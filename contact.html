@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - Let's Work Together</title>
+  <meta name="description" content="Get in touch to discuss your next project." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-group label {
+      font-weight: 600;
+      color: var(--black);
+      font-size: 0.95rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      padding: 0.8rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: border-color 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .submit-btn {
+      background: var(--black);
+      color: var(--white);
+      padding: 1rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .submit-btn:hover {
+      background: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .info-block {
+      padding: 2rem;
+      background: var(--light);
+      border-radius: 8px;
+      border-left: 4px solid var(--accent);
+    }
+
+    .info-block h3 {
+      margin-bottom: 0.5rem;
+      color: var(--black);
+    }
+
+    .info-block p {
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    .info-block a {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .info-block a:hover {
+      text-decoration: underline;
+    }
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .social-item {
+      text-align: center;
+      padding: 1.5rem;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      transition: all 0.3s;
+    }
+
+    .social-item:hover {
+      border-color: var(--accent);
+      box-shadow: 0 4px 12px rgba(255, 107, 53, 0.1);
+    }
+
+    .social-item a {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .social-item a:after {
+      content: attr(data-label);
+      font-size: 0.85rem;
+      color: var(--gray);
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .contact-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="nav-logo">Portfolio 2026</a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="index.html">Work</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <a href="contact.html" class="nav-cta active">Get in Touch</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1>Let's Talk</h1>
+        <p class="hero-subtitle">Have a project in mind or just want to say hello? We'd love to hear from you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-container">
+        <!-- Contact Form -->
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="company">Company / Organization</label>
+            <input type="text" id="company" name="company">
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Project Type</label>
+            <input type="text" id="subject" name="subject" placeholder="e.g., Brand Identity, Web Design, etc." required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us about your project..." required></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <div class="info-block">
+            <h3>📧 Email</h3>
+            <p><a href="mailto:hello@portfolio.com">hello@portfolio.com</a></p>
+            <p style="font-size: 0.9rem; color: var(--gray-light); margin-top: 0.5rem;">I typically respond within 24 hours</p>
+          </div>
+
+          <div class="info-block">
+            <h3>💼 Availability</h3>
+            <p>Available for:</p>
+            <ul style="margin-top: 0.8rem; list-style: none;">
+              <li style="padding: 0.3rem 0;">✓ Freelance projects</li>
+              <li style="padding: 0.3rem 0;">✓ Full-time positions</li>
+              <li style="padding: 0.3rem 0;">✓ Consulting & advice</li>
+              <li style="padding: 0.3rem 0;">✓ Collaborations</li>
+            </ul>
+          </div>
+
+          <div class="info-block">
+            <h3>🌐 Connect</h3>
+            <p>Find me on social media:</p>
+            <div class="social-grid" style="margin-top: 1rem;">
+              <a href="#" style="text-decoration: none;">
+                <div class="social-item">
+                  <div style="font-size: 1.5rem;">in</div>
+                  <div style="font-size: 0.85rem; color: var(--gray);">LinkedIn</div>
+                </div>
+              </a>
+              <a href="#" style="text-decoration: none;">
+                <div class="social-item">
+                  <div style="font-size: 1.5rem;">📷</div>
+                  <div style="font-size: 0.85rem; color: var(--gray);">Instagram</div>
+                </div>
+              </a>
+              <a href="#" style="text-decoration: none;">
+                <div class="social-item">
+                  <div style="font-size: 1.5rem;">𝕏</div>
+                  <div style="font-size: 0.85rem; color: var(--gray);">Twitter</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Response Info Section -->
+  <section class="section" style="background: var(--light);">
+    <div class="container text-center">
+      <h2 class="section-title">What to Expect</h2>
+      <div style="max-width: 700px; margin: 0 auto;">
+        <p style="color: var(--gray); line-height: 1.8; font-size: 1.05rem;">
+          Once you send your message, I'll review your project details and get back to you as soon as possible. We can schedule a call to discuss your vision, timeline, and how I can best help you achieve your goals.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-col">
+        <h3>Portfolio</h3>
+        <p>Creative design studio specializing in visual branding, digital solutions, and meaningful user experiences.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <p><a href="index.html">Work</a></p>
+        <p><a href="services.html">Services</a></p>
+        <p><a href="about.html">About</a></p>
+        <p><a href="contact.html">Contact</a></p>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p><a href="mailto:hello@portfolio.com">hello@portfolio.com</a></p>
+        <p>Available for freelance & full-time projects</p>
+        <div class="social-links">
+          <a href="#" title="LinkedIn">in</a>
+          <a href="#" title="Instagram">📷</a>
+          <a href="#" title="Twitter">𝕏</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Portfolio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Simple form handling
+    document.querySelector('.contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for your message! I\'ll get back to you soon.');
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
