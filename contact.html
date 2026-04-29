@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact - Let's Work Together</title>
+  <title>Contact — copenickerstudio®</title>
   <meta name="description" content="Get in touch to discuss your next project." />
   <link rel="stylesheet" href="styles.css" />
   <style>
@@ -27,7 +27,7 @@
     }
 
     .form-group label {
-      font-weight: 600;
+      font-weight: 650;
       color: var(--black);
       font-size: 0.95rem;
     }
@@ -36,7 +36,7 @@
     .form-group textarea {
       padding: 0.8rem 1rem;
       border: 1px solid var(--border);
-      border-radius: 6px;
+      border-radius: 14px;
       font-family: inherit;
       font-size: 0.95rem;
       transition: border-color 0.3s;
@@ -45,8 +45,8 @@
     .form-group input:focus,
     .form-group textarea:focus {
       outline: none;
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+      border-color: rgba(11, 11, 15, 0.35);
+      box-shadow: var(--focus);
     }
 
     .form-group textarea {
@@ -59,16 +59,16 @@
       color: var(--white);
       padding: 1rem;
       border: none;
-      border-radius: 6px;
+      border-radius: 999px;
       font-size: 1rem;
-      font-weight: 600;
+      font-weight: 650;
       cursor: pointer;
-      transition: all 0.3s;
+      transition: transform 160ms ease, box-shadow 160ms ease;
     }
 
     .submit-btn:hover {
-      background: var(--accent);
       transform: translateY(-2px);
+      box-shadow: var(--shadow);
     }
 
     .contact-info {
@@ -78,10 +78,10 @@
     }
 
     .info-block {
-      padding: 2rem;
-      background: var(--light);
-      border-radius: 8px;
-      border-left: 4px solid var(--accent);
+      padding: 22px;
+      background: var(--gray-100);
+      border-radius: 18px;
+      border: 1px solid var(--border);
     }
 
     .info-block h3 {
@@ -90,17 +90,20 @@
     }
 
     .info-block p {
-      color: var(--gray);
+      color: var(--gray-600);
       line-height: 1.6;
     }
 
     .info-block a {
-      color: var(--accent);
-      font-weight: 600;
+      color: var(--black);
+      font-weight: 650;
+      text-decoration: underline;
+      text-decoration-color: rgba(11, 11, 15, 0.25);
+      text-underline-offset: 0.18em;
     }
 
     .info-block a:hover {
-      text-decoration: underline;
+      text-decoration-color: rgba(11, 11, 15, 0.55);
     }
 
     .social-grid {
@@ -115,13 +118,13 @@
       padding: 1.5rem;
       background: white;
       border: 1px solid var(--border);
-      border-radius: 6px;
-      transition: all 0.3s;
+      border-radius: 18px;
+      transition: transform 160ms ease, box-shadow 160ms ease;
     }
 
     .social-item:hover {
-      border-color: var(--accent);
-      box-shadow: 0 4px 12px rgba(255, 107, 53, 0.1);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
     }
 
     .social-item a {
@@ -133,7 +136,7 @@
     .social-item a:after {
       content: attr(data-label);
       font-size: 0.85rem;
-      color: var(--gray);
+      color: var(--gray-600);
       display: block;
     }
 
@@ -149,23 +152,23 @@
 
   <!-- Navigation -->
   <nav>
-    <a href="index.html" class="nav-logo">Portfolio 2026</a>
+    <a href="index.html" class="nav-logo">copenickerstudio®</a>
     <div class="nav-right">
       <ul class="nav-links">
         <li><a href="index.html">Work</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="about.html">About</a></li>
       </ul>
-      <a href="contact.html" class="nav-cta active">Get in Touch</a>
+      <a href="contact.html" class="nav-cta active">Work with us ↗</a>
     </div>
   </nav>
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-container">
+    <div class="container">
       <div class="hero-content">
-        <h1>Let's Talk</h1>
-        <p class="hero-subtitle">Have a project in mind or just want to say hello? We'd love to hear from you.</p>
+        <h1>Let’s create <span class="underline-italic">together</span>.</h1>
+        <p class="hero-subtitle">Share a few details and we’ll come back with a clear next step.</p>
       </div>
     </div>
   </section>
@@ -207,13 +210,13 @@
         <!-- Contact Info -->
         <div class="contact-info">
           <div class="info-block">
-            <h3>📧 Email</h3>
+            <h3>Email</h3>
             <p><a href="mailto:hello@portfolio.com">hello@portfolio.com</a></p>
-            <p style="font-size: 0.9rem; color: var(--gray-light); margin-top: 0.5rem;">I typically respond within 24 hours</p>
+            <p style="font-size: 0.9rem; color: var(--gray-500); margin-top: 0.5rem;">Typically respond within 24 hours.</p>
           </div>
 
           <div class="info-block">
-            <h3>💼 Availability</h3>
+            <h3>Availability</h3>
             <p>Available for:</p>
             <ul style="margin-top: 0.8rem; list-style: none;">
               <li style="padding: 0.3rem 0;">✓ Freelance projects</li>
@@ -224,25 +227,25 @@
           </div>
 
           <div class="info-block">
-            <h3>🌐 Connect</h3>
+            <h3>Connect</h3>
             <p>Find me on social media:</p>
             <div class="social-grid" style="margin-top: 1rem;">
               <a href="#" style="text-decoration: none;">
                 <div class="social-item">
                   <div style="font-size: 1.5rem;">in</div>
-                  <div style="font-size: 0.85rem; color: var(--gray);">LinkedIn</div>
+                  <div style="font-size: 0.85rem; color: var(--gray-600);">LinkedIn</div>
                 </div>
               </a>
               <a href="#" style="text-decoration: none;">
                 <div class="social-item">
-                  <div style="font-size: 1.5rem;">📷</div>
-                  <div style="font-size: 0.85rem; color: var(--gray);">Instagram</div>
+                  <div style="font-size: 1.5rem;">ig</div>
+                  <div style="font-size: 0.85rem; color: var(--gray-600);">Instagram</div>
                 </div>
               </a>
               <a href="#" style="text-decoration: none;">
                 <div class="social-item">
-                  <div style="font-size: 1.5rem;">𝕏</div>
-                  <div style="font-size: 0.85rem; color: var(--gray);">Twitter</div>
+                  <div style="font-size: 1.5rem;">dr</div>
+                  <div style="font-size: 0.85rem; color: var(--gray-600);">Dribbble</div>
                 </div>
               </a>
             </div>
@@ -253,11 +256,11 @@
   </section>
 
   <!-- Response Info Section -->
-  <section class="section" style="background: var(--light);">
+  <section class="section" style="background: var(--gray-100); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
     <div class="container text-center">
       <h2 class="section-title">What to Expect</h2>
       <div style="max-width: 700px; margin: 0 auto;">
-        <p style="color: var(--gray); line-height: 1.8; font-size: 1.05rem;">
+        <p style="color: var(--gray-600); line-height: 1.8; font-size: 1.05rem;">
           Once you send your message, I'll review your project details and get back to you as soon as possible. We can schedule a call to discuss your vision, timeline, and how I can best help you achieve your goals.
         </p>
       </div>
@@ -268,8 +271,8 @@
   <footer>
     <div class="footer-content">
       <div class="footer-col">
-        <h3>Portfolio</h3>
-        <p>Creative design studio specializing in visual branding, digital solutions, and meaningful user experiences.</p>
+        <h3>copenickerstudio®</h3>
+        <p>Digital studio focused on branding and digital experiences. Strategy, design, and technology — with an eye for detail.</p>
       </div>
       <div class="footer-col">
         <h3>Quick Links</h3>
@@ -281,16 +284,16 @@
       <div class="footer-col">
         <h3>Contact</h3>
         <p><a href="mailto:hello@portfolio.com">hello@portfolio.com</a></p>
-        <p>Available for freelance & full-time projects</p>
+        <p>Berlin · Remote</p>
         <div class="social-links">
           <a href="#" title="LinkedIn">in</a>
-          <a href="#" title="Instagram">📷</a>
-          <a href="#" title="Twitter">𝕏</a>
+          <a href="#" title="Instagram">ig</a>
+          <a href="#" title="Dribbble">dr</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 Portfolio. All rights reserved.</p>
+      <p>&copy; 2026 copenickerstudio®. All rights reserved.</p>
     </div>
   </footer>
 
