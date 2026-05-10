@@ -797,3 +797,32 @@ footer {
 .mt-6 { margin-top: 3rem; }
 .mb-4 { margin-bottom: 2rem; }
 .mb-6 { margin-bottom: 3rem; }
+
+/* ════════════════════════════════ WHATSAPP ════════════════════════════════ */
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  background: #25D366;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-btn svg {
+  width: 26px;
+  height: 26px;
+  fill: #fff;
+}
