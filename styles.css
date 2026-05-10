@@ -609,35 +609,27 @@ nav {
 
 .work-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
 }
 
 .work-card {
-  position: relative;
-  display: block;
+  display: grid;
+  gap: 16px;
   text-decoration: none;
   color: inherit;
-  border-radius: 20px;
-  overflow: hidden;
 }
 
 .work-card:hover .work-thumb img {
   transform: scale(1.03);
 }
 
-.work-card:hover .work-thumb {
-  transform: none;
-  box-shadow: none;
-}
-
 .work-thumb {
-  border-radius: 0;
+  border-radius: 14px;
   overflow: hidden;
   background: var(--gray-100);
   border: none;
-  aspect-ratio: 16 / 7;
-  transition: none;
+  aspect-ratio: 4 / 3;
 }
 
 .work-thumb img {
@@ -649,32 +641,26 @@ nav {
 }
 
 .work-meta {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 48px 48px 36px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.58) 0%, transparent 100%);
   display: grid;
-  gap: 5px;
-}
-
-.work-title {
-  font-size: 1.5rem;
-  font-weight: 650;
-  letter-spacing: -0.02em;
-  color: #fff;
+  gap: 4px;
 }
 
 .work-desc {
-  font-size: 0.92rem;
-  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.85rem;
+  color: var(--gray-500);
+  letter-spacing: 0.01em;
+  order: -1;
 }
 
-@media (max-width: 900px) {
-  .work-thumb { aspect-ratio: 16 / 9; }
-  .work-meta { padding: 32px 28px 24px; }
-  .work-title { font-size: 1.2rem; }
+.work-title {
+  font-size: 1.35rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  color: var(--black);
+}
+
+@media (max-width: 700px) {
+  .work-grid { grid-template-columns: 1fr; }
 }
 
 /* ════════════════════════════════ CASE STUDY ════════════════════════════════ */
