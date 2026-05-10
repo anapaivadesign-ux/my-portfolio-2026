@@ -840,10 +840,10 @@ nav {
 }
 
 .service-card-title {
-  font-family: 'Canela', Georgia, serif;
-  font-weight: 400;
-  font-size: 52px;
-  line-height: 1.05;
+  font-family: inherit;
+  font-weight: 650;
+  font-size: 1.6rem;
+  line-height: 1.2;
   letter-spacing: -0.02em;
   margin-bottom: 16px;
 }
