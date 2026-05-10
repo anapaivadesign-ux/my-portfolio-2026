@@ -829,22 +829,22 @@ nav {
 .service-card-new {
   border: 1px solid var(--border);
   border-radius: 20px;
-  padding: 40px 40px 36px;
+  padding: 56px 48px 48px;
   display: flex;
   flex-direction: column;
   gap: 0;
 }
 
 .service-card-top {
-  margin-bottom: 32px;
+  margin-bottom: 40px;
 }
 
 .service-card-title {
   font-family: inherit;
   font-weight: 650;
-  font-size: 1.6rem;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  font-size: 2rem;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
   margin-bottom: 16px;
 }
 
