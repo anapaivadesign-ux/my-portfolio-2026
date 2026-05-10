@@ -1017,11 +1017,12 @@ nav {
   grid-template-columns: 1fr auto;
   align-items: center;
   gap: 40px;
-  padding: 48px 56px;
+  padding: 36px 48px;
   border-radius: 22px;
   border: 1px solid var(--border);
   background: var(--gray-100);
-  overflow: hidden;
+  overflow: visible;
+  position: relative;
 }
 
 .cta-section-text {
@@ -1031,7 +1032,10 @@ nav {
 
 .cta-section-image {
   flex-shrink: 0;
-  width: 240px;
+  width: 200px;
+  margin-bottom: -36px;
+  margin-top: -36px;
+  margin-right: -16px;
 }
 
 .cta-section-image img {
