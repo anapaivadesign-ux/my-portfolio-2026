@@ -38,6 +38,33 @@
 
 html {
   scroll-behavior: smooth;
+  cursor: none;
+}
+
+/* custom cursor */
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  background: var(--black);
+  border-radius: 999px;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 80ms ease, width 200ms ease, height 200ms ease, opacity 200ms ease;
+}
+
+.cursor.hover {
+  width: 36px;
+  height: 36px;
+  opacity: 0.6;
+}
+
+@media (hover: none) {
+  .cursor { display: none; }
+  html { cursor: auto; }
 }
 
 body {
