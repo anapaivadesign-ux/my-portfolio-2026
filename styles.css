@@ -109,6 +109,40 @@ a {
 .home-hero .hero-content { max-width: 980px; }
 .home-hero .hero-subtitle { max-width: 72ch; }
 
+.clients-bar {
+  padding: 32px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--gray-100);
+}
+
+.clients-label {
+  font-size: 0.85rem;
+  color: var(--gray-500);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.clients-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 36px;
+}
+
+.clients-logos img {
+  height: 22px;
+  width: auto;
+  opacity: 0.45;
+  filter: grayscale(1);
+  transition: opacity 160ms ease;
+}
+
+.clients-logos img:hover {
+  opacity: 0.75;
+}
+
 .split {
   display: grid;
   grid-template-columns: 1fr 1fr;
