@@ -610,12 +610,12 @@ nav {
 .work-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 32px;
+  gap: 20px;
 }
 
 .work-card {
   display: grid;
-  gap: 16px;
+  gap: 18px;
   text-decoration: none;
   color: inherit;
 }
@@ -625,11 +625,11 @@ nav {
 }
 
 .work-thumb {
-  border-radius: 14px;
+  border-radius: 10px;
   overflow: hidden;
   background: var(--gray-100);
   border: none;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 2;
 }
 
 .work-thumb img {
@@ -637,12 +637,12 @@ nav {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .work-meta {
   display: grid;
-  gap: 4px;
+  gap: 6px;
 }
 
 .work-desc {
@@ -653,14 +653,16 @@ nav {
 }
 
 .work-title {
-  font-size: 1.35rem;
+  font-size: 1.6rem;
   font-weight: 650;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
   color: var(--black);
+  line-height: 1.2;
 }
 
 @media (max-width: 700px) {
   .work-grid { grid-template-columns: 1fr; }
+  .work-title { font-size: 1.3rem; }
 }
 
 /* ════════════════════════════════ CASE STUDY ════════════════════════════════ */
