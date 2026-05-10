@@ -114,6 +114,7 @@ a {
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   background: var(--gray-100);
+  overflow: hidden;
 }
 
 .clients-label {
@@ -122,25 +123,38 @@ a {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   margin-bottom: 20px;
+  padding: 0 5%;
 }
 
-.clients-logos {
+.clients-track-wrap {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.clients-track {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  gap: 36px;
+  gap: 56px;
+  width: max-content;
+  animation: marquee 28s linear infinite;
 }
 
-.clients-logos img {
+.clients-track img {
   height: 22px;
   width: auto;
   opacity: 0.45;
   filter: grayscale(1);
-  transition: opacity 160ms ease;
+  flex-shrink: 0;
 }
 
-.clients-logos img:hover {
-  opacity: 0.75;
+.clients-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
 .split {
