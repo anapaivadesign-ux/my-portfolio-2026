@@ -355,34 +355,28 @@ nav {
 @media (max-width: 768px) {
   nav {
     padding: 14px 5%;
-    padding-top: calc(14px + env(safe-area-inset-top, 0px));
-    min-height: 60px;
+    min-height: 56px;
   }
 
   .burger { display: flex; }
 
   .nav-right {
+    display: none;
     position: fixed;
-    top: calc(60px + env(safe-area-inset-top, 0px));
+    top: 56px;
     left: 0;
     right: 0;
-    background: rgba(255,255,255,0.97);
-    backdrop-filter: blur(10px);
+    background: #fff;
     border-bottom: 1px solid var(--border);
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 0;
     z-index: 99;
-    padding: 0 5%;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 320ms ease, padding 320ms ease;
+    padding: 8px 5% 20px;
+    box-shadow: 0 8px 24px rgba(11,11,15,0.08);
   }
 
-  .nav-right.open {
-    max-height: 420px;
-    padding: 8px 5% 24px;
-  }
+  .nav-right.open { display: flex; }
 
   .nav-links {
     flex-direction: column;
@@ -398,17 +392,17 @@ nav {
 
   .nav-links a {
     display: block;
-    font-size: 1.05rem;
+    font-size: 1rem;
     font-weight: 550;
-    padding: 16px 0;
+    padding: 15px 0;
+    color: var(--black);
   }
 
   .nav-cta {
-    margin-top: 18px;
-    margin-bottom: 4px;
+    margin-top: 16px;
     font-size: 0.95rem;
-    width: 100%;
     justify-content: center;
+    text-align: center;
   }
 }
 
