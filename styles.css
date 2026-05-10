@@ -353,13 +353,17 @@ nav {
 .burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 @media (max-width: 768px) {
-  nav { padding: 16px 5%; }
+  nav {
+    padding: 14px 5%;
+    padding-top: calc(14px + env(safe-area-inset-top, 0px));
+    min-height: 60px;
+  }
 
   .burger { display: flex; }
 
   .nav-right {
     position: fixed;
-    top: 57px;
+    top: calc(60px + env(safe-area-inset-top, 0px));
     left: 0;
     right: 0;
     background: rgba(255,255,255,0.97);
@@ -372,12 +376,12 @@ nav {
     padding: 0 5%;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 300ms ease, padding 300ms ease;
+    transition: max-height 320ms ease, padding 320ms ease;
   }
 
   .nav-right.open {
-    max-height: 400px;
-    padding: 20px 5% 24px;
+    max-height: 420px;
+    padding: 8px 5% 24px;
   }
 
   .nav-links {
@@ -394,14 +398,17 @@ nav {
 
   .nav-links a {
     display: block;
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 550;
-    padding: 14px 0;
+    padding: 16px 0;
   }
 
   .nav-cta {
-    margin-top: 16px;
-    font-size: 0.9rem;
+    margin-top: 18px;
+    margin-bottom: 4px;
+    font-size: 0.95rem;
+    width: 100%;
+    justify-content: center;
   }
 }
 
