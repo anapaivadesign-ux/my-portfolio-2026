@@ -794,6 +794,11 @@ nav {
 
 /* ════════════════════════════════ SERVICES ════════════════════════════════ */
 
+.canela-heading {
+  font-family: 'Canela', Georgia, serif;
+  font-weight: 400;
+}
+
 .services-title {
   font-family: 'Canela', Georgia, serif;
   font-weight: 400;
