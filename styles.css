@@ -947,6 +947,32 @@ nav {
   box-shadow: var(--shadow);
 }
 
+.cta-button-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--black);
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--black);
+  font-size: 0.98rem;
+  font-weight: 600;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.cta-button-outline:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 /* ════════════════════════════════ FOOTER ════════════════════════════════ */
 
 footer {
