@@ -12,7 +12,10 @@
   <!-- Navigation -->
   <nav>
     <a href="index.html" class="nav-logo">copenickerstudio®</a>
-    <div class="nav-right">
+    <button class="burger" id="burger" aria-label="Menu" onclick="this.classList.toggle('open');document.getElementById('navRight').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-right" id="navRight">
       <ul class="nav-links">
         <li><a href="index.html">Work</a></li>
         <li><a href="services.html">Services</a></li>
