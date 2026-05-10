@@ -111,8 +111,6 @@ a {
 
 .clients-bar {
   padding: 32px 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
   overflow: hidden;
 }
 
@@ -145,6 +143,11 @@ a {
   opacity: 0.45;
   filter: grayscale(1);
   flex-shrink: 0;
+}
+
+.clients-track img[src*="wayra"],
+.clients-track img[src*="logo-lightmode"] {
+  height: 36px;
 }
 
 .clients-track:hover {
