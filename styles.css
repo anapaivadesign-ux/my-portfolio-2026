@@ -258,6 +258,7 @@ a {
   text-transform: uppercase;
   margin-bottom: 20px;
   padding: 0 5%;
+  text-align: center;
 }
 
 .clients-track-wrap {
@@ -807,6 +808,7 @@ nav {
   letter-spacing: -0.02em;
   margin-top: 48px;
   margin-bottom: 48px;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
