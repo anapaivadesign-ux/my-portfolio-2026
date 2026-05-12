@@ -739,7 +739,7 @@ nav {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: rgba(0, 0, 0, 0.45);
+  background: var(--overlay-bg, rgba(0, 0, 0, 0.45));
   opacity: 0;
   transition: opacity 300ms ease;
   border-radius: 10px;
