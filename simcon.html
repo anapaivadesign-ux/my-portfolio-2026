@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SIMCON UI/UX copenickerstudio®</title>
+  <meta name="description" content="SIMCON UI/UX — redesigned platform with scalable design system, component library and SVG animations." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="canonical" href="https://copenickerstudio.com/simcon.html" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .simcon-hero {
+      padding: 80px 0 0;
+    }
+
+    .simcon-hero-inner {
+      display: grid;
+      gap: 32px;
+    }
+
+    .simcon-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .simcon-kv {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--gray-100);
+      aspect-ratio: 16 / 9;
+      margin-top: 48px;
+    }
+
+    .simcon-kv img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .simcon-kv.placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray-400);
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+    }
+
+    .simcon-body {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 64px;
+      align-items: start;
+      padding: 72px 0 80px;
+    }
+
+    .simcon-sections {
+      display: grid;
+      gap: 72px;
+    }
+
+    .simcon-section {
+      display: grid;
+      gap: 20px;
+    }
+
+    .simcon-section-label {
+      font-size: 0.78rem;
+      font-weight: 650;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+    }
+
+    .simcon-section h2 {
+      font-size: 1.6rem;
+      font-weight: 650;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .simcon-section p {
+      font-size: 1.05rem;
+      color: var(--gray-600);
+      line-height: 1.85;
+    }
+
+    .simcon-image {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--gray-100);
+      aspect-ratio: 16 / 10;
+      margin-top: 8px;
+    }
+
+    .simcon-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .simcon-image.placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray-400);
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+    }
+
+    .simcon-image-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .simcon-image-grid .simcon-image {
+      margin-top: 0;
+    }
+
+    .simcon-sidebar {
+      position: sticky;
+      top: 100px;
+    }
+
+    .simcon-sidebar .case-panel {
+      background: var(--gray-50, #fafafa);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+    }
+
+    @media (max-width: 900px) {
+      .simcon-body {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        padding: 48px 0 64px;
+      }
+
+      .simcon-sidebar {
+        position: static;
+        order: -1;
+      }
+
+      .simcon-image-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="nav-logo">copenickerstudio®</a>
+    <button class="burger" id="burger" aria-label="Menu" onclick="this.classList.toggle('open');document.getElementById('navRight').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-right" id="navRight">
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Work</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <a href="contact.html" class="nav-cta">Let's talk ↗</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="section simcon-hero">
+    <div class="container">
+      <div class="simcon-hero-inner">
+        <div>
+          <a class="link-arrow" href="index.html">← Back to work</a>
+          <h1 class="case-title" style="margin-top: 24px;">SIMCON</h1>
+          <p class="hero-subtitle" style="max-width: 60ch; margin-top: 16px;">
+            Redesigning a platform with a scalable design system, component library, and SVG animations to enhance usability and team collaboration.
+          </p>
+          <div class="simcon-tags" style="margin-top: 24px;">
+            <span class="tag">UI/UX Design</span>
+            <span class="tag">Design System</span>
+            <span class="tag">Figma</span>
+            <span class="tag">SVG Animation</span>
+          </div>
+        </div>
+
+        <!-- Hero image — replace src when ready -->
+        <div class="simcon-kv placeholder">Add hero image</div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Body -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="simcon-body">
+
+        <!-- Main content -->
+        <div class="simcon-sections">
+
+          <div class="simcon-section">
+            <span class="simcon-section-label">01 — Implementation</span>
+            <h2>Building the system</h2>
+            <p>Worked closely with the team to create high-fidelity UI screens in Figma, adhering to Simcon's brand guidelines and design system standards. Focused on clear hierarchy, simplicity, and consistent styling across components. Updated and maintained the component library, and designed SVG animations to subtly enhance user interactions while maintaining usability.</p>
+            <!-- Image placeholder — replace with real image -->
+            <div class="simcon-image placeholder">Add image</div>
+            <div class="simcon-image-grid">
+              <div class="simcon-image placeholder">Add image</div>
+              <div class="simcon-image placeholder">Add image</div>
+            </div>
+          </div>
+
+          <div class="simcon-section">
+            <span class="simcon-section-label">02 — Results</span>
+            <h2>A system ready to scale</h2>
+            <p>The redesigned platform now features a scalable, well-organized design system and component library that streamlines development and design collaboration at Simcon. Interactive SVG animations improved user engagement and enhanced the overall experience. The system is ready for deployment and continuous updates based on team and user feedback.</p>
+            <!-- Image placeholder — replace with real image -->
+            <div class="simcon-image placeholder">Add image</div>
+          </div>
+
+          <div class="simcon-section">
+            <span class="simcon-section-label">03 — Learnings</span>
+            <h2>Teamwork makes systems work</h2>
+            <p>This project reinforced the importance of teamwork in maintaining a consistent, usable, and interactive design system. Supporting the component library and introducing SVG animations highlighted how small details create meaningful improvements in both the design process and the end-user experience.</p>
+          </div>
+
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="simcon-sidebar">
+          <div class="case-panel">
+            <div class="case-h3">Project details</div>
+            <div class="dl">
+              <div class="dl-row">
+                <div class="dt">Client</div>
+                <div class="dd">SIMCON</div>
+              </div>
+              <div class="dl-row">
+                <div class="dt">Service</div>
+                <div class="dd">UI/UX Design</div>
+              </div>
+              <div class="dl-row">
+                <div class="dt">Deliverables</div>
+                <div class="dd">UI screens, component library, SVG animations</div>
+              </div>
+              <div class="dl-row">
+                <div class="dt">Tools</div>
+                <div class="dd">Figma</div>
+              </div>
+            </div>
+            <div style="height: 8px;"></div>
+            <a class="cta-button" href="contact.html">Start a project ↗</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients -->
+  <section class="clients-bar">
+    <p class="clients-label">Collaborate with</p>
+    <div class="clients-track-wrap">
+      <div class="clients-track">
+        <img src="images/logos/AKQA-Logo 1.svg" alt="AKQA">
+        <img src="images/logos/DPX_Typologo_black 1.svg" alt="DPX">
+        <img src="images/logos/foodora-logo 1.svg" alt="Foodora">
+        <img src="images/logos/60a62aad0f25c64e47260856_wayra-telefonica-innovation-white 1.svg" alt="Wayra Telefonica">
+        <img src="images/logos/logo-lightmode 1.svg" alt="Client">
+        <img src="images/logos/Layer_1.svg" alt="Client">
+        <img src="images/logos/image 63.svg" alt="Client">
+        <img src="images/logos/image 65.svg" alt="Client">
+        <img src="images/logos/Vector.svg" alt="Client">
+        <img src="images/logos/AKQA-Logo 1.svg" alt="AKQA">
+        <img src="images/logos/DPX_Typologo_black 1.svg" alt="DPX">
+        <img src="images/logos/foodora-logo 1.svg" alt="Foodora">
+        <img src="images/logos/60a62aad0f25c64e47260856_wayra-telefonica-innovation-white 1.svg" alt="Wayra Telefonica">
+        <img src="images/logos/logo-lightmode 1.svg" alt="Client">
+        <img src="images/logos/Layer_1.svg" alt="Client">
+        <img src="images/logos/image 63.svg" alt="Client">
+        <img src="images/logos/image 65.svg" alt="Client">
+        <img src="images/logos/Vector.svg" alt="Client">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-col">
+        <h3>copenickerstudio®</h3>
+        <p>Digital studio focused on branding and digital experiences. Strategy, design, and technology with an eye for detail.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <p><a href="index.html">Work</a></p>
+        <p><a href="services.html">Services</a></p>
+        <p><a href="about.html">About</a></p>
+        <p><a href="contact.html">Contact</a></p>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p><a href="mailto:ana@copenickerstudio.com">ana@copenickerstudio.com</a></p>
+        <p>Berlin · Lisboa · Remote</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/anapaivadesign/" target="_blank" title="LinkedIn">in</a>
+          <a href="https://www.instagram.com/copenicker" target="_blank" title="Instagram">ig</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 copenickerstudio®. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="wa-widget">
+    <div class="wa-panel" id="waPanel">
+      <div class="wa-panel-header">
+        <img class="wa-avatar" src="images/ana-profile.png" alt="Ana">
+        <div class="wa-panel-header-info">
+          <strong>copenickerstudio®</strong>
+          <span>Typically replies instantly</span>
+        </div>
+        <button class="wa-close" onclick="document.getElementById('waPanel').classList.remove('open')">&times;</button>
+      </div>
+      <div class="wa-body">
+        <div class="wa-bubble">Hi there! 👋 How can we help you?<span>now</span></div>
+      </div>
+      <a class="wa-start" href="https://wa.me/491746290656" target="_blank">Start chat</a>
+    </div>
+    <button class="wa-btn" onclick="document.getElementById('waPanel').classList.toggle('open')" aria-label="Chat on WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </button>
+  </div>
+
+  <div class="cursor" id="cursor"></div>
+  <script>
+    const cursor = document.getElementById("cursor");
+    document.addEventListener("mousemove", e => {
+      cursor.style.left = e.clientX + "px";
+      cursor.style.top = e.clientY + "px";
+    });
+    document.querySelectorAll("a, button").forEach(el => {
+      el.addEventListener("mouseenter", () => cursor.classList.add("hover"));
+      el.addEventListener("mouseleave", () => cursor.classList.remove("hover"));
+    });
+
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add("visible"); revealObserver.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll(".section").forEach(el => {
+      el.classList.add("reveal");
+      revealObserver.observe(el);
+    });
+  </script>
+
+</body>
+</html>
