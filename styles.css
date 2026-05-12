@@ -633,7 +633,7 @@ nav {
 .work-thumb {
   border-radius: 10px;
   overflow: hidden;
-  background: #f5f5f5;
+  background: transparent;
   border: none;
   aspect-ratio: 16 / 11;
 }
