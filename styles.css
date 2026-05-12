@@ -299,25 +299,25 @@ a {
 }
 
 .blob-1 {
-  width: 560px;
-  height: 560px;
-  background: radial-gradient(circle, rgba(167, 139, 250, 0.18) 0%, transparent 70%);
+  width: 660px;
+  height: 660px;
+  background: radial-gradient(circle, rgba(167, 139, 250, 0.45) 0%, transparent 70%);
   top: -120px;
   right: -80px;
 }
 
 .blob-2 {
-  width: 480px;
-  height: 480px;
-  background: radial-gradient(circle, rgba(251, 191, 114, 0.14) 0%, transparent 70%);
+  width: 560px;
+  height: 560px;
+  background: radial-gradient(circle, rgba(251, 191, 114, 0.38) 0%, transparent 70%);
   bottom: -60px;
   left: 10%;
 }
 
 .blob-3 {
-  width: 360px;
-  height: 360px;
-  background: radial-gradient(circle, rgba(110, 231, 183, 0.12) 0%, transparent 70%);
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(110, 231, 183, 0.32) 0%, transparent 70%);
   top: 40%;
   right: 20%;
 }
