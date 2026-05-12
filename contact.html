@@ -183,7 +183,8 @@
     <div class="container">
       <div class="contact-container">
         <!-- Contact Form -->
-        <form class="contact-form">
+        <form class="contact-form" action="https://formspree.io/f/mkoyeowv" method="POST">
+          <input type="hidden" name="_next" value="https://copenickerstudio.com/contact.html?sent=1">
           <div class="form-group">
             <label for="name">Full Name</label>
             <input type="text" id="name" name="name" required>
@@ -320,15 +321,6 @@
       <p>&copy; 2026 copenickerstudio®. All rights reserved.</p>
     </div>
   </footer>
-
-  <script>
-    // Simple form handling
-    document.querySelector('.contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Thank you for your message! I\'ll get back to you soon.');
-      this.reset();
-    });
-  </script>
 
   <div class="wa-widget">
     <div class="wa-panel" id="waPanel">
