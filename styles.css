@@ -197,10 +197,15 @@ a {
   justify-content: center;
 }
 
+.hero-subtitle-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  justify-content: center;
+}
+
 .spinning-badge {
-  position: absolute;
-  top: 16px;
-  right: -36px;
+  flex-shrink: 0;
   width: 120px;
   height: 120px;
   display: flex;
