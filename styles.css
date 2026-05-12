@@ -217,10 +217,10 @@ a {
 
 .hero-badge {
   position: absolute;
-  top: 10%;
-  right: 8%;
-  width: 160px;
-  height: 160px;
+  top: 8%;
+  right: 6%;
+  width: 190px;
+  height: 190px;
 }
 
 @keyframes spin-badge {
