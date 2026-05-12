@@ -206,10 +206,11 @@ a {
   flex-shrink: 0;
 }
 
-.spinning-badge--inline {
+.badge-anchor {
   position: absolute;
-  top: -50px;
-  right: -60px;
+  left: 38%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 120px;
   height: 120px;
   display: flex;
