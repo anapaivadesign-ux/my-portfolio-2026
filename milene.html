@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meaningful Milene copenickerstudio®</title>
+  <meta name="description" content="Brand identity and website design for Milene, an osteopath and yoga teacher based in Lisbon." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="canonical" href="https://copenickerstudio.com/milene.html" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .milene-hero {
+      padding: 80px 0 0;
+    }
+
+    .milene-hero-inner {
+      display: grid;
+      gap: 32px;
+    }
+
+    .milene-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .milene-kv {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      margin-top: 48px;
+      background: #e05c2a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .milene-kv-inner {
+      text-align: center;
+      padding: 40px;
+    }
+
+    .milene-kv-tagline {
+      font-size: clamp(1.8rem, 4vw, 3.2rem);
+      font-weight: 800;
+      color: #fbf5e4;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .milene-kv-sub {
+      margin-top: 16px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(251,245,228,0.7);
+    }
+
+    .milene-kv img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .milene-body {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 64px;
+      align-items: start;
+      padding: 72px 0 80px;
+    }
+
+    .milene-sections {
+      display: grid;
+      gap: 72px;
+    }
+
+    .milene-section {
+      display: grid;
+      gap: 20px;
+    }
+
+    .milene-section-label {
+      font-size: 0.78rem;
+      font-weight: 650;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+    }
+
+    .milene-section h2 {
+      font-size: 1.6rem;
+      font-weight: 650;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .milene-section p {
+      font-size: 1.05rem;
+      color: var(--gray-600);
+      line-height: 1.85;
+    }
+
+    .milene-image {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--gray-100);
+      margin-top: 8px;
+    }
+
+    .milene-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .milene-palette {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .milene-swatch {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .milene-swatch-color {
+      width: 64px;
+      height: 64px;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .milene-swatch span {
+      font-size: 0.72rem;
+      font-weight: 650;
+      letter-spacing: 0.04em;
+      color: var(--gray-500);
+    }
+
+    .milene-icons-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .milene-icon-tile {
+      aspect-ratio: 1;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+    }
+
+    .milene-sidebar {
+      position: sticky;
+      top: 100px;
+    }
+
+    .milene-sidebar .case-panel {
+      background: var(--gray-50, #fafafa);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+    }
+
+    @media (max-width: 900px) {
+      .milene-body {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        padding: 48px 0 64px;
+      }
+
+      .milene-sidebar {
+        position: static;
+        order: -1;
+      }
+
+      .milene-icons-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="nav-logo">copenickerstudio®</a>
+    <button class="burger" id="burger" aria-label="Menu" onclick="this.classList.toggle('open');document.getElementById('navRight').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-right" id="navRight">
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Work</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <a href="contact.html" class="nav-cta">Let's talk ↗</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="section milene-hero">
+    <div class="container">
+      <div class="milene-hero-inner">
+        <div>
+          <a class="link-arrow" href="index.html">← Back to work</a>
+          <h1 class="case-title" style="margin-top: 56px;">Meaningful Milene</h1>
+          <p class="hero-subtitle" style="max-width: 60ch; margin-top: 16px;">
+            Brand identity and website design for an osteopath and yoga teacher building her practice in Lisbon — warm, human, and full of meaning.
+          </p>
+          <div class="milene-tags" style="margin-top: 24px;">
+            <span class="tag">Web Design</span>
+            <span class="tag">Brand Identity</span>
+            <span class="tag">Next.js</span>
+            <span class="tag">Illustration</span>
+          </div>
+        </div>
+
+        <div class="milene-kv">
+          <div class="milene-kv-inner">
+            <div class="milene-kv-tagline">Everything I do,<br>I do with meaning.</div>
+            <div class="milene-kv-sub">Osteopath & Yoga Teacher · Lisbon</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Body -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="milene-body">
+
+        <!-- Main content -->
+        <div class="milene-sections">
+
+          <div class="milene-section">
+            <span class="milene-section-label">01 — Challenge</span>
+            <h2>Building trust before the first appointment</h2>
+            <p>Milene is an Azorean osteopath who built a thriving practice in Faial through one thing: genuine care. Moving to Lisbon meant starting from scratch in a competitive city — without the word-of-mouth network she'd earned over years. The challenge was to create a digital presence that communicated her warmth and expertise to people who had never met her.</p>
+            <p>The brand needed to feel human, joyful, and trustworthy — not clinical. It also had to serve two different audiences: adults seeking osteopathy and parents looking for gentle care for their children.</p>
+          </div>
+
+          <div class="milene-section">
+            <span class="milene-section-label">02 — Brand Identity</span>
+            <h2>A palette as warm as the practitioner</h2>
+            <p>The visual identity centres on a bold, warm colour palette — burnt orange, deep indigo, lime, and rose — that feels alive and approachable without losing credibility. Each colour has a role: orange for energy and warmth, indigo for trust and depth, lime for vitality, pink for care and tenderness.</p>
+
+            <div class="milene-palette">
+              <div class="milene-swatch">
+                <div class="milene-swatch-color" style="background:#e05c2a;"></div>
+                <span>Orange</span>
+              </div>
+              <div class="milene-swatch">
+                <div class="milene-swatch-color" style="background:#2d2f6b;"></div>
+                <span>Indigo</span>
+              </div>
+              <div class="milene-swatch">
+                <div class="milene-swatch-color" style="background:#c8e64a;"></div>
+                <span>Lime</span>
+              </div>
+              <div class="milene-swatch">
+                <div class="milene-swatch-color" style="background:#e87ea1;"></div>
+                <span>Rose</span>
+              </div>
+              <div class="milene-swatch">
+                <div class="milene-swatch-color" style="background:#fbf5e4;"></div>
+                <span>Cream</span>
+              </div>
+            </div>
+
+            <p style="margin-top: 16px;">A custom set of brand icons — flowers, birds, waves, a human-leaf form, a sun — were designed to appear throughout the site as decorative elements that reinforce the holistic, nature-connected philosophy behind Milene's work.</p>
+
+            <div class="milene-icons-grid">
+              <div class="milene-icon-tile" style="background:#e05c2a;">🌸</div>
+              <div class="milene-icon-tile" style="background:#2d2f6b;">🐦</div>
+              <div class="milene-icon-tile" style="background:#c8e64a;">🌿</div>
+              <div class="milene-icon-tile" style="background:#e87ea1;">♡</div>
+              <div class="milene-icon-tile" style="background:#c8e64a;">☀</div>
+              <div class="milene-icon-tile" style="background:#e05c2a;">〰</div>
+              <div class="milene-icon-tile" style="background:#e87ea1;">✳</div>
+              <div class="milene-icon-tile" style="background:#2d2f6b;">🌺</div>
+            </div>
+          </div>
+
+          <div class="milene-section">
+            <span class="milene-section-label">03 — Website</span>
+            <h2>A site that feels like a warm welcome</h2>
+            <p>The website was built in Next.js with a section-by-section narrative flow — starting with warmth and trust, moving into Milene's story, then services and testimonials, and ending with a clear call to book. Wave borders between sections create a fluid, organic sense of movement.</p>
+            <p>Services are broken down clearly: Osteopathy (clinic & home visits), Infant & Pediatric, and Yoga — each with its own tone and visual treatment. The copy was written to feel personal and direct, reflecting how Milene actually speaks to her patients.</p>
+          </div>
+
+          <div class="milene-section">
+            <span class="milene-section-label">04 — Learnings</span>
+            <h2>Design as an act of care</h2>
+            <p>This project was a reminder that healthcare brands require a particular kind of sensitivity. Every design decision — colour, type size, tone of voice — either builds or erodes trust. Getting that balance right meant deeply understanding who Milene is before touching a single pixel.</p>
+          </div>
+
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="milene-sidebar">
+          <div class="case-panel">
+            <div class="case-h3">Project details</div>
+            <div class="dl">
+              <div class="dl-row">
+                <div class="dt">Client</div>
+                <div class="dd">Meaningful Milene</div>
+              </div>
+              <div class="dl-row">
+                <div class="dt">Service</div>
+                <div class="dd">Brand Identity · Web Design</div>
+              </div>
+              <div class="dl-row">
+                <div class="dt">Deliverables</div>
+                <div class="dd">Brand system, custom icons, full website</div>
+              </div>
+              <div class="dl-row">
+                <div class="dt">Tech</div>
+                <div class="dd">Next.js · Tailwind CSS</div>
+              </div>
+              <div class="dl-row">
+                <div class="dt">Sector</div>
+                <div class="dd">Health & Wellness</div>
+              </div>
+            </div>
+            <div style="height: 8px;"></div>
+            <a class="cta-button" href="contact.html">Start a project ↗</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients -->
+  <section class="clients-bar">
+    <p class="clients-label">Brands I've worked with</p>
+    <div class="clients-track-wrap">
+      <div class="clients-track">
+        <img src="images/logos/AKQA-Logo 1.svg" alt="AKQA">
+        <img src="images/logos/DPX_Typologo_black 1.svg" alt="DPX">
+        <img src="images/logos/foodora-logo 1.svg" alt="Foodora">
+        <img src="images/logos/60a62aad0f25c64e47260856_wayra-telefonica-innovation-white 1.svg" alt="Wayra Telefonica">
+        <img src="images/logos/logo-lightmode 1.svg" alt="Client">
+        <img src="images/logos/Layer_1.svg" alt="Client">
+        <img src="images/logos/image 63.svg" alt="Client">
+        <img src="images/logos/image 65.svg" alt="Client">
+        <img src="images/logos/Vector.svg" alt="Client">
+        <img src="images/logos/AKQA-Logo 1.svg" alt="AKQA">
+        <img src="images/logos/DPX_Typologo_black 1.svg" alt="DPX">
+        <img src="images/logos/foodora-logo 1.svg" alt="Foodora">
+        <img src="images/logos/60a62aad0f25c64e47260856_wayra-telefonica-innovation-white 1.svg" alt="Wayra Telefonica">
+        <img src="images/logos/logo-lightmode 1.svg" alt="Client">
+        <img src="images/logos/Layer_1.svg" alt="Client">
+        <img src="images/logos/image 63.svg" alt="Client">
+        <img src="images/logos/image 65.svg" alt="Client">
+        <img src="images/logos/Vector.svg" alt="Client">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-col">
+        <h3>copenickerstudio®</h3>
+        <p>Consulting. Design. Experience.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <p><a href="index.html">Work</a></p>
+        <p><a href="services.html">Services</a></p>
+        <p><a href="about.html">About</a></p>
+        <p><a href="contact.html">Contact</a></p>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p><a href="mailto:ana@copenickerstudio.com">ana@copenickerstudio.com</a></p>
+        <p>Berlin · Lisboa · Remote</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/anapaivadesign/" target="_blank" title="LinkedIn">in</a>
+          <a href="https://www.instagram.com/copenicker" target="_blank" title="Instagram">ig</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 copenickerstudio®. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="wa-widget">
+    <div class="wa-panel" id="waPanel">
+      <div class="wa-panel-header">
+        <img class="wa-avatar" src="images/ana-profile.png" alt="Ana">
+        <div class="wa-panel-header-info">
+          <strong>copenickerstudio®</strong>
+          <span>Typically replies instantly</span>
+        </div>
+        <button class="wa-close" onclick="document.getElementById('waPanel').classList.remove('open')">&times;</button>
+      </div>
+      <div class="wa-body">
+        <div class="wa-bubble">Hi there! 👋 How can we help you?<span>now</span></div>
+      </div>
+      <a class="wa-start" href="https://wa.me/491746290656" target="_blank">Start chat</a>
+    </div>
+    <button class="wa-btn" onclick="document.getElementById('waPanel').classList.toggle('open')" aria-label="Chat on WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </button>
+  </div>
+
+  <div class="cursor" id="cursor"></div>
+  <script>
+    const cursor = document.getElementById("cursor");
+    document.addEventListener("mousemove", e => {
+      cursor.style.left = e.clientX + "px";
+      cursor.style.top = e.clientY + "px";
+    });
+    document.querySelectorAll("a, button").forEach(el => {
+      el.addEventListener("mouseenter", () => cursor.classList.add("hover"));
+      el.addEventListener("mouseleave", () => cursor.classList.remove("hover"));
+    });
+
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add("visible"); revealObserver.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll(".section").forEach(el => {
+      el.classList.add("reveal");
+      revealObserver.observe(el);
+    });
+  </script>
+
+</body>
+</html>
