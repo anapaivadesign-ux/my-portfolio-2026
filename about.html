@@ -40,6 +40,142 @@
     </div>
   </section>
 
+  <!-- FAQ Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="canela-heading" style="margin-bottom: 48px;">FAQ</h2>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What kind of projects do you work on?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>I work on UI/UX design, illustration, and consulting projects for brands, agencies, startups, and founders — from product interfaces and design systems to brand identities, campaign visuals, and editorial illustration.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What's your creative process like?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Most projects follow four stages: discovery → concept → development → final delivery. You'll be involved at each step with clear communication throughout, so there are no surprises at the end.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            I've never worked with a designer before — where do I start?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Just reach out with your idea and any relevant details — what you need, when you need it, and a rough budget if you have one. We can jump on a quick call to clarify scope and figure out the best approach together.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            How do revisions work?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Every project includes 2–3 revision rounds at key stages — after the initial concept, after design proposals, and a final round for small refinements. Additional rounds are available at extra cost if needed.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can you adapt to my brand's existing style?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely. I can work within your existing brand guidelines or help you evolve them — adapting to your brand's tone, audience, and aesthetic while bringing fresh thinking to the work.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What industries have you worked with?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Ed-tech, e-commerce, no-code tools, food & lifestyle, fintech, publishing, and more. I've worked with global agencies like AKQA and DPX, as well as early-stage startups and independent founders.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Do you work remotely?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes — I'm based between Berlin and Lisbon and work with clients worldwide. Remote collaboration is my default, and I'm comfortable leading projects across time zones.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid var(--border);
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.05rem;
+      font-weight: 650;
+      color: var(--black);
+      cursor: pointer;
+      text-align: left;
+      gap: 16px;
+    }
+    .faq-icon {
+      font-size: 1.4rem;
+      font-weight: 300;
+      flex-shrink: 0;
+      transition: transform 250ms ease;
+    }
+    .faq-question[aria-expanded="true"] .faq-icon {
+      transform: rotate(45deg);
+    }
+    .faq-answer {
+      display: none;
+      padding-bottom: 24px;
+    }
+    .faq-answer p {
+      color: var(--gray-600);
+      line-height: 1.8;
+      max-width: 70ch;
+    }
+    .faq-question[aria-expanded="true"] + .faq-answer {
+      display: block;
+    }
+  </style>
+  <script>
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        document.querySelectorAll('.faq-question').forEach(b => b.setAttribute('aria-expanded', 'false'));
+        btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+      });
+    });
+  </script>
+
   <!-- CTA Section -->
   <section class="section">
     <div class="container">
