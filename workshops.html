@@ -9,79 +9,31 @@
   <link rel="canonical" href="https://copenickerstudio.com/workshops.html" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .ws-hero {
-      padding: 80px 0 64px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .ws-hero-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: end;
-    }
-
-    .ws-eyebrow {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gray-500);
-      margin-bottom: 20px;
-    }
-
-    .ws-hero-title {
-      font-size: clamp(2.8rem, 5vw, 4.5rem);
-      font-weight: 800;
-      line-height: 1.05;
-      letter-spacing: -0.03em;
-      color: var(--black);
-    }
-
-    .ws-hero-desc {
-      margin-top: 20px;
-      font-size: 1.05rem;
-      color: var(--gray-600);
-      line-height: 1.7;
-      max-width: 44ch;
-    }
-
     .ws-formats {
       display: flex;
-      flex-direction: column;
       gap: 12px;
-      align-self: end;
+      flex-wrap: wrap;
+      margin-top: 32px;
     }
 
     .ws-format-item {
       display: flex;
       align-items: center;
-      gap: 14px;
-      padding: 16px 20px;
+      gap: 10px;
+      padding: 10px 16px;
       border: 1px solid var(--border);
-      border-radius: 14px;
+      border-radius: 999px;
       background: var(--white);
     }
 
-    .ws-format-icon {
-      font-size: 1.3rem;
-      width: 36px;
-      text-align: center;
-      flex-shrink: 0;
-    }
+    .ws-format-icon { font-size: 1rem; }
 
     .ws-format-label {
-      font-size: 0.875rem;
-      font-weight: 750;
+      font-size: 0.85rem;
+      font-weight: 650;
       color: var(--black);
     }
 
-    .ws-format-sub {
-      font-size: 0.8rem;
-      color: var(--gray-500);
-    }
-
-    /* Section label */
     .ws-section-label {
       font-size: 0.7rem;
       font-weight: 700;
@@ -90,14 +42,12 @@
       color: var(--gray-500);
       padding-bottom: 16px;
       border-bottom: 1px solid var(--border);
-      margin-bottom: 32px;
+      margin-bottom: 0;
     }
 
-    /* Workshop list */
     .ws-list {
       display: flex;
       flex-direction: column;
-      gap: 0;
     }
 
     .ws-item {
@@ -107,14 +57,9 @@
       gap: 32px;
       padding: 36px 0;
       border-bottom: 1px solid var(--border);
-      text-decoration: none;
-      color: inherit;
-      transition: background 120ms ease;
     }
 
-    .ws-item:first-child {
-      border-top: 1px solid var(--border);
-    }
+    .ws-item:first-of-type { border-top: 1px solid var(--border); }
 
     .ws-item-left {
       display: flex;
@@ -129,7 +74,6 @@
     }
 
     .ws-tag {
-      display: inline-block;
       font-size: 0.68rem;
       font-weight: 700;
       letter-spacing: 0.1em;
@@ -138,7 +82,6 @@
       border-radius: 999px;
       border: 1px solid var(--border);
       color: var(--gray-600);
-      background: var(--white);
     }
 
     .ws-tag-dark {
@@ -148,10 +91,11 @@
     }
 
     .ws-item-title {
-      font-size: clamp(1.4rem, 2.5vw, 2rem);
-      font-weight: 800;
+      font-family: 'Canela', Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
       letter-spacing: -0.02em;
-      line-height: 1.15;
+      line-height: 1.1;
       color: var(--black);
     }
 
@@ -162,62 +106,7 @@
       max-width: 60ch;
     }
 
-    .ws-item-meta {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 4px;
-    }
-
-    .ws-meta-pill {
-      font-size: 0.8rem;
-      color: var(--gray-500);
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .ws-item-right {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 12px;
-      padding-top: 4px;
-      flex-shrink: 0;
-    }
-
-    .ws-book-btn {
-      display: inline-block;
-      padding: 12px 24px;
-      background: var(--black);
-      color: var(--white);
-      border-radius: 999px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      text-decoration: none;
-      white-space: nowrap;
-      transition: transform 120ms ease, box-shadow 120ms ease;
-    }
-
-    .ws-book-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow);
-    }
-
-    .ws-popular-badge {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--gray-500);
-      white-space: nowrap;
-    }
-
-    /* Includes expandable */
     .ws-includes {
-      margin-top: 8px;
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
@@ -231,11 +120,58 @@
       padding: 4px 10px;
     }
 
-    /* Banner section */
+    .ws-item-meta {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .ws-meta-pill {
+      font-size: 0.8rem;
+      color: var(--gray-500);
+    }
+
+    .ws-item-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+      padding-top: 4px;
+      flex-shrink: 0;
+    }
+
+    .ws-popular-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+    }
+
+    .ws-book-btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: var(--black);
+      color: var(--white);
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: transform 120ms ease, box-shadow 120ms ease;
+    }
+
+    .ws-book-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
     .ws-banner {
       background: var(--black);
       border-radius: 18px;
-      padding: 56px 48px;
+      padding: 48px;
       display: grid;
       grid-template-columns: 1fr auto;
       gap: 32px;
@@ -244,17 +180,18 @@
     }
 
     .ws-banner-title {
-      font-size: clamp(1.5rem, 2.5vw, 2.2rem);
-      font-weight: 800;
+      font-family: 'Canela', Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.4rem, 2vw, 1.9rem);
       letter-spacing: -0.02em;
       color: var(--white);
       line-height: 1.2;
     }
 
     .ws-banner-sub {
-      margin-top: 10px;
+      margin-top: 8px;
       font-size: 0.9rem;
-      color: rgba(255,255,255,0.55);
+      color: rgba(255,255,255,0.5);
       line-height: 1.6;
       max-width: 48ch;
     }
@@ -271,17 +208,16 @@
       text-transform: uppercase;
       text-decoration: none;
       white-space: nowrap;
-      transition: transform 120ms ease;
       flex-shrink: 0;
+      transition: transform 120ms ease;
     }
 
     .ws-banner-btn:hover { transform: translateY(-2px); }
 
     @media (max-width: 768px) {
-      .ws-hero-inner { grid-template-columns: 1fr; gap: 32px; }
       .ws-item { grid-template-columns: 1fr; gap: 16px; }
       .ws-item-right { align-items: flex-start; flex-direction: row; align-items: center; }
-      .ws-banner { grid-template-columns: 1fr; padding: 36px 28px; }
+      .ws-banner { grid-template-columns: 1fr; padding: 32px 24px; }
     }
   </style>
 </head>
@@ -306,35 +242,23 @@
   </nav>
 
   <!-- Hero -->
-  <section class="ws-hero">
+  <section class="hero">
     <div class="container">
-      <div class="ws-hero-inner">
-        <div>
-          <p class="ws-eyebrow">Workshops & Training</p>
-          <h1 class="ws-hero-title">Learn by<br>doing.</h1>
-          <p class="ws-hero-desc">Hands-on sessions for teams who want to think clearer, move faster, and design with intention. Come with a problem. Leave with traction.</p>
-        </div>
+      <div class="hero-content">
+        <h1 class="canela-heading">Learn by <span class="underline-italic">doing</span>.</h1>
+        <p class="hero-subtitle">Hands-on sessions for teams who want to think clearer, move faster, and design with intention. Come with a problem. Leave with traction.</p>
         <div class="ws-formats">
           <div class="ws-format-item">
-            <div class="ws-format-icon">🏢</div>
-            <div>
-              <div class="ws-format-label">On-site</div>
-              <div class="ws-format-sub">At your office, wherever you are</div>
-            </div>
+            <span class="ws-format-icon">🏢</span>
+            <span class="ws-format-label">On-site</span>
           </div>
           <div class="ws-format-item">
-            <div class="ws-format-icon">💻</div>
-            <div>
-              <div class="ws-format-label">Remote</div>
-              <div class="ws-format-sub">Fully distributed, fully hands-on</div>
-            </div>
+            <span class="ws-format-icon">💻</span>
+            <span class="ws-format-label">Remote</span>
           </div>
           <div class="ws-format-item">
-            <div class="ws-format-icon">🌍</div>
-            <div>
-              <div class="ws-format-label">Retreat</div>
-              <div class="ws-format-sub">Offsite intensives & multi-day formats</div>
-            </div>
+            <span class="ws-format-icon">🌍</span>
+            <span class="ws-format-label">Retreat</span>
           </div>
         </div>
       </div>
@@ -342,14 +266,13 @@
   </section>
 
   <!-- Workshops List -->
-  <section class="section">
+  <section class="section" style="padding-top: 0;">
     <div class="container">
 
-      <p class="ws-section-label">Upcoming & available workshops</p>
+      <p class="ws-section-label">Available workshops</p>
 
       <div class="ws-list">
 
-        <!-- Design Thinking Sprint -->
         <div class="ws-item">
           <div class="ws-item-left">
             <div class="ws-item-tags">
@@ -377,7 +300,6 @@
           </div>
         </div>
 
-        <!-- UX Research -->
         <div class="ws-item">
           <div class="ws-item-left">
             <div class="ws-item-tags">
@@ -403,7 +325,6 @@
           </div>
         </div>
 
-        <!-- UX for Non-Designers -->
         <div class="ws-item">
           <div class="ws-item-left">
             <div class="ws-item-tags">
@@ -411,7 +332,7 @@
               <span class="ws-tag">PMs & Engineers</span>
             </div>
             <div class="ws-item-title">UX for Non-Designers</div>
-            <div class="ws-item-desc">For PMs, engineers, and founders who collaborate with design. Build the vocabulary and instincts to give better feedback, make better decisions, and ship better products.</div>
+            <div class="ws-item-desc">For PMs, engineers, and founders who collaborate with design. Build the vocabulary and instincts to give better feedback and ship better products.</div>
             <div class="ws-includes">
               <span class="ws-include-chip">UX principles</span>
               <span class="ws-include-chip">Reading design</span>
@@ -429,7 +350,6 @@
           </div>
         </div>
 
-        <!-- Brand Identity -->
         <div class="ws-item">
           <div class="ws-item-left">
             <div class="ws-item-tags">
@@ -437,7 +357,7 @@
               <span class="ws-tag">Founders</span>
             </div>
             <div class="ws-item-title">Brand Identity Workshop</div>
-            <div class="ws-item-desc">Align your team around what your brand truly stands for — values, voice, visual direction. Leave with a creative brief that any designer can run with immediately.</div>
+            <div class="ws-item-desc">Align your team around what your brand truly stands for — values, voice, visual direction. Leave with a creative brief ready to hand to any designer.</div>
             <div class="ws-includes">
               <span class="ws-include-chip">Brand audit</span>
               <span class="ws-include-chip">Positioning</span>
@@ -457,10 +377,9 @@
 
       </div>
 
-      <!-- Custom banner -->
       <div class="ws-banner">
         <div>
-          <div class="ws-banner-title">Need something tailored<br>for your team?</div>
+          <div class="ws-banner-title">Need something tailored for your team?</div>
           <div class="ws-banner-sub">Every team is different. I'll design a session around your specific challenge, size, and schedule — and come back with a proposal within 48 hours.</div>
         </div>
         <a href="contact.html" class="ws-banner-btn">Let's talk ↗</a>
