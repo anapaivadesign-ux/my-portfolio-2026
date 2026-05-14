@@ -9,179 +9,279 @@
   <link rel="canonical" href="https://copenickerstudio.com/workshops.html" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .workshops-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
+    .ws-hero {
+      padding: 80px 0 64px;
+      border-bottom: 1px solid var(--border);
     }
 
-    .workshop-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 36px;
+    .ws-hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: end;
+    }
+
+    .ws-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      margin-bottom: 20px;
+    }
+
+    .ws-hero-title {
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--black);
+    }
+
+    .ws-hero-desc {
+      margin-top: 20px;
+      font-size: 1.05rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+      max-width: 44ch;
+    }
+
+    .ws-formats {
       display: flex;
       flex-direction: column;
-      gap: 16px;
-      transition: transform 160ms ease, box-shadow 160ms ease;
+      gap: 12px;
+      align-self: end;
     }
 
-    .workshop-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
+    .ws-format-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 20px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--white);
     }
 
-    .workshop-card-dark {
+    .ws-format-icon {
+      font-size: 1.3rem;
+      width: 36px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .ws-format-label {
+      font-size: 0.875rem;
+      font-weight: 750;
+      color: var(--black);
+    }
+
+    .ws-format-sub {
+      font-size: 0.8rem;
+      color: var(--gray-500);
+    }
+
+    /* Section label */
+    .ws-section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 32px;
+    }
+
+    /* Workshop list */
+    .ws-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .ws-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: start;
+      gap: 32px;
+      padding: 36px 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      color: inherit;
+      transition: background 120ms ease;
+    }
+
+    .ws-item:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    .ws-item-left {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .ws-item-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .ws-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--gray-600);
+      background: var(--white);
+    }
+
+    .ws-tag-dark {
       background: var(--black);
       border-color: var(--black);
       color: var(--white);
     }
 
-    .workshop-tag {
-      display: inline-block;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: var(--gray-100);
-      color: var(--gray-600);
-      width: fit-content;
+    .ws-item-title {
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: var(--black);
     }
 
-    .workshop-card-dark .workshop-tag {
-      background: rgba(255,255,255,0.1);
-      color: rgba(255,255,255,0.6);
-    }
-
-    .workshop-card-title {
-      font-size: 1.35rem;
-      font-weight: 750;
-      line-height: 1.3;
-    }
-
-    .workshop-card-dark .workshop-card-title {
-      color: var(--white);
-    }
-
-    .workshop-card-desc {
+    .ws-item-desc {
       font-size: 0.9rem;
       color: var(--gray-600);
       line-height: 1.65;
-      flex: 1;
+      max-width: 60ch;
     }
 
-    .workshop-card-dark .workshop-card-desc {
-      color: rgba(255,255,255,0.65);
-    }
-
-    .workshop-meta {
+    .ws-item-meta {
       display: flex;
-      gap: 16px;
+      gap: 20px;
       flex-wrap: wrap;
+      margin-top: 4px;
     }
 
-    .workshop-meta-item {
+    .ws-meta-pill {
       font-size: 0.8rem;
-      font-weight: 700;
       color: var(--gray-500);
       display: flex;
       align-items: center;
       gap: 5px;
     }
 
-    .workshop-card-dark .workshop-meta-item {
-      color: rgba(255,255,255,0.45);
-    }
-
-    .workshop-checklist {
-      list-style: none;
+    .ws-item-right {
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      font-size: 0.875rem;
-      color: var(--gray-600);
+      align-items: flex-end;
+      gap: 12px;
+      padding-top: 4px;
+      flex-shrink: 0;
     }
 
-    .workshop-card-dark .workshop-checklist {
-      color: rgba(255,255,255,0.65);
-    }
-
-    .workshop-checklist li::before {
-      content: "✓ ";
-      font-weight: 700;
-      color: var(--black);
-    }
-
-    .workshop-card-dark .workshop-checklist li::before {
-      color: rgba(255,255,255,0.5);
-    }
-
-    .workshop-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.875rem;
-      font-weight: 700;
-      color: var(--black);
-      text-decoration: underline;
-      text-decoration-color: rgba(11,11,15,0.25);
-      text-underline-offset: 0.2em;
-      margin-top: auto;
-    }
-
-    .workshop-card-dark .workshop-cta {
+    .ws-book-btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: var(--black);
       color: var(--white);
-      text-decoration-color: rgba(255,255,255,0.3);
-    }
-
-    .workshop-card-featured {
-      grid-column: 1 / -1;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .formats-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 12px;
-    }
-
-    .format-item {
-      background: var(--gray-100);
-      border-radius: 12px;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .format-item-icon {
-      font-size: 1.5rem;
-      margin-bottom: 8px;
-    }
-
-    .format-item-label {
+      border-radius: 999px;
       font-size: 0.8rem;
       font-weight: 700;
-      color: var(--black);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: transform 120ms ease, box-shadow 120ms ease;
     }
 
-    .format-item-sub {
-      font-size: 0.75rem;
-      color: var(--gray-500);
-      margin-top: 2px;
+    .ws-book-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
     }
+
+    .ws-popular-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      white-space: nowrap;
+    }
+
+    /* Includes expandable */
+    .ws-includes {
+      margin-top: 8px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .ws-include-chip {
+      font-size: 0.78rem;
+      color: var(--gray-600);
+      background: var(--gray-100);
+      border-radius: 8px;
+      padding: 4px 10px;
+    }
+
+    /* Banner section */
+    .ws-banner {
+      background: var(--black);
+      border-radius: 18px;
+      padding: 56px 48px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 32px;
+      align-items: center;
+      margin-top: 48px;
+    }
+
+    .ws-banner-title {
+      font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      line-height: 1.2;
+    }
+
+    .ws-banner-sub {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+      max-width: 48ch;
+    }
+
+    .ws-banner-btn {
+      display: inline-block;
+      padding: 14px 28px;
+      background: var(--white);
+      color: var(--black);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: transform 120ms ease;
+      flex-shrink: 0;
+    }
+
+    .ws-banner-btn:hover { transform: translateY(-2px); }
 
     @media (max-width: 768px) {
-      .workshops-grid { grid-template-columns: 1fr; }
-      .workshop-card-featured {
-        grid-column: 1;
-        grid-template-columns: 1fr;
-      }
-      .formats-grid { grid-template-columns: repeat(3, 1fr); }
+      .ws-hero-inner { grid-template-columns: 1fr; gap: 32px; }
+      .ws-item { grid-template-columns: 1fr; gap: 16px; }
+      .ws-item-right { align-items: flex-start; flex-direction: row; align-items: center; }
+      .ws-banner { grid-template-columns: 1fr; padding: 36px 28px; }
     }
   </style>
 </head>
@@ -206,137 +306,166 @@
   </nav>
 
   <!-- Hero -->
-  <section class="hero">
+  <section class="ws-hero">
     <div class="container">
-      <div class="hero-content">
-        <h1 class="canela-heading">Learn by <span class="underline-italic">doing</span>.</h1>
-        <p class="hero-subtitle">Hands-on workshops for teams who want to think better, move faster, and design with intention.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Formats -->
-  <section class="section" style="padding-top: 0; padding-bottom: 0;">
-    <div class="container">
-      <div class="formats-grid">
-        <div class="format-item">
-          <div class="format-item-icon">🏢</div>
-          <div class="format-item-label">On-site</div>
-          <div class="format-item-sub">At your office</div>
+      <div class="ws-hero-inner">
+        <div>
+          <p class="ws-eyebrow">Workshops & Training</p>
+          <h1 class="ws-hero-title">Learn by<br>doing.</h1>
+          <p class="ws-hero-desc">Hands-on sessions for teams who want to think clearer, move faster, and design with intention. Come with a problem. Leave with traction.</p>
         </div>
-        <div class="format-item">
-          <div class="format-item-icon">💻</div>
-          <div class="format-item-label">Remote</div>
-          <div class="format-item-sub">Anywhere in the world</div>
-        </div>
-        <div class="format-item">
-          <div class="format-item-icon">🌍</div>
-          <div class="format-item-label">Retreat</div>
-          <div class="format-item-sub">Offsite & intensive</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Workshops Grid -->
-  <section class="section">
-    <div class="container wide-container">
-      <div class="workshops-grid">
-
-        <!-- Featured: Design Thinking -->
-        <div class="workshop-card workshop-card-featured workshop-card-dark">
-          <div>
-            <span class="workshop-tag">Most popular</span>
-            <h2 class="workshop-card-title" style="font-size: 1.8rem; margin-top: 12px;">Design Thinking Sprint</h2>
-            <p class="workshop-card-desc" style="font-size: 1rem;">A structured 1-day intensive where your team goes from a fuzzy problem to a tested concept. Based on Google Ventures' 5-day Sprint, compressed into a single focused day.</p>
-            <div class="workshop-meta" style="margin-top: 16px;">
-              <span class="workshop-meta-item">⏱ 1 day</span>
-              <span class="workshop-meta-item">👥 4–12 people</span>
-              <span class="workshop-meta-item">🎯 Teams & startups</span>
+        <div class="ws-formats">
+          <div class="ws-format-item">
+            <div class="ws-format-icon">🏢</div>
+            <div>
+              <div class="ws-format-label">On-site</div>
+              <div class="ws-format-sub">At your office, wherever you are</div>
             </div>
           </div>
-          <div>
-            <ul class="workshop-checklist">
-              <li>Problem framing & How Might We questions</li>
-              <li>Ideation & concept sketching</li>
-              <li>Rapid prototyping</li>
-              <li>User testing with real feedback</li>
-            </ul>
-            <a href="contact.html" class="workshop-cta" style="margin-top: 24px; display: inline-flex;">Book this workshop ↗</a>
+          <div class="ws-format-item">
+            <div class="ws-format-icon">💻</div>
+            <div>
+              <div class="ws-format-label">Remote</div>
+              <div class="ws-format-sub">Fully distributed, fully hands-on</div>
+            </div>
+          </div>
+          <div class="ws-format-item">
+            <div class="ws-format-icon">🌍</div>
+            <div>
+              <div class="ws-format-label">Retreat</div>
+              <div class="ws-format-sub">Offsite intensives & multi-day formats</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Workshops List -->
+  <section class="section">
+    <div class="container">
+
+      <p class="ws-section-label">Upcoming & available workshops</p>
+
+      <div class="ws-list">
+
+        <!-- Design Thinking Sprint -->
+        <div class="ws-item">
+          <div class="ws-item-left">
+            <div class="ws-item-tags">
+              <span class="ws-tag ws-tag-dark">Most popular</span>
+              <span class="ws-tag">Teams</span>
+              <span class="ws-tag">Startups</span>
+            </div>
+            <div class="ws-item-title">Design Thinking Sprint</div>
+            <div class="ws-item-desc">Go from a fuzzy problem to a tested concept in one structured day. Based on the Google Ventures Sprint, compressed and sharpened for busy teams.</div>
+            <div class="ws-includes">
+              <span class="ws-include-chip">Problem framing</span>
+              <span class="ws-include-chip">Ideation</span>
+              <span class="ws-include-chip">Rapid prototyping</span>
+              <span class="ws-include-chip">User testing</span>
+            </div>
+            <div class="ws-item-meta">
+              <span class="ws-meta-pill">⏱ Full day</span>
+              <span class="ws-meta-pill">👥 4–12 people</span>
+              <span class="ws-meta-pill">📍 On-site · Remote · Retreat</span>
+            </div>
+          </div>
+          <div class="ws-item-right">
+            <span class="ws-popular-badge">★ Top rated</span>
+            <a href="contact.html" class="ws-book-btn">Book now ↗</a>
           </div>
         </div>
 
         <!-- UX Research -->
-        <div class="workshop-card">
-          <span class="workshop-tag">Research</span>
-          <h2 class="workshop-card-title">UX Research Fundamentals</h2>
-          <p class="workshop-card-desc">Learn how to plan and run user interviews, synthesise findings, and turn raw data into design decisions your whole team can act on.</p>
-          <div class="workshop-meta">
-            <span class="workshop-meta-item">⏱ Half day</span>
-            <span class="workshop-meta-item">👥 Up to 16</span>
+        <div class="ws-item">
+          <div class="ws-item-left">
+            <div class="ws-item-tags">
+              <span class="ws-tag">Research</span>
+              <span class="ws-tag">Product teams</span>
+            </div>
+            <div class="ws-item-title">UX Research Fundamentals</div>
+            <div class="ws-item-desc">Plan and run user interviews, synthesise findings, and turn raw data into decisions your whole team can act on. No prior research experience needed.</div>
+            <div class="ws-includes">
+              <span class="ws-include-chip">Research planning</span>
+              <span class="ws-include-chip">Interview techniques</span>
+              <span class="ws-include-chip">Affinity mapping</span>
+              <span class="ws-include-chip">Presenting insights</span>
+            </div>
+            <div class="ws-item-meta">
+              <span class="ws-meta-pill">⏱ Half day</span>
+              <span class="ws-meta-pill">👥 Up to 16 people</span>
+              <span class="ws-meta-pill">📍 On-site · Remote</span>
+            </div>
           </div>
-          <ul class="workshop-checklist">
-            <li>Research planning & screeners</li>
-            <li>Interview techniques</li>
-            <li>Affinity mapping</li>
-            <li>Presenting insights</li>
-          </ul>
-          <a href="contact.html" class="workshop-cta">Book this workshop ↗</a>
+          <div class="ws-item-right">
+            <a href="contact.html" class="ws-book-btn">Book now ↗</a>
+          </div>
         </div>
 
-        <!-- UX for non-designers -->
-        <div class="workshop-card">
-          <span class="workshop-tag">For teams</span>
-          <h2 class="workshop-card-title">UX for Non-Designers</h2>
-          <p class="workshop-card-desc">For PMs, engineers, and founders who work alongside design. Build the vocabulary and instincts to make better product decisions together.</p>
-          <div class="workshop-meta">
-            <span class="workshop-meta-item">⏱ Half day</span>
-            <span class="workshop-meta-item">👥 Up to 20</span>
+        <!-- UX for Non-Designers -->
+        <div class="ws-item">
+          <div class="ws-item-left">
+            <div class="ws-item-tags">
+              <span class="ws-tag">Cross-functional</span>
+              <span class="ws-tag">PMs & Engineers</span>
+            </div>
+            <div class="ws-item-title">UX for Non-Designers</div>
+            <div class="ws-item-desc">For PMs, engineers, and founders who collaborate with design. Build the vocabulary and instincts to give better feedback, make better decisions, and ship better products.</div>
+            <div class="ws-includes">
+              <span class="ws-include-chip">UX principles</span>
+              <span class="ws-include-chip">Reading design</span>
+              <span class="ws-include-chip">Giving feedback</span>
+              <span class="ws-include-chip">Critique session</span>
+            </div>
+            <div class="ws-item-meta">
+              <span class="ws-meta-pill">⏱ Half day</span>
+              <span class="ws-meta-pill">👥 Up to 20 people</span>
+              <span class="ws-meta-pill">📍 On-site · Remote</span>
+            </div>
           </div>
-          <ul class="workshop-checklist">
-            <li>UX principles in plain language</li>
-            <li>Reading & giving design feedback</li>
-            <li>Common patterns & anti-patterns</li>
-            <li>Hands-on critique session</li>
-          </ul>
-          <a href="contact.html" class="workshop-cta">Book this workshop ↗</a>
+          <div class="ws-item-right">
+            <a href="contact.html" class="ws-book-btn">Book now ↗</a>
+          </div>
         </div>
 
         <!-- Brand Identity -->
-        <div class="workshop-card">
-          <span class="workshop-tag">Brand</span>
-          <h2 class="workshop-card-title">Brand Identity Workshop</h2>
-          <p class="workshop-card-desc">Align your team around what your brand truly stands for — values, voice, visual direction — and leave with a creative brief ready to brief any designer.</p>
-          <div class="workshop-meta">
-            <span class="workshop-meta-item">⏱ 1 day</span>
-            <span class="workshop-meta-item">👥 4–8 people</span>
+        <div class="ws-item">
+          <div class="ws-item-left">
+            <div class="ws-item-tags">
+              <span class="ws-tag">Brand</span>
+              <span class="ws-tag">Founders</span>
+            </div>
+            <div class="ws-item-title">Brand Identity Workshop</div>
+            <div class="ws-item-desc">Align your team around what your brand truly stands for — values, voice, visual direction. Leave with a creative brief that any designer can run with immediately.</div>
+            <div class="ws-includes">
+              <span class="ws-include-chip">Brand audit</span>
+              <span class="ws-include-chip">Positioning</span>
+              <span class="ws-include-chip">Visual moodboarding</span>
+              <span class="ws-include-chip">Brand brief</span>
+            </div>
+            <div class="ws-item-meta">
+              <span class="ws-meta-pill">⏱ Full day</span>
+              <span class="ws-meta-pill">👥 4–8 people</span>
+              <span class="ws-meta-pill">📍 On-site · Remote · Retreat</span>
+            </div>
           </div>
-          <ul class="workshop-checklist">
-            <li>Brand audit & competitive review</li>
-            <li>Values & positioning</li>
-            <li>Visual direction moodboarding</li>
-            <li>Brand brief document</li>
-          </ul>
-          <a href="contact.html" class="workshop-cta">Book this workshop ↗</a>
-        </div>
-
-        <!-- Custom -->
-        <div class="workshop-card" style="grid-column: 1 / -1; background: var(--gray-100); border: none; text-align: center; align-items: center;">
-          <h2 class="workshop-card-title">Need something tailored?</h2>
-          <p class="workshop-card-desc" style="max-width: 560px;">Every team is different. I can design a workshop around your specific challenge, team size, and time constraints.</p>
-          <a href="contact.html" class="cta-button" style="margin-top: 8px;">Let's talk ↗</a>
+          <div class="ws-item-right">
+            <a href="contact.html" class="ws-book-btn">Book now ↗</a>
+          </div>
         </div>
 
       </div>
-    </div>
-  </section>
 
-  <!-- CTA -->
-  <section class="section" style="background: var(--gray-100); border-top: 1px solid var(--border);">
-    <div class="container text-center">
-      <h2 class="section-title">Ready to run a workshop?</h2>
-      <p style="color: var(--gray-600); max-width: 480px; margin: 0 auto 2rem;">Tell me about your team and the challenge you're working on — I'll come back with a proposal within 48 hours.</p>
-      <a href="contact.html" class="cta-button">Get in touch ↗</a>
+      <!-- Custom banner -->
+      <div class="ws-banner">
+        <div>
+          <div class="ws-banner-title">Need something tailored<br>for your team?</div>
+          <div class="ws-banner-sub">Every team is different. I'll design a session around your specific challenge, size, and schedule — and come back with a proposal within 48 hours.</div>
+        </div>
+        <a href="contact.html" class="ws-banner-btn">Let's talk ↗</a>
+      </div>
+
     </div>
   </section>
 
