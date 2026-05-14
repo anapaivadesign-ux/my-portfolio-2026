@@ -3,151 +3,121 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact copenickerstudio®</title>
-  <meta name="description" content="Get in touch to discuss your next project." />
+  <title>Blog copenickerstudio®</title>
+  <meta name="description" content="Thoughts on design, product, and the process behind great digital experiences." />
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="canonical" href="https://copenickerstudio.com/contact.html" />
+  <link rel="canonical" href="https://copenickerstudio.com/blog.html" />
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <style>
-    .contact-container {
+    .blog-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
     }
 
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .form-group label {
-      font-weight: 650;
-      color: var(--black);
-      font-size: 0.95rem;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      padding: 0.8rem 1rem;
+    .blog-card {
+      background: var(--white);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      font-family: inherit;
-      font-size: 0.95rem;
-      transition: border-color 0.3s;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: rgba(11, 11, 15, 0.35);
-      box-shadow: var(--focus);
-    }
-
-    .form-group textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    .submit-btn {
-      background: var(--black);
-      color: var(--white);
-      padding: 1rem;
-      border: none;
-      border-radius: 999px;
-      font-size: 1rem;
-      font-weight: 650;
-      cursor: pointer;
+      border-radius: 18px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
       transition: transform 160ms ease, box-shadow 160ms ease;
+      display: flex;
+      flex-direction: column;
     }
 
-    .submit-btn:hover {
-      transform: translateY(-2px);
+    .blog-card:hover {
+      transform: translateY(-4px);
       box-shadow: var(--shadow);
     }
 
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    .info-block {
-      padding: 22px;
+    .blog-card-img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
       background: var(--gray-100);
-      border-radius: 18px;
-      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
     }
 
-    .info-block h3 {
-      margin-bottom: 0.5rem;
-      color: var(--black);
+    .blog-card-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
     }
 
-    .info-block p {
+    .blog-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--gray-100);
       color: var(--gray-600);
-      line-height: 1.6;
+      width: fit-content;
     }
 
-    .info-block a {
+    .blog-card-title {
+      font-size: 1.15rem;
+      font-weight: 750;
+      line-height: 1.35;
       color: var(--black);
-      font-weight: 650;
-      text-decoration: underline;
-      text-decoration-color: rgba(11, 11, 15, 0.25);
-      text-underline-offset: 0.18em;
     }
 
-    .info-block a:hover {
-      text-decoration-color: rgba(11, 11, 15, 0.55);
+    .blog-card-excerpt {
+      font-size: 0.9rem;
+      color: var(--gray-600);
+      line-height: 1.65;
+      flex: 1;
     }
 
-    .social-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin-top: 1.5rem;
+    .blog-card-meta {
+      font-size: 0.8rem;
+      color: var(--gray-500);
+      margin-top: 8px;
     }
 
-    .social-item {
-      text-align: center;
-      padding: 1.5rem;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      transition: transform 160ms ease, box-shadow 160ms ease;
-    }
-
-    .social-item:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow);
-    }
-
-    .social-item a {
-      font-size: 2rem;
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-
-    .social-item a:after {
-      content: attr(data-label);
+    .blog-card-link {
       font-size: 0.85rem;
-      color: var(--gray-600);
-      display: block;
+      font-weight: 700;
+      color: var(--black);
+      text-decoration: underline;
+      text-decoration-color: rgba(11,11,15,0.25);
+      text-underline-offset: 0.2em;
+    }
+
+    .blog-card-featured {
+      grid-column: 1 / -1;
+    }
+
+    .blog-card-featured .blog-card-img {
+      aspect-ratio: 21 / 9;
+    }
+
+    .blog-card-featured .blog-card-title {
+      font-size: 1.5rem;
+    }
+
+    .blog-coming-soon {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 80px 24px;
+      border: 1px dashed var(--border);
+      border-radius: 18px;
+      color: var(--gray-500);
     }
 
     @media (max-width: 768px) {
-      .contact-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
+      .blog-grid { grid-template-columns: 1fr; }
+      .blog-card-featured { grid-column: 1; }
+      .blog-card-featured .blog-card-img { aspect-ratio: 16 / 9; }
     }
   </style>
 </head>
@@ -164,110 +134,98 @@
         <li><a href="index.html">Work</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="blog.html">Blog</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
         <li><a href="workshops.html">Workshops</a></li>
       </ul>
-      <a href="contact.html" class="nav-cta active">Let's talk ↗</a>
+      <a href="contact.html" class="nav-cta">Let's talk ↗</a>
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <h1 class="canela-heading">Let’s create <span class="underline-italic">together</span>.</h1>
-        <p class="hero-subtitle">Share a few details and we’ll come back with a clear next step.</p>
+        <h1 class="canela-heading">Thoughts on <span class="underline-italic">design</span>.</h1>
+        <p class="hero-subtitle">Process, perspective, and the questions worth asking.</p>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section class="section">
-    <div class="container">
-      <div class="contact-container">
-        <!-- Contact Form -->
-        <form class="contact-form" action="https://formspree.io/f/mkoyeowv" method="POST">
-          <input type="hidden" name="_next" value="https://copenickerstudio.com/contact.html?sent=1">
-          <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" required>
+  <!-- Blog Grid -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container wide-container">
+      <div class="blog-grid">
+
+        <!-- Featured post -->
+        <a class="blog-card blog-card-featured" href="#">
+          <div class="blog-card-img" style="background: #f0ebe3; font-size: 4rem;">✏️</div>
+          <div class="blog-card-body">
+            <span class="blog-tag">Process</span>
+            <div class="blog-card-title">Why I always start with a week of just listening</div>
+            <p class="blog-card-excerpt">Discovery is the most underrated phase in design. Before wireframes, before colours, before any visual decision — I spend a week doing nothing but listening. Here's what that looks like and why it changes everything.</p>
+            <div class="blog-card-meta">May 2026 · 5 min read</div>
+            <span class="blog-card-link">Read more →</span>
           </div>
+        </a>
 
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required>
+        <!-- Post 2 -->
+        <a class="blog-card" href="#">
+          <div class="blog-card-img" style="background: #e8f0fe;">🎨</div>
+          <div class="blog-card-body">
+            <span class="blog-tag">Brand Identity</span>
+            <div class="blog-card-title">Colour isn't decoration — it's communication</div>
+            <p class="blog-card-excerpt">Every colour choice carries meaning. A quick guide to building palettes that do real work for your brand.</p>
+            <div class="blog-card-meta">April 2026 · 4 min read</div>
+            <span class="blog-card-link">Read more →</span>
           </div>
+        </a>
 
-          <div class="form-group">
-            <label for="company">Company / Organization</label>
-            <input type="text" id="company" name="company">
+        <!-- Post 3 -->
+        <a class="blog-card" href="#">
+          <div class="blog-card-img" style="background: #fef3c7;">💡</div>
+          <div class="blog-card-body">
+            <span class="blog-tag">UX</span>
+            <div class="blog-card-title">The 3 questions I ask before designing any screen</div>
+            <p class="blog-card-excerpt">Most design problems are actually framing problems. These three questions help me zoom out before zooming in.</p>
+            <div class="blog-card-meta">March 2026 · 3 min read</div>
+            <span class="blog-card-link">Read more →</span>
           </div>
+        </a>
 
-          <div class="form-group">
-            <label for="subject">Project Type</label>
-            <input type="text" id="subject" name="subject" placeholder="e.g., Brand Identity, Web Design, etc." required>
+        <!-- Post 4 -->
+        <a class="blog-card" href="#">
+          <div class="blog-card-img" style="background: #ede9fe;">🔍</div>
+          <div class="blog-card-body">
+            <span class="blog-tag">Research</span>
+            <div class="blog-card-title">How to run a user interview that actually reveals something</div>
+            <p class="blog-card-excerpt">Most interviews produce polite answers, not real insights. Here's how I structure sessions to get past the surface.</p>
+            <div class="blog-card-meta">February 2026 · 6 min read</div>
+            <span class="blog-card-link">Read more →</span>
           </div>
+        </a>
 
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Tell us about your project..." required></textarea>
+        <!-- Post 5 -->
+        <a class="blog-card" href="#">
+          <div class="blog-card-img" style="background: #dcfce7;">🌱</div>
+          <div class="blog-card-body">
+            <span class="blog-tag">Freelance</span>
+            <div class="blog-card-title">What nobody tells you about going independent</div>
+            <p class="blog-card-excerpt">The business side of freelance design is rarely taught. A few hard-learned lessons from building copenickerstudio.</p>
+            <div class="blog-card-meta">January 2026 · 7 min read</div>
+            <span class="blog-card-link">Read more →</span>
           </div>
+        </a>
 
-          <button type="submit" class="submit-btn">Send Message</button>
-
-          <div class="calendly-inline-widget" data-url="https://calendly.com/ana-paiva-design" style="min-width:320px;height:700px;margin-top:2rem;"></div>
-        </form>
-
-        <!-- Contact Info -->
-        <div class="contact-info">
-          <div class="info-block">
-            <h3>Email</h3>
-            <p><a href="mailto:ana@copenickerstudio.com">ana@copenickerstudio.com</a></p>
-            <p style="font-size: 0.9rem; color: var(--gray-500); margin-top: 0.5rem;">Typically respond within 24 hours.</p>
-          </div>
-
-          <div class="info-block">
-            <h3>Availability</h3>
-            <p>Available for:</p>
-            <ul style="margin-top: 0.8rem; list-style: none;">
-              <li style="padding: 0.3rem 0;">✓ Freelance projects</li>
-              <li style="padding: 0.3rem 0;">✓ Consulting & advice</li>
-              <li style="padding: 0.3rem 0;">✓ Collaborations</li>
-            </ul>
-          </div>
-
-          <div class="info-block">
-            <h3>Connect</h3>
-            <p>Find me on social media:</p>
-            <div class="social-grid" style="margin-top: 1rem;">
-              <a href="https://www.linkedin.com/in/anapaivadesign/" target="_blank" style="text-decoration: none;">
-                <div class="social-item">
-                  <div style="font-size: 1.5rem;">in</div>
-                  <div style="font-size: 0.85rem; color: var(--gray-600);">LinkedIn</div>
-                </div>
-              </a>
-              <a href="https://www.instagram.com/copenicker" target="_blank" style="text-decoration: none;">
-                <div class="social-item">
-                  <div style="font-size: 1.5rem;">ig</div>
-                  <div style="font-size: 0.85rem; color: var(--gray-600);">Instagram</div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- Response Info Section -->
-  <section class="section" style="background: var(--gray-100); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <!-- Newsletter CTA -->
+  <section class="section" style="background: var(--gray-100); border-top: 1px solid var(--border);">
     <div class="container text-center">
-      <h2 class="section-title">What to Expect</h2>
-      <div style="max-width: 700px; margin: 0 auto;">
-        <p style="color: var(--gray-600); line-height: 1.8; font-size: 1.05rem;">
-          Once you send your message, I'll review your project details and get back to you as soon as possible. We can schedule a call to discuss your vision, timeline, and how I can best help you achieve your goals.
-        </p>
-      </div>
+      <h2 class="section-title">Stay in the loop</h2>
+      <p style="color: var(--gray-600); max-width: 480px; margin: 0 auto 2rem;">New posts on design, process, and running a studio — straight to your inbox.</p>
+      <a href="contact.html" class="cta-button">Get in touch ↗</a>
     </div>
   </section>
 
@@ -310,6 +268,8 @@
         <p><a href="index.html">Work</a></p>
         <p><a href="services.html">Services</a></p>
         <p><a href="about.html">About</a></p>
+        <p><a href="blog.html">Blog</a></p>
+        <p><a href="workshops.html">Workshops</a></p>
         <p><a href="contact.html">Contact</a></p>
       </div>
       <div class="footer-col">
@@ -347,8 +307,6 @@
     </button>
   </div>
 
-  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-
   <div class="cursor" id="cursor"></div>
   <script>
     const cursor = document.getElementById("cursor");
@@ -360,7 +318,6 @@
       el.addEventListener("mouseenter", () => cursor.classList.add("hover"));
       el.addEventListener("mouseleave", () => cursor.classList.remove("hover"));
     });
-
     const revealObserver = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) { e.target.classList.add("visible"); revealObserver.unobserve(e.target); }

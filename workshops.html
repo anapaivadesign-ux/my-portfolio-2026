@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Workshops copenickerstudio®</title>
+  <meta name="description" content="Hands-on design workshops for teams — Design Thinking, UX Research, and more." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="canonical" href="https://copenickerstudio.com/workshops.html" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .workshops-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .workshop-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .workshop-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .workshop-card-dark {
+      background: var(--black);
+      border-color: var(--black);
+      color: var(--white);
+    }
+
+    .workshop-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--gray-100);
+      color: var(--gray-600);
+      width: fit-content;
+    }
+
+    .workshop-card-dark .workshop-tag {
+      background: rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.6);
+    }
+
+    .workshop-card-title {
+      font-size: 1.35rem;
+      font-weight: 750;
+      line-height: 1.3;
+    }
+
+    .workshop-card-dark .workshop-card-title {
+      color: var(--white);
+    }
+
+    .workshop-card-desc {
+      font-size: 0.9rem;
+      color: var(--gray-600);
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .workshop-card-dark .workshop-card-desc {
+      color: rgba(255,255,255,0.65);
+    }
+
+    .workshop-meta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .workshop-meta-item {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--gray-500);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .workshop-card-dark .workshop-meta-item {
+      color: rgba(255,255,255,0.45);
+    }
+
+    .workshop-checklist {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.875rem;
+      color: var(--gray-600);
+    }
+
+    .workshop-card-dark .workshop-checklist {
+      color: rgba(255,255,255,0.65);
+    }
+
+    .workshop-checklist li::before {
+      content: "✓ ";
+      font-weight: 700;
+      color: var(--black);
+    }
+
+    .workshop-card-dark .workshop-checklist li::before {
+      color: rgba(255,255,255,0.5);
+    }
+
+    .workshop-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--black);
+      text-decoration: underline;
+      text-decoration-color: rgba(11,11,15,0.25);
+      text-underline-offset: 0.2em;
+      margin-top: auto;
+    }
+
+    .workshop-card-dark .workshop-cta {
+      color: var(--white);
+      text-decoration-color: rgba(255,255,255,0.3);
+    }
+
+    .workshop-card-featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .formats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 12px;
+    }
+
+    .format-item {
+      background: var(--gray-100);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .format-item-icon {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    .format-item-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--black);
+    }
+
+    .format-item-sub {
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      margin-top: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .workshops-grid { grid-template-columns: 1fr; }
+      .workshop-card-featured {
+        grid-column: 1;
+        grid-template-columns: 1fr;
+      }
+      .formats-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="nav-logo">copenickerstudio®</a>
+    <button class="burger" id="burger" aria-label="Menu" onclick="this.classList.toggle('open');document.getElementById('navRight').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-right" id="navRight">
+      <ul class="nav-links">
+        <li><a href="index.html">Work</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="workshops.html" class="active">Workshops</a></li>
+      </ul>
+      <a href="contact.html" class="nav-cta">Let's talk ↗</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="canela-heading">Learn by <span class="underline-italic">doing</span>.</h1>
+        <p class="hero-subtitle">Hands-on workshops for teams who want to think better, move faster, and design with intention.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formats -->
+  <section class="section" style="padding-top: 0; padding-bottom: 0;">
+    <div class="container">
+      <div class="formats-grid">
+        <div class="format-item">
+          <div class="format-item-icon">🏢</div>
+          <div class="format-item-label">On-site</div>
+          <div class="format-item-sub">At your office</div>
+        </div>
+        <div class="format-item">
+          <div class="format-item-icon">💻</div>
+          <div class="format-item-label">Remote</div>
+          <div class="format-item-sub">Anywhere in the world</div>
+        </div>
+        <div class="format-item">
+          <div class="format-item-icon">🌍</div>
+          <div class="format-item-label">Retreat</div>
+          <div class="format-item-sub">Offsite & intensive</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Workshops Grid -->
+  <section class="section">
+    <div class="container wide-container">
+      <div class="workshops-grid">
+
+        <!-- Featured: Design Thinking -->
+        <div class="workshop-card workshop-card-featured workshop-card-dark">
+          <div>
+            <span class="workshop-tag">Most popular</span>
+            <h2 class="workshop-card-title" style="font-size: 1.8rem; margin-top: 12px;">Design Thinking Sprint</h2>
+            <p class="workshop-card-desc" style="font-size: 1rem;">A structured 1-day intensive where your team goes from a fuzzy problem to a tested concept. Based on Google Ventures' 5-day Sprint, compressed into a single focused day.</p>
+            <div class="workshop-meta" style="margin-top: 16px;">
+              <span class="workshop-meta-item">⏱ 1 day</span>
+              <span class="workshop-meta-item">👥 4–12 people</span>
+              <span class="workshop-meta-item">🎯 Teams & startups</span>
+            </div>
+          </div>
+          <div>
+            <ul class="workshop-checklist">
+              <li>Problem framing & How Might We questions</li>
+              <li>Ideation & concept sketching</li>
+              <li>Rapid prototyping</li>
+              <li>User testing with real feedback</li>
+            </ul>
+            <a href="contact.html" class="workshop-cta" style="margin-top: 24px; display: inline-flex;">Book this workshop ↗</a>
+          </div>
+        </div>
+
+        <!-- UX Research -->
+        <div class="workshop-card">
+          <span class="workshop-tag">Research</span>
+          <h2 class="workshop-card-title">UX Research Fundamentals</h2>
+          <p class="workshop-card-desc">Learn how to plan and run user interviews, synthesise findings, and turn raw data into design decisions your whole team can act on.</p>
+          <div class="workshop-meta">
+            <span class="workshop-meta-item">⏱ Half day</span>
+            <span class="workshop-meta-item">👥 Up to 16</span>
+          </div>
+          <ul class="workshop-checklist">
+            <li>Research planning & screeners</li>
+            <li>Interview techniques</li>
+            <li>Affinity mapping</li>
+            <li>Presenting insights</li>
+          </ul>
+          <a href="contact.html" class="workshop-cta">Book this workshop ↗</a>
+        </div>
+
+        <!-- UX for non-designers -->
+        <div class="workshop-card">
+          <span class="workshop-tag">For teams</span>
+          <h2 class="workshop-card-title">UX for Non-Designers</h2>
+          <p class="workshop-card-desc">For PMs, engineers, and founders who work alongside design. Build the vocabulary and instincts to make better product decisions together.</p>
+          <div class="workshop-meta">
+            <span class="workshop-meta-item">⏱ Half day</span>
+            <span class="workshop-meta-item">👥 Up to 20</span>
+          </div>
+          <ul class="workshop-checklist">
+            <li>UX principles in plain language</li>
+            <li>Reading & giving design feedback</li>
+            <li>Common patterns & anti-patterns</li>
+            <li>Hands-on critique session</li>
+          </ul>
+          <a href="contact.html" class="workshop-cta">Book this workshop ↗</a>
+        </div>
+
+        <!-- Brand Identity -->
+        <div class="workshop-card">
+          <span class="workshop-tag">Brand</span>
+          <h2 class="workshop-card-title">Brand Identity Workshop</h2>
+          <p class="workshop-card-desc">Align your team around what your brand truly stands for — values, voice, visual direction — and leave with a creative brief ready to brief any designer.</p>
+          <div class="workshop-meta">
+            <span class="workshop-meta-item">⏱ 1 day</span>
+            <span class="workshop-meta-item">👥 4–8 people</span>
+          </div>
+          <ul class="workshop-checklist">
+            <li>Brand audit & competitive review</li>
+            <li>Values & positioning</li>
+            <li>Visual direction moodboarding</li>
+            <li>Brand brief document</li>
+          </ul>
+          <a href="contact.html" class="workshop-cta">Book this workshop ↗</a>
+        </div>
+
+        <!-- Custom -->
+        <div class="workshop-card" style="grid-column: 1 / -1; background: var(--gray-100); border: none; text-align: center; align-items: center;">
+          <h2 class="workshop-card-title">Need something tailored?</h2>
+          <p class="workshop-card-desc" style="max-width: 560px;">Every team is different. I can design a workshop around your specific challenge, team size, and time constraints.</p>
+          <a href="contact.html" class="cta-button" style="margin-top: 8px;">Let's talk ↗</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background: var(--gray-100); border-top: 1px solid var(--border);">
+    <div class="container text-center">
+      <h2 class="section-title">Ready to run a workshop?</h2>
+      <p style="color: var(--gray-600); max-width: 480px; margin: 0 auto 2rem;">Tell me about your team and the challenge you're working on — I'll come back with a proposal within 48 hours.</p>
+      <a href="contact.html" class="cta-button">Get in touch ↗</a>
+    </div>
+  </section>
+
+  <!-- Clients -->
+  <section class="clients-bar">
+    <p class="clients-label">Brands I've worked with</p>
+    <div class="clients-track-wrap">
+      <div class="clients-track">
+        <img src="images/logos/AKQA-Logo 1.svg" alt="AKQA">
+        <img src="images/logos/DPX_Typologo_black 1.svg" alt="DPX">
+        <img src="images/logos/foodora-logo 1.svg" alt="Foodora">
+        <img src="images/logos/60a62aad0f25c64e47260856_wayra-telefonica-innovation-white 1.svg" alt="Wayra Telefonica">
+        <img src="images/logos/logo-lightmode 1.svg" alt="Client">
+        <img src="images/logos/Layer_1.svg" alt="Client">
+        <img src="images/logos/image 63.svg" alt="Client">
+        <img src="images/logos/image 65.svg" alt="Client">
+        <img src="images/logos/Vector.svg" alt="Client">
+        <img src="images/logos/AKQA-Logo 1.svg" alt="AKQA">
+        <img src="images/logos/DPX_Typologo_black 1.svg" alt="DPX">
+        <img src="images/logos/foodora-logo 1.svg" alt="Foodora">
+        <img src="images/logos/60a62aad0f25c64e47260856_wayra-telefonica-innovation-white 1.svg" alt="Wayra Telefonica">
+        <img src="images/logos/logo-lightmode 1.svg" alt="Client">
+        <img src="images/logos/Layer_1.svg" alt="Client">
+        <img src="images/logos/image 63.svg" alt="Client">
+        <img src="images/logos/image 65.svg" alt="Client">
+        <img src="images/logos/Vector.svg" alt="Client">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-col">
+        <h3>copenickerstudio®</h3>
+        <p>Consulting. Design. Experience.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <p><a href="index.html">Work</a></p>
+        <p><a href="services.html">Services</a></p>
+        <p><a href="about.html">About</a></p>
+        <p><a href="blog.html">Blog</a></p>
+        <p><a href="workshops.html">Workshops</a></p>
+        <p><a href="contact.html">Contact</a></p>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p><a href="mailto:ana@copenickerstudio.com">ana@copenickerstudio.com</a></p>
+        <p>Berlin · Lisboa · Remote</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/anapaivadesign/" target="_blank" title="LinkedIn">in</a>
+          <a href="https://www.instagram.com/copenicker" target="_blank" title="Instagram">ig</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 copenickerstudio®. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="wa-widget">
+    <div class="wa-panel" id="waPanel">
+      <div class="wa-panel-header">
+        <img class="wa-avatar" src="images/ana-profile.png" alt="Ana">
+        <div class="wa-panel-header-info">
+          <strong>copenickerstudio®</strong>
+          <span>Typically replies instantly</span>
+        </div>
+        <button class="wa-close" onclick="document.getElementById('waPanel').classList.remove('open')">&times;</button>
+      </div>
+      <div class="wa-body">
+        <div class="wa-bubble">Hi there! 👋 How can we help you?<span>now</span></div>
+      </div>
+      <a class="wa-start" href="https://wa.me/491746290656" target="_blank">Start chat</a>
+    </div>
+    <button class="wa-btn" onclick="document.getElementById('waPanel').classList.toggle('open')" aria-label="Chat on WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </button>
+  </div>
+
+  <div class="cursor" id="cursor"></div>
+  <script>
+    const cursor = document.getElementById("cursor");
+    document.addEventListener("mousemove", e => {
+      cursor.style.left = e.clientX + "px";
+      cursor.style.top = e.clientY + "px";
+    });
+    document.querySelectorAll("a, button").forEach(el => {
+      el.addEventListener("mouseenter", () => cursor.classList.add("hover"));
+      el.addEventListener("mouseleave", () => cursor.classList.remove("hover"));
+    });
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add("visible"); revealObserver.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll(".section").forEach(el => {
+      el.classList.add("reveal");
+      revealObserver.observe(el);
+    });
+  </script>
+
+</body>
+</html>
