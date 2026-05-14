@@ -334,6 +334,10 @@
       .plan { break-inside: avoid; }
     }
 
+    @media (max-width: 860px) {
+      .plans { grid-template-columns: 1fr !important; }
+    }
+
     @media (max-width: 640px) {
       .page { padding: 32px 24px; }
       .header { flex-direction: column; gap: 16px; }
@@ -369,27 +373,27 @@
   <!-- Plans -->
   <section>
     <div class="section-title">Plans</div>
-    <div class="plans">
+    <div class="plans" style="grid-template-columns: repeat(3, 1fr); align-items: start;">
 
       <!-- Plan A -->
       <div class="plan">
-        <div class="plan-header">
+        <div class="plan-header" style="flex-direction:column; gap:12px;">
           <div>
             <div class="plan-name">Plan A · Foundation</div>
             <div class="plan-subtitle">Fast launch, built to last</div>
           </div>
-          <div class="plan-price">
+          <div class="plan-price" style="text-align:left;">
             <div class="amount">€1,200 – €1,500</div>
             <div class="note">20–25h × €60/h · estimated hours</div>
           </div>
         </div>
-        <div class="plan-body">
+        <div class="plan-body" style="grid-template-columns:1fr;">
           <div>
             <div class="plan-col-title">What's included</div>
             <ul class="plan-list">
               <li>Design based on your references</li>
               <li>Development in Next.js</li>
-              <li>Hosted on Vercel (free tier)</li>
+              <li>Hosted on Vercel</li>
               <li>Code versioned on GitHub</li>
               <li>Auto-deploy on every update</li>
               <li>Responsive (mobile + desktop)</li>
@@ -409,7 +413,7 @@
             </ul>
           </div>
           <div class="plan-note">
-            <strong>Note:</strong> With direct GitHub access, you're welcome to make changes to the code yourself. We love the spirit: just know that we're not able to take responsibility for any unintended changes made outside of our scope of work.
+            <strong>Note:</strong> With direct GitHub access, you're welcome to make changes to the code yourself. Just know we can't take responsibility for unintended changes outside our scope.
           </div>
           <div class="plan-note">
             <strong>Consulting/coaching included:</strong> I will explain and guide you through all the tools we use, so you feel confident managing your website after launch.
@@ -419,23 +423,23 @@
 
       <!-- Plan B (featured) -->
       <div class="plan featured">
-        <div class="plan-header">
+        <div class="plan-header" style="flex-direction:column; gap:12px;">
           <div>
             <div class="plan-name">Plan B · Creator</div>
             <div class="plan-subtitle">The smart alternative to Wix: you own everything</div>
           </div>
-          <div class="plan-price">
+          <div class="plan-price" style="text-align:left;">
             <div class="amount">€1,980 – €2,400</div>
-            <div class="note">33–40h × €60/h · one-time</div>
-            <div class="plan-badge" style="margin-top:8px;">Recommended</div>
+            <div class="note">40–47h × €60/h · estimated hours</div>
+            <div class="plan-badge" style="display:inline-block; margin-top:8px;">Recommended</div>
           </div>
         </div>
-        <div class="plan-body">
+        <div class="plan-body" style="grid-template-columns:1fr;">
           <div>
             <div class="plan-col-title">What's included</div>
             <ul class="plan-list">
               <li>Everything in Plan A</li>
-              <li>Sanity.io CMS integration</li>
+              <li>Sanity.io CMS integration (alternative to Wix)</li>
               <li>Visual content editor (no code)</li>
               <li>Live content previews</li>
               <li>Manage text, images, pages yourself</li>
@@ -456,48 +460,47 @@
           <div class="plan-note">
             <strong>Note:</strong> Sanity.io offers a generous free tier (up to 3 users, unlimited content). Paid plans start at $15/month if you grow beyond that.
           </div>
-
-          <!-- Wix comparison -->
-          <div style="grid-column:1/-1; margin-top:8px;">
-            <div class="plan-col-title" style="color:rgba(255,255,255,0.7); margin-bottom:12px;">Why not just use Wix?</div>
-            <table style="width:100%; border-collapse:collapse; font-size:0.8rem; background:#fff; border-radius:10px; overflow:hidden;">
+          <!-- Wix comparison compact -->
+          <div style="margin-top:4px;">
+            <div class="plan-col-title" style="color:rgba(255,255,255,0.7); margin-bottom:8px;">Why not just use Wix?</div>
+            <table style="width:100%; border-collapse:collapse; font-size:0.75rem; background:#fff; border-radius:8px; overflow:hidden;">
               <thead>
                 <tr>
-                  <th style="text-align:left; padding:8px 12px; color:var(--gray-400); font-weight:600; border-bottom:1px solid var(--border);"></th>
-                  <th style="text-align:center; padding:8px 12px; color:var(--gray-600); font-weight:600; border-bottom:1px solid var(--border);">Wix</th>
-                  <th style="text-align:center; padding:8px 12px; color:var(--black); font-weight:700; border-bottom:1px solid var(--border);">Plan B · Creator</th>
+                  <th style="text-align:left; padding:6px 8px; color:var(--gray-400); font-weight:600; border-bottom:1px solid var(--border);"></th>
+                  <th style="text-align:center; padding:6px 8px; color:var(--gray-600); font-weight:600; border-bottom:1px solid var(--border);">Wix</th>
+                  <th style="text-align:center; padding:6px 8px; color:var(--black); font-weight:700; border-bottom:1px solid var(--border);">Plan B</th>
                 </tr>
               </thead>
               <tbody>
                 <tr style="border-bottom:1px solid var(--border);">
-                  <td style="padding:8px 12px; color:var(--gray-600);">Monthly cost</td>
-                  <td style="padding:8px 12px; text-align:center; color:var(--gray-600);">€17–€35/mo</td>
-                  <td style="padding:8px 12px; text-align:center; color:#16a34a; font-weight:600;">€0/mo</td>
+                  <td style="padding:6px 8px; color:var(--gray-600);">Monthly cost</td>
+                  <td style="padding:6px 8px; text-align:center; color:var(--gray-600);">€17–35/mo</td>
+                  <td style="padding:6px 8px; text-align:center; color:#16a34a; font-weight:600;">€0/mo</td>
                 </tr>
                 <tr style="border-bottom:1px solid var(--border); background:var(--gray-100);">
-                  <td style="padding:8px 12px; color:var(--gray-600);">You own the code</td>
-                  <td style="padding:8px 12px; text-align:center; color:#dc2626;">✗</td>
-                  <td style="padding:8px 12px; text-align:center; color:#16a34a;">✓</td>
+                  <td style="padding:6px 8px; color:var(--gray-600);">Own the code</td>
+                  <td style="padding:6px 8px; text-align:center; color:#dc2626;">✗</td>
+                  <td style="padding:6px 8px; text-align:center; color:#16a34a;">✓</td>
                 </tr>
                 <tr style="border-bottom:1px solid var(--border);">
-                  <td style="padding:8px 12px; color:var(--gray-600);">Custom design</td>
-                  <td style="padding:8px 12px; text-align:center; color:var(--gray-400);">Limited</td>
-                  <td style="padding:8px 12px; text-align:center; color:#16a34a;">✓ Full</td>
+                  <td style="padding:6px 8px; color:var(--gray-600);">Custom design</td>
+                  <td style="padding:6px 8px; text-align:center; color:var(--gray-400);">Limited</td>
+                  <td style="padding:6px 8px; text-align:center; color:#16a34a;">✓</td>
                 </tr>
                 <tr style="border-bottom:1px solid var(--border); background:var(--gray-100);">
-                  <td style="padding:8px 12px; color:var(--gray-600);">Edit content yourself</td>
-                  <td style="padding:8px 12px; text-align:center; color:#16a34a;">✓</td>
-                  <td style="padding:8px 12px; text-align:center; color:#16a34a;">✓</td>
+                  <td style="padding:6px 8px; color:var(--gray-600);">Edit content</td>
+                  <td style="padding:6px 8px; text-align:center; color:#16a34a;">✓</td>
+                  <td style="padding:6px 8px; text-align:center; color:#16a34a;">✓</td>
                 </tr>
                 <tr style="border-bottom:1px solid var(--border);">
-                  <td style="padding:8px 12px; color:var(--gray-600);">Performance & SEO</td>
-                  <td style="padding:8px 12px; text-align:center; color:var(--gray-400);">Average</td>
-                  <td style="padding:8px 12px; text-align:center; color:#16a34a;">✓ Excellent</td>
+                  <td style="padding:6px 8px; color:var(--gray-600);">Performance</td>
+                  <td style="padding:6px 8px; text-align:center; color:var(--gray-400);">Average</td>
+                  <td style="padding:6px 8px; text-align:center; color:#16a34a;">✓</td>
                 </tr>
                 <tr>
-                  <td style="padding:8px 12px; color:var(--gray-600);">Can migrate away</td>
-                  <td style="padding:8px 12px; text-align:center; color:#dc2626;">✗ Locked in</td>
-                  <td style="padding:8px 12px; text-align:center; color:#16a34a;">✓ Always</td>
+                  <td style="padding:6px 8px; color:var(--gray-600);">Can migrate</td>
+                  <td style="padding:6px 8px; text-align:center; color:#dc2626;">✗</td>
+                  <td style="padding:6px 8px; text-align:center; color:#16a34a;">✓</td>
                 </tr>
               </tbody>
             </table>
@@ -507,70 +510,52 @@
 
       <!-- Plan C -->
       <div class="plan">
-        <div class="plan-header">
+        <div class="plan-header" style="flex-direction:column; gap:12px;">
           <div>
             <div class="plan-name">Plan C · Autopilot</div>
             <div class="plan-subtitle">We handle everything: you just focus on your business</div>
           </div>
-          <div class="plan-price">
-            <div class="amount">€299 – €499</div>
+          <div class="plan-price" style="text-align:left;">
+            <div class="amount">€99 – €499</div>
             <div class="note">setup + €49/mo subscription</div>
           </div>
         </div>
         <div class="plan-body" style="grid-template-columns:1fr;">
           <div>
-            <div class="plan-col-title">Pricing model</div>
+            <div class="plan-col-title">Setup pricing</div>
             <table style="width:100%; border-collapse:collapse; font-size:0.82rem; margin-top:4px;">
-              <thead>
-                <tr style="border-bottom:1px solid var(--border);">
-                  <th style="text-align:left; padding:8px 12px; color:var(--gray-400); font-weight:600;">Component</th>
-                  <th style="text-align:left; padding:8px 12px; color:var(--gray-400); font-weight:600;">Tier</th>
-                  <th style="text-align:left; padding:8px 12px; color:var(--gray-400); font-weight:600;">Price</th>
-                  <th style="text-align:left; padding:8px 12px; color:var(--gray-400); font-weight:600;">Notes</th>
-                </tr>
-              </thead>
               <tbody>
                 <tr style="border-bottom:1px solid var(--border);">
-                  <td style="padding:8px 12px; font-weight:500;">Setup & design</td>
-                  <td style="padding:8px 12px; color:var(--gray-600);">1-page site</td>
-                  <td style="padding:8px 12px; font-weight:600;">€99–€299</td>
-                  <td style="padding:8px 12px; color:var(--gray-600);">Based on complexity</td>
+                  <td style="padding:7px 10px; color:var(--gray-600);">1-page site</td>
+                  <td style="padding:7px 10px; font-weight:600; text-align:right;">€99–€299</td>
                 </tr>
                 <tr style="border-bottom:1px solid var(--border); background:var(--gray-100);">
-                  <td style="padding:8px 12px;"></td>
-                  <td style="padding:8px 12px; color:var(--gray-600);">2-page site</td>
-                  <td style="padding:8px 12px; font-weight:600;">€399–499</td>
-                  <td style="padding:8px 12px; color:var(--gray-600);">Based on complexity</td>
+                  <td style="padding:7px 10px; color:var(--gray-600);">2-page site</td>
+                  <td style="padding:7px 10px; font-weight:600; text-align:right;">€399–€499</td>
                 </tr>
                 <tr style="border-bottom:1px solid var(--border);">
-                  <td style="padding:8px 12px;"></td>
-                  <td style="padding:8px 12px; color:var(--gray-600);">6-page site</td>
-                  <td style="padding:8px 12px; font-weight:600;">€699–899</td>
-                  <td style="padding:8px 12px; color:var(--gray-600);">Based on complexity</td>
+                  <td style="padding:7px 10px; color:var(--gray-600);">6-page site</td>
+                  <td style="padding:7px 10px; font-weight:600; text-align:right;">€699–€899</td>
                 </tr>
                 <tr style="border-bottom:1px solid var(--border); background:var(--gray-100);">
-                  <td style="padding:8px 12px; font-weight:500;">Monthly subscription</td>
-                  <td style="padding:8px 12px; color:var(--gray-600);">Base</td>
-                  <td style="padding:8px 12px; font-weight:600;">€49/mo</td>
-                  <td style="padding:8px 12px; color:var(--gray-600);">Hosting + 2 changes</td>
-                </tr>
-                <tr style="border-bottom:1px solid var(--border); background:var(--gray-100);">
-                  <td style="padding:8px 12px; font-weight:500;">Extra change requests</td>
-                  <td style="padding:8px 12px; color:var(--gray-600);">Per change</td>
-                  <td style="padding:8px 12px; font-weight:600;">€29 each</td>
-                  <td style="padding:8px 12px; color:var(--gray-600);">Above 2/mo</td>
+                  <td style="padding:7px 10px; font-weight:500;">Monthly subscription</td>
+                  <td style="padding:7px 10px; font-weight:600; text-align:right;">€49/mo</td>
                 </tr>
                 <tr style="border-bottom:1px solid var(--border);">
-                  <td style="padding:8px 12px; font-weight:500;">Social media add-on</td>
-                  <td style="padding:8px 12px; color:var(--gray-600);">Optional</td>
-                  <td style="padding:8px 12px; font-weight:600;">TBD</td>
-                  <td style="padding:8px 12px; color:var(--gray-600);">Validate in discovery</td>
+                  <td style="padding:7px 10px; color:var(--gray-600); font-size:0.78rem;">Hosting + 2 changes included</td>
+                  <td style="padding:7px 10px; text-align:right;"></td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border); background:var(--gray-100);">
+                  <td style="padding:7px 10px; color:var(--gray-600);">Extra changes</td>
+                  <td style="padding:7px 10px; font-weight:600; text-align:right;">€29 each</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border);">
+                  <td style="padding:7px 10px; color:var(--gray-600);">Social media add-on</td>
+                  <td style="padding:7px 10px; font-weight:600; text-align:right;">TBD</td>
                 </tr>
                 <tr>
-                  <td style="padding:8px 12px; font-weight:500;">SEO agent</td>
-                  <td style="padding:8px 12px; color:var(--gray-600);">Add-on (Phase 2+)</td>
-                  <td style="padding:8px 12px; font-weight:600;">€29–79/mo</td>
-                  <td style="padding:8px 12px; color:var(--gray-600);">Future rollout</td>
+                  <td style="padding:7px 10px; color:var(--gray-600);">SEO add-on</td>
+                  <td style="padding:7px 10px; font-weight:600; text-align:right;">€29–€79/mo</td>
                 </tr>
               </tbody>
             </table>
@@ -713,7 +698,7 @@
       Get in touch and we'll find the right plan for your project.</p>
       <p style="margin-top:6px; font-size:0.78rem;">ana@copenickerstudio.com · copenickerstudio.com</p>
     </div>
-    <a class="footer-cta" href="mailto:ana@copenickerstudio.com">Let's talk ↗</a>
+    <a class="footer-cta" href="https://copenickerstudio.com/contact.html">Let's talk ↗</a>
   </div>
 
 </div>
