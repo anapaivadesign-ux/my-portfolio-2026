@@ -335,6 +335,11 @@
       .plan { break-inside: avoid; }
     }
 
+    .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .pros-cons-col-title { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
+    .pros-cons ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .pros-cons li { font-size: 0.82rem; display: flex; gap: 6px; align-items: flex-start; color: var(--gray-600); }
+
     @media (max-width: 760px) {
       .plans { grid-template-columns: 1fr !important; }
     }
@@ -419,6 +424,26 @@
               <li><strong>Total: 16–18h</strong></li>
             </ul>
           </div>
+          <div class="pros-cons">
+            <div>
+              <div class="pros-cons-col-title" style="color:#16a34a;">Pros</div>
+              <ul>
+                <li><span style="color:#16a34a;">✓</span> Fast to launch</li>
+                <li><span style="color:#16a34a;">✓</span> Lower upfront cost</li>
+                <li><span style="color:#16a34a;">✓</span> Easy to manage yourself</li>
+                <li><span style="color:#16a34a;">✓</span> Can upgrade later</li>
+              </ul>
+            </div>
+            <div>
+              <div class="pros-cons-col-title" style="color:#dc2626;">Cons</div>
+              <ul>
+                <li><span style="color:#dc2626;">✗</span> Monthly Wix fee</li>
+                <li><span style="color:#dc2626;">✗</span> Limited flexibility</li>
+                <li><span style="color:#dc2626;">✗</span> Wix controls your site</li>
+                <li><span style="color:#dc2626;">✗</span> Average SEO performance</li>
+              </ul>
+            </div>
+          </div>
           <div class="plan-note">
             <strong>Note:</strong> Wix has a monthly subscription (~€17–35/mo) paid directly by you. When you're ready to grow, we can migrate your site to a fully custom Next.js solution with Sanity CMS. Your content and brand come with you.
           </div>
@@ -462,6 +487,25 @@
               <li>Consulting/coaching: 3h</li>
               <li><strong>Total: 23–28h</strong></li>
             </ul>
+          </div>
+          <div class="pros-cons">
+            <div>
+              <div class="pros-cons-col-title" style="color:#4ade80;">Pros</div>
+              <ul>
+                <li><span style="color:#4ade80;">✓</span> <span style="color:rgba(255,255,255,0.85);">You own the code</span></li>
+                <li><span style="color:#4ade80;">✓</span> <span style="color:rgba(255,255,255,0.85);">No monthly platform fee</span></li>
+                <li><span style="color:#4ade80;">✓</span> <span style="color:rgba(255,255,255,0.85);">Excellent SEO & performance</span></li>
+                <li><span style="color:#4ade80;">✓</span> <span style="color:rgba(255,255,255,0.85);">Fully custom design</span></li>
+              </ul>
+            </div>
+            <div>
+              <div class="pros-cons-col-title" style="color:#f87171;">Cons</div>
+              <ul>
+                <li><span style="color:#f87171;">✗</span> <span style="color:rgba(255,255,255,0.7);">Higher upfront investment</span></li>
+                <li><span style="color:#f87171;">✗</span> <span style="color:rgba(255,255,255,0.7);">More hours to build</span></li>
+                <li><span style="color:#f87171;">✗</span> <span style="color:rgba(255,255,255,0.7);">Vercel + Claude Code costs</span></li>
+              </ul>
+            </div>
           </div>
           <div class="plan-note" style="background:rgba(255,255,255,0.08); color:rgba(255,255,255,0.9);">
             <strong style="color:#fff;">Note:</strong> With direct GitHub access, you're welcome to make changes to the code yourself. Just know we can't take responsibility for unintended changes outside our scope.
@@ -534,6 +578,25 @@
                 </tr>
               </tbody>
             </table>
+          </div>
+          <div class="pros-cons">
+            <div>
+              <div class="pros-cons-col-title" style="color:#16a34a;">Pros</div>
+              <ul>
+                <li><span style="color:#16a34a;">✓</span> Zero technical knowledge</li>
+                <li><span style="color:#16a34a;">✓</span> Everything managed for you</li>
+                <li><span style="color:#16a34a;">✓</span> Predictable monthly cost</li>
+                <li><span style="color:#16a34a;">✓</span> Fast updates via WhatsApp</li>
+              </ul>
+            </div>
+            <div>
+              <div class="pros-cons-col-title" style="color:#dc2626;">Cons</div>
+              <ul>
+                <li><span style="color:#dc2626;">✗</span> Monthly fee ongoing</li>
+                <li><span style="color:#dc2626;">✗</span> Max 2 changes/month</li>
+                <li><span style="color:#dc2626;">✗</span> No direct CMS access</li>
+              </ul>
+            </div>
           </div>
           <div class="plan-note">
             <strong>Note:</strong> No CMS on this plan: all content updates are handled by us. Just send your change requests via WhatsApp and we'll take care of it. Up to 2 changes/month included, extra changes at €29 each. Claude Code included.
