@@ -342,6 +342,7 @@
 
     @media (max-width: 760px) {
       .plans { grid-template-columns: 1fr !important; }
+      .needs-grid { grid-template-columns: 1fr !important; }
     }
 
     @media (max-width: 640px) {
@@ -708,7 +709,7 @@
   <section>
     <div class="section-title">What we need from you</div>
     <p style="color:var(--gray-600); font-size:0.95rem; max-width:640px; margin-bottom:32px;">Before we start building, we'll need a few things from you. The more complete these are at kick-off, the faster we move.</p>
-    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
+    <div class="needs-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
 
       <div style="background:var(--gray-100); border-radius:12px; padding:24px;">
         <div style="font-weight:700; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--gray-400); margin-bottom:14px;">Content</div>
