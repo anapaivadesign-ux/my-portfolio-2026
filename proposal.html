@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Website Proposal — copenickerstudio®</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0b0b0f;
+      --white: #ffffff;
+      --gray-600: #5a5a66;
+      --gray-400: #9a9aa6;
+      --gray-100: #f6f6f9;
+      --border: rgba(11,11,15,0.10);
+      --accent: #0b0b0f;
+    }
+
+    body {
+      font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.6;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 64px 48px;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 56px;
+    }
+
+    .logo {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .header-meta {
+      text-align: right;
+      font-size: 0.82rem;
+      color: var(--gray-400);
+      line-height: 1.8;
+    }
+
+    /* Intro */
+    .intro {
+      margin-bottom: 56px;
+    }
+
+    .intro-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 16px;
+    }
+
+    .intro h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .intro p {
+      font-size: 1rem;
+      color: var(--gray-600);
+      max-width: 60ch;
+      line-height: 1.8;
+    }
+
+    /* Section */
+    .section-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section { margin-bottom: 56px; }
+
+    /* Plans */
+    .plans {
+      display: grid;
+      gap: 20px;
+    }
+
+    .plan {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .plan.featured {
+      border-color: var(--black);
+    }
+
+    .plan-header {
+      padding: 28px 32px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .plan.featured .plan-header {
+      background: var(--black);
+      color: var(--white);
+      border-bottom-color: rgba(255,255,255,0.1);
+    }
+
+    .plan-badge {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--black);
+      color: var(--white);
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    .plan.featured .plan-badge {
+      background: rgba(255,255,255,0.15);
+      color: var(--white);
+    }
+
+    .plan-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+
+    .plan-subtitle {
+      font-size: 0.85rem;
+      color: var(--gray-400);
+    }
+
+    .plan.featured .plan-subtitle {
+      color: rgba(255,255,255,0.6);
+    }
+
+    .plan-price {
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .plan-price .amount {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .plan-price .note {
+      font-size: 0.75rem;
+      color: var(--gray-400);
+      margin-top: 2px;
+    }
+
+    .plan.featured .plan-price .note {
+      color: rgba(255,255,255,0.5);
+    }
+
+    .plan-body {
+      padding: 28px 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .plan-col-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 12px;
+    }
+
+    .plan-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .plan-list li {
+      font-size: 0.88rem;
+      color: var(--gray-600);
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+
+    .plan-list li::before {
+      content: "→";
+      flex-shrink: 0;
+      color: var(--black);
+      font-size: 0.8rem;
+      margin-top: 1px;
+    }
+
+    .plan-note {
+      grid-column: 1 / -1;
+      background: var(--gray-100);
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 0.82rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+
+    /* Stack table */
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .stack-item {
+      background: var(--gray-100);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .stack-item-plan {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 12px;
+    }
+
+    .stack-item ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .stack-item li {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--black);
+    }
+
+    /* Process */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .process-step {
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .step-number {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 8px;
+    }
+
+    .step-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .step-desc {
+      font-size: 0.8rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    .footer {
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .footer-left p {
+      font-size: 0.82rem;
+      color: var(--gray-600);
+      line-height: 1.8;
+    }
+
+    .footer-cta {
+      flex-shrink: 0;
+      background: var(--black);
+      color: var(--white);
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    @media print {
+      .page { padding: 40px; }
+      .plan { break-inside: avoid; }
+    }
+
+    @media (max-width: 640px) {
+      .page { padding: 32px 24px; }
+      .header { flex-direction: column; gap: 16px; }
+      .header-meta { text-align: left; }
+      .plan-body { grid-template-columns: 1fr; }
+      .stack-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .footer { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">copenickerstudio®</div>
+    <div class="header-meta">
+      <div>ana@copenickerstudio.com</div>
+      <div>copenickerstudio.com</div>
+      <div>Berlin · Lisboa · Remote</div>
+      <div style="margin-top:6px;">May 2026</div>
+    </div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    <div class="intro-label">Website Proposal — ALH · Ascend Life Hub</div>
+    <h1>Let's build something<br>that works for you.</h1>
+    <p>Three plans tailored to different needs — from a fast, clean launch to a fully managed setup where you can update your own content. All built on modern, reliable technology.</p>
+  </div>
+
+  <!-- Plans -->
+  <section>
+    <div class="section-title">Plans</div>
+    <div class="plans">
+
+      <!-- Plan A -->
+      <div class="plan">
+        <div class="plan-header">
+          <div>
+            <div class="plan-name">Plan A — Standard</div>
+            <div class="plan-subtitle">Fast launch, low overhead</div>
+          </div>
+          <div class="plan-price">
+            <div class="amount">On request</div>
+            <div class="note">one-time project</div>
+          </div>
+        </div>
+        <div class="plan-body">
+          <div>
+            <div class="plan-col-title">What's included</div>
+            <ul class="plan-list">
+              <li>Custom design in Figma</li>
+              <li>Development in Next.js</li>
+              <li>Hosted on Vercel (free tier)</li>
+              <li>Code versioned on GitHub</li>
+              <li>Auto-deploy on every update</li>
+              <li>Responsive (mobile + desktop)</li>
+              <li>SEO basics included</li>
+            </ul>
+          </div>
+          <div>
+            <div class="plan-col-title">Best for</div>
+            <ul class="plan-list">
+              <li>Portfolio or landing pages</li>
+              <li>Static content that rarely changes</li>
+              <li>Fast time-to-launch</li>
+              <li>Minimal ongoing costs</li>
+            </ul>
+          </div>
+          <div class="plan-note">
+            <strong>Note:</strong> Content updates require developer involvement. Ideal if you don't need to edit the site yourself regularly.
+          </div>
+        </div>
+      </div>
+
+      <!-- Plan B (featured) -->
+      <div class="plan featured">
+        <div class="plan-header">
+          <div>
+            <div class="plan-name">Plan B — With CMS</div>
+            <div class="plan-subtitle">Edit your own content, anytime</div>
+          </div>
+          <div class="plan-price">
+            <div class="amount">On request</div>
+            <div class="note">one-time + Sanity free tier</div>
+            <div class="plan-badge" style="margin-top:8px;">Recommended</div>
+          </div>
+        </div>
+        <div class="plan-body">
+          <div>
+            <div class="plan-col-title">What's included</div>
+            <ul class="plan-list">
+              <li>Everything in Plan A</li>
+              <li>Sanity.io CMS integration</li>
+              <li>Visual content editor (no code)</li>
+              <li>Live content previews</li>
+              <li>Manage text, images, pages yourself</li>
+              <li>CMS onboarding & training</li>
+            </ul>
+          </div>
+          <div>
+            <div class="plan-col-title">Best for</div>
+            <ul class="plan-list">
+              <li>Blogs, news, service pages</li>
+              <li>Clients who update content regularly</li>
+              <li>Teams managing their own site</li>
+              <li>Long-term independence</li>
+            </ul>
+          </div>
+          <div class="plan-note" style="background:rgba(255,255,255,0.08); color:rgba(255,255,255,0.7);">
+            <strong style="color:#fff;">Note:</strong> Sanity.io offers a generous free tier (up to 3 users, unlimited content). Paid plans start at $15/month if you grow beyond that.
+          </div>
+        </div>
+      </div>
+
+      <!-- Plan C -->
+      <div class="plan">
+        <div class="plan-header">
+          <div>
+            <div class="plan-name">Plan C — Fully Managed</div>
+            <div class="plan-subtitle">I handle everything, including hosting</div>
+          </div>
+          <div class="plan-price">
+            <div class="amount">On request</div>
+            <div class="note">one-time + monthly retainer</div>
+          </div>
+        </div>
+        <div class="plan-body">
+          <div>
+            <div class="plan-col-title">What's included</div>
+            <ul class="plan-list">
+              <li>Everything in Plan B</li>
+              <li>Hosting managed by copenickerstudio®</li>
+              <li>Custom domain setup & renewal</li>
+              <li>SSL certificate management</li>
+              <li>Monthly backups</li>
+              <li>Performance monitoring</li>
+              <li>Priority support</li>
+            </ul>
+          </div>
+          <div>
+            <div class="plan-col-title">Best for</div>
+            <ul class="plan-list">
+              <li>Clients who want zero tech overhead</li>
+              <li>Businesses needing ongoing support</li>
+              <li>Peace of mind — everything handled</li>
+            </ul>
+          </div>
+          <div class="plan-note">
+            <strong>Note:</strong> Monthly retainer covers hosting, maintenance, and up to 2 hours of content/design updates per month.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Tech Stack -->
+  <section>
+    <div class="section-title">Technology</div>
+    <div class="stack-grid">
+      <div class="stack-item">
+        <div class="stack-item-plan">All Plans</div>
+        <ul>
+          <li>Next.js — framework</li>
+          <li>GitHub — version control</li>
+          <li>Figma — design</li>
+          <li>Tailwind CSS — styling</li>
+        </ul>
+      </div>
+      <div class="stack-item">
+        <div class="stack-item-plan">Plans A & B</div>
+        <ul>
+          <li>Vercel — hosting & deploy</li>
+          <li>Free tier available</li>
+          <li>Auto-deploy from GitHub</li>
+          <li>Global CDN included</li>
+        </ul>
+      </div>
+      <div class="stack-item">
+        <div class="stack-item-plan">Plan B only</div>
+        <ul>
+          <li>Sanity.io — content CMS</li>
+          <li>Visual content studio</li>
+          <li>Real-time previews</li>
+          <li>Free tier up to 3 users</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section>
+    <div class="section-title">How we work</div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-number">01</div>
+        <div class="step-title">Discovery</div>
+        <div class="step-desc">Kick-off call to align on goals, content, and visual direction.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-number">02</div>
+        <div class="step-title">Design</div>
+        <div class="step-desc">Figma mockups with 2 rounds of feedback before development starts.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-number">03</div>
+        <div class="step-title">Build</div>
+        <div class="step-desc">Development in Next.js with a staging link for review before launch.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-number">04</div>
+        <div class="step-title">Launch</div>
+        <div class="step-desc">Domain setup, deploy to production, and handoff or onboarding.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-left">
+      <p><strong>Ready to get started?</strong><br>
+      Get in touch and we'll find the right plan for your project.</p>
+      <p style="margin-top:6px; font-size:0.78rem;">ana@copenickerstudio.com · copenickerstudio.com</p>
+    </div>
+    <a class="footer-cta" href="mailto:ana@copenickerstudio.com">Let's talk ↗</a>
+  </div>
+
+</div>
+</body>
+</html>
