@@ -3,128 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Blog copenickerstudio®</title>
-  <meta name="description" content="Thoughts on design, product, and the process behind great digital experiences." />
+  <title>Why I always start with a week of just listening — copenickerstudio®</title>
+  <meta name="description" content="Discovery is the most underrated phase in design. Before wireframes, before colours — I spend a week doing nothing but listening. Here's what that looks like." />
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="canonical" href="https://copenickerstudio.com/blog.html" />
-  <meta property="og:title" content="Blog — copenickerstudio®" />
-  <meta property="og:description" content="Thoughts on design, product, and the process behind great digital experiences." />
-  <meta property="og:url" content="https://copenickerstudio.com/blog.html" />
-  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://copenickerstudio.com/blog-design-discovery.html" />
+  <meta property="og:title" content="Why I always start with a week of just listening — copenickerstudio®" />
+  <meta property="og:description" content="Discovery is the most underrated phase in design. Before wireframes, before colours — I spend a week doing nothing but listening." />
+  <meta property="og:url" content="https://copenickerstudio.com/blog-design-discovery.html" />
+  <meta property="og:type" content="article" />
   <meta property="og:image" content="https://copenickerstudio.com/images/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-    }
-
-    .blog-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      overflow: hidden;
-      text-decoration: none;
-      color: inherit;
-      transition: transform 160ms ease, box-shadow 160ms ease;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .blog-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
-    }
-
-    .blog-card-img {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-      background: var(--gray-100);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.5rem;
-    }
-
-    .blog-card-body {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      flex: 1;
-    }
-
-    .blog-tag {
+    .article-hero { padding: 80px 0 40px; }
+    .article-hero .blog-tag {
       display: inline-block;
       font-size: 0.7rem;
       font-weight: 700;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      padding: 4px 10px;
+      padding: 4px 12px;
       border-radius: 999px;
       background: var(--gray-100);
       color: var(--gray-600);
-      width: fit-content;
+      margin-bottom: 20px;
     }
-
-    .blog-card-title {
+    .article-hero h1 { font-size: clamp(2rem, 4vw, 3rem); max-width: 760px; }
+    .article-meta { font-size: 0.85rem; color: var(--gray-500); margin-top: 16px; }
+    .article-body { max-width: 720px; margin: 0 auto; padding: 40px 0 80px; }
+    .article-body p { font-size: 1.05rem; line-height: 1.8; color: var(--gray-700); margin-bottom: 1.5rem; }
+    .article-body h2 { font-size: 1.5rem; font-weight: 750; margin: 2.5rem 0 1rem; color: var(--black); }
+    .article-body h3 { font-size: 1.15rem; font-weight: 700; margin: 2rem 0 0.75rem; color: var(--black); }
+    .article-body ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }
+    .article-body ul li { font-size: 1.05rem; line-height: 1.8; color: var(--gray-700); margin-bottom: 0.5rem; }
+    .article-body blockquote {
+      border-left: 3px solid var(--black);
+      padding: 8px 0 8px 24px;
+      margin: 2rem 0;
       font-size: 1.15rem;
-      font-weight: 750;
-      line-height: 1.35;
+      font-style: italic;
       color: var(--black);
     }
-
-    .blog-card-excerpt {
-      font-size: 0.9rem;
-      color: var(--gray-600);
-      line-height: 1.65;
-      flex: 1;
-    }
-
-    .blog-card-meta {
-      font-size: 0.8rem;
-      color: var(--gray-500);
-      margin-top: 8px;
-    }
-
-    .blog-card-link {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--black);
-      text-decoration: underline;
-      text-decoration-color: rgba(11,11,15,0.25);
-      text-underline-offset: 0.2em;
-    }
-
-    .blog-card-featured {
-      grid-column: 1 / -1;
-    }
-
-    .blog-card-featured .blog-card-img {
-      aspect-ratio: 21 / 9;
-    }
-
-    .blog-card-featured .blog-card-title {
-      font-size: 1.5rem;
-    }
-
-    .blog-coming-soon {
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 80px 24px;
-      border: 1px dashed var(--border);
-      border-radius: 18px;
-      color: var(--gray-500);
-    }
-
-    @media (max-width: 768px) {
-      .blog-grid { grid-template-columns: 1fr; }
-      .blog-card-featured { grid-column: 1; }
-      .blog-card-featured .blog-card-img { aspect-ratio: 16 / 9; }
-    }
+    .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 600; color: var(--gray-600); text-decoration: none; margin-bottom: 32px; }
+    .back-link:hover { color: var(--black); }
   </style>
 </head>
 <body>
@@ -147,98 +68,82 @@
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section class="hero">
+  <!-- Article Hero -->
+  <section class="article-hero">
     <div class="container">
-      <div class="hero-content">
-        <h1 class="canela-heading">Thoughts on <span class="underline-italic">design</span>.</h1>
-        <p class="hero-subtitle">Process, perspective, and the questions worth asking.</p>
-      </div>
+      <a href="blog.html" class="back-link">← Back to Blog</a>
+      <span class="blog-tag">Process</span>
+      <h1 class="canela-heading">Why I always start with a week of just <span class="underline-italic">listening</span>.</h1>
+      <p class="article-meta">May 2026 · 5 min read · Ana Paiva</p>
     </div>
   </section>
 
-  <!-- Blog Grid -->
+  <!-- Article Body -->
   <section class="section" style="padding-top: 0;">
-    <div class="container wide-container">
-      <div class="blog-grid">
+    <div class="container">
+      <div class="article-body">
 
-        <!-- Featured post -->
-        <a class="blog-card blog-card-featured" href="blog-design-discovery.html">
-          <div class="blog-card-img" style="background: #f0ebe3; font-size: 4rem;">✏️</div>
-          <div class="blog-card-body">
-            <span class="blog-tag">Process</span>
-            <div class="blog-card-title">Why I always start with a week of just listening</div>
-            <p class="blog-card-excerpt">Discovery is the most underrated phase in design. Before wireframes, before colours, before any visual decision — I spend a week doing nothing but listening. Here's what that looks like and why it changes everything.</p>
-            <div class="blog-card-meta">May 2026 · 5 min read</div>
-            <span class="blog-card-link">Read more →</span>
-          </div>
-        </a>
+        <p>Every new project starts the same way. A client reaches out, excited — they have a vision, a deadline, sometimes even a Figma file they've been building themselves at midnight. And the first thing I tell them is: let's not open Figma yet.</p>
 
-        <!-- Post 2 -->
-        <a class="blog-card" href="blog-colour-communication.html">
-          <div class="blog-card-img" style="background: #e8f0fe;">🎨</div>
-          <div class="blog-card-body">
-            <span class="blog-tag">Brand Identity</span>
-            <div class="blog-card-title">Colour isn't decoration — it's communication</div>
-            <p class="blog-card-excerpt">Every colour choice carries meaning. A quick guide to building palettes that do real work for your brand.</p>
-            <div class="blog-card-meta">April 2026 · 4 min read</div>
-            <span class="blog-card-link">Read more →</span>
-          </div>
-        </a>
+        <p>This always surprises people. They hired a designer. Why isn't she designing?</p>
 
-        <!-- Post 3 -->
-        <a class="blog-card" href="blog-ux-questions.html">
-          <div class="blog-card-img" style="background: #fef3c7;">💡</div>
-          <div class="blog-card-body">
-            <span class="blog-tag">UX</span>
-            <div class="blog-card-title">The 3 questions I ask before designing any screen</div>
-            <p class="blog-card-excerpt">Most design problems are actually framing problems. These three questions help me zoom out before zooming in.</p>
-            <div class="blog-card-meta">March 2026 · 3 min read</div>
-            <span class="blog-card-link">Read more →</span>
-          </div>
-        </a>
+        <p>The answer is simple: you can't design a solution before you understand the problem. And most of the time, the problem you think you have isn't the real problem at all.</p>
 
-        <!-- Post 4 -->
-        <a class="blog-card" href="blog-user-interviews.html">
-          <div class="blog-card-img" style="background: #ede9fe;">🔍</div>
-          <div class="blog-card-body">
-            <span class="blog-tag">Research</span>
-            <div class="blog-card-title">How to run a user interview that actually reveals something</div>
-            <p class="blog-card-excerpt">Most interviews produce polite answers, not real insights. Here's how I structure sessions to get past the surface.</p>
-            <div class="blog-card-meta">February 2026 · 6 min read</div>
-            <span class="blog-card-link">Read more →</span>
-          </div>
-        </a>
+        <blockquote>"Most design problems are actually framing problems."</blockquote>
 
-        <!-- Post 5 -->
-        <a class="blog-card" href="blog-going-independent.html">
-          <div class="blog-card-img" style="background: #dcfce7;">🌱</div>
-          <div class="blog-card-body">
-            <span class="blog-tag">Freelance</span>
-            <div class="blog-card-title">What nobody tells you about going independent</div>
-            <p class="blog-card-excerpt">The business side of freelance design is rarely taught. A few hard-learned lessons from building copenickerstudio.</p>
-            <div class="blog-card-meta">January 2026 · 7 min read</div>
-            <span class="blog-card-link">Read more →</span>
-          </div>
-        </a>
+        <h2>What a discovery week actually looks like</h2>
+
+        <p>A discovery week isn't a week of doing nothing. It's a week of doing the most important thing — gathering signal before making decisions. Here's what it looks like in practice:</p>
+
+        <h3>Day 1–2: Stakeholder interviews</h3>
+        <p>I talk to everyone who has a stake in the outcome — founders, product managers, customer support, sometimes sales. Not to gather requirements (that comes later), but to understand what each person believes the problem to be. The differences between those answers are always illuminating.</p>
+
+        <h3>Day 3: User interviews or recordings</h3>
+        <p>If there's an existing product, I watch session recordings — real users, real friction, real moments of confusion. If it's a new product, I talk to people who represent the target audience. I ask about their current behaviour, not their opinion of a hypothetical solution.</p>
+
+        <h3>Day 4: Competitive and context review</h3>
+        <p>I look at what exists in the space — not to copy, but to understand the visual and interaction language users already know. What patterns are they familiar with? What expectations will they bring to this product?</p>
+
+        <h3>Day 5: Synthesis</h3>
+        <p>This is where the listening becomes thinking. I take all the notes, all the patterns, all the contradictions — and I try to articulate the real design challenge in one sentence. That sentence becomes the brief we actually work from.</p>
+
+        <h2>Why skipping this is expensive</h2>
+
+        <p>I've worked with teams that skipped discovery. They moved fast, delivered screens quickly, and then spent the next three months iterating on the wrong thing. The time saved in week one cost them ten weeks later.</p>
+
+        <p>Discovery is insurance. It's the phase that makes everything after it faster, more focused, and more likely to actually work.</p>
+
+        <h2>What you get at the end</h2>
+
+        <ul>
+          <li>A shared understanding of the problem across all stakeholders</li>
+          <li>A clear design brief that the whole team can align on</li>
+          <li>A set of user needs and pain points grounded in real evidence</li>
+          <li>A prioritised list of what to design first — and what to leave for later</li>
+        </ul>
+
+        <p>None of this is glamorous. There are no beautiful deliverables at the end of discovery week. But the work that comes after it is better in every measurable way.</p>
+
+        <p>If you're planning a design project and you're tempted to skip straight to screens — don't. Spend the first week just listening. It will be the best investment you make.</p>
 
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
+  <!-- CTA -->
   <section class="section">
     <div class="container">
       <div class="cta-section">
         <div class="cta-section-text">
-          <h2 class="canela-heading">Stay in the <span class="underline-italic">loop</span>.</h2>
-          <p>New posts on design, process, and running a studio — straight to your inbox.</p>
+          <h2 class="canela-heading">Let's create <span class="underline-italic">together</span>.</h2>
+          <p>Big ideas start with a simple hello. Reach out and we'll take it from there.</p>
           <div class="cta-buttons">
-            <a href="contact.html" class="cta-button">Get in touch ↗</a>
+            <a href="services.html" class="cta-button-outline">See all services ↗</a>
+            <a href="contact.html" class="cta-button">Let's talk ↗</a>
           </div>
         </div>
         <div class="cta-section-image">
-          <img src="images/bannerimage.png" alt="Stay in the loop">
+          <img src="images/bannerimage.png" alt="Let's work together">
         </div>
       </div>
     </div>

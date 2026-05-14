@@ -3,128 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Blog copenickerstudio®</title>
-  <meta name="description" content="Thoughts on design, product, and the process behind great digital experiences." />
+  <title>Colour isn't decoration — it's communication — copenickerstudio®</title>
+  <meta name="description" content="Every colour choice carries meaning. A guide to building colour palettes that do real work for your brand identity and user experience." />
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="canonical" href="https://copenickerstudio.com/blog.html" />
-  <meta property="og:title" content="Blog — copenickerstudio®" />
-  <meta property="og:description" content="Thoughts on design, product, and the process behind great digital experiences." />
-  <meta property="og:url" content="https://copenickerstudio.com/blog.html" />
-  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://copenickerstudio.com/blog-colour-communication.html" />
+  <meta property="og:title" content="Colour isn't decoration — it's communication — copenickerstudio®" />
+  <meta property="og:description" content="Every colour choice carries meaning. A guide to building colour palettes that do real work for your brand." />
+  <meta property="og:url" content="https://copenickerstudio.com/blog-colour-communication.html" />
+  <meta property="og:type" content="article" />
   <meta property="og:image" content="https://copenickerstudio.com/images/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-    }
-
-    .blog-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      overflow: hidden;
-      text-decoration: none;
-      color: inherit;
-      transition: transform 160ms ease, box-shadow 160ms ease;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .blog-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
-    }
-
-    .blog-card-img {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-      background: var(--gray-100);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.5rem;
-    }
-
-    .blog-card-body {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      flex: 1;
-    }
-
-    .blog-tag {
+    .article-hero { padding: 80px 0 40px; }
+    .article-hero .blog-tag {
       display: inline-block;
       font-size: 0.7rem;
       font-weight: 700;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      padding: 4px 10px;
+      padding: 4px 12px;
       border-radius: 999px;
       background: var(--gray-100);
       color: var(--gray-600);
-      width: fit-content;
+      margin-bottom: 20px;
     }
-
-    .blog-card-title {
+    .article-hero h1 { font-size: clamp(2rem, 4vw, 3rem); max-width: 760px; }
+    .article-meta { font-size: 0.85rem; color: var(--gray-500); margin-top: 16px; }
+    .article-body { max-width: 720px; margin: 0 auto; padding: 40px 0 80px; }
+    .article-body p { font-size: 1.05rem; line-height: 1.8; color: var(--gray-700); margin-bottom: 1.5rem; }
+    .article-body h2 { font-size: 1.5rem; font-weight: 750; margin: 2.5rem 0 1rem; color: var(--black); }
+    .article-body h3 { font-size: 1.15rem; font-weight: 700; margin: 2rem 0 0.75rem; color: var(--black); }
+    .article-body ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }
+    .article-body ul li { font-size: 1.05rem; line-height: 1.8; color: var(--gray-700); margin-bottom: 0.5rem; }
+    .article-body blockquote {
+      border-left: 3px solid var(--black);
+      padding: 8px 0 8px 24px;
+      margin: 2rem 0;
       font-size: 1.15rem;
-      font-weight: 750;
-      line-height: 1.35;
+      font-style: italic;
       color: var(--black);
     }
-
-    .blog-card-excerpt {
-      font-size: 0.9rem;
-      color: var(--gray-600);
-      line-height: 1.65;
-      flex: 1;
-    }
-
-    .blog-card-meta {
-      font-size: 0.8rem;
-      color: var(--gray-500);
-      margin-top: 8px;
-    }
-
-    .blog-card-link {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--black);
-      text-decoration: underline;
-      text-decoration-color: rgba(11,11,15,0.25);
-      text-underline-offset: 0.2em;
-    }
-
-    .blog-card-featured {
-      grid-column: 1 / -1;
-    }
-
-    .blog-card-featured .blog-card-img {
-      aspect-ratio: 21 / 9;
-    }
-
-    .blog-card-featured .blog-card-title {
-      font-size: 1.5rem;
-    }
-
-    .blog-coming-soon {
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 80px 24px;
-      border: 1px dashed var(--border);
-      border-radius: 18px;
-      color: var(--gray-500);
-    }
-
-    @media (max-width: 768px) {
-      .blog-grid { grid-template-columns: 1fr; }
-      .blog-card-featured { grid-column: 1; }
-      .blog-card-featured .blog-card-img { aspect-ratio: 16 / 9; }
-    }
+    .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 600; color: var(--gray-600); text-decoration: none; margin-bottom: 32px; }
+    .back-link:hover { color: var(--black); }
   </style>
 </head>
 <body>
@@ -147,98 +68,81 @@
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section class="hero">
+  <!-- Article Hero -->
+  <section class="article-hero">
     <div class="container">
-      <div class="hero-content">
-        <h1 class="canela-heading">Thoughts on <span class="underline-italic">design</span>.</h1>
-        <p class="hero-subtitle">Process, perspective, and the questions worth asking.</p>
-      </div>
+      <a href="blog.html" class="back-link">← Back to Blog</a>
+      <span class="blog-tag">Brand Identity</span>
+      <h1 class="canela-heading">Colour isn't <span class="underline-italic">decoration</span> — it's communication.</h1>
+      <p class="article-meta">April 2026 · 4 min read · Ana Paiva</p>
     </div>
   </section>
 
-  <!-- Blog Grid -->
+  <!-- Article Body -->
   <section class="section" style="padding-top: 0;">
-    <div class="container wide-container">
-      <div class="blog-grid">
+    <div class="container">
+      <div class="article-body">
 
-        <!-- Featured post -->
-        <a class="blog-card blog-card-featured" href="blog-design-discovery.html">
-          <div class="blog-card-img" style="background: #f0ebe3; font-size: 4rem;">✏️</div>
-          <div class="blog-card-body">
-            <span class="blog-tag">Process</span>
-            <div class="blog-card-title">Why I always start with a week of just listening</div>
-            <p class="blog-card-excerpt">Discovery is the most underrated phase in design. Before wireframes, before colours, before any visual decision — I spend a week doing nothing but listening. Here's what that looks like and why it changes everything.</p>
-            <div class="blog-card-meta">May 2026 · 5 min read</div>
-            <span class="blog-card-link">Read more →</span>
-          </div>
-        </a>
+        <p>When clients ask me to "make it more colourful" or "can we try a blue version," I know we need to have a conversation before we open the colour picker. Colour is one of the most powerful tools in visual design — and one of the most misunderstood.</p>
 
-        <!-- Post 2 -->
-        <a class="blog-card" href="blog-colour-communication.html">
-          <div class="blog-card-img" style="background: #e8f0fe;">🎨</div>
-          <div class="blog-card-body">
-            <span class="blog-tag">Brand Identity</span>
-            <div class="blog-card-title">Colour isn't decoration — it's communication</div>
-            <p class="blog-card-excerpt">Every colour choice carries meaning. A quick guide to building palettes that do real work for your brand.</p>
-            <div class="blog-card-meta">April 2026 · 4 min read</div>
-            <span class="blog-card-link">Read more →</span>
-          </div>
-        </a>
+        <p>Most people treat colour as decoration. Something to make a design look nice, feel warm, stand out on the page. But colour does much more than that. It communicates trust, urgency, friendliness, luxury, danger. It tells a story before anyone reads a single word.</p>
 
-        <!-- Post 3 -->
-        <a class="blog-card" href="blog-ux-questions.html">
-          <div class="blog-card-img" style="background: #fef3c7;">💡</div>
-          <div class="blog-card-body">
-            <span class="blog-tag">UX</span>
-            <div class="blog-card-title">The 3 questions I ask before designing any screen</div>
-            <p class="blog-card-excerpt">Most design problems are actually framing problems. These three questions help me zoom out before zooming in.</p>
-            <div class="blog-card-meta">March 2026 · 3 min read</div>
-            <span class="blog-card-link">Read more →</span>
-          </div>
-        </a>
+        <blockquote>"The right colour palette isn't beautiful — it's accurate."</blockquote>
 
-        <!-- Post 4 -->
-        <a class="blog-card" href="blog-user-interviews.html">
-          <div class="blog-card-img" style="background: #ede9fe;">🔍</div>
-          <div class="blog-card-body">
-            <span class="blog-tag">Research</span>
-            <div class="blog-card-title">How to run a user interview that actually reveals something</div>
-            <p class="blog-card-excerpt">Most interviews produce polite answers, not real insights. Here's how I structure sessions to get past the surface.</p>
-            <div class="blog-card-meta">February 2026 · 6 min read</div>
-            <span class="blog-card-link">Read more →</span>
-          </div>
-        </a>
+        <h2>Colour carries meaning before you assign it</h2>
 
-        <!-- Post 5 -->
-        <a class="blog-card" href="blog-going-independent.html">
-          <div class="blog-card-img" style="background: #dcfce7;">🌱</div>
-          <div class="blog-card-body">
-            <span class="blog-tag">Freelance</span>
-            <div class="blog-card-title">What nobody tells you about going independent</div>
-            <p class="blog-card-excerpt">The business side of freelance design is rarely taught. A few hard-learned lessons from building copenickerstudio.</p>
-            <div class="blog-card-meta">January 2026 · 7 min read</div>
-            <span class="blog-card-link">Read more →</span>
-          </div>
-        </a>
+        <p>Colours arrive with pre-existing associations. Some are cultural (white means purity in Western contexts, mourning in some Eastern ones). Some are psychological (red increases heart rate, blue creates calm). Some are industry-specific (green for health and sustainability, black for luxury).</p>
+
+        <p>Before choosing a colour, ask: what does this colour already mean to the people who will see it? You're not working from a blank slate — you're working with inherited associations, and you can use them or fight them. But you can't ignore them.</p>
+
+        <h2>The three roles of colour in a brand system</h2>
+
+        <h3>1. Primary colour — your identity</h3>
+        <p>This is the colour people associate with your brand. It should be distinct within your category (not the same blue as every other tech company), but not so unusual that it creates friction. Your primary colour does the heavy lifting of recognition.</p>
+
+        <h3>2. Supporting palette — your range of expression</h3>
+        <p>One colour isn't enough for a full design system. Supporting colours give you flexibility — for backgrounds, tags, states, data visualisation. The key is harmony: supporting colours should feel like they belong together, not like they were chosen on different days.</p>
+
+        <h3>3. Functional colours — your system language</h3>
+        <p>Error red, success green, warning amber — these colours aren't about brand expression, they're about communication clarity. They need to follow convention because users already know what they mean. Don't try to be creative here.</p>
+
+        <h2>A simple test for your colour palette</h2>
+
+        <p>Before finalising a palette, run it through these checks:</p>
+
+        <ul>
+          <li><strong>Contrast:</strong> Does text pass WCAG AA accessibility standards against your backgrounds?</li>
+          <li><strong>Colour blindness:</strong> Does your UI still work when viewed in greyscale or by someone with deuteranopia?</li>
+          <li><strong>Context:</strong> How does the palette look at small sizes, on dark backgrounds, in print?</li>
+          <li><strong>Meaning alignment:</strong> Does each colour communicate what you intend, given your industry and audience?</li>
+        </ul>
+
+        <h2>When "I just like it" isn't good enough</h2>
+
+        <p>Aesthetic preference is real and valid. But in professional design, colour choices need to be defensible — not just to you, but to your client, their marketing team, their developers, and ultimately their users.</p>
+
+        <p>When I present a colour direction, I don't say "I think this looks nice." I say: "This colour is associated with trust in financial contexts, it differentiates you from your two main competitors who both use blue, and it passes accessibility standards at all required contrast levels."</p>
+
+        <p>That's what makes a colour choice a design decision rather than a guess.</p>
 
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
+  <!-- CTA -->
   <section class="section">
     <div class="container">
       <div class="cta-section">
         <div class="cta-section-text">
-          <h2 class="canela-heading">Stay in the <span class="underline-italic">loop</span>.</h2>
-          <p>New posts on design, process, and running a studio — straight to your inbox.</p>
+          <h2 class="canela-heading">Let's create <span class="underline-italic">together</span>.</h2>
+          <p>Big ideas start with a simple hello. Reach out and we'll take it from there.</p>
           <div class="cta-buttons">
-            <a href="contact.html" class="cta-button">Get in touch ↗</a>
+            <a href="services.html" class="cta-button-outline">See all services ↗</a>
+            <a href="contact.html" class="cta-button">Let's talk ↗</a>
           </div>
         </div>
         <div class="cta-section-image">
-          <img src="images/bannerimage.png" alt="Stay in the loop">
+          <img src="images/bannerimage.png" alt="Let's work together">
         </div>
       </div>
     </div>

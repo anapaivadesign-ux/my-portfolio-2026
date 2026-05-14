@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>How to run a user interview that actually reveals something — copenickerstudio®</title>
+  <meta name="description" content="Most user interviews produce polite answers, not real insights. Here's how to structure UX research sessions that get past the surface and uncover what users actually think." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="canonical" href="https://copenickerstudio.com/blog-user-interviews.html" />
+  <meta property="og:title" content="How to run a user interview that actually reveals something — copenickerstudio®" />
+  <meta property="og:description" content="Most user interviews produce polite answers, not real insights. Here's how to structure sessions to get past the surface." />
+  <meta property="og:url" content="https://copenickerstudio.com/blog-user-interviews.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://copenickerstudio.com/images/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .article-hero { padding: 80px 0 40px; }
+    .article-hero .blog-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: var(--gray-100);
+      color: var(--gray-600);
+      margin-bottom: 20px;
+    }
+    .article-hero h1 { font-size: clamp(2rem, 4vw, 3rem); max-width: 760px; }
+    .article-meta { font-size: 0.85rem; color: var(--gray-500); margin-top: 16px; }
+    .article-body { max-width: 720px; margin: 0 auto; padding: 40px 0 80px; }
+    .article-body p { font-size: 1.05rem; line-height: 1.8; color: var(--gray-700); margin-bottom: 1.5rem; }
+    .article-body h2 { font-size: 1.5rem; font-weight: 750; margin: 2.5rem 0 1rem; color: var(--black); }
+    .article-body h3 { font-size: 1.15rem; font-weight: 700; margin: 2rem 0 0.75rem; color: var(--black); }
+    .article-body ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }
+    .article-body ul li { font-size: 1.05rem; line-height: 1.8; color: var(--gray-700); margin-bottom: 0.5rem; }
+    .article-body blockquote {
+      border-left: 3px solid var(--black);
+      padding: 8px 0 8px 24px;
+      margin: 2rem 0;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--black);
+    }
+    .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 600; color: var(--gray-600); text-decoration: none; margin-bottom: 32px; }
+    .back-link:hover { color: var(--black); }
+    .do-dont { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 2rem 0; }
+    .do-dont-col { background: var(--gray-100); border-radius: 12px; padding: 20px 24px; }
+    .do-dont-col .label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px; }
+    .do-dont-col.do .label { color: #16a34a; }
+    .do-dont-col.dont .label { color: #dc2626; }
+    .do-dont-col ul { padding-left: 1.2rem; margin: 0; }
+    .do-dont-col ul li { font-size: 0.9rem; line-height: 1.7; color: var(--gray-700); margin-bottom: 4px; }
+    @media (max-width: 600px) { .do-dont { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="nav-logo">copenickerstudio®</a>
+    <button class="burger" id="burger" aria-label="Menu" onclick="this.classList.toggle('open');document.getElementById('navRight').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-right" id="navRight">
+      <ul class="nav-links">
+        <li><a href="index.html">Work</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="workshops.html">Workshops</a></li>
+      </ul>
+      <a href="contact.html" class="nav-cta">Let's talk ↗</a>
+    </div>
+  </nav>
+
+  <!-- Article Hero -->
+  <section class="article-hero">
+    <div class="container">
+      <a href="blog.html" class="back-link">← Back to Blog</a>
+      <span class="blog-tag">Research</span>
+      <h1 class="canela-heading">How to run a user interview that actually <span class="underline-italic">reveals</span> something.</h1>
+      <p class="article-meta">February 2026 · 6 min read · Ana Paiva</p>
+    </div>
+  </section>
+
+  <!-- Article Body -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="article-body">
+
+        <p>I've sat in on hundreds of user interviews over my career. And I can tell you: most of them produce the same thing. The user is polite. They say the product is "nice" or "easy to use." They don't mention the three things that confused them. They don't tell you about the workaround they invented because a core feature didn't work how they expected.</p>
+
+        <p>They're not lying. They're just being human. People are social. They don't want to criticise something to the face of the person who built it.</p>
+
+        <p>Good user interview technique is about creating the conditions where honest answers are possible. Here's how.</p>
+
+        <h2>Before the interview</h2>
+
+        <h3>Define what you need to learn</h3>
+        <p>Write down the three most important questions your team has about user behaviour — not about the product, about the behaviour. "Why do users abandon the checkout at step 3?" is a behaviour question. "Do users like our new checkout design?" is a product question. Research the behaviour; validate the design separately with usability testing.</p>
+
+        <h3>Recruit the right people</h3>
+        <p>Five interviews with the right participants are worth more than twenty with the wrong ones. Define your target user clearly — not "adults aged 25-45" but "people who have moved cities at least once in the last three years and currently manage their own finances." Specificity gets you signal.</p>
+
+        <h2>During the interview</h2>
+
+        <h3>Start by removing pressure</h3>
+        <p>Open every session with the same sentence: "I want to be clear — we're not testing you, we're testing the product. There are no wrong answers. If something is confusing, that's useful information for us, not a reflection on you." Say it and mean it. It changes the whole dynamic.</p>
+
+        <h3>Ask about the past, not the hypothetical</h3>
+
+        <div class="do-dont">
+          <div class="do-dont-col do">
+            <div class="label">Ask this</div>
+            <ul>
+              <li>"Tell me about the last time you did X."</li>
+              <li>"What happened when you tried to Y?"</li>
+              <li>"Walk me through what you did."</li>
+            </ul>
+          </div>
+          <div class="do-dont-col dont">
+            <div class="label">Not this</div>
+            <ul>
+              <li>"Would you ever use a feature like X?"</li>
+              <li>"Do you think you'd want Y?"</li>
+              <li>"How would you feel if Z?"</li>
+            </ul>
+          </div>
+        </div>
+
+        <p>Hypothetical questions get hypothetical answers. People are notoriously bad at predicting their own behaviour. Past behaviour, on the other hand, is real data.</p>
+
+        <h3>Follow the hesitations</h3>
+        <p>The most valuable moments in an interview are the pauses, the "well... it depends," the slight frowns. These are signals. Don't rush past them. Slow down. Ask: "I noticed you paused there — what were you thinking?" or "You said 'sort of' — can you tell me more about what you meant?"</p>
+
+        <blockquote>"The insight is never in the first answer. It's in what comes after the follow-up."</blockquote>
+
+        <h3>Embrace silence</h3>
+        <p>Most interviewers talk too much. When a user finishes answering, resist the urge to respond immediately. Count to three in your head. The silence is often uncomfortable enough that the user will keep talking — and what they say next is usually more honest than their first answer.</p>
+
+        <h2>After the interview</h2>
+
+        <p>Write your notes within an hour while the memory is fresh. Focus on behaviours, quotes, and moments of confusion — not your interpretations. Save the analysis for when you have data from multiple sessions and can look for patterns across participants rather than treating any one person's experience as universal.</p>
+
+        <p>Good user research is a skill that improves with practice. But these principles — asking about the past, following hesitations, embracing silence — will make your very next interview more useful than your last.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-section">
+        <div class="cta-section-text">
+          <h2 class="canela-heading">Let's create <span class="underline-italic">together</span>.</h2>
+          <p>Big ideas start with a simple hello. Reach out and we'll take it from there.</p>
+          <div class="cta-buttons">
+            <a href="services.html" class="cta-button-outline">See all services ↗</a>
+            <a href="contact.html" class="cta-button">Let's talk ↗</a>
+          </div>
+        </div>
+        <div class="cta-section-image">
+          <img src="images/bannerimage.png" alt="Let's work together">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients -->
+  <section class="clients-bar">
+    <p class="clients-label">Brands I've worked with</p>
+    <div class="clients-track-wrap">
+      <div class="clients-track">
+        <img src="images/logos/AKQA-Logo 1.svg" alt="AKQA">
+        <img src="images/logos/DPX_Typologo_black 1.svg" alt="DPX">
+        <img src="images/logos/foodora-logo 1.svg" alt="Foodora">
+        <img src="images/logos/60a62aad0f25c64e47260856_wayra-telefonica-innovation-white 1.svg" alt="Wayra Telefonica">
+        <img src="images/logos/logo-lightmode 1.svg" alt="Client">
+        <img src="images/logos/Layer_1.svg" alt="Client">
+        <img src="images/logos/image 63.svg" alt="Client">
+        <img src="images/logos/image 65.svg" alt="Client">
+        <img src="images/logos/Vector.svg" alt="Client">
+        <img src="images/logos/AKQA-Logo 1.svg" alt="AKQA">
+        <img src="images/logos/DPX_Typologo_black 1.svg" alt="DPX">
+        <img src="images/logos/foodora-logo 1.svg" alt="Foodora">
+        <img src="images/logos/60a62aad0f25c64e47260856_wayra-telefonica-innovation-white 1.svg" alt="Wayra Telefonica">
+        <img src="images/logos/logo-lightmode 1.svg" alt="Client">
+        <img src="images/logos/Layer_1.svg" alt="Client">
+        <img src="images/logos/image 63.svg" alt="Client">
+        <img src="images/logos/image 65.svg" alt="Client">
+        <img src="images/logos/Vector.svg" alt="Client">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-col">
+        <h3>copenickerstudio®</h3>
+        <p>Consulting. Design. Experience.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <p><a href="index.html">Work</a></p>
+        <p><a href="services.html">Services</a></p>
+        <p><a href="about.html">About</a></p>
+        <p><a href="blog.html">Blog</a></p>
+        <p><a href="workshops.html">Workshops</a></p>
+        <p><a href="contact.html">Contact</a></p>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p><a href="mailto:ana@copenickerstudio.com">ana@copenickerstudio.com</a></p>
+        <p>Berlin · Lisboa · Remote</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/anapaivadesign/" target="_blank" title="LinkedIn">in</a>
+          <a href="https://www.instagram.com/copenicker" target="_blank" title="Instagram">ig</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 copenickerstudio®. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="wa-widget">
+    <div class="wa-panel" id="waPanel">
+      <div class="wa-panel-header">
+        <img class="wa-avatar" src="images/ana-profile.png" alt="Ana">
+        <div class="wa-panel-header-info">
+          <strong>copenickerstudio®</strong>
+          <span>Typically replies instantly</span>
+        </div>
+        <button class="wa-close" onclick="document.getElementById('waPanel').classList.remove('open')">&times;</button>
+      </div>
+      <div class="wa-body">
+        <div class="wa-bubble">Hi there! 👋 How can we help you?<span>now</span></div>
+      </div>
+      <a class="wa-start" href="https://wa.me/491746290656" target="_blank">Start chat</a>
+    </div>
+    <button class="wa-btn" onclick="document.getElementById('waPanel').classList.toggle('open')" aria-label="Chat on WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </button>
+  </div>
+
+  <div class="cursor" id="cursor"></div>
+  <script>
+    const cursor = document.getElementById("cursor");
+    document.addEventListener("mousemove", e => {
+      cursor.style.left = e.clientX + "px";
+      cursor.style.top = e.clientY + "px";
+    });
+    document.querySelectorAll("a, button").forEach(el => {
+      el.addEventListener("mouseenter", () => cursor.classList.add("hover"));
+      el.addEventListener("mouseleave", () => cursor.classList.remove("hover"));
+    });
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add("visible"); revealObserver.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll(".section").forEach(el => {
+      el.classList.add("reveal");
+      revealObserver.observe(el);
+    });
+  </script>
+
+</body>
+</html>
