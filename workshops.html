@@ -168,53 +168,7 @@
       box-shadow: var(--shadow);
     }
 
-    .ws-banner {
-      background: var(--black);
-      border-radius: 18px;
-      padding: 48px;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 32px;
-      align-items: center;
-      margin-top: 48px;
-    }
-
-    .ws-banner-title {
-      font-family: 'Canela', Georgia, serif;
-      font-weight: 400;
-      font-size: clamp(1.4rem, 2vw, 1.9rem);
-      letter-spacing: -0.02em;
-      color: var(--white);
-      line-height: 1.2;
-    }
-
-    .ws-banner-sub {
-      margin-top: 8px;
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.6;
-      max-width: 48ch;
-    }
-
-    .ws-banner-btn {
-      display: inline-block;
-      padding: 14px 28px;
-      background: var(--white);
-      color: var(--black);
-      border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      text-decoration: none;
-      white-space: nowrap;
-      flex-shrink: 0;
-      transition: transform 120ms ease;
-    }
-
-    .ws-banner-btn:hover { transform: translateY(-2px); }
-
-    @media (max-width: 768px) {
+@media (max-width: 768px) {
       .ws-item { grid-template-columns: 1fr; gap: 16px; }
       .ws-item-right { align-items: flex-start; flex-direction: row; align-items: center; }
       .ws-banner { grid-template-columns: 1fr; padding: 32px 24px; }
@@ -377,14 +331,24 @@
 
       </div>
 
-      <div class="ws-banner">
-        <div>
-          <div class="ws-banner-title">Need something tailored for your team?</div>
-          <div class="ws-banner-sub">Every team is different. I'll design a session around your specific challenge, size, and schedule — and come back with a proposal within 48 hours.</div>
-        </div>
-        <a href="contact.html" class="ws-banner-btn">Let's talk ↗</a>
-      </div>
+    </div>
+  </section>
 
+  <!-- CTA Section -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-section">
+        <div class="cta-section-text">
+          <h2 class="canela-heading">Need something <span class="underline-italic">tailored</span>?</h2>
+          <p>Every team is different. I'll design a session around your specific challenge, size, and schedule — and come back with a proposal within 48 hours.</p>
+          <div class="cta-buttons">
+            <a href="contact.html" class="cta-button">Let's talk ↗</a>
+          </div>
+        </div>
+        <div class="cta-section-image">
+          <img src="images/bannerimage.png" alt="Let's work together">
+        </div>
+      </div>
     </div>
   </section>
 
