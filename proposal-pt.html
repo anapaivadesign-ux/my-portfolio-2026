@@ -373,9 +373,16 @@
     .pros-cons ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
     .pros-cons li { font-size: 0.82rem; display: flex; gap: 6px; align-items: flex-start; color: var(--gray-600); }
 
+    .conditions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
     @media (max-width: 760px) {
       .plans { grid-template-columns: 1fr !important; }
       .needs-grid { grid-template-columns: 1fr !important; }
+      .conditions-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 640px) {
@@ -387,7 +394,10 @@
       .process-steps { grid-template-columns: 1fr 1fr; }
       .footer { flex-direction: column; align-items: flex-start; }
       .intro-layout { flex-direction: column; }
-      .intro-layout img { width: 100% !important; }
+      .intro-layout img { display: none; }
+      .needs-grid { grid-template-columns: 1fr !important; }
+      .conditions-grid { grid-template-columns: 1fr; }
+      .pros-cons { grid-template-columns: 1fr; }
     }
   </style>
   <!-- Google tag (gtag.js) -->
@@ -793,7 +803,7 @@
   <!-- Condições de trabalho -->
   <section>
     <div class="section-title">Condições de trabalho</div>
-    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;">
+    <div class="conditions-grid">
 
       <div style="background:var(--gray-100); border-radius:12px; padding:24px;">
         <div style="font-weight:700; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--gray-400); margin-bottom:14px;">Pagamento</div>
