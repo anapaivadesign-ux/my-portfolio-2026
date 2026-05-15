@@ -348,16 +348,17 @@
     .plan-more-items.open { max-height: 1200px; }
     .plan-toggle-btn {
       display: block;
-      margin: 14px auto 0;
-      background: var(--gray-100);
-      border: 1px solid var(--border);
+      margin: 16px auto 0;
+      background: transparent;
+      border: 1.5px solid rgba(11,11,15,0.2);
       border-radius: 999px;
       cursor: pointer;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--gray-600);
-      padding: 7px 20px;
-      letter-spacing: 0.04em;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--black);
+      padding: 10px 22px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
       transition: background 160ms, color 160ms, border-color 160ms;
       text-align: center;
     }
@@ -486,7 +487,7 @@
               <li>Integração de reservas Calendly</li>
               <li>Consultoria/coaching: 2h</li>
             </ul>
-            <button class="plan-toggle-btn" onclick="toggleMore('more-a', this)">Ver mais ▾</button>
+            <button class="plan-toggle-btn" onclick="toggleMore('more-a', this)">Ver mais ↓</button>
           </div>
           <div class="plan-more-items" id="more-a">
             <div style="margin-top:16px;">
@@ -552,7 +553,7 @@
               <li>Integração de reservas Calendly</li>
               <li>Consultoria/coaching: 4h</li>
             </ul>
-            <button class="plan-toggle-btn" onclick="toggleMore('more-b', this)">Ver mais ▾</button>
+            <button class="plan-toggle-btn" onclick="toggleMore('more-b', this)">Ver mais ↓</button>
           </div>
           <div class="plan-more-items" id="more-b">
             <div style="margin-top:16px;">
@@ -618,7 +619,7 @@
               <li>SEO básico mantido</li>
               <li>Sem necessidade de conhecimentos técnicos</li>
             </ul>
-            <button class="plan-toggle-btn" onclick="toggleMore('more-c', this)">Ver mais ▾</button>
+            <button class="plan-toggle-btn" onclick="toggleMore('more-c', this)">Ver mais ↓</button>
           </div>
           <div class="plan-more-items" id="more-c">
             <div style="margin-top:16px;">
