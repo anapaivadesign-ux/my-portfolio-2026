@@ -347,12 +347,25 @@
     .plan-more-items { overflow: hidden; max-height: 0; transition: max-height 400ms ease; }
     .plan-more-items.open { max-height: 1200px; }
     .plan-toggle-btn {
-      background: none; border: none; cursor: pointer;
-      font-size: 0.78rem; font-weight: 600; color: var(--gray-400);
-      padding: 6px 0 0; display: flex; align-items: center; gap: 4px;
-      letter-spacing: 0.02em; transition: color 160ms;
+      display: block;
+      margin: 14px auto 0;
+      background: var(--gray-100);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gray-600);
+      padding: 7px 20px;
+      letter-spacing: 0.04em;
+      transition: background 160ms, color 160ms, border-color 160ms;
+      text-align: center;
     }
-    .plan-toggle-btn:hover { color: var(--black); }
+    .plan-toggle-btn:hover {
+      background: var(--black);
+      color: var(--white);
+      border-color: var(--black);
+    }
 
     .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .pros-cons-col-title { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
