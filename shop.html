@@ -3,155 +3,158 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SIMCON UI/UX copenicker . studio</title>
-  <meta name="description" content="SIMCON UI/UX — redesigned platform with scalable design system, component library and SVG animations." />
+  <title>Shop — copenicker . studio</title>
+  <meta name="description" content="Art prints and illustrated works by Ana Paiva. Printed on quality paper, shipped worldwide." />
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="canonical" href="https://copenickerstudio.com/simcon.html" />
+  <link rel="canonical" href="https://copenickerstudio.com/shop.html" />
+  <meta property="og:title" content="Shop — copenicker . studio" />
+  <meta property="og:description" content="Art prints and illustrated works by Ana Paiva. Printed on quality paper, shipped worldwide." />
+  <meta property="og:url" content="https://copenickerstudio.com/shop.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://copenickerstudio.com/images/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="styles.css" />
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <style>
-    .simcon-hero {
-      padding: 80px 0 0;
-    }
-
-    .simcon-hero-inner {
+    .shop-grid {
       display: grid;
-      gap: 32px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
     }
 
-    .simcon-tags {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .simcon-kv {
-      width: 100%;
-      border-radius: 16px;
+    .product-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
       overflow: hidden;
-      background: var(--gray-100);
-      aspect-ratio: 16 / 9;
-      margin-top: 48px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 160ms ease, box-shadow 160ms ease;
     }
 
-    .simcon-kv img {
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .product-img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gray-100);
+      font-size: 3rem;
+    }
+
+    .product-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
     }
 
-    .simcon-kv.placeholder {
+    .product-body {
+      padding: 20px;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--gray-400);
-      font-size: 0.9rem;
-      letter-spacing: 0.04em;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
     }
 
-    .simcon-body {
-      display: grid;
-      grid-template-columns: 1fr 320px;
-      gap: 64px;
-      align-items: start;
-      padding: 72px 0 80px;
-    }
-
-    .simcon-sections {
-      display: grid;
-      gap: 72px;
-    }
-
-    .simcon-section {
-      display: grid;
-      gap: 20px;
-    }
-
-    .simcon-section-label {
-      font-size: 0.78rem;
-      font-weight: 650;
-      letter-spacing: 0.1em;
+    .product-tag {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--gray-400);
     }
 
-    .simcon-section h2 {
-      font-size: 1.6rem;
-      font-weight: 650;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
+    .product-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.3;
     }
 
-    .simcon-section p {
-      font-size: 1.05rem;
+    .product-desc {
+      font-size: 0.85rem;
       color: var(--gray-600);
-      line-height: 1.85;
+      line-height: 1.6;
+      flex: 1;
     }
 
-    .simcon-image {
-      width: 100%;
-      border-radius: 12px;
-      overflow: hidden;
-      background: var(--gray-100);
-      aspect-ratio: 16 / 10;
-      margin-top: 8px;
-    }
-
-    .simcon-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .simcon-image.placeholder {
+    .product-footer {
       display: flex;
       align-items: center;
-      justify-content: center;
-      color: var(--gray-400);
-      font-size: 0.85rem;
+      justify-content: space-between;
+      margin-top: 12px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .product-price {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--black);
+    }
+
+    .product-buy-btn {
+      background: var(--black);
+      color: var(--white);
+      border: none;
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-size: 0.78rem;
+      font-weight: 700;
       letter-spacing: 0.04em;
+      text-decoration: none;
+      cursor: pointer;
+      transition: opacity 160ms;
     }
 
-    .simcon-image-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-top: 8px;
+    .product-buy-btn:hover { opacity: 0.75; }
+
+    .shop-filter {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
     }
 
-    .simcon-image-grid .simcon-image {
-      margin-top: 0;
-    }
-
-    .simcon-sidebar {
-      position: sticky;
-      top: 100px;
-    }
-
-    .simcon-sidebar .case-panel {
-      background: var(--gray-50, #fafafa);
+    .filter-btn {
+      background: none;
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 32px;
+      border-radius: 999px;
+      padding: 6px 16px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--gray-600);
+      cursor: pointer;
+      transition: all 160ms;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--black);
+      color: var(--white);
+      border-color: var(--black);
+    }
+
+    .shop-empty {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 80px 24px;
+      color: var(--gray-400);
+      font-size: 0.95rem;
     }
 
     @media (max-width: 900px) {
-      .simcon-body {
-        grid-template-columns: 1fr;
-        gap: 48px;
-        padding: 48px 0 64px;
-      }
+      .shop-grid { grid-template-columns: repeat(2, 1fr); }
+    }
 
-      .simcon-sidebar {
-        position: static;
-        order: -1;
-      }
-
-      .simcon-image-grid {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width: 560px) {
+      .shop-grid { grid-template-columns: 1fr; }
     }
   </style>
   <!-- Google tag (gtag.js) -->
@@ -173,109 +176,106 @@
     </button>
     <div class="nav-right" id="navRight">
       <ul class="nav-links">
-        <li><a href="index.html" class="active">Work</a></li>
+        <li><a href="index.html">Work</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="about.html">About</a></li>
+        <li><a href="shop.html" class="active">Shop</a></li>
       </ul>
       <a href="contact.html" class="nav-cta">Let's talk ↗</a>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section class="section simcon-hero">
+  <section class="hero">
     <div class="container">
-      <div class="simcon-hero-inner">
-        <div>
-          <a class="link-arrow" href="index.html">← Back to work</a>
-          <h1 class="case-title" style="margin-top: 56px;">SIMCON</h1>
-          <p class="hero-subtitle" style="max-width: 60ch; margin-top: 16px;">
-            Redesigning a platform with a scalable design system, component library, and SVG animations to enhance usability and team collaboration.
-          </p>
-          <div class="simcon-tags" style="margin-top: 24px;">
-            <span class="tag">UI/UX Design</span>
-            <span class="tag">Design System</span>
-            <span class="tag">Figma</span>
-            <span class="tag">SVG Animation</span>
+      <div class="hero-content">
+        <h1 class="canela-heading">Original <span class="underline-italic">prints</span>.</h1>
+        <p class="hero-subtitle">Illustrated works printed on quality paper — ready to hang.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shop -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container wide-container">
+
+      <!-- Filters -->
+      <div class="shop-filter">
+        <button class="filter-btn active">All</button>
+        <button class="filter-btn">Illustration</button>
+        <button class="filter-btn">Typography</button>
+        <button class="filter-btn">Abstract</button>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="shop-grid">
+
+        <!-- Product 1 -->
+        <div class="product-card">
+          <div class="product-img" style="background:#e8d5c4;">
+            <img src="images/bannerimage.png" alt="Print 1" style="object-fit:contain; padding:32px; opacity:0.6;">
+          </div>
+          <div class="product-body">
+            <span class="product-tag">Illustration · A4</span>
+            <div class="product-title">Coming soon</div>
+            <p class="product-desc">New prints launching soon. Follow on Instagram for the first look.</p>
+            <div class="product-footer">
+              <span class="product-price">—</span>
+              <a href="https://www.instagram.com/copenicker" target="_blank" class="product-buy-btn">Follow ↗</a>
+            </div>
           </div>
         </div>
 
-        <div class="simcon-kv" style="background: #0a0a1a; display:flex; align-items:center; justify-content:center;">
-          <lottie-player src="images/simcon images/simcon.json" background="transparent" speed="1" loop autoplay style="width:100%;height:100%;"></lottie-player>
+        <!-- Product 2 -->
+        <div class="product-card">
+          <div class="product-img" style="background:#c7d9f5;">
+            <img src="images/bannerimage.png" alt="Print 2" style="object-fit:contain; padding:32px; opacity:0.6;">
+          </div>
+          <div class="product-body">
+            <span class="product-tag">Illustration · A4</span>
+            <div class="product-title">Coming soon</div>
+            <p class="product-desc">New prints launching soon. Follow on Instagram for the first look.</p>
+            <div class="product-footer">
+              <span class="product-price">—</span>
+              <a href="https://www.instagram.com/copenicker" target="_blank" class="product-buy-btn">Follow ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card">
+          <div class="product-img" style="background:#d4c5f5;">
+            <img src="images/bannerimage.png" alt="Print 3" style="object-fit:contain; padding:32px; opacity:0.6;">
+          </div>
+          <div class="product-body">
+            <span class="product-tag">Illustration · A4</span>
+            <div class="product-title">Coming soon</div>
+            <p class="product-desc">New prints launching soon. Follow on Instagram for the first look.</p>
+            <div class="product-footer">
+              <span class="product-price">—</span>
+              <a href="https://www.instagram.com/copenicker" target="_blank" class="product-buy-btn">Follow ↗</a>
+            </div>
+          </div>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- Body -->
-  <section class="section" style="padding-top: 0;">
+  <!-- CTA -->
+  <section class="section">
     <div class="container">
-      <div class="simcon-body">
-
-        <!-- Main content -->
-        <div class="simcon-sections">
-
-          <div class="simcon-section">
-            <span class="simcon-section-label">01 — Implementation</span>
-            <h2>Building the system</h2>
-            <p>Worked closely with the team to create high-fidelity UI screens in Figma, adhering to Simcon's brand guidelines and design system standards. Focused on clear hierarchy, simplicity, and consistent styling across components. Updated and maintained the component library, and designed SVG animations to subtly enhance user interactions while maintaining usability.</p>
-            <div class="simcon-image" style="background:#f5f5f5;">
-              <object data="images/simcon images/simcon-detail-2.svg" type="image/svg+xml" style="width:100%;height:100%;object-fit:contain;display:block;"></object>
-            </div>
-            <div class="simcon-image-grid">
-              <div class="simcon-image" style="background:#f5f5f5;">
-                <object data="images/simcon images/simcon-detail-3.svg" type="image/svg+xml" style="width:100%;height:100%;object-fit:contain;display:block;"></object>
-              </div>
-              <div class="simcon-image" style="background:#f5f5f5;">
-                <object data="images/simcon images/simcon-detail-4.svg" type="image/svg+xml" style="width:100%;height:100%;object-fit:contain;display:block;"></object>
-              </div>
-            </div>
+      <div class="cta-section">
+        <div class="cta-section-text">
+          <h2 class="canela-heading">Want something <span class="underline-italic">custom</span>?</h2>
+          <p>Commission a one-of-a-kind illustration for your space, your brand, or someone you love.</p>
+          <div class="cta-buttons">
+            <a href="contact.html" class="cta-button">Get in touch ↗</a>
           </div>
-
-          <div class="simcon-section">
-            <span class="simcon-section-label">02 — Results</span>
-            <h2>A system ready to scale</h2>
-            <p>The redesigned platform now features a scalable, well-organized design system and component library that streamlines development and design collaboration at Simcon. Interactive SVG animations improved user engagement and enhanced the overall experience. The system is ready for deployment and continuous updates based on team and user feedback.</p>
-            <div class="simcon-image" style="background:#f5f5f5;">
-              <object data="images/simcon images/simcon-detail-5.svg" type="image/svg+xml" style="width:100%;height:100%;object-fit:contain;display:block;"></object>
-            </div>
-          </div>
-
-          <div class="simcon-section">
-            <span class="simcon-section-label">03 — Learnings</span>
-            <h2>Teamwork makes systems work</h2>
-            <p>This project reinforced the importance of teamwork in maintaining a consistent, usable, and interactive design system. Supporting the component library and introducing SVG animations highlighted how small details create meaningful improvements in both the design process and the end-user experience.</p>
-          </div>
-
         </div>
-
-        <!-- Sidebar -->
-        <aside class="simcon-sidebar">
-          <div class="case-panel">
-            <div class="case-h3">Project details</div>
-            <div class="dl">
-              <div class="dl-row">
-                <div class="dt">Client</div>
-                <div class="dd">SIMCON</div>
-              </div>
-              <div class="dl-row">
-                <div class="dt">Service</div>
-                <div class="dd">UI/UX Design</div>
-              </div>
-              <div class="dl-row">
-                <div class="dt">Deliverables</div>
-                <div class="dd">UI screens, component library, SVG animations</div>
-              </div>
-              <div class="dl-row">
-                <div class="dt">Tools</div>
-                <div class="dd">Figma</div>
-              </div>
-            </div>
-            <div style="height: 8px;"></div>
-            <a class="cta-button" href="contact.html">Start a project ↗</a>
-          </div>
-        </aside>
-
+        <div class="cta-section-image">
+          <img src="images/bannerimage.png" alt="Custom illustration">
+        </div>
       </div>
     </div>
   </section>
@@ -329,9 +329,10 @@
         <p><a href="index.html">Work</a></p>
         <p><a href="services.html">Services</a></p>
         <p><a href="about.html">About</a></p>
-        <p><a href="contact.html">Contact</a></p>
         <p><a href="blog.html">Blog</a></p>
         <p><a href="workshops.html">Workshops</a></p>
+        <p><a href="shop.html">Shop</a></p>
+        <p><a href="contact.html">Contact</a></p>
       </div>
       <div class="footer-col">
         <h3>Contact</h3>
@@ -379,7 +380,6 @@
       el.addEventListener("mouseenter", () => cursor.classList.add("hover"));
       el.addEventListener("mouseleave", () => cursor.classList.remove("hover"));
     });
-
     const revealObserver = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) { e.target.classList.add("visible"); revealObserver.unobserve(e.target); }
