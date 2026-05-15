@@ -335,6 +335,16 @@
       .plan { break-inside: avoid; }
     }
 
+    .plan-more-items { overflow: hidden; max-height: 0; transition: max-height 300ms ease; }
+    .plan-more-items.open { max-height: 400px; }
+    .plan-toggle-btn {
+      background: none; border: none; cursor: pointer;
+      font-size: 0.78rem; font-weight: 600; color: var(--gray-400);
+      padding: 6px 0 0; display: flex; align-items: center; gap: 4px;
+      letter-spacing: 0.02em; transition: color 160ms;
+    }
+    .plan-toggle-btn:hover { color: var(--black); }
+
     .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .pros-cons-col-title { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
     .pros-cons ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
@@ -448,11 +458,16 @@
               <li>Design baseado num template Wix, personalizado para a tua marca</li>
               <li>Geres todo o conteúdo tu mesmo (sem código)</li>
               <li>Responsivo (mobile + desktop)</li>
-              <li>SEO básico incluído</li>
-              <li>Integração de pagamentos Stripe</li>
-              <li>Integração de reservas Calendly</li>
-              <li>Consultoria/coaching: 2h</li>
             </ul>
+            <div class="plan-more-items" id="more-a">
+              <ul class="plan-list" style="margin-top:8px;">
+                <li>SEO básico incluído</li>
+                <li>Integração de pagamentos Stripe</li>
+                <li>Integração de reservas Calendly</li>
+                <li>Consultoria/coaching: 2h</li>
+              </ul>
+            </div>
+            <button class="plan-toggle-btn" onclick="toggleMore('more-a', this)">Ver mais ↓</button>
           </div>
           <div>
             <div class="plan-col-title">Estimativa de tempo</div>
@@ -512,13 +527,18 @@
               <li>Design baseado nas tuas referências</li>
               <li>Desenvolvimento em Next.js</li>
               <li>Alojado no Vercel</li>
-              <li>Código versionado no GitHub</li>
-              <li>Deploy automático em cada atualização</li>
-              <li>Responsivo (mobile + desktop)</li>
-              <li>SEO básico incluído</li>
-              <li>Integração de pagamentos Stripe</li>
-              <li>Integração de reservas Calendly</li>
             </ul>
+            <div class="plan-more-items" id="more-b">
+              <ul class="plan-list" style="margin-top:8px;">
+                <li>Código versionado no GitHub</li>
+                <li>Deploy automático em cada atualização</li>
+                <li>Responsivo (mobile + desktop)</li>
+                <li>SEO básico incluído</li>
+                <li>Integração de pagamentos Stripe</li>
+                <li>Integração de reservas Calendly</li>
+              </ul>
+            </div>
+            <button class="plan-toggle-btn" onclick="toggleMore('more-b', this)">Ver mais ↓</button>
           </div>
           <div>
             <div class="plan-col-title">Estimativa de tempo</div>
@@ -578,10 +598,15 @@
               <li>Alojamento da nossa parte</li>
               <li>Suporte 24h via WhatsApp</li>
               <li>2 alterações de conteúdo/mês incluídas</li>
-              <li>Design responsivo (mobile + desktop)</li>
-              <li>SEO básico mantido</li>
-              <li>Sem necessidade de conhecimentos técnicos</li>
             </ul>
+            <div class="plan-more-items" id="more-c">
+              <ul class="plan-list" style="margin-top:8px;">
+                <li>Design responsivo (mobile + desktop)</li>
+                <li>SEO básico mantido</li>
+                <li>Sem necessidade de conhecimentos técnicos</li>
+              </ul>
+            </div>
+            <button class="plan-toggle-btn" onclick="toggleMore('more-c', this)">Ver mais ↓</button>
           </div>
           <div>
             <div class="plan-col-title">Preços de setup</div>
@@ -761,5 +786,12 @@
   </div>
 
 </div>
+<script>
+  function toggleMore(id, btn) {
+    const el = document.getElementById(id);
+    const open = el.classList.toggle('open');
+    btn.textContent = open ? 'Ver menos ↑' : 'Ver mais ↓';
+  }
+</script>
 </body>
 </html>
