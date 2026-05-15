@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Use Notion as your website's CMS — no code needed — copenicker . studio</title>
+  <meta name="description" content="If you keep going back to Claude every time you want to change a headline or swap an image, there's a better way. Set up Notion as your content layer and update your site without touching code." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="canonical" href="https://copenickerstudio.com/blog-notion-cms.html" />
+  <meta property="og:title" content="Use Notion as your website's CMS — no code needed — copenicker . studio" />
+  <meta property="og:description" content="Set up Notion as your site's content layer and update copy, images, and layout from a spreadsheet. No code, no Claude, no stress." />
+  <meta property="og:url" content="https://copenickerstudio.com/blog-notion-cms.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://copenickerstudio.com/images/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2WCSR9CKQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-N2WCSR9CKQ");
+  </script>
+  <style>
+    .article-hero { padding: 100px 0 48px; }
+    .article-hero .blog-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: var(--gray-100);
+      color: var(--gray-600);
+      margin-bottom: 20px;
+    }
+    .article-hero h1 { font-size: clamp(2rem, 4vw, 3rem); max-width: 760px; }
+    .article-meta { font-size: 0.85rem; color: var(--gray-500); margin-top: 16px; }
+    .article-body { max-width: 720px; margin: 0 auto; padding: 40px 0 80px; }
+    .article-body p { font-size: 1.05rem; line-height: 1.8; color: var(--gray-700); margin-bottom: 1.5rem; }
+    .article-body h2 { font-size: 1.5rem; font-weight: 750; margin: 2.5rem 0 1rem; color: var(--black); }
+    .article-body h3 { font-size: 1.15rem; font-weight: 700; margin: 2rem 0 0.75rem; color: var(--black); }
+    .article-body ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }
+    .article-body ul li { font-size: 1.05rem; line-height: 1.8; color: var(--gray-700); margin-bottom: 0.5rem; }
+    .article-body ol { padding-left: 1.5rem; margin-bottom: 1.5rem; }
+    .article-body ol li { font-size: 1.05rem; line-height: 1.8; color: var(--gray-700); margin-bottom: 0.75rem; }
+    .article-body blockquote {
+      border-left: 3px solid var(--black);
+      padding: 8px 0 8px 24px;
+      margin: 2rem 0;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--black);
+    }
+    .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 600; color: var(--gray-600); text-decoration: none; margin-bottom: 40px; padding: 10px 18px; border: 1px solid var(--border); border-radius: 999px; transition: background 160ms ease; }
+    .back-link:hover { color: var(--black); }
+    .callout {
+      background: var(--gray-100);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 2rem 0;
+      font-size: 1rem;
+      color: var(--gray-700);
+      line-height: 1.75;
+    }
+    .callout strong { color: var(--black); }
+    .vocab-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 2rem; font-size: 0.95rem; }
+    .vocab-table th { text-align: left; padding: 10px 16px; background: var(--black); color: var(--white); font-weight: 600; }
+    .vocab-table th:first-child { border-radius: 10px 0 0 0; }
+    .vocab-table th:last-child { border-radius: 0 10px 0 0; }
+    .vocab-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .vocab-table tr:nth-child(even) td { background: var(--gray-100); }
+    .vocab-table td:first-child { font-weight: 600; color: var(--black); white-space: nowrap; }
+    .vocab-table td:last-child { color: var(--gray-600); }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="nav-logo">copenicker . studio</a>
+    <button class="burger" id="burger" aria-label="Menu" onclick="this.classList.toggle('open');document.getElementById('navRight').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-right" id="navRight">
+      <ul class="nav-links">
+        <li><a href="index.html">Work</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="workshops.html">Workshops</a></li>
+      </ul>
+      <a href="contact.html" class="nav-cta">Let's talk ↗</a>
+    </div>
+  </nav>
+
+  <!-- Article Hero -->
+  <section class="article-hero">
+    <div class="container">
+      <a href="blog.html" class="back-link">← Back to Blog</a>
+      <span class="blog-tag">Tools</span>
+      <h1 class="canela-heading">Use Notion as your website's <span class="underline-italic">CMS</span>. No code needed.</h1>
+      <p class="article-meta">May 2026 · 7 min read · Ana Paiva</p>
+    </div>
+  </section>
+
+  <!-- Article Body -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="article-body">
+
+        <p>If you used Claude to help you build your website, there's a good chance you're still going back to it every time you want to change a headline, swap an image, or move a section around. This guide shows you how to stop doing that.</p>
+
+        <p>The idea is simple: you set up a Notion database that acts as your site's content layer. Claude reads from it and renders your site accordingly. Once it's set up, you can manage a lot of things from Notion — no code, no reopening Claude for small updates.</p>
+
+        <div class="callout">
+          <strong>What you'll end up with:</strong> A Notion database that controls your website's content, images, layout styles, and what's visible. You update Notion, refresh your site, it's done.
+        </div>
+
+        <p>This works best for portfolio sites, case study pages, landing pages, or any site where you want to update content without touching code regularly.</p>
+
+        <h2>Before you start</h2>
+
+        <p><strong>What you need:</strong></p>
+        <ul>
+          <li>A Notion account (free plan works fine)</li>
+          <li>A website Claude helped you build (or any site where you can edit the code)</li>
+          <li>A Claude subscription (any plan)</li>
+        </ul>
+
+        <p><strong>What you don't need:</strong></p>
+        <ul>
+          <li>Coding knowledge — Claude handles the technical parts</li>
+          <li>Any external tools or paid integrations</li>
+        </ul>
+
+        <h2>Quick vocabulary</h2>
+
+        <p>A few terms that will come up. Skip this if you're already comfortable with these.</p>
+
+        <table class="vocab-table">
+          <thead>
+            <tr><th>Term</th><th>What it means</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Notion database</td><td>A Notion page that looks like a table, where each row is a piece of content and each column is a property (like title, image, layout style). Think of it like a structured spreadsheet, but inside Notion.</td></tr>
+            <tr><td>Notion API</td><td>The bridge that lets your site read data from your Notion workspace automatically.</td></tr>
+            <tr><td>Property</td><td>A column in your Notion database. Each row (content piece) can have different property types: text, image, checkbox, select option, number, etc.</td></tr>
+            <tr><td>Headless CMS</td><td>A tool that lets you edit content without touching code. "Headless" just means the CMS (Notion, in this case) is separate from the website itself.</td></tr>
+            <tr><td>Slug</td><td>The URL-friendly version of a page name. For example, the case study "Learn.xyz" would have the slug <em>learn-xyz</em>, making the URL <em>yoursite.com/work/learn-xyz</em>.</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Part 1: Set up your Notion database</h2>
+
+        <p>This is where you build the structure that will power your site. Think of each row as one piece of content (a case study, a section, a project) and each column as a detail about it.</p>
+
+        <p>Here's the thing most people don't realise: you don't have to build this manually, column by column. You can just describe what you need to Claude and it will set up the entire database structure for you in seconds — the right property types, the right options, all of it. This is especially useful when your database is complex.</p>
+
+        <p>But first — Claude needs to be connected to Notion before it can do any of that.</p>
+
+        <ol>
+          <li><strong>Connect Notion to Claude.</strong> In Claude, go to Integrations and connect your Notion workspace. This gives Claude read and write access to your databases.</li>
+          <li><strong>Let Claude build the database for you.</strong> Tell Claude what your site needs — "I have a portfolio with case studies, each with a title, cover image, tags, and a summary" — and ask it to create a Notion database with the right structure.</li>
+          <li><strong>Fill in your first rows.</strong> Add a few real entries so you have something to test with. Cover images should be stored as URLs (from GitHub, Cloudinary, or wherever your site files live) rather than uploaded directly into Notion — it keeps your site fast.</li>
+        </ol>
+
+        <h2>Part 2: Tell Claude to build the rendering logic</h2>
+
+        <p>This is the one-time setup where Claude writes the code that reads from your Notion database and displays it on your site. You only do this once.</p>
+
+        <ol>
+          <li><strong>Give Claude context about your site.</strong> Share your current HTML/CSS structure and explain which sections you want to be controlled by Notion.</li>
+          <li><strong>Ask Claude to handle individual pages.</strong> For example: "Read the case studies from my Notion database and generate the project cards on my work page."</li>
+          <li><strong>Test it.</strong> Add a row in Notion, refresh your site, and check that it appears correctly. Adjust as needed.</li>
+        </ol>
+
+        <h2>Part 3: What you can do from Notion (no Claude needed)</h2>
+
+        <p>Once the setup is done, here's everything you can update without touching Claude or your code again:</p>
+
+        <ul>
+          <li>Edit copy and content</li>
+          <li>Swap images (just update the URL)</li>
+          <li>Change layout styles (if you set up a layout property)</li>
+          <li>Hide or show content instantly (using a Published checkbox)</li>
+          <li>Reorder sections (using an Order number field)</li>
+          <li>Add new content — new case study, new blog post, new service</li>
+        </ul>
+
+        <blockquote>"You update Notion. You refresh the site. That's it."</blockquote>
+
+        <h2>Part 4: Surprising things you can also do</h2>
+
+        <p>Most people don't think about these when they first set up a Notion-powered site, but they're genuinely useful:</p>
+
+        <ul>
+          <li><strong>Use Notion as a draft system.</strong> Keep unpublished content in your database with a "Draft" status. It won't show on the site until you change it to "Published."</li>
+          <li><strong>Build a Featured section separately.</strong> Add a "Featured" checkbox property and filter your homepage to only show featured work.</li>
+          <li><strong>Filter by category or industry.</strong> Add tags or select options, then let Claude build filtered views (e.g. only show illustration projects).</li>
+          <li><strong>Let Claude write content directly in Notion.</strong> Ask Claude to draft copy for a new case study directly into your database — no copy-pasting needed.</li>
+          <li><strong>Track what's published vs. what still needs work.</strong> Notion's views let you see all draft content at a glance, which is especially useful when you have multiple projects in progress.</li>
+        </ul>
+
+        <h2>Is this right for your site?</h2>
+
+        <p>This setup is a significant step up from a static site — it adds a backend layer (the Notion API) and requires the one-time technical setup with Claude. It's worth it if:</p>
+
+        <ul>
+          <li>You update your site content regularly</li>
+          <li>You want clients or collaborators to be able to update content without touching code</li>
+          <li>You're building a site with lots of structured content (many case studies, blog posts, team members)</li>
+        </ul>
+
+        <p>If your site rarely changes, a static HTML setup is simpler and faster. The best tool is always the one that matches how you actually work.</p>
+
+        <p>But if you find yourself reopening Claude every week to tweak a headline or swap a project image — this is the upgrade that pays off.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-section">
+        <div class="cta-section-text">
+          <h2 class="canela-heading">Let's create <span class="underline-italic">together</span>.</h2>
+          <p>Big ideas start with a simple hello. Reach out and we'll take it from there.</p>
+          <div class="cta-buttons">
+            <a href="services.html" class="cta-button-outline">See all services ↗</a>
+            <a href="contact.html" class="cta-button">Let's talk ↗</a>
+          </div>
+        </div>
+        <div class="cta-section-image">
+          <img src="images/bannerimage.png" alt="Let's work together">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients -->
+  <section class="clients-bar">
+    <p class="clients-label">Brands I've worked with</p>
+    <div class="clients-track-wrap">
+      <div class="clients-track">
+        <img src="images/logos/AKQA.svg" alt="AKQA">
+        <img src="images/logos/DigitasPixelPark.svg" alt="Digitas Pixel Park">
+        <img src="images/logos/foodora.svg" alt="Foodora">
+        <img src="images/logos/wayra.svg" alt="Wayra Telefonica">
+        <img src="images/logos/blush.svg" alt="Blush">
+        <img src="images/logos/techstars.svg" alt="Techstars">
+        <img src="images/logos/landor&Fitch.svg" alt="Landor &amp; Fitch">
+        <img src="images/logos/metadesign.svg" alt="Metadesign">
+        <img src="images/logos/wundermanthompson.svg" alt="Wunderman Thompson">
+        <img src="images/logos/florada.svg" alt="Florada">
+        <img src="images/logos/DHL.png" alt="DHL">
+        <img src="images/logos/MVPFactory.png" alt="MVP Factory">
+        <img src="images/logos/Vapiano.png" alt="Vapiano">
+        <img src="images/logos/minglabs.png" alt="Minglabs">
+        <img src="images/logos/AKQA.svg" alt="AKQA">
+        <img src="images/logos/DigitasPixelPark.svg" alt="Digitas Pixel Park">
+        <img src="images/logos/foodora.svg" alt="Foodora">
+        <img src="images/logos/wayra.svg" alt="Wayra Telefonica">
+        <img src="images/logos/blush.svg" alt="Blush">
+        <img src="images/logos/techstars.svg" alt="Techstars">
+        <img src="images/logos/landor&Fitch.svg" alt="Landor &amp; Fitch">
+        <img src="images/logos/metadesign.svg" alt="Metadesign">
+        <img src="images/logos/wundermanthompson.svg" alt="Wunderman Thompson">
+        <img src="images/logos/florada.svg" alt="Florada">
+        <img src="images/logos/DHL.png" alt="DHL">
+        <img src="images/logos/MVPFactory.png" alt="MVP Factory">
+        <img src="images/logos/Vapiano.png" alt="Vapiano">
+        <img src="images/logos/minglabs.png" alt="Minglabs">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-col">
+        <h3>copenicker . studio</h3>
+        <p>Consulting. Design. Experience.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <p><a href="index.html">Work</a></p>
+        <p><a href="services.html">Services</a></p>
+        <p><a href="about.html">About</a></p>
+        <p><a href="blog.html">Blog</a></p>
+        <p><a href="workshops.html">Workshops</a></p>
+        <p><a href="contact.html">Contact</a></p>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p><a href="mailto:ana@copenickerstudio.com">ana@copenickerstudio.com</a></p>
+        <p>Berlin · Lisboa · Remote</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/anapaivadesign/" target="_blank" title="LinkedIn">in</a>
+          <a href="https://www.instagram.com/copenicker" target="_blank" title="Instagram">ig</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 copenicker . studio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="wa-widget">
+    <div class="wa-panel" id="waPanel">
+      <div class="wa-panel-header">
+        <img class="wa-avatar" src="images/ana-profile.png" alt="Ana">
+        <div class="wa-panel-header-info">
+          <strong>copenicker . studio</strong>
+          <span>Typically replies instantly</span>
+        </div>
+        <button class="wa-close" onclick="document.getElementById('waPanel').classList.remove('open')">&times;</button>
+      </div>
+      <div class="wa-body">
+        <div class="wa-bubble">Hi there! 👋 How can we help you?<span>now</span></div>
+      </div>
+      <a class="wa-start" href="https://wa.me/491746290656" target="_blank">Start chat</a>
+    </div>
+    <button class="wa-btn" onclick="document.getElementById('waPanel').classList.toggle('open')" aria-label="Chat on WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </button>
+  </div>
+
+  <div class="cursor" id="cursor"></div>
+  <script>
+    const cursor = document.getElementById("cursor");
+    document.addEventListener("mousemove", e => {
+      cursor.style.left = e.clientX + "px";
+      cursor.style.top = e.clientY + "px";
+    });
+    document.querySelectorAll("a, button").forEach(el => {
+      el.addEventListener("mouseenter", () => cursor.classList.add("hover"));
+      el.addEventListener("mouseleave", () => cursor.classList.remove("hover"));
+    });
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add("visible"); revealObserver.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll(".section").forEach(el => {
+      el.classList.add("reveal");
+      revealObserver.observe(el);
+    });
+  </script>
+
+</body>
+</html>
