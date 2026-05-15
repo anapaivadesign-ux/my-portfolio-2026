@@ -486,7 +486,7 @@
               <li>Integração de reservas Calendly</li>
               <li>Consultoria/coaching: 2h</li>
             </ul>
-            <button class="plan-toggle-btn" onclick="toggleMore('more-a', this)">Ver detalhes ↓</button>
+            <button class="plan-toggle-btn" onclick="toggleMore('more-a', this)">Ver detalhes</button>
           </div>
           <div class="plan-more-items" id="more-a">
             <div style="margin-top:16px;">
@@ -552,7 +552,7 @@
               <li>Integração de reservas Calendly</li>
               <li>Consultoria/coaching: 4h</li>
             </ul>
-            <button class="plan-toggle-btn" onclick="toggleMore('more-b', this)">Ver detalhes ↓</button>
+            <button class="plan-toggle-btn" onclick="toggleMore('more-b', this)">Ver detalhes</button>
           </div>
           <div class="plan-more-items" id="more-b">
             <div style="margin-top:16px;">
@@ -618,7 +618,7 @@
               <li>SEO básico mantido</li>
               <li>Sem necessidade de conhecimentos técnicos</li>
             </ul>
-            <button class="plan-toggle-btn" onclick="toggleMore('more-c', this)">Ver detalhes ↓</button>
+            <button class="plan-toggle-btn" onclick="toggleMore('more-c', this)">Ver detalhes</button>
           </div>
           <div class="plan-more-items" id="more-c">
             <div style="margin-top:16px;">
@@ -803,7 +803,7 @@
   function toggleMore(id, btn) {
     const el = document.getElementById(id);
     const open = el.classList.toggle('open');
-    btn.textContent = open ? 'Fechar ↑' : 'Ver detalhes ↓';
+    btn.textContent = open ? 'Fechar' : 'Ver detalhes';
   }
 </script>
 </body>
