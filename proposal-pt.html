@@ -335,8 +335,8 @@
       .plan { break-inside: avoid; }
     }
 
-    .plan-more-items { overflow: hidden; max-height: 0; transition: max-height 300ms ease; }
-    .plan-more-items.open { max-height: 400px; }
+    .plan-more-items { overflow: hidden; max-height: 0; transition: max-height 400ms ease; }
+    .plan-more-items.open { max-height: 1200px; }
     .plan-toggle-btn {
       background: none; border: none; cursor: pointer;
       font-size: 0.78rem; font-weight: 600; color: var(--gray-400);
@@ -459,45 +459,43 @@
               <li>Design baseado num template Wix, personalizado para a tua marca</li>
               <li>Geres todo o conteúdo tu mesmo (sem código)</li>
               <li>Responsivo (mobile + desktop)</li>
+              <li>SEO básico incluído</li>
+              <li>Integração de pagamentos Stripe</li>
+              <li>Integração de reservas Calendly</li>
+              <li>Consultoria/coaching: 2h</li>
             </ul>
-            <div class="plan-more-items" id="more-a">
-              <ul class="plan-list" style="margin-top:8px;">
-                <li>SEO básico incluído</li>
-                <li>Integração de pagamentos Stripe</li>
-                <li>Integração de reservas Calendly</li>
-                <li>Consultoria/coaching: 2h</li>
+            <button class="plan-toggle-btn" onclick="toggleMore('more-a', this)">Ver mais ▾</button>
+          </div>
+          <div class="plan-more-items" id="more-a">
+            <div style="margin-top:16px;">
+              <div class="plan-col-title">Estimativa de tempo</div>
+              <ul class="plan-list">
+                <li><strong>Total: 14–16h</strong></li>
               </ul>
             </div>
-            <button class="plan-toggle-btn" onclick="toggleMore('more-a', this)">Ver mais ↓</button>
-          </div>
-          <div>
-            <div class="plan-col-title">Estimativa de tempo</div>
-            <ul class="plan-list">
-              <li><strong>Total: 14–16h</strong></li>
-            </ul>
-          </div>
-          <div class="pros-cons">
-            <div>
-              <div class="pros-cons-col-title" style="color:#16a34a;">Pros</div>
-              <ul>
-                <li><span style="color:#16a34a;">✓</span> Lançamento rápido</li>
-                <li><span style="color:#16a34a;">✓</span> Menor custo inicial</li>
-                <li><span style="color:#16a34a;">✓</span> Fácil de gerir sozinho</li>
-                <li><span style="color:#16a34a;">✓</span> Podes migrar depois</li>
-              </ul>
+            <div class="pros-cons" style="margin-top:16px;">
+              <div>
+                <div class="pros-cons-col-title" style="color:#16a34a;">Pros</div>
+                <ul>
+                  <li><span style="color:#16a34a;">✓</span> Lançamento rápido</li>
+                  <li><span style="color:#16a34a;">✓</span> Menor custo inicial</li>
+                  <li><span style="color:#16a34a;">✓</span> Fácil de gerir sozinho</li>
+                  <li><span style="color:#16a34a;">✓</span> Podes migrar depois</li>
+                </ul>
+              </div>
+              <div>
+                <div class="pros-cons-col-title" style="color:#9a9aa6;">Limitações</div>
+                <ul>
+                  <li><span style="color:#9a9aa6;">✗</span> Mensalidade Wix</li>
+                  <li><span style="color:#9a9aa6;">✗</span> Flexibilidade limitada</li>
+                  <li><span style="color:#9a9aa6;">✗</span> O Wix controla o teu site</li>
+                  <li><span style="color:#9a9aa6;">✗</span> SEO mediano</li>
+                </ul>
+              </div>
             </div>
-            <div>
-              <div class="pros-cons-col-title" style="color:#9a9aa6;">Limitações</div>
-              <ul>
-                <li><span style="color:#9a9aa6;">✗</span> Mensalidade Wix</li>
-                <li><span style="color:#9a9aa6;">✗</span> Flexibilidade limitada</li>
-                <li><span style="color:#9a9aa6;">✗</span> O Wix controla o teu site</li>
-                <li><span style="color:#9a9aa6;">✗</span> SEO mediano</li>
-              </ul>
+            <div class="plan-note" style="margin-top:16px;">
+              <strong>Nota:</strong> O Wix tem uma subscrição mensal (~€17–35/mês) paga diretamente por ti. Quando estiveres pronto para crescer, podemos migrar o teu site para uma solução Next.js totalmente personalizada com Sanity CMS. O teu conteúdo e marca ficam contigo.
             </div>
-          </div>
-          <div class="plan-note">
-            <strong>Nota:</strong> O Wix tem uma subscrição mensal (~€17–35/mês) paga diretamente por ti. Quando estiveres pronto para crescer, podemos migrar o teu site para uma solução Next.js totalmente personalizada com Sanity CMS. O teu conteúdo e marca ficam contigo.
           </div>
         </div>
       </div>
@@ -524,49 +522,47 @@
               <li>Design baseado nas tuas referências</li>
               <li>Desenvolvimento em Next.js</li>
               <li>Alojado no Vercel</li>
+              <li>Código versionado no GitHub</li>
+              <li>Deploy automático em cada atualização</li>
+              <li>Responsivo (mobile + desktop)</li>
+              <li>SEO básico incluído</li>
+              <li>Integração de pagamentos Stripe</li>
+              <li>Integração de reservas Calendly</li>
             </ul>
-            <div class="plan-more-items" id="more-b">
-              <ul class="plan-list" style="margin-top:8px;">
-                <li>Código versionado no GitHub</li>
-                <li>Deploy automático em cada atualização</li>
-                <li>Responsivo (mobile + desktop)</li>
-                <li>SEO básico incluído</li>
-                <li>Integração de pagamentos Stripe</li>
-                <li>Integração de reservas Calendly</li>
+            <button class="plan-toggle-btn" onclick="toggleMore('more-b', this)">Ver mais ▾</button>
+          </div>
+          <div class="plan-more-items" id="more-b">
+            <div style="margin-top:16px;">
+              <div class="plan-col-title">Estimativa de tempo</div>
+              <ul class="plan-list">
+                <li><strong>Total: 14–16h</strong></li>
               </ul>
             </div>
-            <button class="plan-toggle-btn" onclick="toggleMore('more-b', this)">Ver mais ↓</button>
-          </div>
-          <div>
-            <div class="plan-col-title">Estimativa de tempo</div>
-            <ul class="plan-list">
-              <li><strong>Total: 14–16h</strong></li>
-            </ul>
-          </div>
-          <div class="pros-cons">
-            <div>
-              <div class="pros-cons-col-title" style="color:#16a34a;">Pros</div>
-              <ul>
-                <li><span style="color:#16a34a;">✓</span> O código é teu</li>
-                <li><span style="color:#16a34a;">✓</span> Sem mensalidade de plataforma</li>
-                <li><span style="color:#16a34a;">✓</span> Excellent SEO & performance</li>
-                <li><span style="color:#16a34a;">✓</span> Design totalmente personalizado</li>
-              </ul>
+            <div class="pros-cons" style="margin-top:16px;">
+              <div>
+                <div class="pros-cons-col-title" style="color:#16a34a;">Pros</div>
+                <ul>
+                  <li><span style="color:#16a34a;">✓</span> O código é teu</li>
+                  <li><span style="color:#16a34a;">✓</span> Sem mensalidade de plataforma</li>
+                  <li><span style="color:#16a34a;">✓</span> Excellent SEO & performance</li>
+                  <li><span style="color:#16a34a;">✓</span> Design totalmente personalizado</li>
+                </ul>
+              </div>
+              <div>
+                <div class="pros-cons-col-title" style="color:#9a9aa6;">Limitações</div>
+                <ul>
+                  <li><span style="color:#9a9aa6;">✗</span> Investimento inicial maior</li>
+                  <li><span style="color:#9a9aa6;">✗</span> Mais horas de desenvolvimento</li>
+                  <li><span style="color:#9a9aa6;">✗</span> Custos Vercel + Claude Code</li>
+                </ul>
+              </div>
             </div>
-            <div>
-              <div class="pros-cons-col-title" style="color:#9a9aa6;">Limitações</div>
-              <ul>
-                <li><span style="color:#9a9aa6;">✗</span> Investimento inicial maior</li>
-                <li><span style="color:#9a9aa6;">✗</span> Mais horas de desenvolvimento</li>
-                <li><span style="color:#9a9aa6;">✗</span> Custos Vercel + Claude Code</li>
-              </ul>
+            <div class="plan-note" style="margin-top:16px;">
+              <strong>Nota:</strong> Com acesso direto ao GitHub, podes fazer alterações ao código. Apenas não nos responsabilizamos por alterações não intencionais fora do nosso âmbito.
             </div>
-          </div>
-          <div class="plan-note">
-            <strong>Nota:</strong> Com acesso direto ao GitHub, podes fazer alterações ao código. Apenas não nos responsabilizamos por alterações não intencionais fora do nosso âmbito.
-          </div>
-          <div class="plan-note">
-            <strong>Consultoria/coaching incluído:</strong> Explico e guio-te por todas as ferramentas que usamos, para te sentires confiante a gerir o teu website após o lançamento.
+            <div class="plan-note" style="margin-top:8px;">
+              <strong>Consultoria/coaching incluído:</strong> Explico e guio-te por todas as ferramentas que usamos, para te sentires confiante a gerir o teu website após o lançamento.
+            </div>
           </div>
         </div>
       </div>
@@ -595,68 +591,66 @@
               <li>Alojamento da nossa parte</li>
               <li>Suporte 24h via WhatsApp</li>
               <li>2 alterações de conteúdo/mês incluídas</li>
+              <li>Design responsivo (mobile + desktop)</li>
+              <li>SEO básico mantido</li>
+              <li>Sem necessidade de conhecimentos técnicos</li>
             </ul>
-            <div class="plan-more-items" id="more-c">
-              <ul class="plan-list" style="margin-top:8px;">
-                <li>Design responsivo (mobile + desktop)</li>
-                <li>SEO básico mantido</li>
-                <li>Sem necessidade de conhecimentos técnicos</li>
-              </ul>
-            </div>
-            <button class="plan-toggle-btn" onclick="toggleMore('more-c', this)">Ver mais ↓</button>
+            <button class="plan-toggle-btn" onclick="toggleMore('more-c', this)">Ver mais ▾</button>
           </div>
-          <div>
-            <div class="plan-col-title">Preços de setup</div>
-            <table style="width:100%; border-collapse:collapse; font-size:0.82rem; margin-top:4px;">
-              <tbody>
-                <tr style="border-bottom:1px solid var(--border); background:#f0fdf4;">
-                  <td style="padding:7px 10px; color:var(--gray-600);">5-page site <span style="font-size:0.7rem; color:#16a34a; font-weight:600;">← your project</span></td>
-                  <td style="padding:7px 10px; font-weight:700; text-align:right; color:#16a34a;">€699</td>
-                </tr>
-                <tr style="border-bottom:1px solid var(--border); background:var(--gray-100);">
-                  <td style="padding:7px 10px; font-weight:500;">Subscrição mensal</td>
-                  <td style="padding:7px 10px; font-weight:600; text-align:right;">€49/mo</td>
-                </tr>
-                <tr style="border-bottom:1px solid var(--border);">
-                  <td style="padding:7px 10px; color:var(--gray-600); font-size:0.78rem;">Alojamento + 2 alterações incluídas</td>
-                  <td style="padding:7px 10px; text-align:right;"></td>
-                </tr>
-                <tr style="border-bottom:1px solid var(--border); background:var(--gray-100);">
-                  <td style="padding:7px 10px; color:var(--gray-600);">Alterações extra</td>
-                  <td style="padding:7px 10px; font-weight:600; text-align:right;">€29 each</td>
-                </tr>
-                <tr style="border-bottom:1px solid var(--border);">
-                  <td style="padding:7px 10px; color:var(--gray-600);">Add-on redes sociais</td>
-                  <td style="padding:7px 10px; font-weight:600; text-align:right;">TBD</td>
-                </tr>
-                <tr>
-                  <td style="padding:7px 10px; color:var(--gray-600);">Add-on SEO</td>
-                  <td style="padding:7px 10px; font-weight:600; text-align:right;">€29–€79/mo</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="pros-cons">
-            <div>
-              <div class="pros-cons-col-title" style="color:#16a34a;">Pros</div>
-              <ul>
-                <li><span style="color:#16a34a;">✓</span> Sem conhecimentos técnicos</li>
-                <li><span style="color:#16a34a;">✓</span> Tudo gerido por nós</li>
-                <li><span style="color:#16a34a;">✓</span> Custo mensal previsível</li>
-                <li><span style="color:#16a34a;">✓</span> Atualizações rápidas via WhatsApp</li>
-                <li><span style="color:#16a34a;">✓</span> 2 alterações/mês incluídas</li>
-              </ul>
+          <div class="plan-more-items" id="more-c">
+            <div style="margin-top:16px;">
+              <div class="plan-col-title">Preços de setup</div>
+              <table style="width:100%; border-collapse:collapse; font-size:0.82rem; margin-top:4px;">
+                <tbody>
+                  <tr style="border-bottom:1px solid var(--border); background:#f0fdf4;">
+                    <td style="padding:7px 10px; color:var(--gray-600);">5-page site <span style="font-size:0.7rem; color:#16a34a; font-weight:600;">← your project</span></td>
+                    <td style="padding:7px 10px; font-weight:700; text-align:right; color:#16a34a;">€699</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border); background:var(--gray-100);">
+                    <td style="padding:7px 10px; font-weight:500;">Subscrição mensal</td>
+                    <td style="padding:7px 10px; font-weight:600; text-align:right;">€49/mo</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:7px 10px; color:var(--gray-600); font-size:0.78rem;">Alojamento + 2 alterações incluídas</td>
+                    <td style="padding:7px 10px; text-align:right;"></td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border); background:var(--gray-100);">
+                    <td style="padding:7px 10px; color:var(--gray-600);">Alterações extra</td>
+                    <td style="padding:7px 10px; font-weight:600; text-align:right;">€29 each</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:7px 10px; color:var(--gray-600);">Add-on redes sociais</td>
+                    <td style="padding:7px 10px; font-weight:600; text-align:right;">TBD</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:7px 10px; color:var(--gray-600);">Add-on SEO</td>
+                    <td style="padding:7px 10px; font-weight:600; text-align:right;">€29–€79/mo</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <div>
-              <div class="pros-cons-col-title" style="color:#9a9aa6;">Limitações</div>
-              <ul>
-                <li><span style="color:#9a9aa6;">✗</span> Mensalidade contínua</li>
-                <li><span style="color:#9a9aa6;">✗</span> Sem acesso direto ao CMS</li>
-              </ul>
+            <div class="pros-cons" style="margin-top:16px;">
+              <div>
+                <div class="pros-cons-col-title" style="color:#16a34a;">Pros</div>
+                <ul>
+                  <li><span style="color:#16a34a;">✓</span> Sem conhecimentos técnicos</li>
+                  <li><span style="color:#16a34a;">✓</span> Tudo gerido por nós</li>
+                  <li><span style="color:#16a34a;">✓</span> Custo mensal previsível</li>
+                  <li><span style="color:#16a34a;">✓</span> Atualizações rápidas via WhatsApp</li>
+                  <li><span style="color:#16a34a;">✓</span> 2 alterações/mês incluídas</li>
+                </ul>
+              </div>
+              <div>
+                <div class="pros-cons-col-title" style="color:#9a9aa6;">Limitações</div>
+                <ul>
+                  <li><span style="color:#9a9aa6;">✗</span> Mensalidade contínua</li>
+                  <li><span style="color:#9a9aa6;">✗</span> Sem acesso direto ao CMS</li>
+                </ul>
+              </div>
             </div>
-          </div>
-          <div class="plan-note">
-            <strong>Note:</strong> No CMS on this plan: all content updates are handled by us. Just send your change requests via WhatsApp and we'll take care of it. Up to 2 alterações/mês incluídas, extra changes at €29 each. Claude Code included.
+            <div class="plan-note" style="margin-top:16px;">
+              <strong>Nota:</strong> Todas as atualizações de conteúdo são feitas por nós. Envia os pedidos via WhatsApp e tratamos de tudo. Até 2 alterações/mês incluídas, extra a €29 cada. Claude Code incluído.
+            </div>
           </div>
         </div>
       </div>
@@ -718,7 +712,7 @@
           <td style="padding:14px 16px; font-weight:700;">Custo mensal em ferramentas <span style="font-size:0.75rem; color:var(--gray-400); font-weight:400;">(apenas ferramentas, sem taxa de serviço)</span></td>
           <td style="padding:14px 16px; text-align:center; font-weight:700; color:var(--gray-600);">~€35/mo</td>
           <td style="padding:14px 16px; text-align:center; font-weight:700; color:var(--gray-600);">~€40/mo</td>
-          <td style="padding:14px 16px; text-align:center; font-weight:700; color:var(--black);">€49/mo*</td>
+          <td style="padding:14px 16px; text-align:center; font-weight:700; color:var(--black);">€49/mo <span style="font-size:0.75rem; font-weight:400;">(sem custos extra de ferramentas)</span></td>
         </tr>
       </tbody>
     </table>
@@ -765,7 +759,6 @@
           <li>✦ Conta Wix criada</li>
           <li>✦ Conta Stripe (para pagamentos)</li>
           <li>✦ hello@ascendlifehub.com email active</li>
-          <li>✦ Conta Dashline configurada</li>
         </ul>
       </div>
 
