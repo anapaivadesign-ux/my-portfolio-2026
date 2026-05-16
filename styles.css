@@ -955,8 +955,8 @@ nav {
 }
 
 .service-card-title {
-  font-family: inherit;
-  font-weight: 650;
+  font-family: 'Caudex', Georgia, serif;
+  font-weight: 700;
   font-size: 2rem;
   line-height: 1.15;
   letter-spacing: -0.025em;
