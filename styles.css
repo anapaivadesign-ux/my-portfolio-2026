@@ -1,12 +1,6 @@
 /* ════════════════════════════════ FONTS ════════════════════════════════ */
 
-@font-face {
-  font-family: 'Canela';
-  src: url('fonts/Canela Family/Canela-Regular-Trial.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
+@import url('https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 /* ════════════════════════════════ RESET & GLOBALS ════════════════════════════════ */
 
@@ -168,7 +162,7 @@ a {
 /* home (editorial) */
 .home-hero { position: relative; overflow: hidden; }
 .home-hero .hero-subtitle {
-  font-family: 'Canela', Georgia, serif;
+  font-family: 'Caudex', Georgia, serif;
   font-size: 80px;
   font-weight: 400;
   line-height: 1.05;
@@ -488,8 +482,9 @@ nav {
 }
 
 .nav-logo {
+  font-family: 'Caudex', Georgia, serif;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0.01em;
   text-transform: lowercase;
 }
@@ -914,12 +909,12 @@ nav {
 /* ════════════════════════════════ SERVICES ════════════════════════════════ */
 
 .canela-heading {
-  font-family: 'Canela', Georgia, serif;
+  font-family: 'Caudex', Georgia, serif;
   font-weight: 400;
 }
 
 .services-title {
-  font-family: 'Canela', Georgia, serif;
+  font-family: 'Caudex', Georgia, serif;
   font-weight: 400;
   font-size: 64px;
   line-height: 1.05;
