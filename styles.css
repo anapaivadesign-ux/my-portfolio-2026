@@ -906,6 +906,63 @@ nav {
   .gallery .work-thumb img { height: 360px; }
 }
 
+/* ════════════════════════════════ STATS GRID ════════════════════════════════ */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 48px;
+  padding-top: 48px;
+  border-top: 1px solid var(--border);
+}
+
+.stats-col { display: flex; flex-direction: column; gap: 16px; }
+
+.stats-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gray-400);
+}
+
+.stats-years {
+  font-family: 'Caudex', Georgia, serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--black);
+}
+
+.stats-bio {
+  font-size: 0.88rem;
+  color: var(--gray-600);
+  line-height: 1.75;
+}
+
+.stats-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stats-list li {
+  font-size: 0.95rem;
+  color: var(--black);
+  line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+}
+
+@media (max-width: 560px) {
+  .stats-grid { grid-template-columns: 1fr; gap: 28px; }
+  .stats-years { font-size: 2.2rem; }
+}
+
 /* ════════════════════════════════ SERVICES ════════════════════════════════ */
 
 .canela-heading {
