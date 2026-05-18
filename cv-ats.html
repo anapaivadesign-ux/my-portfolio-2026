@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV ATS — Ana Paiva · Senior Product Designer</title>
+  <meta name="robots" content="noindex" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11pt;
+      color: #000;
+      background: #fff;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 48px;
+      line-height: 1.5;
+    }
+
+    h1 {
+      font-size: 20pt;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      font-size: 12pt;
+      color: #333;
+      margin-bottom: 12px;
+    }
+
+    .contact-line {
+      font-size: 10pt;
+      color: #333;
+      margin-bottom: 24px;
+    }
+
+    .contact-line a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    .summary {
+      font-size: 10.5pt;
+      color: #222;
+      line-height: 1.7;
+      margin-bottom: 28px;
+      border-left: 3px solid #000;
+      padding-left: 14px;
+    }
+
+    h2 {
+      font-size: 10pt;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-bottom: 1px solid #000;
+      padding-bottom: 4px;
+      margin-bottom: 14px;
+      margin-top: 28px;
+    }
+
+    .entry {
+      margin-bottom: 18px;
+    }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+
+    .entry-title {
+      font-size: 11pt;
+      font-weight: 700;
+    }
+
+    .entry-date {
+      font-size: 10pt;
+      color: #555;
+      white-space: nowrap;
+    }
+
+    .entry-company {
+      font-size: 10.5pt;
+      color: #333;
+      margin-bottom: 4px;
+    }
+
+    .entry-desc {
+      font-size: 10.5pt;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .entry-clients {
+      font-size: 10pt;
+      color: #555;
+      margin-top: 4px;
+      line-height: 1.6;
+    }
+
+    .skills-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 32px;
+      list-style: none;
+    }
+
+    .skills-list li {
+      font-size: 10.5pt;
+      color: #222;
+    }
+
+    .skills-list li::before {
+      content: "• ";
+    }
+
+    .lang-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 10.5pt;
+      padding: 4px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .lang-row:last-child { border-bottom: none; }
+
+    .lang-level {
+      color: #555;
+      font-size: 10pt;
+    }
+
+    .print-btn {
+      display: block;
+      margin: 0 auto 32px;
+      padding: 10px 28px;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      letter-spacing: 0.04em;
+    }
+
+    .print-btn:hover { opacity: 0.75; }
+
+    .print-note {
+      text-align: center;
+      font-size: 0.78rem;
+      color: #888;
+      margin-bottom: 32px;
+    }
+
+    @media print {
+      .print-btn, .print-note, .back-link { display: none; }
+      body { padding: 0; }
+    }
+
+    .back-link {
+      display: inline-block;
+      font-size: 0.8rem;
+      color: #555;
+      text-decoration: none;
+      margin-bottom: 24px;
+    }
+
+    .back-link:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <a href="cv.html" class="back-link">← Back to CV</a>
+
+  <button class="print-btn" onclick="window.print()">↓ Save as PDF</button>
+  <p class="print-note">Cmd + P → Save as PDF (macOS) &nbsp;·&nbsp; Ctrl + P → Save as PDF (Windows)</p>
+
+  <!-- Header -->
+  <h1>Ana Paiva</h1>
+  <div class="subtitle">Senior Product Designer & Illustrator</div>
+  <div class="contact-line">
+    ana.paiva.design@gmail.com &nbsp;·&nbsp;
+    +49 174 629 0656 &nbsp;·&nbsp;
+    <a href="https://www.linkedin.com/in/anapaivadesign/">linkedin.com/in/anapaivadesign</a> &nbsp;·&nbsp;
+    copenickerstudio.com
+  </div>
+
+  <!-- Summary -->
+  <p class="summary">Berlin-based Senior UI/UX Designer and Illustrator with over 10 years of experience creating user-centred digital products. Specialised in solving business problems through research, design thinking, and cross-platform product design. Experienced in partnering with global agencies and startups to deliver intuitive, data-driven, and visually engaging experiences. Strong background in multimedia design, user research, prototyping, and interaction design.</p>
+
+  <!-- Experience -->
+  <h2>Experience</h2>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">Senior Product Designer & Illustrator — Freelance</span>
+      <span class="entry-date">2016 – Present</span>
+    </div>
+    <div class="entry-desc">Independent designer working with agencies, startups, and founders worldwide on product design, brand strategy, and illustration.</div>
+    <div class="entry-clients">Clients: Meta Design, AKQA, Wunderman Thompson, MVP Factory, Blush Illustrations, Digitas Pixelpark, Monday.pt, MingLabs, Dayone, Deevio, Bettermile, Shorty, AirBeamTV, Relokate, Matchwave, Vaultoro, Trustyou, Simcon, KGK.</div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">Product Designer</span>
+      <span class="entry-date">2018 – 2020</span>
+    </div>
+    <div class="entry-company">MobiLab Solutions — Berlin, Germany</div>
+    <div class="entry-desc">Partnered with engineering teams to ensure seamless product implementation for DHL and Vapiano.</div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">UX Designer</span>
+      <span class="entry-date">2015 – 2017</span>
+    </div>
+    <div class="entry-company">Techstars Startups — Berlin, Germany</div>
+    <div class="entry-desc">Provided UX guidance, developed wireframes, prototypes, and interface designs for early-stage startups.</div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">UX Designer</span>
+      <span class="entry-date">2014 – 2015</span>
+    </div>
+    <div class="entry-company">Foodora — Berlin, Germany</div>
+    <div class="entry-desc">Provided UX guidance, developed wireframes, prototypes, and interface designs during the startup's growth phase.</div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">Design Intern</span>
+      <span class="entry-date">2014</span>
+    </div>
+    <div class="entry-company">Landor & Fitch — Hamburg, Germany</div>
+    <div class="entry-desc">Contributed to visual identity and brand strategy projects at a leading global brand agency.</div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">Design Intern</span>
+      <span class="entry-date">2013</span>
+    </div>
+    <div class="entry-company">Wayra Telefónica Innovation Incubator — Munich, Germany</div>
+    <div class="entry-desc">Supported design and innovation projects within Telefónica's startup incubator programme.</div>
+  </div>
+
+  <!-- Education -->
+  <h2>Education</h2>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">UX Design Certification</span>
+      <span class="entry-date">2017</span>
+    </div>
+    <div class="entry-company">CareerFoundry</div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">Master's Degree in Multimedia Design</span>
+      <span class="entry-date">2012</span>
+    </div>
+    <div class="entry-company">University of Coimbra — Coimbra, Portugal</div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">Bachelor's Degree in Multimedia</span>
+      <span class="entry-date">2009</span>
+    </div>
+    <div class="entry-company">Viseu, Portugal</div>
+  </div>
+
+  <!-- Skills -->
+  <h2>Skills</h2>
+  <ul class="skills-list">
+    <li>User research</li>
+    <li>A/B testing</li>
+    <li>Information architecture</li>
+    <li>Design thinking</li>
+    <li>Interaction design</li>
+    <li>Design sprints</li>
+    <li>UX/UI design</li>
+    <li>Agile & Scrum workflows</li>
+    <li>Ideation & prototyping</li>
+    <li>User needs analysis</li>
+    <li>AI integration in product design</li>
+    <li>No-code / low-code automation</li>
+  </ul>
+
+  <!-- Languages -->
+  <h2>Languages</h2>
+  <div class="lang-row"><span>English</span><span class="lang-level">C1 — Professional proficiency</span></div>
+  <div class="lang-row"><span>German</span><span class="lang-level">B2 — Upper intermediate</span></div>
+  <div class="lang-row"><span>Portuguese</span><span class="lang-level">C2 — Native</span></div>
+
+</body>
+</html>
