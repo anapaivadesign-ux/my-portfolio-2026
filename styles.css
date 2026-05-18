@@ -1141,43 +1141,10 @@ nav {
   gap: 40px;
   padding: 36px 48px;
   border-radius: 22px;
-  border: 1px solid var(--border);
-  background: var(--gray-100);
+  border: none;
+  background: #8FA4D1;
   overflow: hidden;
   position: relative;
-}
-
-.cta-section::before,
-.cta-section::after {
-  content: "";
-  position: absolute;
-  border-radius: 999px;
-  filter: blur(60px);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.cta-section::before {
-  width: 260px;
-  height: 260px;
-  background: #8FA4D1;
-  opacity: 0.35;
-  top: -80px;
-  right: 120px;
-}
-
-.cta-section::after {
-  width: 180px;
-  height: 180px;
-  background: #391212;
-  opacity: 0.22;
-  bottom: -60px;
-  right: 40px;
-}
-
-.cta-section > * {
-  position: relative;
-  z-index: 1;
 }
 
 .cta-section-text {
@@ -1207,7 +1174,7 @@ nav {
 .cta-section p {
   font-size: 1.05rem;
   margin-bottom: 6px;
-  color: var(--gray-600);
+  color: rgba(11,11,15,0.65);
 }
 
 @media (max-width: 700px) {
