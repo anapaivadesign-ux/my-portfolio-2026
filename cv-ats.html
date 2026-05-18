@@ -171,9 +171,25 @@
     }
 
     .back-link:hover { text-decoration: underline; }
+    html { cursor: none; }
+    .cursor {
+      position: fixed; top: 0; left: 0;
+      width: 18px; height: 18px;
+      background: #0b0b0f;
+      border-radius: 999px;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform 80ms ease, width 200ms ease, height 200ms ease;
+    }
+    .cursor.hover { width: 36px; height: 36px; opacity: 0.6; }
+    @media (hover: none) { .cursor { display: none; } html { cursor: auto; } }
+    @media print { .cursor { display: none; } html { cursor: auto; } }
   </style>
 </head>
 <body>
+
+  <div class="cursor" id="cursor"></div>
 
   <a href="cv.html" class="back-link">← Back to CV</a>
 
@@ -300,5 +316,12 @@
   <div class="lang-row"><span>German</span><span class="lang-level">B2 — Upper intermediate</span></div>
   <div class="lang-row"><span>Portuguese</span><span class="lang-level">C2 — Native</span></div>
 
+  <script src="cursor.js" defer></script>
+  <script>
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseenter', () => document.getElementById('cursor')?.classList.add('hover'));
+      el.addEventListener('mouseleave', () => document.getElementById('cursor')?.classList.remove('hover'));
+    });
+  </script>
 </body>
 </html>
