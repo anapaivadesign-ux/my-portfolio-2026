@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV — Ana Paiva · Senior Product Designer</title>
+  <meta name="description" content="Senior UI/UX Designer and Illustrator with over 10 years of experience creating user-centred digital products." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="canonical" href="https://copenickerstudio.com/cv.html" />
+  <meta property="og:title" content="CV — Ana Paiva · Senior Product Designer" />
+  <meta property="og:description" content="Senior UI/UX Designer and Illustrator with over 10 years of experience." />
+  <meta property="og:url" content="https://copenickerstudio.com/cv.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://copenickerstudio.com/images/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .cv-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .cv-sidebar {
+      position: sticky;
+      top: 32px;
+    }
+
+    .cv-section {
+      margin-bottom: 48px;
+    }
+
+    .cv-section-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cv-name {
+      font-family: 'Caudex', Georgia, serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .cv-title {
+      font-size: 1rem;
+      color: var(--gray-600);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .cv-contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .cv-contact-list li {
+      font-size: 0.85rem;
+      color: var(--gray-600);
+    }
+
+    .cv-contact-list a {
+      color: var(--black);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .cv-skills-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .cv-skills-list li {
+      font-size: 0.85rem;
+      color: var(--gray-700);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cv-skills-list li::before {
+      content: "";
+      width: 4px;
+      height: 4px;
+      background: var(--gray-400);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .cv-lang-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cv-lang-row:last-child {
+      border-bottom: none;
+    }
+
+    .cv-lang-level {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--gray-500);
+      background: var(--gray-100);
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+
+    .cv-entry {
+      margin-bottom: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cv-entry:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .cv-entry-meta {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 4px;
+    }
+
+    .cv-entry-title {
+      font-family: 'Caudex', Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 6px;
+    }
+
+    .cv-entry-desc {
+      font-size: 0.88rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+
+    .cv-clients {
+      font-size: 0.85rem;
+      color: var(--gray-500);
+      line-height: 1.8;
+      margin-top: 6px;
+    }
+
+    .cv-summary {
+      font-size: 1rem;
+      color: var(--gray-600);
+      line-height: 1.8;
+      max-width: 72ch;
+      margin-bottom: 48px;
+    }
+
+    .cv-download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--black);
+      color: var(--white);
+      border-radius: 999px;
+      padding: 12px 24px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      transition: opacity 160ms;
+      margin-bottom: 56px;
+    }
+
+    .cv-download-btn:hover { opacity: 0.75; }
+
+    @media (max-width: 860px) {
+      .cv-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .cv-sidebar {
+        position: static;
+      }
+    }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2WCSR9CKQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-N2WCSR9CKQ");
+  </script>
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="nav-logo">copenicker . studio</a>
+    <button class="burger" id="burger" aria-label="Menu" onclick="this.classList.toggle('open');document.getElementById('navRight').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-right" id="navRight">
+      <ul class="nav-links">
+        <li><a href="index.html">Work</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="shop.html">Shop</a></li>
+      </ul>
+      <a href="contact.html" class="nav-cta">Let's talk ↗</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="canela-heading">Curriculum <span class="underline-italic">Vitae</span>.</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- CV Content -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+
+      <p class="cv-summary">Berlin-based Senior UI/UX Designer and Illustrator with over 10 years of experience creating user-centred digital products. Specialised in solving business problems through research, design thinking, and cross-platform product design. Experienced in partnering with global agencies and startups to deliver intuitive, data-driven, and visually engaging experiences.</p>
+
+      <a href="CV_anapaiva_Senior_product_designer_2026-compressed.pdf" download class="cv-download-btn">
+        ↓ Download CV
+      </a>
+
+      <div class="cv-grid">
+
+        <!-- Sidebar -->
+        <div class="cv-sidebar">
+
+          <div class="cv-section">
+            <div class="cv-section-label">Contact</div>
+            <ul class="cv-contact-list">
+              <li><a href="mailto:ana.paiva.design@gmail.com">ana.paiva.design@gmail.com</a></li>
+              <li><a href="https://www.linkedin.com/in/anapaivadesign/" target="_blank">LinkedIn ↗</a></li>
+              <li><a href="tel:+491746290656">+49 174 629 0656</a></li>
+            </ul>
+          </div>
+
+          <div class="cv-section">
+            <div class="cv-section-label">Skills</div>
+            <ul class="cv-skills-list">
+              <li>User research</li>
+              <li>Information architecture</li>
+              <li>Interaction design</li>
+              <li>UX/UI design</li>
+              <li>Ideation & prototyping</li>
+              <li>A/B testing</li>
+              <li>Design thinking</li>
+              <li>Design sprints</li>
+              <li>Agile & Scrum workflows</li>
+              <li>User needs analysis</li>
+              <li>AI integration in product design</li>
+              <li>No-code / low-code automation</li>
+            </ul>
+          </div>
+
+          <div class="cv-section">
+            <div class="cv-section-label">Languages</div>
+            <div class="cv-lang-row">
+              <span>English</span>
+              <span class="cv-lang-level">C1</span>
+            </div>
+            <div class="cv-lang-row">
+              <span>German</span>
+              <span class="cv-lang-level">B2</span>
+            </div>
+            <div class="cv-lang-row">
+              <span>Portuguese</span>
+              <span class="cv-lang-level">C2</span>
+            </div>
+          </div>
+
+          <div class="cv-section">
+            <div class="cv-section-label">Education</div>
+
+            <div class="cv-entry">
+              <div class="cv-entry-meta">2017</div>
+              <div class="cv-entry-title">UX Design</div>
+              <div class="cv-entry-desc">CareerFoundry</div>
+            </div>
+
+            <div class="cv-entry">
+              <div class="cv-entry-meta">2012 · Coimbra, Portugal</div>
+              <div class="cv-entry-title">Master's in Multimedia Design</div>
+              <div class="cv-entry-desc">University of Coimbra</div>
+            </div>
+
+            <div class="cv-entry">
+              <div class="cv-entry-meta">2009 · Viseu, Portugal</div>
+              <div class="cv-entry-title">Bachelor's in Multimedia</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Main content -->
+        <div class="cv-main">
+
+          <div class="cv-section">
+            <div class="cv-section-label">Experience</div>
+
+            <div class="cv-entry">
+              <div class="cv-entry-meta">2016 – Present · Freelance</div>
+              <div class="cv-entry-title">Senior Product Designer & Illustrator</div>
+              <div class="cv-entry-desc">Independent designer working with agencies, startups, and founders worldwide on product design, brand strategy, and illustration.</div>
+              <div class="cv-clients">Meta Design · AKQA · Wunderman Thompson · MVP Factory · Blush Illustrations · Digitas Pixelpark · Monday.pt · MingLabs · Dayone · Deevio · Bettermile · Shorty · AirBeamTV · Relokate · Matchwave · Vaultoro · Trustyou · Simcon · KGK</div>
+            </div>
+
+            <div class="cv-entry">
+              <div class="cv-entry-meta">2018 – 2020 · Berlin, Germany</div>
+              <div class="cv-entry-title">Product Designer — MobiLab Solutions</div>
+              <div class="cv-entry-desc">Partnered with engineering teams to ensure seamless product implementation for DHL and Vapiano.</div>
+            </div>
+
+            <div class="cv-entry">
+              <div class="cv-entry-meta">2015 – 2017 · Berlin, Germany</div>
+              <div class="cv-entry-title">UX Designer — Techstars Startups</div>
+              <div class="cv-entry-desc">Provided UX guidance, developed wireframes, prototypes, and interface designs for early-stage startups.</div>
+            </div>
+
+            <div class="cv-entry">
+              <div class="cv-entry-meta">2014 – 2015 · Berlin, Germany</div>
+              <div class="cv-entry-title">UX Designer — Foodora</div>
+              <div class="cv-entry-desc">Provided UX guidance, developed wireframes, prototypes, and interface designs during the startup's growth phase.</div>
+            </div>
+
+            <div class="cv-entry">
+              <div class="cv-entry-meta">2014 · Hamburg, Germany</div>
+              <div class="cv-entry-title">Intern — Landor & Fitch</div>
+              <div class="cv-entry-desc">Brand agency internship contributing to visual identity and brand strategy projects.</div>
+            </div>
+
+            <div class="cv-entry">
+              <div class="cv-entry-meta">2013 · Munich, Germany</div>
+              <div class="cv-entry-title">Intern — Wayra Telefónica Innovation Incubator</div>
+              <div class="cv-entry-desc">Supported design and innovation projects within Telefónica's startup incubator programme.</div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-col">
+        <h3>copenicker . studio</h3>
+        <p>Consulting. Design. Experience.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <p><a href="index.html">Work</a></p>
+        <p><a href="services.html">Services</a></p>
+        <p><a href="about.html">About</a></p>
+        <p><a href="contact.html">Contact</a></p>
+        <p><a href="blog.html">Blog</a></p>
+        <p><a href="workshops.html">Workshops</a></p>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p><a href="mailto:ana.paiva.design@gmail.com">ana.paiva.design@gmail.com</a></p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/anapaivadesign/" target="_blank" title="LinkedIn">in</a>
+          <a href="https://www.instagram.com/copenicker" target="_blank" title="Instagram">ig</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 copenicker . studio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Widget -->
+  <div class="wa-widget">
+    <a href="https://wa.me/491746290656" target="_blank" class="wa-btn" title="Chat on WhatsApp">
+      <svg width="26" height="26" viewBox="0 0 32 32" fill="none"><path d="M16 3C9.373 3 4 8.373 4 15c0 2.385.664 4.615 1.816 6.515L4 29l7.697-1.793A11.94 11.94 0 0016 28c6.627 0 12-5.373 12-12S22.627 3 16 3z" fill="#25D366"/><path d="M21.5 18.5c-.3-.15-1.77-.87-2.04-.97-.28-.1-.48-.15-.68.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.79-1.67-2.09-.18-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.68-1.63-.93-2.23-.24-.58-.49-.5-.68-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.48.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.19-.57-.34z" fill="#fff"/></svg>
+    </a>
+  </div>
+
+  <script src="cursor.js" defer></script>
+  <script>
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseenter', () => document.getElementById('cursor')?.classList.add('hover'));
+      el.addEventListener('mouseleave', () => document.getElementById('cursor')?.classList.remove('hover'));
+    });
+  </script>
+
+</body>
+</html>
