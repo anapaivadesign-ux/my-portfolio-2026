@@ -843,7 +843,7 @@ nav {
 .case-panel {
   border: 1px solid var(--border);
   border-radius: 18px;
-  background: var(--gray-100);
+  background: var(--white);
   padding: 28px;
   display: grid;
   gap: 14px;
