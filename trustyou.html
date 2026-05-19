@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TrustYou UI/UX — copenicker . studio</title>
+  <meta name="description" content="TrustYou — UI/UX design for the world's #1 hospitality AI platform." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="canonical" href="https://copenickerstudio.com/trustyou.html" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Case study hero */
+    .cs-hero {
+      background: #0f3c6e;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 120px 60px 60px;
+      color: #fff;
+    }
+
+    .cs-hero-top {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .cs-hero-back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #fff;
+      text-decoration: none;
+      opacity: 0.6;
+      transition: opacity 0.2s;
+    }
+
+    .cs-hero-back-btn:hover { opacity: 1; }
+
+    .cs-hero-name {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #fff;
+      opacity: 0.5;
+    }
+
+    .cs-hero-bottom {
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 80px;
+      align-items: end;
+    }
+
+    .cs-hero-desc {
+      font-size: clamp(2rem, 4.5vw, 4rem);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      color: #fff;
+      margin: 0;
+    }
+
+    .cs-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .cs-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .cs-meta-label {
+      font-size: 0.63rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .cs-meta-value {
+      font-size: 0.9rem;
+      color: #fff;
+      line-height: 1.5;
+    }
+
+    .cs-cover {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #e8f0fa;
+    }
+
+    .cs-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .cs-body {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 64px;
+      align-items: start;
+      padding: 72px 0 80px;
+    }
+
+    .cs-sections {
+      display: grid;
+      gap: 72px;
+    }
+
+    .cs-section {
+      display: grid;
+      gap: 20px;
+    }
+
+    .cs-section-label {
+      font-size: 0.78rem;
+      font-weight: 650;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+    }
+
+    .cs-section h2 {
+      font-size: 1.6rem;
+      font-weight: 650;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .cs-section p {
+      font-size: 1.05rem;
+      color: var(--gray-600);
+      line-height: 1.85;
+    }
+
+    .cs-image {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--gray-100);
+      aspect-ratio: 16 / 10;
+      margin-top: 8px;
+    }
+
+    .cs-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .cs-sidebar {
+      position: sticky;
+      top: 100px;
+    }
+
+    @media (max-width: 768px) {
+      .cs-hero {
+        padding: 100px 24px 44px;
+        min-height: auto;
+      }
+      .cs-hero-bottom {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .cs-body {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        padding: 48px 0 64px;
+      }
+      .cs-sidebar {
+        position: static;
+        order: -1;
+      }
+    }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2WCSR9CKQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-N2WCSR9CKQ");
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="nav-logo">copenicker . studio</a>
+    <button class="burger" id="burger" aria-label="Menu" onclick="this.classList.toggle('open');document.getElementById('navRight').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-right" id="navRight">
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Work</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="shop.html">Shop</a></li>
+      </ul>
+      <a href="contact.html" class="nav-cta">Let's talk ↗</a>
+    </div>
+  </nav>
+
+  <!-- Case Study Hero -->
+  <section class="cs-hero">
+    <div class="cs-hero-top">
+      <a href="index.html" class="cs-hero-back-btn">← Back to work</a>
+      <span class="cs-hero-name">— Trust You</span>
+    </div>
+    <div class="cs-hero-bottom">
+      <p class="cs-hero-desc">Designing intuitive experiences for the world's #1 hospitality AI platform — helping hotels turn guest feedback into direct bookings and happier customers.</p>
+      <div class="cs-meta">
+        <div class="cs-meta-item">
+          <div class="cs-meta-label">Services</div>
+          <div class="cs-meta-value">UI/UX Design<br>SaaS Platform</div>
+        </div>
+        <div class="cs-meta-item">
+          <div class="cs-meta-label">Client</div>
+          <div class="cs-meta-value">TrustYou</div>
+        </div>
+        <div class="cs-meta-item">
+          <div class="cs-meta-label">Tools</div>
+          <div class="cs-meta-value">Figma</div>
+        </div>
+        <div class="cs-meta-item">
+          <div class="cs-meta-label">www</div>
+          <div class="cs-meta-value"><a href="https://www.trustyou.com" target="_blank" style="color:inherit;">trustyou.com</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cover image -->
+  <div class="cs-cover">
+    <img src="images/trust You/cover_trust_you.png" alt="TrustYou platform UI">
+  </div>
+
+  <!-- Body -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="cs-body">
+
+        <!-- Main content -->
+        <div class="cs-sections">
+
+          <div class="cs-section">
+            <span class="cs-section-label">01 — Challenge</span>
+            <h2>Simplifying complexity for hospitality teams</h2>
+            <p>TrustYou is a hospitality AI platform used by thousands of hotels worldwide to manage guest feedback, reviews, and direct bookings. The challenge was to simplify dense data dashboards into intuitive workflows that both hotel managers and front-desk staff could use confidently — without extensive training.</p>
+          </div>
+
+          <div class="cs-section">
+            <span class="cs-section-label">02 — Approach</span>
+            <h2>Data-driven design decisions</h2>
+            <p>Working embedded within the product team, I translated complex analytics and AI-generated insights into clear, actionable UI patterns. The focus was on reducing cognitive load — surfacing what matters most at a glance, while keeping advanced features accessible for power users. Each screen went through multiple rounds of stakeholder feedback and user testing before reaching production.</p>
+            <div class="cs-image" style="background:#e8f0fa;">
+              <img src="images/trust You/cover_trust_you.png" alt="TrustYou UI detail">
+            </div>
+          </div>
+
+          <div class="cs-section">
+            <span class="cs-section-label">03 — Results</span>
+            <h2>A platform hotels trust</h2>
+            <p>The redesigned platform features cleaner information architecture, faster task flows, and a consistent component system that scales across product areas. Improved onboarding and clearer feedback loops contributed to higher engagement across key dashboard features. The platform continues to serve as the industry benchmark for hospitality intelligence.</p>
+          </div>
+
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="cs-sidebar">
+          <div class="case-panel">
+            <div class="case-h3">Project details</div>
+            <div class="dl">
+              <div class="dl-row">
+                <div class="dt">Client</div>
+                <div class="dd">TrustYou</div>
+              </div>
+              <div class="dl-row">
+                <div class="dt">Service</div>
+                <div class="dd">UI/UX Design</div>
+              </div>
+              <div class="dl-row">
+                <div class="dt">Industry</div>
+                <div class="dd">Hospitality AI · SaaS</div>
+              </div>
+              <div class="dl-row">
+                <div class="dt">Tools</div>
+                <div class="dd">Figma</div>
+              </div>
+            </div>
+            <div style="height: 8px;"></div>
+            <a class="cta-button" href="contact.html">Start a project ↗</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients -->
+  <section class="clients-bar">
+    <p class="clients-label">Brands I've worked with</p>
+    <div class="clients-track-wrap">
+      <div class="clients-track">
+        <img src="images/logos/AKQA.svg" alt="AKQA">
+        <img src="images/logos/DigitasPixelPark.svg" alt="Digitas Pixel Park">
+        <img src="images/logos/foodora.svg" alt="Foodora">
+        <img src="images/logos/wayra.svg" alt="Wayra Telefonica">
+        <img src="images/logos/blush.svg" alt="Blush">
+        <img src="images/logos/techstars.svg" alt="Techstars">
+        <img src="images/logos/landor&Fitch.svg" alt="Landor &amp; Fitch">
+        <img src="images/logos/metadesign.svg" alt="Metadesign">
+        <img src="images/logos/wundermanthompson.svg" alt="Wunderman Thompson">
+        <img src="images/logos/florada.svg" alt="Florada">
+        <img src="images/logos/DHL.png" alt="DHL">
+        <img src="images/logos/MVPFactory.png" alt="MVP Factory">
+        <img src="images/logos/Vapiano.png" alt="Vapiano">
+        <img src="images/logos/minglabs.png" alt="Minglabs">
+        <img src="images/logos/AKQA.svg" alt="AKQA">
+        <img src="images/logos/DigitasPixelPark.svg" alt="Digitas Pixel Park">
+        <img src="images/logos/foodora.svg" alt="Foodora">
+        <img src="images/logos/wayra.svg" alt="Wayra Telefonica">
+        <img src="images/logos/blush.svg" alt="Blush">
+        <img src="images/logos/techstars.svg" alt="Techstars">
+        <img src="images/logos/landor&Fitch.svg" alt="Landor &amp; Fitch">
+        <img src="images/logos/metadesign.svg" alt="Metadesign">
+        <img src="images/logos/wundermanthompson.svg" alt="Wunderman Thompson">
+        <img src="images/logos/florada.svg" alt="Florada">
+        <img src="images/logos/DHL.png" alt="DHL">
+        <img src="images/logos/MVPFactory.png" alt="MVP Factory">
+        <img src="images/logos/Vapiano.png" alt="Vapiano">
+        <img src="images/logos/minglabs.png" alt="Minglabs">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-col">
+        <h3>copenicker . studio</h3>
+        <p>Consulting. Design. Experience.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <p><a href="index.html">Work</a></p>
+        <p><a href="services.html">Services</a></p>
+        <p><a href="about.html">About</a></p>
+        <p><a href="contact.html">Contact</a></p>
+        <p><a href="blog.html">Blog</a></p>
+        <p><a href="workshops.html">Workshops</a></p>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p><a href="mailto:ana@copenickerstudio.com">ana@copenickerstudio.com</a></p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/anapaivadesign/" target="_blank" title="LinkedIn">in</a>
+          <a href="https://www.instagram.com/copenicker" target="_blank" title="Instagram">ig</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 copenicker . studio. All rights reserved. · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="complaints.html">Complaints</a></p>
+    </div>
+  </footer>
+
+  <div class="wa-widget">
+    <div class="wa-panel" id="waPanel">
+      <div class="wa-panel-header">
+        <img class="wa-avatar" src="images/ana-profile.png" alt="Ana">
+        <div class="wa-panel-header-info">
+          <strong>copenicker . studio</strong>
+          <span>Typically replies instantly</span>
+        </div>
+        <button class="wa-close" onclick="document.getElementById('waPanel').classList.remove('open')">&times;</button>
+      </div>
+      <div class="wa-body">
+        <div class="wa-bubble">Hi there! 👋 How can we help you?<span>now</span></div>
+      </div>
+      <a class="wa-start" href="https://wa.me/491746290656" target="_blank">Start chat</a>
+    </div>
+    <button class="wa-btn" onclick="document.getElementById('waPanel').classList.toggle('open')" aria-label="Chat on WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </button>
+  </div>
+
+  <div class="cursor" id="cursor"></div>
+  <script>
+    const cursor = document.getElementById("cursor");
+    document.addEventListener("mousemove", e => {
+      cursor.style.left = e.clientX + "px";
+      cursor.style.top = e.clientY + "px";
+    });
+    document.querySelectorAll("a, button").forEach(el => {
+      el.addEventListener("mouseenter", () => cursor.classList.add("hover"));
+      el.addEventListener("mouseleave", () => cursor.classList.remove("hover"));
+    });
+
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add("visible"); revealObserver.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll(".section").forEach(el => {
+      el.classList.add("reveal");
+      revealObserver.observe(el);
+    });
+  </script>
+
+</body>
+</html>
