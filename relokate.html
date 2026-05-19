@@ -3,21 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Meaningful Milene copenicker . studio</title>
-  <meta name="description" content="Brand identity and website design for Milene, an osteopath and yoga teacher based in Lisbon." />
+  <title>Relokate UI/UX — copenicker . studio</title>
+  <meta name="description" content="Relokate — UI/UX design for a relocation software platform." />
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="canonical" href="https://copenickerstudio.com/milene.html" />
+  <link rel="canonical" href="https://copenickerstudio.com/relokate.html" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* Case study hero */
     .cs-hero {
-      background: #e05c2a;
+      background: #0d6e64;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       padding: 120px 60px 60px;
-      color: #fbf5e4;
+      color: #e8f5f3;
     }
 
     .cs-hero-top {
@@ -32,7 +31,7 @@
       gap: 6px;
       font-size: 0.82rem;
       font-weight: 600;
-      color: #fbf5e4;
+      color: #e8f5f3;
       text-decoration: none;
       opacity: 0.6;
       transition: opacity 0.2s;
@@ -45,7 +44,7 @@
       font-weight: 600;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: #fbf5e4;
+      color: #e8f5f3;
       opacity: 0.5;
     }
 
@@ -61,7 +60,7 @@
       font-weight: 400;
       line-height: 1.15;
       letter-spacing: -0.025em;
-      color: #fbf5e4;
+      color: #e8f5f3;
       margin: 0;
     }
 
@@ -81,27 +80,87 @@
       font-size: 0.63rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      color: rgba(251,245,228,0.5);
+      color: rgba(232,245,243,0.5);
     }
 
     .cs-meta-value {
       font-size: 0.9rem;
-      color: #fbf5e4;
+      color: #e8f5f3;
       line-height: 1.5;
     }
 
-    .milene-cover {
+    .cs-cover {
       width: 100%;
-      background: #fbf5e4;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 60px 0;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #f0f9f8;
     }
 
-    .milene-cover img {
-      max-width: 480px;
-      width: 80%;
+    .cs-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .cs-body {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 64px;
+      align-items: start;
+      padding: 72px 0 80px;
+    }
+
+    .cs-sections {
+      display: grid;
+      gap: 72px;
+    }
+
+    .cs-section {
+      display: grid;
+      gap: 20px;
+    }
+
+    .cs-section-label {
+      font-size: 0.78rem;
+      font-weight: 650;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+    }
+
+    .cs-section h2 {
+      font-size: 1.6rem;
+      font-weight: 650;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .cs-section p {
+      font-size: 1.05rem;
+      color: var(--gray-600);
+      line-height: 1.85;
+    }
+
+    .cs-image {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--gray-100);
+      aspect-ratio: 16 / 10;
+      margin-top: 8px;
+    }
+
+    .cs-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .cs-sidebar {
+      position: sticky;
+      top: 100px;
     }
 
     @media (max-width: 768px) {
@@ -115,136 +174,15 @@
       }
     }
 
-    .milene-body {
-      display: grid;
-      grid-template-columns: 1fr 320px;
-      gap: 64px;
-      align-items: start;
-      padding: 72px 0 80px;
-    }
-
-    .milene-sections {
-      display: grid;
-      gap: 72px;
-    }
-
-    .milene-section {
-      display: grid;
-      gap: 20px;
-    }
-
-    .milene-section-label {
-      font-size: 0.78rem;
-      font-weight: 650;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--gray-400);
-    }
-
-    .milene-section h2 {
-      font-size: 1.6rem;
-      font-weight: 650;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-    }
-
-    .milene-section p {
-      font-size: 1.05rem;
-      color: var(--gray-600);
-      line-height: 1.85;
-    }
-
-    .milene-image {
-      width: 100%;
-      border-radius: 12px;
-      overflow: hidden;
-      background: var(--gray-100);
-      margin-top: 8px;
-    }
-
-    .milene-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .milene-palette {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 8px;
-    }
-
-    .milene-swatch {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .milene-swatch-color {
-      width: 64px;
-      height: 64px;
-      border-radius: 12px;
-      border: 1px solid rgba(0,0,0,0.08);
-    }
-
-    .milene-swatch span {
-      font-size: 0.72rem;
-      font-weight: 650;
-      letter-spacing: 0.04em;
-      color: var(--gray-500);
-    }
-
-    .milene-icons-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-top: 8px;
-    }
-
-    .milene-icon-tile {
-      aspect-ratio: 1;
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-    }
-
-    .milene-icon-tile img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    .milene-sidebar {
-      position: sticky;
-      top: 100px;
-    }
-
-    .milene-sidebar .case-panel {
-      background: var(--gray-50, #fafafa);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 32px;
-    }
-
     @media (max-width: 900px) {
-      .milene-body {
+      .cs-body {
         grid-template-columns: 1fr;
         gap: 48px;
         padding: 48px 0 64px;
       }
-
-      .milene-sidebar {
+      .cs-sidebar {
         position: static;
         order: -1;
-      }
-
-      .milene-icons-grid {
-        grid-template-columns: repeat(4, 1fr);
       }
     }
   </style>
@@ -280,158 +218,90 @@
   <section class="cs-hero">
     <div class="cs-hero-top">
       <a href="index.html" class="cs-hero-back-btn">← Back to work</a>
-      <span class="cs-hero-name">— Meaningful Milene</span>
+      <span class="cs-hero-name">— Relokate</span>
     </div>
     <div class="cs-hero-bottom">
-      <p class="cs-hero-desc">Brand identity and website design for an osteopath and yoga teacher building her practice in Lisbon — warm, human, and full of meaning.</p>
+      <p class="cs-hero-desc">Designing the end-to-end experience for a relocation software platform — making complex global moves feel simple, human, and stress-free.</p>
       <div class="cs-meta">
         <div class="cs-meta-item">
           <div class="cs-meta-label">Services</div>
-          <div class="cs-meta-value">Web Design</div>
+          <div class="cs-meta-value">UI/UX Design<br>SaaS Platform</div>
         </div>
         <div class="cs-meta-item">
           <div class="cs-meta-label">Client</div>
-          <div class="cs-meta-value">Meaningful Milene</div>
+          <div class="cs-meta-value">Relokate</div>
         </div>
         <div class="cs-meta-item">
-          <div class="cs-meta-label">Tech</div>
-          <div class="cs-meta-value">Next.js · Tailwind</div>
+          <div class="cs-meta-label">Tools</div>
+          <div class="cs-meta-value">Figma</div>
         </div>
         <div class="cs-meta-item">
           <div class="cs-meta-label">www</div>
-          <div class="cs-meta-value"><a href="https://meanful-milene-mu.vercel.app" target="_blank" style="color:inherit;">meaningfulmilene.com</a></div>
+          <div class="cs-meta-value"><a href="https://relokate.io" target="_blank" style="color:inherit;">relokate.io</a></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Cover -->
-  <div class="milene-cover">
-    <img src="images/milene/logo_1.png" alt="Meaningful Milene brand">
+  <!-- Cover image -->
+  <div class="cs-cover">
+    <img src="images/relokate/relokate_cover.png" alt="Relokate platform UI">
   </div>
 
   <!-- Body -->
   <section class="section" style="padding-top: 0;">
     <div class="container">
-      <div class="milene-body">
+      <div class="cs-body">
 
         <!-- Main content -->
-        <div class="milene-sections">
+        <div class="cs-sections">
 
-          <div class="milene-section">
-            <span class="milene-section-label">01 — Challenge</span>
-            <h2>Building trust before the first appointment</h2>
-            <p>Milene is an Azorean osteopath who built a thriving practice in Faial through one thing: genuine care. Moving to Lisbon meant starting from scratch in a competitive city — without the word-of-mouth network she'd earned over years. The challenge was to create a digital presence that communicated her warmth and expertise to people who had never met her.</p>
-            <p>The brand needed to feel human, joyful, and trustworthy — not clinical. It also had to serve two different audiences: adults seeking osteopathy and parents looking for gentle care for their children.</p>
+          <div class="cs-section">
+            <span class="cs-section-label">01 — Challenge</span>
+            <h2>Making relocation feel less overwhelming</h2>
+            <p>Relocating to a new country involves dozens of moving parts — visas, housing, school searches, banking, local registrations. Relokate set out to bring all of this into one platform, serving both employees moving abroad and the HR teams managing their transitions. The challenge was designing workflows complex enough to handle real-world edge cases while feeling approachable for stressed, time-poor users.</p>
           </div>
 
-          <div class="milene-section">
-            <span class="milene-section-label">02 — Brand Identity</span>
-            <h2>A palette as warm as the practitioner</h2>
-            <p>The visual identity centres on a bold, warm colour palette — burnt orange, deep indigo, lime, and rose — that feels alive and approachable without losing credibility. Each colour has a role: orange for energy and warmth, indigo for trust and depth, lime for vitality, pink for care and tenderness.</p>
-
-            <div class="milene-palette">
-              <div class="milene-swatch">
-                <div class="milene-swatch-color" style="background:#e05c2a;"></div>
-                <span>Orange</span>
-              </div>
-              <div class="milene-swatch">
-                <div class="milene-swatch-color" style="background:#2d2f6b;"></div>
-                <span>Indigo</span>
-              </div>
-              <div class="milene-swatch">
-                <div class="milene-swatch-color" style="background:#c8e64a;"></div>
-                <span>Lime</span>
-              </div>
-              <div class="milene-swatch">
-                <div class="milene-swatch-color" style="background:#e87ea1;"></div>
-                <span>Rose</span>
-              </div>
-              <div class="milene-swatch">
-                <div class="milene-swatch-color" style="background:#fbf5e4;"></div>
-                <span>Cream</span>
-              </div>
-            </div>
-
-            <p style="margin-top: 16px;">A custom set of brand icons — flowers, birds, waves, a human-leaf form, a sun — were designed to appear throughout the site as decorative elements that reinforce the holistic, nature-connected philosophy behind Milene's work.</p>
-
-            <div class="milene-icons-grid">
-              <div class="milene-icon-tile" style="background:#e05c2a;"><img src="images/milene/icons/flower.svg" alt="flower"></div>
-              <div class="milene-icon-tile" style="background:#2d2f6b;"><img src="images/milene/icons/bird.svg" alt="bird"></div>
-              <div class="milene-icon-tile" style="background:#c8e64a;"><img src="images/milene/icons/mountain.svg" alt="mountain"></div>
-              <div class="milene-icon-tile" style="background:#e87ea1;"><img src="images/milene/icons/heart.svg" alt="heart"></div>
-              <div class="milene-icon-tile" style="background:#c8e64a;"><img src="images/milene/icons/sun.svg" alt="sun"></div>
-              <div class="milene-icon-tile" style="background:#e05c2a;"><img src="images/milene/icons/sea.svg" alt="sea"></div>
-              <div class="milene-icon-tile" style="background:#e87ea1;"><img src="images/milene/icons/star.svg" alt="star"></div>
-              <div class="milene-icon-tile" style="background:#2d2f6b;"><img src="images/milene/icons/square.svg" alt="square"></div>
-            </div>
-
-            <div style="margin-top: 32px;">
-              <p style="font-size:0.78rem; font-weight:650; letter-spacing:0.1em; text-transform:uppercase; color:var(--gray-400); margin-bottom:16px;">Logo variations</p>
-              <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap:12px;">
-                <img src="images/milene/logo_1.png" alt="Logo 1" style="width:100%; border-radius:10px;">
-                <img src="images/milene/logo_2.png" alt="Logo 2" style="width:100%; border-radius:10px;">
-                <img src="images/milene/logo_3.png" alt="Logo 3" style="width:100%; border-radius:10px;">
-                <img src="images/milene/logo_4.png" alt="Logo 4" style="width:100%; border-radius:10px;">
-                <img src="images/milene/logo_5.png" alt="Logo 5" style="width:100%; border-radius:10px;">
-                <img src="images/milene/logo_6.png" alt="Logo 6" style="width:100%; border-radius:10px;">
-                <img src="images/milene/logo_7.png" alt="Logo 7" style="width:100%; border-radius:10px;">
-                <img src="images/milene/logo_8.png" alt="Logo 8" style="width:100%; border-radius:10px;">
-              </div>
+          <div class="cs-section">
+            <span class="cs-section-label">02 — Approach</span>
+            <h2>Two users, one platform</h2>
+            <p>The platform serves two distinct audiences: relocating employees navigating their move, and HR coordinators tracking multiple cases at once. I designed dual-view dashboards that give each user type exactly what they need — personal checklists and milestone tracking for employees; case management, document oversight, and team communication tools for HR.</p>
+            <p>A strong information architecture was the foundation. By mapping every user journey end-to-end before touching Figma, we avoided the trap of building screens in isolation — every flow connected logically to the next.</p>
+            <div class="cs-image">
+              <img src="images/relokate/relokate_cover.png" alt="Relokate UI detail">
             </div>
           </div>
 
-          <div class="milene-section">
-            <span class="milene-section-label">03 — Website</span>
-            <h2>A site that feels like a warm welcome</h2>
-            <p>The website was built in Next.js with a section-by-section narrative flow — starting with warmth and trust, moving into Milene's story, then services and testimonials, and ending with a clear call to book. Wave borders between sections create a fluid, organic sense of movement.</p>
-            <p>Services are broken down clearly: Osteopathy (clinic & home visits), Infant & Pediatric, and Yoga — each with its own tone and visual treatment. The copy was written to feel personal and direct, reflecting how Milene actually speaks to her patients.</p>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:8px;">
-              <div class="milene-image" style="background:#e05c2a;">
-                <img src="images/milene/patterns/pattern.svg" alt="Brand pattern" style="object-fit:contain; padding:16px;">
-              </div>
-              <div class="milene-image" style="background:#fbf5e4;">
-                <img src="images/milene/quotes/quote.svg" alt="Brand quote" style="object-fit:contain; padding:16px;">
-              </div>
-            </div>
-          </div>
-
-          <div class="milene-section">
-            <span class="milene-section-label">04 — Learnings</span>
-            <h2>Design as an act of care</h2>
-            <p>This project was a reminder that healthcare brands require a particular kind of sensitivity. Every design decision — colour, type size, tone of voice — either builds or erodes trust. Getting that balance right meant deeply understanding who Milene is before touching a single pixel.</p>
+          <div class="cs-section">
+            <span class="cs-section-label">03 — Results</span>
+            <h2>A platform built for real complexity</h2>
+            <p>The finished product handles the full relocation lifecycle — from initial offer acceptance through to settled-in status — with a consistent, calming UI that reduces anxiety at every step. The design system scales across mobile and desktop, ensuring employees can check progress on the go while HR managers work through complex cases at their desks.</p>
           </div>
 
         </div>
 
         <!-- Sidebar -->
-        <aside class="milene-sidebar">
+        <aside class="cs-sidebar">
           <div class="case-panel">
             <div class="case-h3">Project details</div>
             <div class="dl">
               <div class="dl-row">
                 <div class="dt">Client</div>
-                <div class="dd">Meaningful Milene</div>
+                <div class="dd">Relokate</div>
               </div>
               <div class="dl-row">
                 <div class="dt">Service</div>
-                <div class="dd">Web Design</div>
+                <div class="dd">UI/UX Design</div>
               </div>
               <div class="dl-row">
-                <div class="dt">Deliverables</div>
-                <div class="dd">Brand system, custom icons, full website</div>
+                <div class="dt">Industry</div>
+                <div class="dd">Relocation · SaaS</div>
               </div>
               <div class="dl-row">
-                <div class="dt">Tech</div>
-                <div class="dd">Next.js · Tailwind CSS</div>
-              </div>
-              <div class="dl-row">
-                <div class="dt">Sector</div>
-                <div class="dd">Health & Wellness</div>
+                <div class="dt">Tools</div>
+                <div class="dd">Figma</div>
               </div>
             </div>
-            <div style="height: 8px;"></div>
-            <a class="cta-button" href="https://meanful-milene-mu.vercel.app" target="_blank" rel="noopener">Visit site ↗</a>
             <div style="height: 8px;"></div>
             <a class="cta-button" href="contact.html">Start a project ↗</a>
           </div>

@@ -1008,9 +1008,10 @@ nav {
 }
 
 .service-card-new {
-  border: 1px solid var(--border);
+  background: var(--gray-100);
+  border: none;
   border-radius: 20px;
-  padding: 56px 48px 48px;
+  padding: 48px 40px 40px;
   display: flex;
   flex-direction: column;
   gap: 0;
