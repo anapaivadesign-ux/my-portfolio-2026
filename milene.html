@@ -9,61 +9,110 @@
   <link rel="canonical" href="https://copenickerstudio.com/milene.html" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .milene-hero {
-      padding: 80px 0 0;
-    }
-
-    .milene-hero-inner {
-      display: grid;
-      gap: 32px;
-    }
-
-    .milene-tags {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .milene-kv {
-      width: 100%;
-      border-radius: 16px;
-      overflow: hidden;
-      aspect-ratio: 16 / 9;
-      margin-top: 48px;
+    /* Case study hero */
+    .cs-hero {
       background: #e05c2a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 120px 60px 60px;
+      color: #fbf5e4;
+    }
+
+    .cs-hero-top {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .cs-hero-back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #fbf5e4;
+      text-decoration: none;
+      opacity: 0.6;
+      transition: opacity 0.2s;
+    }
+
+    .cs-hero-back-btn:hover { opacity: 1; }
+
+    .cs-hero-name {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #fbf5e4;
+      opacity: 0.5;
+    }
+
+    .cs-hero-bottom {
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 80px;
+      align-items: end;
+    }
+
+    .cs-hero-desc {
+      font-size: clamp(2rem, 4.5vw, 4rem);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      color: #fbf5e4;
+      margin: 0;
+    }
+
+    .cs-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .cs-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .cs-meta-label {
+      font-size: 0.63rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(251,245,228,0.5);
+    }
+
+    .cs-meta-value {
+      font-size: 0.9rem;
+      color: #fbf5e4;
+      line-height: 1.5;
+    }
+
+    .milene-cover {
+      width: 100%;
+      background: #fbf5e4;
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
+      padding: 60px 0;
     }
 
-    .milene-kv-inner {
-      text-align: center;
-      padding: 40px;
+    .milene-cover img {
+      max-width: 480px;
+      width: 80%;
     }
 
-    .milene-kv-tagline {
-      font-size: clamp(1.8rem, 4vw, 3.2rem);
-      font-weight: 800;
-      color: #fbf5e4;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-    }
-
-    .milene-kv-sub {
-      margin-top: 16px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: rgba(251,245,228,0.7);
-    }
-
-    .milene-kv img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+    @media (max-width: 768px) {
+      .cs-hero {
+        padding: 100px 24px 44px;
+        min-height: auto;
+      }
+      .cs-hero-bottom {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
     }
 
     .milene-body {
@@ -227,29 +276,39 @@
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section class="section milene-hero">
-    <div class="container">
-      <div class="milene-hero-inner">
-        <div>
-          <a class="link-arrow" href="index.html" style="margin-bottom: 24px; display: inline-flex; padding: 10px 18px; border: 1px solid var(--border); border-radius: 999px;">← Back to work</a>
-          <h1 class="case-title" style="margin-top: 0;">Meaningful Milene</h1>
-          <p class="hero-subtitle" style="max-width: 60ch; margin-top: 16px;">
-            Brand identity and website design for an osteopath and yoga teacher building her practice in Lisbon — warm, human, and full of meaning.
-          </p>
-          <div class="milene-tags" style="margin-top: 24px;">
-            <span class="tag">Web Design</span>
-            <span class="tag">Next.js</span>
-          </div>
+  <!-- Case Study Hero -->
+  <section class="cs-hero">
+    <div class="cs-hero-top">
+      <a href="index.html" class="cs-hero-back-btn">← Back to work</a>
+      <span class="cs-hero-name">— Meaningful Milene</span>
+    </div>
+    <div class="cs-hero-bottom">
+      <p class="cs-hero-desc">Brand identity and website design for an osteopath and yoga teacher building her practice in Lisbon — warm, human, and full of meaning.</p>
+      <div class="cs-meta">
+        <div class="cs-meta-item">
+          <div class="cs-meta-label">Services</div>
+          <div class="cs-meta-value">Brand Identity<br>Web Design</div>
         </div>
-
-        <div class="milene-kv">
-          <img src="images/milene/logo_1.png" alt="Meaningful Milene brand">
+        <div class="cs-meta-item">
+          <div class="cs-meta-label">Client</div>
+          <div class="cs-meta-value">Meaningful Milene</div>
         </div>
-
+        <div class="cs-meta-item">
+          <div class="cs-meta-label">Tech</div>
+          <div class="cs-meta-value">Next.js · Tailwind</div>
+        </div>
+        <div class="cs-meta-item">
+          <div class="cs-meta-label">www</div>
+          <div class="cs-meta-value"><a href="https://meanful-milene-mu.vercel.app" target="_blank" style="color:inherit;">meaningfulmilene.com</a></div>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- Cover -->
+  <div class="milene-cover">
+    <img src="images/milene/logo_1.png" alt="Meaningful Milene brand">
+  </div>
 
   <!-- Body -->
   <section class="section" style="padding-top: 0;">
