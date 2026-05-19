@@ -844,7 +844,7 @@ nav {
   border: 1px solid var(--border);
   border-radius: 18px;
   background: var(--gray-100);
-  padding: 20px;
+  padding: 28px;
   display: grid;
   gap: 14px;
 }
@@ -895,7 +895,7 @@ nav {
 
 .dd {
   color: var(--gray-900);
-  font-weight: 520;
+  font-weight: 700;
 }
 
 .gallery {
