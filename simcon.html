@@ -24,24 +24,30 @@
     .cs-hero-top {
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 4px;
     }
 
-    .cs-hero-category {
-      font-size: 0.78rem;
+    .cs-hero-back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
       font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
       color: #0f0f1a;
       text-decoration: none;
+      opacity: 0.6;
+      transition: opacity 0.2s;
     }
+
+    .cs-hero-back-btn:hover { opacity: 1; }
 
     .cs-hero-name {
       font-size: 0.78rem;
       font-weight: 600;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       color: #0f0f1a;
+      opacity: 0.55;
     }
 
     .cs-hero-bottom {
@@ -253,7 +259,7 @@
   <!-- Case Study Hero -->
   <section class="cs-hero">
     <div class="cs-hero-top">
-      <a href="index.html" class="cs-hero-category">Projects</a>
+      <a href="index.html" class="cs-hero-back-btn">← Back to work</a>
       <span class="cs-hero-name">— SIMCON</span>
     </div>
     <div class="cs-hero-bottom">
