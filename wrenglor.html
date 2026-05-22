@@ -3,18 +3,190 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>copenicker . studio Consulting. Design. Experience.</title>
-  <meta name="description" content="Digital studio focused on branding and digital experiences." />
+  <title>Wrenglor UI/UX — copenicker . studio</title>
+  <meta name="description" content="Wrenglor — UI/UX design for a SaaS platform." />
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="canonical" href="https://copenickerstudio.com/" />
-  <meta property="og:title" content="copenicker . studio — Consulting. Design. Experience." />
-  <meta property="og:description" content="Digital studio focused on branding and digital experiences." />
-  <meta property="og:url" content="https://copenickerstudio.com/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://copenickerstudio.com/images/og-image.png" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://copenickerstudio.com/wrenglor.html" />
   <link rel="stylesheet" href="styles.css" />
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <style>
+    .cs-hero {
+      background: #6b2737;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 120px 60px 60px;
+      color: #fff;
+    }
+
+    .cs-hero-top {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .cs-hero-back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #fff;
+      text-decoration: none;
+      opacity: 0.6;
+      transition: opacity 0.2s;
+    }
+
+    .cs-hero-back-btn:hover { opacity: 1; }
+
+    .cs-hero-name {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #fff;
+      opacity: 0.5;
+    }
+
+    .cs-hero-bottom {
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 80px;
+      align-items: end;
+    }
+
+    .cs-hero-desc {
+      font-family: 'Caudex', Georgia, serif;
+      font-size: clamp(2rem, 4.5vw, 4rem);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      color: #fff;
+      margin: 0;
+    }
+
+    .cs-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .cs-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .cs-meta-label {
+      font-size: 0.63rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .cs-meta-value {
+      font-size: 0.9rem;
+      color: #fff;
+      line-height: 1.5;
+    }
+
+    .cs-cover {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #f5eeec;
+    }
+
+    .cs-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .cs-body {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 64px;
+      align-items: start;
+      padding: 72px 0 80px;
+    }
+
+    .cs-sections {
+      display: grid;
+      gap: 72px;
+    }
+
+    .cs-section {
+      display: grid;
+      gap: 20px;
+    }
+
+    .cs-section-label {
+      font-size: 0.78rem;
+      font-weight: 650;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+    }
+
+    .cs-section h2 {
+      font-size: 1.6rem;
+      font-weight: 650;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .cs-section p {
+      font-size: 1.05rem;
+      color: var(--gray-600);
+      line-height: 1.85;
+    }
+
+    .cs-image {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--gray-100);
+      aspect-ratio: 16 / 10;
+      margin-top: 8px;
+    }
+
+    .cs-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .cs-sidebar {
+      position: sticky;
+      top: 100px;
+    }
+
+    @media (max-width: 768px) {
+      .cs-hero {
+        padding: 100px 24px 44px;
+        min-height: auto;
+      }
+      .cs-hero-bottom {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .cs-body {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        padding: 48px 0 64px;
+      }
+      .cs-sidebar {
+        position: static;
+        order: -1;
+      }
+    }
+  </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2WCSR9CKQ"></script>
   <script>
@@ -43,109 +215,95 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="hero home-hero" style="position:relative;">
-    <div class="gradient-blob blob-1"></div>
-    <div class="gradient-blob blob-2"></div>
-    <div class="gradient-blob blob-3"></div>
-    <a href="contact.html" class="spinning-badge hero-badge" aria-label="Available now">
-      <svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <path id="circlePath" d="M 110,110 m -85,0 a 85,85 0 1,1 170,0 a 85,85 0 1,1 -170,0"/>
-        </defs>
-<text font-size="13" font-family="inherit" font-weight="600" letter-spacing="7.2" fill="currentColor">
-          <textPath href="#circlePath" startOffset="0%">AVAILABLE NOW · AVAILABLE NOW ·</textPath>
-        </text>
-      </svg>
-    </a>
-    <div class="container">
-      <div class="hero-centered" style="position:relative;">
-        <div class="hero-subtitle-row">
-          <p class="hero-subtitle">Consulting. Design. Experience.</p>
+  <!-- Case Study Hero -->
+  <section class="cs-hero">
+    <div class="cs-hero-top">
+      <a href="index.html" class="cs-hero-back-btn">← Back to work</a>
+      <span class="cs-hero-name">— Wrenglor</span>
+    </div>
+    <div class="cs-hero-bottom">
+      <p class="cs-hero-desc">Designing a seamless SaaS experience for a modern B2B platform.</p>
+      <div class="cs-meta">
+        <div class="cs-meta-item">
+          <div class="cs-meta-label">Services</div>
+          <div class="cs-meta-value">UI/UX Design<br>SaaS Platform</div>
         </div>
-        <a href="#selected-work" class="hero-cta">Selected work ↓</a>
+        <div class="cs-meta-item">
+          <div class="cs-meta-label">Client</div>
+          <div class="cs-meta-value">Wrenglor</div>
+        </div>
+        <div class="cs-meta-item">
+          <div class="cs-meta-label">Tools</div>
+          <div class="cs-meta-value">Figma</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Selected Work -->
-  <section id="selected-work" class="section" style="padding-top: 10px;">
-    <div class="container wide-container">
-      <div class="work-grid">
-        <a class="work-card work-card--overlay" href="simcon.html" style="--overlay-bg: rgba(67, 56, 202, 0.88);">
-          <div class="work-thumb">
-            <img src="images/simcon images/simcon_image1.png" alt="SIMCON Design System">
-            <div class="work-overlay">
-              <div class="work-title">SIMCON</div>
-              <div class="work-desc">UI/UX Design · Design System</div>
-            </div>
-          </div>
-        </a>
+  <!-- Cover image -->
+  <div class="cs-cover">
+    <!-- Add cover image: <img src="images/wrenglor/wrenglor_cover.png" alt="Wrenglor platform UI"> -->
+  </div>
 
-        <a class="work-card work-card--overlay" href="trustyou.html" style="--overlay-bg: rgba(15, 60, 110, 0.88);">
-          <div class="work-thumb">
-            <img src="images/trust You/cover_trust_you.png" alt="Trust You">
-            <div class="work-overlay">
-              <div class="work-title">Trust You</div>
-              <div class="work-desc">UI/UX Design · SaaS</div>
-            </div>
-          </div>
-        </a>
-
-<a class="work-card work-card--overlay" href="relokate.html" style="--overlay-bg: rgba(13, 110, 100, 0.88);">
-          <div class="work-thumb">
-            <img src="images/relokate/relokate_cover.png" alt="Relokate Relocation software platform">
-            <div class="work-overlay">
-              <div class="work-title">Relokate</div>
-              <div class="work-desc">UI/UX Design · SaaS</div>
-            </div>
-          </div>
-        </a>
-
-        <a class="work-card work-card--overlay" href="milene.html" style="--overlay-bg: rgba(45, 47, 107, 0.88);">
-          <div class="work-thumb">
-            <img src="images/milene/covermilene.png" alt="Meaningful Milene">
-            <div class="work-overlay">
-              <div class="work-title">Meaningful Milene</div>
-              <div class="work-desc">Web Design</div>
-            </div>
-          </div>
-        </a>
-
-        <a class="work-card work-card--overlay" href="wrenglor.html" style="--overlay-bg: rgba(107, 39, 55, 0.88);">
-          <div class="work-thumb">
-            <div style="width:100%;aspect-ratio:16/9;background:#6b2737;display:flex;align-items:center;justify-content:center;">
-              <span style="font-family:'Caudex',Georgia,serif;font-size:2rem;color:#fff;opacity:0.4;">Wrenglor</span>
-            </div>
-            <div class="work-overlay">
-              <div class="work-title">Wrenglor</div>
-              <div class="work-desc">UI/UX Design · SaaS</div>
-            </div>
-          </div>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container" style="display: flex; justify-content: center;">
-      <a class="cta-button" href="work.html">View all projects ↗</a>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="section">
+  <!-- Body -->
+  <section class="section" style="padding-top: 0;">
     <div class="container">
-      <div class="cta-section">
-        <div class="cta-section-text">
-          <h2 class="canela-heading">Let’s create <span class="underline-italic">together</span>.</h2>
-          <p>Big ideas start with a simple hello. Reach out and we’ll take it from there.</p>
-          <div class="cta-buttons">
-            <a href="services.html" class="cta-button-outline">See all services ↗</a>
-            <a href="contact.html" class="cta-button">Let’s talk ↗</a>
+      <div class="cs-body">
+
+        <!-- Main content -->
+        <div class="cs-sections">
+
+          <div class="cs-section">
+            <span class="cs-section-label">01 — Challenge</span>
+            <h2>Add challenge headline here</h2>
+            <p>Describe the problem or challenge this project solved. What was the context, what was broken or missing, and why did it matter to the users and the business?</p>
           </div>
+
+          <div class="cs-section">
+            <span class="cs-section-label">02 — Approach</span>
+            <h2>Add approach headline here</h2>
+            <p>Describe the design process and decisions made. What methods did you use? What key insights shaped the direction?</p>
+            <p>Continue with further detail on the execution — how the design came together, any notable challenges solved along the way.</p>
+            <div class="cs-image">
+              <!-- Add image: <img src="images/wrenglor/wrenglor_detail.png" alt="Wrenglor UI detail"> -->
+            </div>
+          </div>
+
+          <div class="cs-section">
+            <span class="cs-section-label">03 — Results</span>
+            <h2>Add results headline here</h2>
+            <p>What was delivered? What impact did the design have — on users, on the product, on the business? Include any metrics or qualitative outcomes if available.</p>
+          </div>
+
         </div>
+
+        <!-- Sidebar -->
+        <aside class="cs-sidebar">
+          <div class="case-panel">
+            <div class="case-h3">Project details</div>
+            <div class="dl">
+              <div class="dl-row">
+                <div class="dt">Client</div>
+                <div class="dd">Wrenglor</div>
+              </div>
+              <div class="dl-row">
+                <div class="dt">Service</div>
+                <div class="dd">UI/UX Design</div>
+              </div>
+              <div class="dl-row">
+                <div class="dt">Industry</div>
+                <div class="dd">SaaS</div>
+              </div>
+              <div class="dl-row">
+                <div class="dt">Tools</div>
+                <div class="dd">Figma</div>
+              </div>
+            </div>
+            <div style="height: 8px;"></div>
+            <a class="cta-button" href="contact.html">Start a project ↗</a>
+          </div>
+        </aside>
+
       </div>
     </div>
   </section>
@@ -209,7 +367,6 @@
         <div class="social-links">
           <a href="https://www.linkedin.com/in/anapaivadesign/" target="_blank" title="LinkedIn">in</a>
           <a href="https://www.instagram.com/copenicker" target="_blank" title="Instagram">ig</a>
-          
         </div>
       </div>
     </div>
@@ -259,13 +416,6 @@
       el.classList.add("reveal");
       revealObserver.observe(el);
     });
-
-    const heroCoverImg = document.querySelector(".hero-cover img");
-    if (heroCoverImg) {
-      window.addEventListener("scroll", () => {
-        heroCoverImg.style.transform = "translateY(" + (window.scrollY * 0.1) + "px)";
-      }, { passive: true });
-    }
   </script>
 
 </body>
