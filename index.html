@@ -70,34 +70,42 @@
 
   <!-- Scroll banner -->
   <a href="#selected-work" class="scroll-banner">
-    <span>Scroll to read</span>
+    <span class="scroll-banner-quote">A designer learning evolving tools, craft, and AI</span>
+    <span class="scroll-banner-center">Scroll to read</span>
     <span class="scroll-banner-arrow">↓</span>
   </a>
 
   <style>
     .scroll-banner {
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
       align-items: center;
-      justify-content: space-between;
       background: transparent;
       color: var(--black);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
       padding: 18px 48px;
-      font-size: 0.9rem;
+      font-size: 0.82rem;
       font-weight: 600;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       text-decoration: none;
       transition: opacity 0.2s;
+      gap: 24px;
     }
     .scroll-banner:hover { opacity: 0.6; }
+    .scroll-banner-quote { color: var(--gray-500); font-weight: 500; letter-spacing: 0.03em; }
+    .scroll-banner-center { text-align: center; white-space: nowrap; }
     .scroll-banner-arrow {
       font-size: 1.2rem;
+      text-align: right;
       transition: transform 0.3s;
     }
     .scroll-banner:hover .scroll-banner-arrow { transform: translateY(4px); }
-    @media (max-width: 600px) { .scroll-banner { padding: 18px 24px; } }
+    @media (max-width: 700px) {
+      .scroll-banner { grid-template-columns: 1fr auto; padding: 18px 24px; }
+      .scroll-banner-quote { display: none; }
+    }
   </style>
 
   <!-- Selected Work -->
