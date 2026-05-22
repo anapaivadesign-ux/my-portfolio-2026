@@ -1263,6 +1263,8 @@ nav {
 .cta-section.cta-navy p { color: rgba(255,255,255,0.85); }
 .cta-section.cta-navy h2 { color: #fff; }
 
+.cta-section.cta-peach { background: #FEECE9; }
+
 .cta-section.cta-orange { background: #F26749; }
 .cta-section.cta-orange h2,
 .cta-section.cta-orange p { color: rgba(255,255,255,0.85); }
