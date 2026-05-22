@@ -70,7 +70,7 @@
 
   <!-- Scroll banner -->
   <a href="#selected-work" class="scroll-banner">
-    <span>UI · UX · Illustration · Available now.</span>
+    <span>Scroll to read</span>
     <span class="scroll-banner-arrow">↓</span>
   </a>
 
@@ -79,18 +79,21 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: #F26749;
-      color: #fff;
-      padding: 22px 48px;
-      font-size: 1.1rem;
+      background: transparent;
+      color: var(--black);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 48px;
+      font-size: 0.9rem;
       font-weight: 600;
-      letter-spacing: 0.01em;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
       text-decoration: none;
-      transition: background 0.2s;
+      transition: opacity 0.2s;
     }
-    .scroll-banner:hover { background: #e0533a; }
+    .scroll-banner:hover { opacity: 0.6; }
     .scroll-banner-arrow {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       transition: transform 0.3s;
     }
     .scroll-banner:hover .scroll-banner-arrow { transform: translateY(4px); }
