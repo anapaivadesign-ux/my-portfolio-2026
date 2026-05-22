@@ -1256,6 +1256,13 @@ nav {
 .cta-section.cta-blue p { color: var(--black); }
 .cta-section.cta-blue h2 { color: var(--black); }
 
+.cta-section.cta-light { background: #b2cee2; }
+
+.cta-section.cta-navy { background: #3a4f99; }
+.cta-section.cta-navy h2,
+.cta-section.cta-navy p { color: rgba(255,255,255,0.85); }
+.cta-section.cta-navy h2 { color: #fff; }
+
 .cta-section.cta-orange { background: #F26749; }
 .cta-section.cta-orange h2,
 .cta-section.cta-orange p { color: rgba(255,255,255,0.85); }
