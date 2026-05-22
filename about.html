@@ -133,7 +133,7 @@
         <div class="testimonial-track" id="testimonialTrack">
 
           <div class="testimonial-slide">
-            <div class="testimonial-card">
+            <div class="testimonial-card testimonial-card--ice">
               <p>"Ana is an amazing Design expert and a wonderful person. She has consistently shown great initiative, brought innovative ideas and implemented complex concepts in her solutions within short time frames. Ana utilizes her expertise in multiple domains and brings great value to the Team. Her self-management and communication skills bring the workflows to another level."</p>
               <div class="testimonial-author">
                 <span class="testimonial-name">Svetlana Moldavskaya</span>
@@ -143,7 +143,7 @@
           </div>
 
           <div class="testimonial-slide">
-            <div class="testimonial-card">
+            <div class="testimonial-card testimonial-card--blue">
               <p>"Ana is a professional with amazing design skills, naturally recognizing the importance of situation analysis and interpreting all variables before making an informed decision. She always has the full picture of the project in her mind, going above and beyond her regular tasks. She is a very complete professional who can take any company she works in to the next level."</p>
               <div class="testimonial-author">
                 <span class="testimonial-name">Daniel Carvalho</span>
@@ -153,7 +153,7 @@
           </div>
 
           <div class="testimonial-slide">
-            <div class="testimonial-card">
+            <div class="testimonial-card testimonial-card--ice">
               <p>"Ana is without a doubt a great creative professional who is always up to date with the new trends and tools in the design domain."</p>
               <div class="testimonial-author">
                 <span class="testimonial-name">Vasco Afonso</span>
@@ -163,7 +163,7 @@
           </div>
 
           <div class="testimonial-slide">
-            <div class="testimonial-card">
+            <div class="testimonial-card testimonial-card--blue">
               <p>"Ana is a brilliant UI Designer and Illustrator. She fostered a remarkable and respectful work environment with our team, as she regularly went above and beyond as a content lead, whether that was in terms of support, commitment or hard work."</p>
               <div class="testimonial-author">
                 <span class="testimonial-name">Sepas Mohammadpour</span>
@@ -190,23 +190,27 @@
     .testimonial-track { display: flex; transition: transform 400ms ease; }
     .testimonial-slide { min-width: 100%; box-sizing: border-box; padding: 0 4px; }
     .testimonial-card {
-      background: var(--gray-50, #fafafa);
-      border: 1px solid var(--border);
+      border: none;
       border-radius: 18px;
       padding: 40px 48px;
       display: flex;
       flex-direction: column;
       gap: 24px;
     }
+    .testimonial-card--ice { background: #b2D3FF; }
+    .testimonial-card--blue { background: #323FF7; }
     .testimonial-card p {
       font-size: 1.15rem;
       line-height: 1.8;
       color: var(--gray-700);
       margin: 0;
     }
+    .testimonial-card--blue p { color: rgba(255,255,255,0.85); }
     .testimonial-author { display: flex; flex-direction: column; gap: 4px; }
     .testimonial-name { font-weight: 700; font-size: 0.95rem; color: var(--black); }
     .testimonial-role { font-size: 0.85rem; color: var(--gray-500); }
+    .testimonial-card--blue .testimonial-name { color: #fff; }
+    .testimonial-card--blue .testimonial-role { color: rgba(255,255,255,0.6); }
     .testimonial-controls {
       display: flex;
       align-items: center;
