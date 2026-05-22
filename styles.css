@@ -1,6 +1,6 @@
 /* ════════════════════════════════ FONTS ════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=JetBrains+Mono:wght@500&display=swap');
 
 /* ════════════════════════════════ RESET & GLOBALS ════════════════════════════════ */
 
@@ -162,11 +162,11 @@ a {
 /* home (editorial) */
 .home-hero { position: relative; overflow: hidden; }
 .home-hero .hero-subtitle {
-  font-family: 'Caudex', Georgia, serif;
-  font-size: 80px;
-  font-weight: 400;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
   color: var(--black);
   text-align: center;
 }
