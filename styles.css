@@ -1209,7 +1209,7 @@ nav {
   padding: 36px 48px;
   border-radius: 22px;
   border: none;
-  background: #A7B5FE;
+  background: #85A5F2;
   overflow: hidden;
   position: relative;
 }
@@ -1244,17 +1244,17 @@ nav {
   color: rgba(11,11,15,0.65);
 }
 
-.cta-section.cta-soft { background: #c1DBE8; }
+.cta-section.cta-soft { background: #85A5F2; }
 
-.cta-section.cta-dark { background: #43302E; }
+.cta-section.cta-dark { background: #85A5F2; }
 .cta-section.cta-dark h2,
-.cta-section.cta-dark p { color: rgba(255,255,255,0.85); }
-.cta-section.cta-dark h2 { color: #fff; }
+.cta-section.cta-dark p { color: var(--black); }
+.cta-section.cta-dark h2 { color: var(--black); }
 
-.cta-section.cta-blue { background: #204ECF; }
+.cta-section.cta-blue { background: #85A5F2; }
 .cta-section.cta-blue h2,
-.cta-section.cta-blue p { color: rgba(255,255,255,0.85); }
-.cta-section.cta-blue h2 { color: #fff; }
+.cta-section.cta-blue p { color: var(--black); }
+.cta-section.cta-blue h2 { color: var(--black); }
 
 .cta-section.cta-orange { background: #F26749; }
 .cta-section.cta-orange h2,
