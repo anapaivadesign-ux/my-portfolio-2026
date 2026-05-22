@@ -188,17 +188,110 @@
     </div>
   </section>
 
-  <!-- Testimonial -->
+  <!-- Testimonials -->
   <section class="section" style="padding-top: 0;">
-    <div class="container" style="max-width: 720px;">
-      <figure style="margin:0;padding:40px 48px;background:var(--gray-50,#fafafa);border:1px solid var(--border);border-radius:18px;">
-        <blockquote style="margin:0;font-size:1.05rem;line-height:1.75;color:var(--gray-700);">"Ana is a professional with amazing design skills, naturally recognizing the importance of situation analysis and interpreting all variables before making an informed decision. She always has the full picture of the project in her mind, going above and beyond her regular tasks."</blockquote>
-        <figcaption style="margin-top:20px;font-size:0.85rem;color:var(--gray-500);">
-          <strong style="color:var(--black);">Daniel Carvalho</strong> — Development Team Lead, Lares Online
-        </figcaption>
-      </figure>
+    <div class="container">
+      <h2 class="canela-heading" style="margin-bottom: 48px; font-size: clamp(2.5rem, 5vw, 4rem); text-align: center;">What people <span class="underline-italic">say</span>.</h2>
+
+      <div class="testimonial-carousel">
+        <div class="testimonial-track" id="svcTestimonialTrack">
+
+          <div class="testimonial-slide">
+            <div class="testimonial-card testimonial-card--ice">
+              <p>"Ana is an amazing Design expert and a wonderful person. She has consistently shown great initiative, brought innovative ideas and implemented complex concepts in her solutions within short time frames. Ana utilizes her expertise in multiple domains and brings great value to the Team. Her self-management and communication skills bring the workflows to another level."</p>
+              <div class="testimonial-author">
+                <span class="testimonial-name">Svetlana Moldavskaya</span>
+                <span class="testimonial-role">Lead Digital Product Designer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="testimonial-card testimonial-card--blue">
+              <p>"Ana is a professional with amazing design skills, naturally recognizing the importance of situation analysis and interpreting all variables before making an informed decision. She always has the full picture of the project in her mind, going above and beyond her regular tasks. She is a very complete professional who can take any company she works in to the next level."</p>
+              <div class="testimonial-author">
+                <span class="testimonial-name">Daniel Carvalho</span>
+                <span class="testimonial-role">Development Team Lead, Lares Online</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="testimonial-card testimonial-card--ice">
+              <p>"Ana is without a doubt a great creative professional who is always up to date with the new trends and tools in the design domain."</p>
+              <div class="testimonial-author">
+                <span class="testimonial-name">Vasco Afonso</span>
+                <span class="testimonial-role">Senior Product Designer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="testimonial-card testimonial-card--blue">
+              <p>"Ana is a brilliant UI Designer and Illustrator. She fostered a remarkable and respectful work environment with our team, as she regularly went above and beyond as a content lead, whether that was in terms of support, commitment or hard work."</p>
+              <div class="testimonial-author">
+                <span class="testimonial-name">Sepas Mohammadpour</span>
+                <span class="testimonial-role">UI Designer, Art Director & Graphic Designer</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="testimonial-controls">
+          <button class="testimonial-btn" id="svcTestimonialPrev" aria-label="Previous">←</button>
+          <div class="testimonial-dots" id="svcTestimonialDots"></div>
+          <button class="testimonial-btn" id="svcTestimonialNext" aria-label="Next">→</button>
+        </div>
+      </div>
+
+      <p style="margin-top: 32px; font-size: 0.9rem; color: var(--gray-500);">For the complete versions and even more testimonials, check: <a href="https://www.linkedin.com/in/anapaivadesign/" target="_blank" rel="noopener" style="color: var(--black); font-weight: 600;">linkedin.com/in/anapaivadesign</a></p>
     </div>
   </section>
+
+  <style>
+    .testimonial-carousel { position: relative; overflow: hidden; }
+    .testimonial-track { display: flex; transition: transform 400ms ease; }
+    .testimonial-slide { min-width: 100%; box-sizing: border-box; padding: 0 4px; }
+    .testimonial-card { border: none; border-radius: 18px; padding: 40px 48px; display: flex; flex-direction: column; gap: 24px; }
+    .testimonial-card--ice { background: #b2D3FF; }
+    .testimonial-card--blue { background: #323FF7; }
+    .testimonial-card p { font-size: 1.15rem; line-height: 1.8; color: var(--gray-700); margin: 0; }
+    .testimonial-card--blue p { color: rgba(255,255,255,0.85); }
+    .testimonial-author { display: flex; flex-direction: column; gap: 4px; }
+    .testimonial-name { font-weight: 700; font-size: 0.95rem; color: var(--black); }
+    .testimonial-role { font-size: 0.85rem; color: var(--gray-500); }
+    .testimonial-card--blue .testimonial-name { color: #fff; }
+    .testimonial-card--blue .testimonial-role { color: rgba(255,255,255,0.6); }
+    .testimonial-controls { display: flex; align-items: center; justify-content: center; gap: 20px; margin-top: 28px; }
+    .testimonial-btn { background: none; border: 1px solid var(--border); border-radius: 999px; width: 44px; height: 44px; font-size: 1rem; cursor: pointer; color: var(--black); transition: background 160ms ease; display: flex; align-items: center; justify-content: center; }
+    .testimonial-btn:hover { background: var(--gray-100); }
+    .testimonial-dots { display: flex; gap: 8px; }
+    .testimonial-dot { width: 8px; height: 8px; border-radius: 999px; background: var(--gray-200, #e5e7eb); border: none; cursor: pointer; transition: background 200ms ease, width 200ms ease; padding: 0; }
+    .testimonial-dot.active { background: var(--black); width: 24px; }
+  </style>
+  <script>
+    (function() {
+      const track = document.getElementById('svcTestimonialTrack');
+      const slides = track.querySelectorAll('.testimonial-slide');
+      const dotsContainer = document.getElementById('svcTestimonialDots');
+      let current = 0;
+      slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'testimonial-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        dot.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(dot);
+      });
+      function goTo(index) {
+        current = (index + slides.length) % slides.length;
+        track.style.transform = 'translateX(-' + current * 100 + '%)';
+        dotsContainer.querySelectorAll('.testimonial-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+      }
+      document.getElementById('svcTestimonialPrev').addEventListener('click', () => goTo(current - 1));
+      document.getElementById('svcTestimonialNext').addEventListener('click', () => goTo(current + 1));
+    })();
+  </script>
 
   <!-- CTA Section -->
   <section class="section">
