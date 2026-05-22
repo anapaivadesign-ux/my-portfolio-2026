@@ -52,11 +52,24 @@
     </div>
   </section>
 
+  <!-- Work Filters -->
+  <section class="section" style="padding-top:0;padding-bottom:0;">
+    <div class="container">
+      <div class="work-filters" id="workFilters">
+        <button class="work-filter active" data-filter="all">All</button>
+        <button class="work-filter" data-filter="ui-ux">UI &amp; UX</button>
+        <button class="work-filter" data-filter="health">Health</button>
+        <button class="work-filter" data-filter="saas">SaaS</button>
+        <button class="work-filter" data-filter="branding">Branding</button>
+      </div>
+    </div>
+  </section>
+
   <!-- All Work Items -->
   <section class="section">
     <div class="container">
-      <div class="work-grid">
-        <a class="work-card" id="brand-cover" href="brand-cover-project.html">
+      <div class="work-grid" id="workGrid">
+        <a class="work-card" id="brand-cover" href="brand-cover-project.html" data-category="branding">
           <div class="work-thumb">
             <img src="images/cover pictures/Cover.png" alt="Brand Cover Project">
           </div>
@@ -66,7 +79,7 @@
           </div>
         </a>
 
-        <a class="work-card" id="chapter-rx" href="chapter-rx.html">
+        <a class="work-card" id="chapter-rx" href="chapter-rx.html" data-category="health ui-ux">
           <div class="work-thumb">
             <img src="images/chapter%20Rx/cover_chapter_rx.png" alt="Chapter RX Menopause management app">
           </div>
@@ -76,7 +89,7 @@
           </div>
         </a>
 
-        <a class="work-card" id="lares-online" href="contact.html">
+        <a class="work-card" id="lares-online" href="contact.html" data-category="ui-ux saas">
           <div class="work-thumb">
             <img src="images/case studie relokate/Screenshot 2026-04-16 at 12.49.48.png" alt="Lares Online Back-office">
           </div>
@@ -86,7 +99,7 @@
           </div>
         </a>
 
-        <a class="work-card" id="bettermile" href="contact.html">
+        <a class="work-card" id="bettermile" href="contact.html" data-category="ui-ux">
           <div class="work-thumb">
             <img src="images/cover pictures/Cover.png" alt="Bettermile Delivery platform">
           </div>
@@ -96,7 +109,7 @@
           </div>
         </a>
 
-        <a class="work-card" id="relokate" href="contact.html">
+        <a class="work-card" id="relokate" href="contact.html" data-category="ui-ux saas">
           <div class="work-thumb">
             <img src="images/case studie relokate/Screenshot 2026-04-16 at 12.49.58.png" alt="Relokate Relocation software platform">
           </div>
@@ -106,7 +119,7 @@
           </div>
         </a>
 
-        <a class="work-card work-card--overlay" id="wrenglor" href="wrenglor.html" style="--overlay-bg: rgba(21, 100, 170, 0.88);">
+        <a class="work-card work-card--overlay" id="wrenglor" href="wrenglor.html" data-category="ui-ux saas" style="--overlay-bg: rgba(21, 100, 170, 0.88);">
           <div class="work-thumb">
             <img src="images/AIbox/redesign/cover_Ailab.png" alt="wenglor AILab">
             <div class="work-overlay">
@@ -118,6 +131,47 @@
       </div>
     </div>
   </section>
+
+  <style>
+    .work-filters {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      padding: 24px 0 8px;
+    }
+    .work-filter {
+      padding: 8px 18px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      background: transparent;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--gray-500);
+      cursor: pointer;
+      transition: all 0.18s;
+    }
+    .work-filter:hover { border-color: var(--black); color: var(--black); }
+    .work-filter.active { background: var(--black); color: #fff; border-color: var(--black); }
+    .work-card { transition: opacity 0.2s, transform 0.2s; }
+    .work-card.hidden { display: none; }
+  </style>
+
+  <script>
+    document.querySelectorAll('.work-filter').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.work-filter').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        document.querySelectorAll('#workGrid .work-card').forEach(card => {
+          if (f === 'all' || (card.dataset.category || '').split(' ').includes(f)) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+  </script>
 
   <!-- CTA Section -->
   <section class="section">
