@@ -283,6 +283,30 @@
     .pros-cons ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
     .pros-cons li { font-size: 0.82rem; display: flex; gap: 6px; align-items: flex-start; color: var(--gray-600); }
 
+    .plan-more-items { overflow: hidden; max-height: 0; transition: max-height 400ms ease; }
+    .plan-more-items.open { max-height: 2000px; }
+    .plan-toggle-btn {
+      display: block;
+      margin: 16px auto 0;
+      background: transparent;
+      border: 1.5px solid rgba(11,11,15,0.2);
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--black);
+      padding: 10px 22px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: background 160ms, color 160ms, border-color 160ms;
+      text-align: center;
+    }
+    .plan-toggle-btn:hover {
+      background: var(--black);
+      color: var(--white);
+      border-color: var(--black);
+    }
+
     @media print {
       .page { padding: 40px; }
       .plan { break-inside: avoid; }
@@ -331,6 +355,37 @@
     <p>Two plans tailored to different needs.</p>
   </div>
 
+  <!-- Process -->
+  <section>
+    <div class="section-title">How we work</div>
+    <div class="process-steps">
+      <div class="process-step">
+        <img src="images/proposals/discovery.png" alt="Discovery" style="width:64px; height:64px; object-fit:contain; margin-bottom:16px;">
+        <div class="step-number">01</div>
+        <div class="step-title">Discovery</div>
+        <div class="step-desc">Kick-off call to align on goals, content, and visual direction.</div>
+      </div>
+      <div class="process-step">
+        <img src="images/proposals/Untitled_Artwork 2.png" alt="Design" style="width:64px; height:64px; object-fit:contain; margin-bottom:16px;">
+        <div class="step-number">02</div>
+        <div class="step-title">Design</div>
+        <div class="step-desc">Design based on your brand guidelines: colours, images and references.</div>
+      </div>
+      <div class="process-step">
+        <img src="images/proposals/Untitled_Artwork 3.png" alt="Build" style="width:64px; height:64px; object-fit:contain; margin-bottom:16px;">
+        <div class="step-number">03</div>
+        <div class="step-title">Build</div>
+        <div class="step-desc">We build your site and share a preview link for you to review before going live.</div>
+      </div>
+      <div class="process-step">
+        <img src="images/proposals/Untitled_Artwork 4.png" alt="Launch" style="width:64px; height:64px; object-fit:contain; margin-bottom:16px;">
+        <div class="step-number">04</div>
+        <div class="step-title">Launch</div>
+        <div class="step-desc">Domain setup, deploy to production, and handoff or onboarding.</div>
+      </div>
+    </div>
+  </section>
+
   <!-- Plans -->
   <section>
     <div class="section-title">Plans</div>
@@ -366,28 +421,31 @@
               <li>Calendly booking integration</li>
               <li>4h onboarding & coaching</li>
             </ul>
+            <button class="plan-toggle-btn" onclick="toggleMore('more-foundation', this)">See details</button>
           </div>
-          <div class="pros-cons">
-            <div>
-              <div class="pros-cons-col-title" style="color:#16a34a;">Pros</div>
-              <ul>
-                <li><span style="color:#16a34a;">✓</span> You own the code</li>
-                <li><span style="color:#16a34a;">✓</span> No platform subscription</li>
-                <li><span style="color:#16a34a;">✓</span> Great SEO & performance</li>
-                <li><span style="color:#16a34a;">✓</span> Fully custom design</li>
-              </ul>
+          <div class="plan-more-items" id="more-foundation">
+            <div class="pros-cons" style="margin-top:16px;">
+              <div>
+                <div class="pros-cons-col-title" style="color:#16a34a;">Pros</div>
+                <ul>
+                  <li><span style="color:#16a34a;">✓</span> You own the code</li>
+                  <li><span style="color:#16a34a;">✓</span> No platform subscription</li>
+                  <li><span style="color:#16a34a;">✓</span> Great SEO & performance</li>
+                  <li><span style="color:#16a34a;">✓</span> Fully custom design</li>
+                </ul>
+              </div>
+              <div>
+                <div class="pros-cons-col-title" style="color:#9a9aa6;">Limitations</div>
+                <ul>
+                  <li><span style="color:#9a9aa6;">✗</span> More initial setup</li>
+                  <li><span style="color:#9a9aa6;">✗</span> Can accidentally edit code</li>
+                  <li><span style="color:#9a9aa6;">✗</span> Vercel + Claude Code costs</li>
+                </ul>
+              </div>
             </div>
-            <div>
-              <div class="pros-cons-col-title" style="color:#9a9aa6;">Limitations</div>
-              <ul>
-                <li><span style="color:#9a9aa6;">✗</span> More initial setup</li>
-                <li><span style="color:#9a9aa6;">✗</span> Can accidentally edit code</li>
-                <li><span style="color:#9a9aa6;">✗</span> Vercel + Claude Code costs</li>
-              </ul>
+            <div class="plan-note" style="margin-top:16px;">
+              <strong>Note:</strong> Coaching included: I'll walk you through all the tools so you feel confident managing your site after launch.
             </div>
-          </div>
-          <div class="plan-note">
-            <strong>Note:</strong> With direct GitHub access, you can edit the code — we're not responsible for unintended changes outside our scope. Coaching included: I'll walk you through all the tools so you feel confident managing your site after launch.
           </div>
         </div>
       </div>
@@ -420,59 +478,62 @@
               <li>SEO basics maintained</li>
               <li>No technical knowledge needed</li>
             </ul>
+            <button class="plan-toggle-btn" onclick="toggleMore('more-autopilot', this)">See details</button>
           </div>
-          <div>
-            <div class="plan-col-title">Setup pricing</div>
-            <table style="width:100%; border-collapse:collapse; font-size:0.82rem; margin-top:4px;">
-              <tbody>
-                <tr style="border-bottom:1px solid var(--border); background:#f0fdf4;">
-                  <td style="padding:7px 10px; color:var(--gray-600);">5-page site</td>
-                  <td style="padding:7px 10px; font-weight:700; text-align:right; color:#16a34a;">€699</td>
-                </tr>
-                <tr style="border-bottom:1px solid var(--border); background:var(--gray-100);">
-                  <td style="padding:7px 10px; font-weight:500;">Monthly subscription</td>
-                  <td style="padding:7px 10px; font-weight:600; text-align:right;">€49/mo</td>
-                </tr>
-                <tr style="border-bottom:1px solid var(--border);">
-                  <td style="padding:7px 10px; color:var(--gray-600); font-size:0.78rem;">Hosting + 2 changes included</td>
-                  <td style="padding:7px 10px; text-align:right;"></td>
-                </tr>
-                <tr style="border-bottom:1px solid var(--border); background:var(--gray-100);">
-                  <td style="padding:7px 10px; color:var(--gray-600);">Extra changes</td>
-                  <td style="padding:7px 10px; font-weight:600; text-align:right;">€29 each</td>
-                </tr>
-                <tr style="border-bottom:1px solid var(--border);">
-                  <td style="padding:7px 10px; color:var(--gray-600);">Social media add-on</td>
-                  <td style="padding:7px 10px; font-weight:600; text-align:right;">TBD</td>
-                </tr>
-                <tr>
-                  <td style="padding:7px 10px; color:var(--gray-600);">SEO add-on</td>
-                  <td style="padding:7px 10px; font-weight:600; text-align:right;">€29–€79/mo</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="pros-cons">
-            <div>
-              <div class="pros-cons-col-title" style="color:#16a34a;">Pros</div>
-              <ul>
-                <li><span style="color:#16a34a;">✓</span> Zero technical knowledge</li>
-                <li><span style="color:#16a34a;">✓</span> Everything managed for you</li>
-                <li><span style="color:#16a34a;">✓</span> Predictable monthly cost</li>
-                <li><span style="color:#16a34a;">✓</span> Fast updates via WhatsApp</li>
-                <li><span style="color:#16a34a;">✓</span> 2 changes/month included</li>
-              </ul>
+          <div class="plan-more-items" id="more-autopilot">
+            <div style="margin-top:16px;">
+              <div class="plan-col-title">Setup pricing</div>
+              <table style="width:100%; border-collapse:collapse; font-size:0.82rem; margin-top:4px;">
+                <tbody>
+                  <tr style="border-bottom:1px solid var(--border); background:#f0fdf4;">
+                    <td style="padding:7px 10px; color:var(--gray-600);">5-page site</td>
+                    <td style="padding:7px 10px; font-weight:700; text-align:right; color:#16a34a;">€699</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border); background:var(--gray-100);">
+                    <td style="padding:7px 10px; font-weight:500;">Monthly subscription</td>
+                    <td style="padding:7px 10px; font-weight:600; text-align:right;">€49/mo</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:7px 10px; color:var(--gray-600); font-size:0.78rem;">Hosting + 2 changes included</td>
+                    <td style="padding:7px 10px; text-align:right;"></td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border); background:var(--gray-100);">
+                    <td style="padding:7px 10px; color:var(--gray-600);">Extra changes</td>
+                    <td style="padding:7px 10px; font-weight:600; text-align:right;">€29 each</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:7px 10px; color:var(--gray-600);">Social media add-on</td>
+                    <td style="padding:7px 10px; font-weight:600; text-align:right;">TBD</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:7px 10px; color:var(--gray-600);">SEO add-on</td>
+                    <td style="padding:7px 10px; font-weight:600; text-align:right;">€29–€79/mo</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <div>
-              <div class="pros-cons-col-title" style="color:#9a9aa6;">Limitations</div>
-              <ul>
-                <li><span style="color:#9a9aa6;">✗</span> Monthly fee ongoing</li>
-                <li><span style="color:#9a9aa6;">✗</span> No direct CMS access</li>
-              </ul>
+            <div class="pros-cons" style="margin-top:16px;">
+              <div>
+                <div class="pros-cons-col-title" style="color:#16a34a;">Pros</div>
+                <ul>
+                  <li><span style="color:#16a34a;">✓</span> Zero technical knowledge</li>
+                  <li><span style="color:#16a34a;">✓</span> Everything managed for you</li>
+                  <li><span style="color:#16a34a;">✓</span> Predictable monthly cost</li>
+                  <li><span style="color:#16a34a;">✓</span> Fast updates via WhatsApp</li>
+                  <li><span style="color:#16a34a;">✓</span> 2 changes/month included</li>
+                </ul>
+              </div>
+              <div>
+                <div class="pros-cons-col-title" style="color:#9a9aa6;">Limitations</div>
+                <ul>
+                  <li><span style="color:#9a9aa6;">✗</span> Monthly fee ongoing</li>
+                  <li><span style="color:#9a9aa6;">✗</span> No direct CMS access</li>
+                </ul>
+              </div>
             </div>
-          </div>
-          <div class="plan-note">
-            <strong>Note:</strong> All content updates are handled by us. Just send your change requests via WhatsApp and we'll take care of it. Up to 2 changes/month included, extra changes at €29 each.
+            <div class="plan-note" style="margin-top:16px;">
+              <strong>Note:</strong> All content updates are handled by us. Just send your change requests via WhatsApp and we'll take care of it. Up to 2 changes/month included, extra changes at €29 each.
+            </div>
           </div>
         </div>
       </div>
@@ -528,37 +589,6 @@
     <p style="font-size:0.78rem; color:var(--gray-400); margin-top:4px;">** Domain (~€10–15/yr) is purchased separately by you on both plans.</p>
   </section>
 
-  <!-- Process -->
-  <section>
-    <div class="section-title">How we work</div>
-    <div class="process-steps">
-      <div class="process-step">
-        <img src="images/proposals/discovery.png" alt="Discovery" style="width:64px; height:64px; object-fit:contain; margin-bottom:16px;">
-        <div class="step-number">01</div>
-        <div class="step-title">Discovery</div>
-        <div class="step-desc">Kick-off call to align on goals, content, and visual direction.</div>
-      </div>
-      <div class="process-step">
-        <img src="images/proposals/Untitled_Artwork 2.png" alt="Design" style="width:64px; height:64px; object-fit:contain; margin-bottom:16px;">
-        <div class="step-number">02</div>
-        <div class="step-title">Design</div>
-        <div class="step-desc">Design based on your brand guidelines: colours, images and references.</div>
-      </div>
-      <div class="process-step">
-        <img src="images/proposals/Untitled_Artwork 3.png" alt="Build" style="width:64px; height:64px; object-fit:contain; margin-bottom:16px;">
-        <div class="step-number">03</div>
-        <div class="step-title">Build</div>
-        <div class="step-desc">We build your site and share a preview link for you to review before going live.</div>
-      </div>
-      <div class="process-step">
-        <img src="images/proposals/Untitled_Artwork 4.png" alt="Launch" style="width:64px; height:64px; object-fit:contain; margin-bottom:16px;">
-        <div class="step-number">04</div>
-        <div class="step-title">Launch</div>
-        <div class="step-desc">Domain setup, deploy to production, and handoff or onboarding.</div>
-      </div>
-    </div>
-  </section>
-
   <!-- What we need from you -->
   <section>
     <div class="section-title">What we need from you</div>
@@ -611,5 +641,12 @@
   </div>
 
 </div>
+<script>
+  function toggleMore(id, btn) {
+    const el = document.getElementById(id);
+    const open = el.classList.toggle('open');
+    btn.textContent = open ? 'Close' : 'See details';
+  }
+</script>
 </body>
 </html>
