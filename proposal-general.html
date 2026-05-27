@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Website Proposal copenicker . studio</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0b0b0f;
+      --white: #ffffff;
+      --gray-600: #5a5a66;
+      --gray-400: #9a9aa6;
+      --gray-100: #f6f6f9;
+      --border: rgba(11,11,15,0.10);
+      --accent: #0b0b0f;
+    }
+
+    body {
+      font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.6;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 64px 48px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 56px;
+    }
+
+    .logo {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .header-meta {
+      text-align: right;
+      font-size: 0.82rem;
+      color: var(--gray-400);
+      line-height: 1.8;
+    }
+
+    .intro { margin-bottom: 56px; }
+
+    .intro-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 16px;
+    }
+
+    .intro h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .intro p {
+      font-size: 1rem;
+      color: var(--gray-600);
+      max-width: 60ch;
+      line-height: 1.8;
+    }
+
+    .section-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section { margin-bottom: 56px; }
+
+    .plans { display: grid; gap: 20px; }
+
+    .plan {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .plan.featured { border-color: var(--black); }
+
+    .plan-header {
+      padding: 28px 32px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .plan.featured .plan-header {
+      background: var(--black);
+      color: var(--white);
+      border-bottom-color: rgba(255,255,255,0.1);
+    }
+
+    .plan-badge {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--black);
+      color: var(--white);
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    .plan.featured .plan-badge {
+      background: rgba(255,255,255,0.15);
+      color: var(--white);
+    }
+
+    .plan-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+
+    .plan-subtitle {
+      font-size: 0.85rem;
+      color: var(--gray-400);
+    }
+
+    .plan.featured .plan-subtitle { color: rgba(255,255,255,0.6); }
+
+    .plan-price { text-align: right; flex-shrink: 0; }
+
+    .plan-price .amount {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .plan-price .note {
+      font-size: 0.75rem;
+      color: var(--gray-400);
+      margin-top: 2px;
+    }
+
+    .plan.featured .plan-price .note { color: rgba(255,255,255,0.5); }
+
+    .plan-body {
+      padding: 28px 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .plan-col-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 12px;
+    }
+
+    .plan-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .plan-list li {
+      font-size: 0.88rem;
+      color: var(--gray-600);
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+
+    .plan-list li::before {
+      content: "→";
+      flex-shrink: 0;
+      color: var(--black);
+      font-size: 0.8rem;
+      margin-top: 1px;
+    }
+
+    .plan-note {
+      grid-column: 1 / -1;
+      background: var(--gray-100);
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 0.82rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .process-step {
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .step-number {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 8px;
+    }
+
+    .step-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .step-desc {
+      font-size: 0.8rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+
+    .footer {
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .footer-left p {
+      font-size: 0.82rem;
+      color: var(--gray-600);
+      line-height: 1.8;
+    }
+
+    .footer-cta {
+      flex-shrink: 0;
+      background: var(--black);
+      color: var(--white);
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .pros-cons-col-title { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
+    .pros-cons ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .pros-cons li { font-size: 0.82rem; display: flex; gap: 6px; align-items: flex-start; color: var(--gray-600); }
+
+    @media print {
+      .page { padding: 40px; }
+      .plan { break-inside: avoid; }
+    }
+
+    @media (max-width: 760px) {
+      .plans { grid-template-columns: 1fr !important; }
+      .needs-grid { grid-template-columns: 1fr !important; }
+    }
+
+    @media (max-width: 640px) {
+      .page { padding: 32px 24px; }
+      .header { flex-direction: column; gap: 16px; }
+      .header-meta { text-align: left; }
+      .plan-body { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .footer { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2WCSR9CKQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-N2WCSR9CKQ");
+  </script>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">copenicker . studio</div>
+    <div class="header-meta">
+      <div>ana@copenickerstudio.com</div>
+      <div>copenickerstudio.com</div>
+      <div style="margin-top:6px;">May 2026</div>
+    </div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    <div class="intro-label">Website Proposal</div>
+    <h1>Let's build something<br>that works for you.</h1>
+    <p>Three plans tailored to different needs — from a fast, clean launch to a fully managed setup where you can update your own content.</p>
+  </div>
+
+  <!-- Plans -->
+  <section>
+    <div class="section-title">Plan</div>
+    <div class="plans" style="grid-template-columns: 1fr; max-width: 560px; align-items: start;">
+
+      <!-- Plan C · Autopilot -->
+      <div class="plan">
+        <div style="height:4px; background:linear-gradient(90deg,#84cc16,#22c55e); border-radius:16px 16px 0 0;"></div>
+        <div class="plan-header" style="flex-direction:column; gap:12px;">
+          <div>
+            <div class="plan-name">Plan C · Autopilot</div>
+            <div class="plan-subtitle">We handle everything — you just focus on your business</div>
+          </div>
+          <div class="plan-price" style="text-align:left;">
+            <div style="display:flex; align-items:baseline; gap:12px;">
+              <span style="font-size:0.9rem; color:var(--gray-600);">5-page site</span>
+              <span class="amount">€699</span>
+            </div>
+            <div class="note">setup + €49/mo subscription</div>
+            <div class="note">Tools: included</div>
+          </div>
+        </div>
+        <div class="plan-body" style="grid-template-columns:1fr;">
+          <div>
+            <div class="plan-col-title">What's included</div>
+            <ul class="plan-list">
+              <li>Hosting on our end</li>
+              <li>24h support via WhatsApp</li>
+              <li>2 content changes/month included</li>
+              <li>Responsive design (mobile + desktop)</li>
+              <li>SEO basics maintained</li>
+              <li>No technical knowledge needed</li>
+            </ul>
+          </div>
+          <div>
+            <div class="plan-col-title">Setup pricing</div>
+            <table style="width:100%; border-collapse:collapse; font-size:0.82rem; margin-top:4px;">
+              <tbody>
+                <tr style="border-bottom:1px solid var(--border); background:#f0fdf4;">
+                  <td style="padding:7px 10px; color:var(--gray-600);">5-page site</td>
+                  <td style="padding:7px 10px; font-weight:700; text-align:right; color:#16a34a;">€699</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border); background:var(--gray-100);">
+                  <td style="padding:7px 10px; font-weight:500;">Monthly subscription</td>
+                  <td style="padding:7px 10px; font-weight:600; text-align:right;">€49/mo</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border);">
+                  <td style="padding:7px 10px; color:var(--gray-600); font-size:0.78rem;">Hosting + 2 changes included</td>
+                  <td style="padding:7px 10px; text-align:right;"></td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border); background:var(--gray-100);">
+                  <td style="padding:7px 10px; color:var(--gray-600);">Extra changes</td>
+                  <td style="padding:7px 10px; font-weight:600; text-align:right;">€29 each</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border);">
+                  <td style="padding:7px 10px; color:var(--gray-600);">Social media add-on</td>
+                  <td style="padding:7px 10px; font-weight:600; text-align:right;">TBD</td>
+                </tr>
+                <tr>
+                  <td style="padding:7px 10px; color:var(--gray-600);">SEO add-on</td>
+                  <td style="padding:7px 10px; font-weight:600; text-align:right;">€29–€79/mo</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="pros-cons">
+            <div>
+              <div class="pros-cons-col-title" style="color:#16a34a;">Pros</div>
+              <ul>
+                <li><span style="color:#16a34a;">✓</span> Zero technical knowledge</li>
+                <li><span style="color:#16a34a;">✓</span> Everything managed for you</li>
+                <li><span style="color:#16a34a;">✓</span> Predictable monthly cost</li>
+                <li><span style="color:#16a34a;">✓</span> Fast updates via WhatsApp</li>
+                <li><span style="color:#16a34a;">✓</span> 2 changes/month included</li>
+              </ul>
+            </div>
+            <div>
+              <div class="pros-cons-col-title" style="color:#dc2626;">Cons</div>
+              <ul>
+                <li><span style="color:#dc2626;">✗</span> Monthly fee ongoing</li>
+                <li><span style="color:#dc2626;">✗</span> No direct CMS access</li>
+              </ul>
+            </div>
+          </div>
+          <div class="plan-note">
+            <strong>Note:</strong> All content updates are handled by us. Just send your change requests via WhatsApp and we'll take care of it. Up to 2 changes/month included, extra changes at €29 each.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Tool Pricing Table -->
+  <section>
+    <div class="section-title">What's included in the €49/mo</div>
+    <table style="width:100%; max-width:560px; border-collapse:collapse; font-size:0.85rem;">
+      <thead>
+        <tr>
+          <th style="text-align:left; padding:12px 16px; background:var(--black); color:var(--white); border-radius:10px 0 0 0; font-weight:600; letter-spacing:0.02em;">Tool</th>
+          <th style="text-align:center; padding:12px 16px; background:var(--black); color:var(--white); border-radius:0 10px 0 0; font-weight:600;">Autopilot</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:14px 16px; font-weight:500;">Next.js</td>
+          <td style="padding:14px 16px; text-align:center; color:#22c55e; font-weight:600;">Free</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border); background:var(--gray-100);">
+          <td style="padding:14px 16px; font-weight:500;">GitHub</td>
+          <td style="padding:14px 16px; text-align:center; color:#22c55e; font-weight:600;">Free</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:14px 16px; font-weight:500;">Vercel hosting</td>
+          <td style="padding:14px 16px; text-align:center; color:#22c55e; font-weight:600;">Included</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border); background:var(--gray-100);">
+          <td style="padding:14px 16px; font-weight:500;">Domain <span style="font-size:0.75rem; color:var(--gray-400); font-weight:400;">(purchased by you)</span></td>
+          <td style="padding:14px 16px; text-align:center; color:var(--gray-400); font-weight:600;">Not included</td>
+        </tr>
+        <tr style="background:var(--gray-100);">
+          <td style="padding:14px 16px; font-weight:700;">Total monthly cost</td>
+          <td style="padding:14px 16px; text-align:center; font-weight:700; color:var(--black);">€49/mo</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.78rem; color:var(--gray-400); margin-top:12px;">Monthly fee includes hosting and all tools. Domain (~€10–15/yr) is purchased separately by you.</p>
+  </section>
+
+  <!-- Process -->
+  <section>
+    <div class="section-title">How we work</div>
+    <div class="process-steps">
+      <div class="process-step">
+        <img src="images/proposals/discovery.png" alt="Discovery" style="width:64px; height:64px; object-fit:contain; margin-bottom:16px;">
+        <div class="step-number">01</div>
+        <div class="step-title">Discovery</div>
+        <div class="step-desc">Kick-off call to align on goals, content, and visual direction.</div>
+      </div>
+      <div class="process-step">
+        <img src="images/proposals/Untitled_Artwork 2.png" alt="Design" style="width:64px; height:64px; object-fit:contain; margin-bottom:16px;">
+        <div class="step-number">02</div>
+        <div class="step-title">Design</div>
+        <div class="step-desc">Design based on your brand guidelines: colours, images and references.</div>
+      </div>
+      <div class="process-step">
+        <img src="images/proposals/Untitled_Artwork 3.png" alt="Build" style="width:64px; height:64px; object-fit:contain; margin-bottom:16px;">
+        <div class="step-number">03</div>
+        <div class="step-title">Build</div>
+        <div class="step-desc">We build your site and share a preview link for you to review before going live.</div>
+      </div>
+      <div class="process-step">
+        <img src="images/proposals/Untitled_Artwork 4.png" alt="Launch" style="width:64px; height:64px; object-fit:contain; margin-bottom:16px;">
+        <div class="step-number">04</div>
+        <div class="step-title">Launch</div>
+        <div class="step-desc">Domain setup, deploy to production, and handoff or onboarding.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What we need from you -->
+  <section>
+    <div class="section-title">What we need from you</div>
+    <p style="color:var(--gray-600); font-size:0.95rem; max-width:640px; margin-bottom:32px;">Before we start building, we'll need a few things from you. The more complete these are at kick-off, the faster we move.</p>
+    <div class="needs-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
+
+      <div style="background:var(--gray-100); border-radius:12px; padding:24px;">
+        <div style="font-weight:700; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--gray-400); margin-bottom:14px;">Content</div>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; font-size:0.88rem; color:var(--gray-600);">
+          <li>✦ Final copy for all pages</li>
+          <li>✦ Profile photos / brand images</li>
+          <li>✦ Logo files (SVG or high-res PNG)</li>
+          <li>✦ Brand colours and fonts (if defined)</li>
+          <li>✦ Testimonials (text + name + role)</li>
+          <li>✦ Design references (websites you like)</li>
+        </ul>
+      </div>
+
+      <div style="background:var(--gray-100); border-radius:12px; padding:24px;">
+        <div style="font-weight:700; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--gray-400); margin-bottom:14px;">Services & Pages</div>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; font-size:0.88rem; color:var(--gray-600);">
+          <li>✦ List of services or offerings</li>
+          <li>✦ Pricing (if to be shown publicly)</li>
+          <li>✦ Any booking or scheduling needs</li>
+          <li>✦ Payment methods you want to accept</li>
+        </ul>
+      </div>
+
+      <div style="background:var(--gray-100); border-radius:12px; padding:24px;">
+        <div style="font-weight:700; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--gray-400); margin-bottom:14px;">Accounts & Access</div>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; font-size:0.88rem; color:var(--gray-600);">
+          <li>✦ Domain name (purchased by you)</li>
+          <li>✦ Calendly account set up</li>
+          <li>✦ Stripe account (for payments)</li>
+          <li>✦ Business email active</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-left">
+      <p><strong>Ready to get started?</strong><br>
+      Get in touch and we'll find the right plan for your project.</p>
+      <p style="margin-top:6px; font-size:0.78rem;">ana@copenickerstudio.com · copenickerstudio.com</p>
+    </div>
+    <a class="footer-cta" href="https://copenickerstudio.com/contact.html">Let's talk ↗</a>
+  </div>
+
+</div>
+</body>
+</html>
