@@ -309,37 +309,46 @@ a {
 .gradient-blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(110px);
-  opacity: 0.65;
+  filter: blur(80px);
+  opacity: 0.85;
   pointer-events: none;
   z-index: 0;
 }
 
 .blob-1 {
-  width: 680px;
-  height: 680px;
-  background: #c4b5fd;
-  top: -160px;
-  left: -160px;
+  width: 700px;
+  height: 700px;
+  background: #a78bfa;
+  top: -200px;
+  left: -150px;
   animation: blob-drift-1 22s ease-in-out infinite;
 }
 
 .blob-2 {
-  width: 520px;
-  height: 520px;
-  background: #fca5a5;
-  bottom: -80px;
-  left: 25%;
+  width: 560px;
+  height: 560px;
+  background: #f87171;
+  bottom: -100px;
+  left: 20%;
   animation: blob-drift-2 28s ease-in-out infinite;
 }
 
 .blob-3 {
-  width: 600px;
-  height: 600px;
-  background: #818cf8;
-  bottom: -120px;
-  right: -120px;
+  width: 640px;
+  height: 640px;
+  background: #6366f1;
+  bottom: -140px;
+  right: -140px;
   animation: blob-drift-3 24s ease-in-out infinite;
+}
+
+.blob-4 {
+  width: 480px;
+  height: 480px;
+  background: #f472b6;
+  top: -60px;
+  right: 8%;
+  animation: blob-drift-4 26s ease-in-out infinite;
 }
 
 @keyframes blob-drift-1 {
@@ -358,15 +367,6 @@ a {
   0%, 100% { transform: translate(0, 0) scale(1); }
   33%       { transform: translate(-40px, 50px) scale(1.07); }
   66%       { transform: translate(60px, -40px) scale(0.95); }
-}
-
-.blob-4 {
-  width: 460px;
-  height: 460px;
-  background: #f9a8d4;
-  top: -80px;
-  right: 10%;
-  animation: blob-drift-4 26s ease-in-out infinite;
 }
 
 @keyframes blob-drift-4 {
