@@ -177,13 +177,14 @@
 
       <div class="work-filter">
         <button class="work-filter-btn active" data-filter="all">All</button>
+        <button class="work-filter-btn" data-filter="saas">SaaS</button>
+        <button class="work-filter-btn" data-filter="ui-ux">UI/UX Design</button>
         <button class="work-filter-btn" data-filter="illustration">Illustration</button>
-        <button class="work-filter-btn" data-filter="typography">Typography</button>
-        <button class="work-filter-btn" data-filter="abstract">Abstract</button>
+        <button class="work-filter-btn" data-filter="design-systems">Design Systems</button>
       </div>
 
       <div class="work-grid">
-        <a class="work-card work-card--overlay" href="simcon.html" data-category="ui-ux" style="--overlay-bg: rgba(67, 56, 202, 0.88);">
+        <a class="work-card work-card--overlay" href="simcon.html" data-category="ui-ux design-systems" style="--overlay-bg: rgba(67, 56, 202, 0.88);">
           <div class="work-thumb">
             <img src="images/simcon images/simcon_cover.png" alt="SIMCON Design System">
             <div class="work-overlay">
@@ -193,7 +194,7 @@
           </div>
         </a>
 
-        <a class="work-card work-card--overlay" href="trustyou.html" data-category="ui-ux" style="--overlay-bg: rgba(15, 60, 110, 0.88);">
+        <a class="work-card work-card--overlay" href="trustyou.html" data-category="ui-ux saas" style="--overlay-bg: rgba(15, 60, 110, 0.88);">
           <div class="work-thumb">
             <img src="images/trust You/cover_trust_you.png" alt="Trust You">
             <div class="work-overlay">
@@ -203,7 +204,7 @@
           </div>
         </a>
 
-        <a class="work-card work-card--overlay" href="relokate.html" data-category="ui-ux" style="--overlay-bg: rgba(13, 110, 100, 0.88);">
+        <a class="work-card work-card--overlay" href="relokate.html" data-category="ui-ux saas" style="--overlay-bg: rgba(13, 110, 100, 0.88);">
           <div class="work-thumb">
             <img src="images/relokate/relokate_cover.png" alt="Relokate Relocation software platform">
             <div class="work-overlay">
@@ -223,7 +224,7 @@
           </div>
         </a>
 
-        <a class="work-card work-card--overlay" href="wrenglor.html" data-category="ui-ux" style="--overlay-bg: rgba(21, 100, 170, 0.88);">
+        <a class="work-card work-card--overlay" href="wrenglor.html" data-category="ui-ux saas" style="--overlay-bg: rgba(21, 100, 170, 0.88);">
           <div class="work-thumb">
             <img src="images/AIbox/redesign/cover_Ailab.png" alt="wenglor AILab">
             <div class="work-overlay">
@@ -386,7 +387,8 @@
         btn.classList.add('active');
         const filter = btn.dataset.filter;
         document.querySelectorAll('#selected-work .work-card').forEach(card => {
-          const show = filter === 'all' || card.dataset.category === filter;
+          const cats = (card.dataset.category || '').split(' ');
+          const show = filter === 'all' || cats.includes(filter);
           card.style.display = show ? '' : 'none';
         });
       });
