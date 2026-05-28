@@ -307,6 +307,7 @@ a {
 }
 
 .gradient-blob {
+  display: none;
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
