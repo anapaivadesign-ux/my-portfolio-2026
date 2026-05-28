@@ -141,13 +141,49 @@
       .scroll-banner { grid-template-columns: 1fr auto; padding: 18px 24px; }
       .scroll-banner-quote { display: none; }
     }
+
+    .work-filter {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .work-filter-btn {
+      padding: 8px 18px;
+      border-radius: 999px;
+      border: 1.5px solid rgba(11,11,15,0.18);
+      background: transparent;
+      color: var(--black);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 160ms, color 160ms, border-color 160ms;
+      letter-spacing: 0.01em;
+    }
+
+    .work-filter-btn:hover { border-color: var(--black); }
+
+    .work-filter-btn.active {
+      background: var(--black);
+      color: var(--white);
+      border-color: var(--black);
+    }
   </style>
 
   <!-- Selected Work -->
   <section id="selected-work" class="section" style="padding-top: 10px;">
     <div class="container wide-container">
+
+      <div class="work-filter">
+        <button class="work-filter-btn active" data-filter="all">All</button>
+        <button class="work-filter-btn" data-filter="illustration">Illustration</button>
+        <button class="work-filter-btn" data-filter="typography">Typography</button>
+        <button class="work-filter-btn" data-filter="abstract">Abstract</button>
+      </div>
+
       <div class="work-grid">
-        <a class="work-card work-card--overlay" href="simcon.html" style="--overlay-bg: rgba(67, 56, 202, 0.88);">
+        <a class="work-card work-card--overlay" href="simcon.html" data-category="ui-ux" style="--overlay-bg: rgba(67, 56, 202, 0.88);">
           <div class="work-thumb">
             <img src="images/simcon images/simcon_cover.png" alt="SIMCON Design System">
             <div class="work-overlay">
@@ -157,7 +193,7 @@
           </div>
         </a>
 
-        <a class="work-card work-card--overlay" href="trustyou.html" style="--overlay-bg: rgba(15, 60, 110, 0.88);">
+        <a class="work-card work-card--overlay" href="trustyou.html" data-category="ui-ux" style="--overlay-bg: rgba(15, 60, 110, 0.88);">
           <div class="work-thumb">
             <img src="images/trust You/cover_trust_you.png" alt="Trust You">
             <div class="work-overlay">
@@ -167,7 +203,7 @@
           </div>
         </a>
 
-<a class="work-card work-card--overlay" href="relokate.html" style="--overlay-bg: rgba(13, 110, 100, 0.88);">
+        <a class="work-card work-card--overlay" href="relokate.html" data-category="ui-ux" style="--overlay-bg: rgba(13, 110, 100, 0.88);">
           <div class="work-thumb">
             <img src="images/relokate/relokate_cover.png" alt="Relokate Relocation software platform">
             <div class="work-overlay">
@@ -177,7 +213,7 @@
           </div>
         </a>
 
-        <a class="work-card work-card--overlay" href="milene.html" style="--overlay-bg: rgba(45, 47, 107, 0.88);">
+        <a class="work-card work-card--overlay" href="milene.html" data-category="ui-ux" style="--overlay-bg: rgba(45, 47, 107, 0.88);">
           <div class="work-thumb">
             <img src="images/milene/covermilene.png" alt="Meaningful Milene">
             <div class="work-overlay">
@@ -187,7 +223,7 @@
           </div>
         </a>
 
-        <a class="work-card work-card--overlay" href="wrenglor.html" style="--overlay-bg: rgba(21, 100, 170, 0.88);">
+        <a class="work-card work-card--overlay" href="wrenglor.html" data-category="ui-ux" style="--overlay-bg: rgba(21, 100, 170, 0.88);">
           <div class="work-thumb">
             <img src="images/AIbox/redesign/cover_Ailab.png" alt="wenglor AILab">
             <div class="work-overlay">
@@ -197,7 +233,7 @@
           </div>
         </a>
 
-        <a class="work-card work-card--overlay" href="chapter-rx.html" style="--overlay-bg: rgba(92, 45, 94, 0.85);">
+        <a class="work-card work-card--overlay" href="chapter-rx.html" data-category="ui-ux" style="--overlay-bg: rgba(92, 45, 94, 0.85);">
           <div class="work-thumb">
             <img src="images/chapter Rx/cover_chapter_rx.png" alt="Chapter RX Menopause management app">
             <div class="work-overlay">
@@ -342,6 +378,18 @@
     document.querySelectorAll(".section").forEach(el => {
       el.classList.add("reveal");
       revealObserver.observe(el);
+    });
+
+    document.querySelectorAll('.work-filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.work-filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('#selected-work .work-card').forEach(card => {
+          const show = filter === 'all' || card.dataset.category === filter;
+          card.style.display = show ? '' : 'none';
+        });
+      });
     });
 
     const heroCoverImg = document.querySelector(".hero-cover img");
