@@ -3,127 +3,74 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Blog copenicker . studio</title>
-  <meta name="description" content="Thoughts on design, product, and the process behind great digital experiences." />
+  <title>The AI tools actually changing how I work as a freelance designer — copenicker . studio</title>
+  <meta name="description" content="Not hype — a practical look at the AI tools I've tested, which ones are worth your time, and how they're changing the day-to-day of freelance design work." />
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="canonical" href="https://copenickerstudio.com/blog.html" />
-  <meta property="og:title" content="Blog — copenicker . studio" />
-  <meta property="og:description" content="Thoughts on design, product, and the process behind great digital experiences." />
-  <meta property="og:url" content="https://copenickerstudio.com/blog.html" />
-  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://copenickerstudio.com/blog-ai-tools-freelance.html" />
+  <meta property="og:title" content="The AI tools actually changing how I work as a freelance designer — copenicker . studio" />
+  <meta property="og:description" content="Not hype — a practical look at the AI tools I've tested, which ones are worth your time, and how they're changing freelance design." />
+  <meta property="og:url" content="https://copenickerstudio.com/blog-ai-tools-freelance.html" />
+  <meta property="og:type" content="article" />
   <meta property="og:image" content="https://copenickerstudio.com/images/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-    }
-
-    .blog-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      overflow: hidden;
-      text-decoration: none;
-      color: inherit;
-      transition: transform 160ms ease, box-shadow 160ms ease;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .blog-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
-    }
-
-    .blog-card-img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      background: var(--gray-100);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.5rem;
-    }
-
-    .blog-card-body {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      flex: 1;
-    }
-
-    .blog-tag {
+    .article-hero { padding: 100px 0 48px; }
+    .article-hero .blog-tag {
       display: inline-block;
       font-size: 0.7rem;
       font-weight: 700;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      padding: 4px 10px;
+      padding: 4px 12px;
       border-radius: 999px;
       background: var(--gray-100);
       color: var(--gray-600);
-      width: fit-content;
+      margin-bottom: 20px;
     }
-
-    .blog-card-title {
+    .article-hero h1 { font-size: clamp(2rem, 4vw, 3rem); max-width: 760px; }
+    .article-meta { font-size: 0.85rem; color: var(--gray-500); margin-top: 16px; }
+    .article-body { max-width: 720px; margin: 0 auto; padding: 40px 0 80px; }
+    .article-body p { font-size: 1.05rem; line-height: 1.8; color: var(--gray-700); margin-bottom: 1.5rem; }
+    .article-body h2 { font-size: 1.5rem; font-weight: 750; margin: 2.5rem 0 1rem; color: var(--black); }
+    .article-body h3 { font-size: 1.15rem; font-weight: 700; margin: 2rem 0 0.75rem; color: var(--black); }
+    .article-body ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }
+    .article-body ul li { font-size: 1.05rem; line-height: 1.8; color: var(--gray-700); margin-bottom: 0.5rem; }
+    .article-body blockquote {
+      border-left: 3px solid var(--black);
+      padding: 8px 0 8px 24px;
+      margin: 2rem 0;
       font-size: 1.15rem;
-      font-weight: 750;
-      line-height: 1.35;
+      font-style: italic;
       color: var(--black);
     }
+    .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 600; color: var(--gray-600); text-decoration: none; margin-bottom: 40px; padding: 10px 18px; border: 1px solid var(--border); border-radius: 999px; transition: background 160ms ease; }
+    .back-link:hover { color: var(--black); }
 
-    .blog-card-excerpt {
-      font-size: 0.9rem;
-      color: var(--gray-600);
-      line-height: 1.65;
-      flex: 1;
+    .tool-card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin-bottom: 16px;
+      background: var(--gray-50, #fafafa);
     }
-
-    .blog-card-meta {
-      font-size: 0.8rem;
-      color: var(--gray-500);
-      margin-top: 8px;
-    }
-
-    .blog-card-link {
-      font-size: 0.85rem;
+    .tool-card-name {
+      font-size: 1rem;
       font-weight: 700;
+      margin-bottom: 4px;
       color: var(--black);
-      text-decoration: underline;
-      text-decoration-color: rgba(11,11,15,0.25);
-      text-underline-offset: 0.2em;
     }
-
-    .blog-card-featured {
-      grid-column: 1 / -1;
+    .tool-card-use {
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 10px;
     }
-
-    .blog-card-featured .blog-card-img {
-      height: 240px;
-    }
-
-    .blog-card-featured .blog-card-title {
-      font-size: 1.5rem;
-    }
-
-    .blog-coming-soon {
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 80px 24px;
-      border: 1px dashed var(--border);
-      border-radius: 18px;
-      color: var(--gray-500);
-    }
-
-    @media (max-width: 768px) {
-      .blog-grid { grid-template-columns: 1fr; }
-      .blog-card-featured { grid-column: 1; }
-      .blog-card-featured .blog-card-img { aspect-ratio: 16 / 9; }
+    .tool-card p {
+      margin-bottom: 0 !important;
+      font-size: 0.95rem !important;
     }
   </style>
   <!-- Google tag (gtag.js) -->
@@ -133,6 +80,26 @@
     function gtag(){dataLayer.push(arguments);}
     gtag("js", new Date());
     gtag("config", "G-N2WCSR9CKQ");
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "The AI tools actually changing how I work as a freelance designer",
+    "description": "Not hype — a practical look at the AI tools I've tested, which ones are worth your time, and how they're changing the day-to-day of freelance design work.",
+    "datePublished": "2026-06-01",
+    "url": "https://copenickerstudio.com/blog-ai-tools-freelance.html",
+    "author": {
+      "@type": "Person",
+      "name": "Ana Paiva",
+      "url": "https://copenickerstudio.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "copenicker . studio",
+      "url": "https://copenickerstudio.com"
+    }
+  }
   </script>
 </head>
 <body>
@@ -154,138 +121,89 @@
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section class="hero">
+  <!-- Article Hero -->
+  <section class="article-hero">
     <div class="container">
-      <div class="hero-content">
-        <h1 class="canela-heading">Thoughts on <span class="underline-italic">design</span>.</h1>
-        <p class="hero-subtitle">Process, perspective, and the questions worth asking.</p>
-      </div>
+      <a href="blog.html" class="back-link">← Back to blog</a>
+      <span class="blog-tag">AI · Freelance</span>
+      <h1>The AI tools actually changing how I work as a freelance designer</h1>
+      <div class="article-meta">June 2026 · 6 min read</div>
     </div>
   </section>
 
-  <!-- Blog Grid -->
-  <section class="section" style="padding-top: 0;">
-    <div class="container wide-container">
-      <div class="blog-grid">
+  <!-- Article Body -->
+  <div class="article-body">
+    <div class="container">
 
-        <!-- Post AI tools -->
-        <a class="blog-card" href="blog-ai-tools-freelance.html">
-          <div class="blog-card-img" style="display:flex;align-items:center;justify-content:center;background:#ddd6fe;">
-          </div>
-          <div class="blog-card-body">
-            <span class="blog-tag">AI · Freelance</span>
-            <div class="blog-card-title">The AI tools actually changing how I work as a freelance designer</div>
-            <p class="blog-card-excerpt">Not hype — a practical look at the tools I've tested, which ones are worth your time, and how AI is reshaping the day-to-day of solo design work.</p>
-            <div class="blog-card-meta">June 2026 · 6 min read</div>
-            <span class="blog-card-link">Read more →</span>
-          </div>
-        </a>
+      <p>Every week there's a new tool claiming to replace designers, automate creativity, or 10x your output. Most of it is noise. But some of it is genuinely useful — and as a freelancer, where time is directly tied to money, even a 20% improvement in how I work matters a lot.</p>
 
-        <!-- Featured post -->
-        <a class="blog-card blog-card-featured" href="blog-design-discovery.html">
-          <div class="blog-card-img" style="display:flex;align-items:center;justify-content:center;background:#e8d5c4;">
-          </div>
-          <div class="blog-card-body">
-            <span class="blog-tag">Process</span>
-            <div class="blog-card-title">Why I always start with a week of just listening</div>
-            <p class="blog-card-excerpt">Discovery is the most underrated phase in design. Before wireframes, before colours, before any visual decision — I spend a week doing nothing but listening. Here's what that looks like and why it changes everything.</p>
-            <div class="blog-card-meta">May 2026 · 5 min read</div>
-            <span class="blog-card-link">Read more →</span>
-          </div>
-        </a>
+      <p>I've been testing AI tools across every part of my workflow over the past year. Not from a place of hype, but from a practical "does this actually save me time or produce better work?" perspective. Here's what I actually use, and what I've left behind.</p>
 
-        <!-- Post 2 -->
-        <a class="blog-card" href="blog-colour-communication.html">
-          <div class="blog-card-img" style="display:flex;align-items:center;justify-content:center;background:#c7d9f5;">
-          </div>
-          <div class="blog-card-body">
-            <span class="blog-tag">Brand Identity</span>
-            <div class="blog-card-title">Colour isn't decoration — it's communication</div>
-            <p class="blog-card-excerpt">Every colour choice carries meaning. A quick guide to building palettes that do real work for your brand.</p>
-            <div class="blog-card-meta">April 2026 · 4 min read</div>
-            <span class="blog-card-link">Read more →</span>
-          </div>
-        </a>
+      <h2>Where AI is genuinely useful in a design workflow</h2>
 
-        <!-- Post 3 -->
-        <a class="blog-card" href="blog-ux-questions.html">
-          <div class="blog-card-img" style="display:flex;align-items:center;justify-content:center;background:#f5e6a3;">
-          </div>
-          <div class="blog-card-body">
-            <span class="blog-tag">UX</span>
-            <div class="blog-card-title">The 3 questions I ask before designing any screen</div>
-            <p class="blog-card-excerpt">Most design problems are actually framing problems. These three questions help me zoom out before zooming in.</p>
-            <div class="blog-card-meta">March 2026 · 3 min read</div>
-            <span class="blog-card-link">Read more →</span>
-          </div>
-        </a>
+      <p>Before getting into specific tools, it's worth being honest about where AI helps and where it doesn't. It doesn't replace creative judgement, client relationships, or the ability to read a brief and understand what's really being asked. What it does do well is compress the time between idea and execution — which for a freelancer working solo, is huge.</p>
 
-        <!-- Post 4 -->
-        <a class="blog-card" href="blog-user-interviews.html">
-          <div class="blog-card-img" style="display:flex;align-items:center;justify-content:center;background:#d4c5f5;">
-          </div>
-          <div class="blog-card-body">
-            <span class="blog-tag">Research</span>
-            <div class="blog-card-title">How to run a user interview that actually reveals something</div>
-            <p class="blog-card-excerpt">Most interviews produce polite answers, not real insights. Here's how I structure sessions to get past the surface.</p>
-            <div class="blog-card-meta">February 2026 · 6 min read</div>
-            <span class="blog-card-link">Read more →</span>
-          </div>
-        </a>
+      <p>The areas where I've found the most value:</p>
+      <ul>
+        <li>Generating visual starting points quickly (before committing to Figma)</li>
+        <li>Writing — proposals, case study copy, client emails</li>
+        <li>Building and iterating on websites without needing a developer</li>
+        <li>Research and competitive analysis in a fraction of the usual time</li>
+      </ul>
 
-        <!-- Post 6 -->
-        <a class="blog-card" href="blog-what-companies-want.html">
-          <div class="blog-card-img" style="display:flex;align-items:center;justify-content:center;background:#fde8c8;">
-          </div>
-          <div class="blog-card-body">
-            <span class="blog-tag">Career</span>
-            <div class="blog-card-title">What top companies look for in designers</div>
-            <p class="blog-card-excerpt">Anthropic, Figma, Notion, Vercel, Stripe. What the best companies are hiring for right now — and what it means for your portfolio.</p>
-            <div class="blog-card-meta">May 2026 · 6 min read</div>
-            <span class="blog-card-link">Read more →</span>
-          </div>
-        </a>
+      <h2>The tools I actually use</h2>
 
-        <!-- Post 5 -->
-        <a class="blog-card" href="blog-going-independent.html">
-          <div class="blog-card-img" style="display:flex;align-items:center;justify-content:center;background:#b8e8c8;">
-          </div>
-          <div class="blog-card-body">
-            <span class="blog-tag">Freelance</span>
-            <div class="blog-card-title">What nobody tells you about going independent</div>
-            <p class="blog-card-excerpt">The business side of freelance design is rarely taught. A few hard-learned lessons from building copenickerstudio.</p>
-            <div class="blog-card-meta">January 2026 · 7 min read</div>
-            <span class="blog-card-link">Read more →</span>
-          </div>
-        </a>
-
-        <!-- Post 7 -->
-        <a class="blog-card" href="blog-notion-cms.html">
-          <div class="blog-card-img" style="display:flex;align-items:center;justify-content:center;background:#c8e8f5;">
-          </div>
-          <div class="blog-card-body">
-            <span class="blog-tag">Tools</span>
-            <div class="blog-card-title">Use Notion as your website's CMS — no code needed</div>
-            <p class="blog-card-excerpt">You don't need a developer to update your website. Here's how to use Notion as a lightweight CMS with Claude as your build partner.</p>
-            <div class="blog-card-meta">May 2026 · 7 min read</div>
-            <span class="blog-card-link">Read more →</span>
-          </div>
-        </a>
-
+      <div class="tool-card">
+        <div class="tool-card-name">Claude (Anthropic)</div>
+        <div class="tool-card-use">Writing · Thinking · Code</div>
+        <p>My most-used tool by far. I use it to draft proposals, sharpen case study descriptions, write blog posts, and — through Claude Code — build and maintain this entire portfolio without a developer. It's less of a "generator" and more of a thinking partner: I bring the direction, it helps me articulate and execute faster.</p>
       </div>
-    </div>
-  </section>
 
-  <!-- CTA Section -->
+      <div class="tool-card">
+        <div class="tool-card-name">Midjourney / Adobe Firefly</div>
+        <div class="tool-card-use">Visual Direction · Moodboards</div>
+        <p>Useful for generating rough visual directions before committing to a design. I use them early in a project to explore atmosphere, colour palette mood, and illustration styles — not to produce final assets, but to give clients something to react to faster. Firefly has the advantage of being usable commercially without licensing concerns.</p>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card-name">Figma AI</div>
+        <div class="tool-card-use">Prototyping · Design exploration</div>
+        <p>The AI features built into Figma — auto-layout suggestions, rename layers, and the newer generative fill — genuinely save small amounts of time that add up. Nothing revolutionary, but having AI within the tool I already live in makes adoption frictionless.</p>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card-name">Notion AI</div>
+        <div class="tool-card-use">Project management · Documentation</div>
+        <p>I use Notion for client project management, and the AI features help me write project briefs, meeting summaries, and scope documents faster. It's particularly useful for converting messy client call notes into structured documents I can actually act on.</p>
+      </div>
+
+      <h2>What I've stopped using</h2>
+
+      <p>A lot of tools that seemed promising turned out to add friction rather than remove it. Fully automated design generators (tools that claim to create full UI from a prompt) aren't there yet — the output needs so much editing that it's often faster to start from scratch. Same with AI that tries to do everything: the generalist tools rarely beat a specialist one at any specific task.</p>
+
+      <blockquote>"The best AI tools feel like having a very fast, very knowledgeable collaborator — not a replacement."</blockquote>
+
+      <h2>The real value for freelancers</h2>
+
+      <p>As a solo designer, the biggest cost is time spent on things that aren't design: writing, admin, web maintenance, responding to briefs. AI tools have compressed that non-design time significantly — which means more hours available for actual work, or simply a better work-life balance.</p>
+
+      <p>The designers who will benefit most from AI aren't the ones trying to use it to replace their skills. They're the ones who use it to remove the tasks that were slowing them down, so they can spend more time on the work that actually requires a human perspective.</p>
+
+      <p>That's the version of AI I'm interested in — and the one I'm actively building my workflow around.</p>
+
+    </div>
+  </div>
+
+  <!-- CTA -->
   <section class="section">
     <div class="container">
-      <div class="cta-section cta-soft">
+      <div class="cta-section">
         <div class="cta-section-text">
-          <h2 class="canela-heading">Stay in the <span class="underline-italic">loop</span>.</h2>
-          <p>New posts on design, process, and running a studio — straight to your inbox.</p>
+          <h2 class="canela-heading">Let's create <span class="underline-italic">together</span>.</h2>
+          <p>Big ideas start with a simple hello. Reach out and we'll take it from there.</p>
           <div class="cta-buttons">
-            <a href="contact.html" class="cta-button">Get in touch ↗</a>
+            <a href="blog.html" class="cta-button-outline">More articles ↗</a>
+            <a href="contact.html" class="cta-button">Let's talk ↗</a>
           </div>
         </div>
       </div>
@@ -341,9 +259,9 @@
         <p><a href="index.html">Work</a></p>
         <p><a href="services.html">Services</a></p>
         <p><a href="about.html">About</a></p>
+        <p><a href="contact.html">Contact</a></p>
         <p><a href="blog.html">Blog</a></p>
         <p><a href="workshops.html">Workshops</a></p>
-        <p><a href="contact.html">Contact</a></p>
       </div>
       <div class="footer-col">
         <h3>Contact</h3>
