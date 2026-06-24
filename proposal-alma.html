@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Design Proposal — Alma Humans · copenicker . studio</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0b0b0f;
+      --white: #ffffff;
+      --gray-600: #5a5a66;
+      --gray-400: #9a9aa6;
+      --gray-100: #f6f6f9;
+      --border: rgba(11,11,15,0.10);
+      --accent: #0b0b0f;
+    }
+
+    body {
+      font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.6;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 64px 48px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 56px;
+    }
+
+    .logo {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .header-meta {
+      text-align: right;
+      font-size: 0.82rem;
+      color: var(--gray-400);
+      line-height: 1.8;
+    }
+
+    .intro { margin-bottom: 56px; }
+
+    .intro-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 16px;
+    }
+
+    .intro h1 {
+      font-family: 'Caudex', Georgia, serif;
+      font-size: 2.2rem;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .intro p {
+      font-size: 1rem;
+      color: var(--gray-600);
+      max-width: 60ch;
+      line-height: 1.8;
+    }
+
+    .section-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section { margin-bottom: 56px; }
+
+    .plans { display: grid; gap: 20px; }
+
+    .plan {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .plan.featured { border-color: var(--black); }
+
+    .plan-header {
+      padding: 28px 32px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .plan.featured .plan-header {
+      background: var(--black);
+      color: var(--white);
+      border-bottom-color: rgba(255,255,255,0.1);
+    }
+
+    .plan-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+
+    .plan-subtitle {
+      font-size: 0.85rem;
+      color: var(--gray-400);
+    }
+
+    .plan.featured .plan-subtitle { color: rgba(255,255,255,0.6); }
+
+    .plan-price { text-align: right; flex-shrink: 0; }
+
+    .plan-price .amount {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .plan-price .note {
+      font-size: 0.75rem;
+      color: var(--gray-400);
+      margin-top: 2px;
+    }
+
+    .plan.featured .plan-price .note { color: rgba(255,255,255,0.5); }
+
+    .plan-body {
+      padding: 28px 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .plan-col-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 12px;
+    }
+
+    .plan-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .plan-list li {
+      font-size: 0.88rem;
+      color: var(--gray-600);
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+
+    .plan-list li::before {
+      content: "→";
+      flex-shrink: 0;
+      color: var(--black);
+      font-size: 0.8rem;
+      margin-top: 1px;
+    }
+
+    .plan-note {
+      grid-column: 1 / -1;
+      background: var(--gray-100);
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 0.82rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .process-step {
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .step-number {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 8px;
+    }
+
+    .step-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .step-desc {
+      font-size: 0.8rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+
+    .footer {
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .footer-left p {
+      font-size: 0.82rem;
+      color: var(--gray-600);
+      line-height: 1.8;
+    }
+
+    .footer-cta {
+      flex-shrink: 0;
+      background: var(--black);
+      color: var(--white);
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .total-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 32px;
+      background: var(--black);
+      color: var(--white);
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .total-row .label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .total-row .amount {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    @media print {
+      .page { padding: 40px; }
+      .plan { break-inside: avoid; }
+    }
+
+    @media (max-width: 760px) {
+      .plans { grid-template-columns: 1fr !important; }
+      .needs-grid { grid-template-columns: 1fr !important; }
+    }
+
+    @media (max-width: 640px) {
+      .page { padding: 32px 24px; }
+      .header { flex-direction: column; gap: 16px; }
+      .header-meta { text-align: left; }
+      .plan-body { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .footer { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2WCSR9CKQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-N2WCSR9CKQ");
+  </script>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">copenicker . studio</div>
+    <div class="header-meta">
+      <div>ana@copenickerstudio.com</div>
+      <div>copenickerstudio.com</div>
+      <div style="margin-top:6px;">June 2026</div>
+    </div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    <div class="intro-label">Design Proposal — Alma Humans</div>
+    <h1>Packaging & brand design<br>for a product that cares.</h1>
+    <p>A full design scope covering soap box packaging, brand identity assets, and a professional email signature. Everything you need to launch with confidence and consistency.</p>
+  </div>
+
+  <!-- Process -->
+  <section>
+    <div class="section-title">How we work</div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-number">01</div>
+        <div class="step-title">Brief & Discovery</div>
+        <div class="step-desc">We align on brand direction, product details, print specs, and visual references before any design begins.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-number">02</div>
+        <div class="step-title">Design</div>
+        <div class="step-desc">We create the artwork based on your brand guidelines, product names, and approved direction.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-number">03</div>
+        <div class="step-title">Review</div>
+        <div class="step-desc">You review, we refine. Up to 2 rounds of feedback per deliverable included in the estimate.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-number">04</div>
+        <div class="step-title">Delivery</div>
+        <div class="step-desc">Print-ready files handed over in all required formats. Ready for your supplier.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deliverables -->
+  <section>
+    <div class="section-title">Deliverables & Pricing</div>
+    <div class="plans" style="grid-template-columns: 1fr;">
+
+      <!-- 1. Soap Box Design -->
+      <div class="plan">
+        <div style="height:4px; background:#5272F5; border-radius:16px 16px 0 0;"></div>
+        <div class="plan-header">
+          <div>
+            <div class="plan-name">1. Soap Box Design — Standard</div>
+            <div class="plan-subtitle">4–5 variations: Forest, Linden, Mint Exfoliation, Lemon, Aloe Vera</div>
+          </div>
+          <div class="plan-price">
+            <div class="amount">€1,500</div>
+            <div class="note">est. 25h × €60/h</div>
+          </div>
+        </div>
+        <div class="plan-body" style="grid-template-columns:1fr;">
+          <ul class="plan-list">
+            <li>Custom artwork per variation based on brand guidelines</li>
+            <li>Dieline setup for standard soap box</li>
+            <li>Print-ready files (PDF + source files)</li>
+            <li>Up to 2 rounds of revisions per variation</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 2. Bundle Box -->
+      <div class="plan">
+        <div style="height:4px; background:#22c55e; border-radius:16px 16px 0 0;"></div>
+        <div class="plan-header">
+          <div>
+            <div class="plan-name">2. Soap Bundle Box Design</div>
+            <div class="plan-subtitle">1 design — "Bestsellers / Trial & Travel Collection" (3 × mini soaps)</div>
+          </div>
+          <div class="plan-price">
+            <div class="amount">€480</div>
+            <div class="note">est. 8h × €60/h</div>
+          </div>
+        </div>
+        <div class="plan-body" style="grid-template-columns:1fr;">
+          <ul class="plan-list">
+            <li>Structural concept adapted to mini soap (1/3 standard size)</li>
+            <li>Artwork for "Bestsellers / Trial & Travel Collection"</li>
+            <li>Dieline setup for bundle box</li>
+            <li>Print-ready files (PDF + source files)</li>
+          </ul>
+          <div class="plan-note">
+            Further seasonal or thematic variations can be scoped separately at €60/h.
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. The Special One -->
+      <div class="plan featured">
+        <div class="plan-header">
+          <div>
+            <div class="plan-name">"The Special One" Box Design</div>
+            <div class="plan-subtitle">Premium bespoke packaging for your standout product</div>
+          </div>
+          <div class="plan-price">
+            <div class="amount">€600 – €840</div>
+            <div class="note">est. 10–14h × €60/h</div>
+          </div>
+        </div>
+        <div class="plan-body" style="grid-template-columns:1fr;">
+          <ul class="plan-list">
+            <li>Bespoke concept development — distinct from the standard range</li>
+            <li>Premium visual direction tailored to the product</li>
+            <li>Dieline setup and print-ready files</li>
+            <li>Up to 2 rounds of revisions</li>
+          </ul>
+          <div class="plan-note" style="background:rgba(255,255,255,0.07); color:rgba(255,255,255,0.7);">
+            Final price depends on complexity of concept. We'll confirm after the discovery session.
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Brand Assets -->
+      <div class="plan">
+        <div style="height:4px; background:#f59e0b; border-radius:16px 16px 0 0;"></div>
+        <div class="plan-header">
+          <div>
+            <div class="plan-name">4. Brand Assets & Identity</div>
+            <div class="plan-subtitle">Watermark variation + brand kit optimised for print and web</div>
+          </div>
+          <div class="plan-price">
+            <div class="amount">€660</div>
+            <div class="note">est. 11h × €60/h</div>
+          </div>
+        </div>
+        <div class="plan-body" style="grid-template-columns:1fr 1fr;">
+          <div>
+            <div class="plan-col-title">Watermark (est. 3h)</div>
+            <ul class="plan-list">
+              <li>New watermark variation based on existing logo</li>
+              <li>Delivered in SVG, PNG (transparent)</li>
+            </ul>
+          </div>
+          <div>
+            <div class="plan-col-title">Brand Kit (est. 8h)</div>
+            <ul class="plan-list">
+              <li>Colour palette (print CMYK + web HEX)</li>
+              <li>Typography system</li>
+              <li>Logo usage guidelines</li>
+              <li>Brand kit PDF for internal use</li>
+            </ul>
+          </div>
+          <div class="plan-note">
+            You mentioned Alma caps in pre-defined colours — happy to include these as a brand touchpoint within the kit.
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Email Signature -->
+      <div class="plan">
+        <div style="height:4px; background:#9a9aa6; border-radius:16px 16px 0 0;"></div>
+        <div class="plan-header">
+          <div>
+            <div class="plan-name">5. Email Signature</div>
+            <div class="plan-subtitle">Clean, professional, mobile-optimised with functioning links</div>
+          </div>
+          <div class="plan-price">
+            <div class="amount">€120</div>
+            <div class="note">est. 2h × €60/h</div>
+          </div>
+        </div>
+        <div class="plan-body" style="grid-template-columns:1fr;">
+          <ul class="plan-list">
+            <li>Designed to look great on mobile and desktop</li>
+            <li>Clickable links (website, email, social)</li>
+            <li>Delivered with setup instructions for Gmail / Outlook</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Total -->
+    <div class="total-row">
+      <div class="label">Total estimate</div>
+      <div class="amount">€3,360 – €3,600</div>
+    </div>
+    <p style="font-size:0.78rem; color:var(--gray-400); margin-top:12px;">* Rate: €60/h. All prices exclude VAT. Final hours confirmed after discovery session.</p>
+    <p style="font-size:0.78rem; color:var(--gray-400); margin-top:4px;">** Additional revisions beyond 2 rounds per deliverable billed at €60/h.</p>
+  </section>
+
+  <!-- What we need -->
+  <section>
+    <div class="section-title">What we need from you</div>
+    <p style="color:var(--gray-600); font-size:0.95rem; max-width:640px; margin-bottom:32px;">The more complete these are at kick-off, the faster we move.</p>
+    <div class="needs-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
+
+      <div style="background:var(--gray-100); border-radius:12px; padding:24px;">
+        <div style="font-weight:700; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--gray-400); margin-bottom:14px;">Brand</div>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; font-size:0.88rem; color:var(--gray-600);">
+          <li>✦ Logo files (SVG or high-res PNG)</li>
+          <li>✦ Brand colours and fonts</li>
+          <li>✦ Any existing brand guidelines</li>
+          <li>✦ Alma caps colours (if including in kit)</li>
+        </ul>
+      </div>
+
+      <div style="background:var(--gray-100); border-radius:12px; padding:24px;">
+        <div style="font-weight:700; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--gray-400); margin-bottom:14px;">Product & Copy</div>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; font-size:0.88rem; color:var(--gray-600);">
+          <li>✦ Final product names and descriptions</li>
+          <li>✦ Ingredients list (if to be included)</li>
+          <li>✦ Any claims or certifications to display</li>
+          <li>✦ Barcode / weight / volume info</li>
+        </ul>
+      </div>
+
+      <div style="background:var(--gray-100); border-radius:12px; padding:24px;">
+        <div style="font-weight:700; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--gray-400); margin-bottom:14px;">Technical & References</div>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; font-size:0.88rem; color:var(--gray-600);">
+          <li>✦ Print supplier dieline (if available)</li>
+          <li>✦ Box dimensions and material</li>
+          <li>✦ Packaging references you love</li>
+          <li>✦ Email signature reference / example</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-left">
+      <p><strong>Ready to get started?</strong><br>
+      Let's book a discovery call and go from there.</p>
+      <p style="margin-top:6px; font-size:0.78rem;">ana@copenickerstudio.com · copenickerstudio.com</p>
+    </div>
+    <a class="footer-cta" href="https://copenickerstudio.com/contact.html">Let's talk ↗</a>
+  </div>
+
+</div>
+</body>
+</html>
