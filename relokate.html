@@ -11,18 +11,18 @@
   <meta property="og:description" content="Designing the end-to-end experience for a relocation software platform." />
   <meta property="og:url" content="https://copenickerstudio.com/relokate.html" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://copenickerstudio.com/images/relokate/relokate_cover.png" />
+  <meta property="og:image" content="https://copenickerstudio.com/images/relokate/relokate_cover_2026.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="styles.css" />
   <style>
     .cs-hero {
-      background: #0d6e64;
+      background: linear-gradient(180deg, #1E1255 0%, #140D3A 100%);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       padding: 120px 60px 60px;
-      color: #e8f5f3;
+      color: #EDEFFD;
     }
 
     .cs-hero-top {
@@ -37,7 +37,7 @@
       gap: 6px;
       font-size: 0.82rem;
       font-weight: 600;
-      color: #e8f5f3;
+      color: #EDEFFD;
       text-decoration: none;
       opacity: 0.6;
       transition: opacity 0.2s;
@@ -50,7 +50,7 @@
       font-weight: 600;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: #e8f5f3;
+      color: #EDEFFD;
       opacity: 0.5;
     }
 
@@ -67,7 +67,7 @@
       font-weight: 400;
       line-height: 1.15;
       letter-spacing: -0.025em;
-      color: #e8f5f3;
+      color: #EDEFFD;
       margin: 0;
     }
 
@@ -87,12 +87,12 @@
       font-size: 0.63rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      color: rgba(232,245,243,0.5);
+      color: rgba(237,239,253,0.5);
     }
 
     .cs-meta-value {
       font-size: 0.9rem;
-      color: #e8f5f3;
+      color: #EDEFFD;
       line-height: 1.5;
     }
 
@@ -100,7 +100,7 @@
       width: 100%;
       aspect-ratio: 16 / 9;
       overflow: hidden;
-      background: #f0f9f8;
+      background: #EDEFFD;
     }
 
     .cs-cover img {
@@ -228,11 +228,11 @@
       <span class="cs-hero-name">— Relokate</span>
     </div>
     <div class="cs-hero-bottom">
-      <p class="cs-hero-desc">Designing the end-to-end experience for a relocation software platform.</p>
+      <p class="cs-hero-desc">Redesigning the case management platform HR teams use to run global relocation.</p>
       <div class="cs-meta">
         <div class="cs-meta-item">
           <div class="cs-meta-label">Services</div>
-          <div class="cs-meta-value">UI/UX Design<br>SaaS Platform</div>
+          <div class="cs-meta-value">UI/UX Design<br>Design System</div>
         </div>
         <div class="cs-meta-item">
           <div class="cs-meta-label">Client</div>
@@ -252,7 +252,7 @@
 
   <!-- Cover image -->
   <div class="cs-cover">
-    <img src="images/relokate/relokate_cover.png" alt="Relokate platform UI">
+    <img src="images/relokate/relokate_cover_2026.png" alt="Relokate HR dashboard showing ongoing cases, upcoming starters, and expiring permits">
   </div>
 
   <!-- Body -->
@@ -265,36 +265,42 @@
 
           <div class="cs-section">
             <span class="cs-section-label">01 — Challenge</span>
-            <h2>Making relocation feel less overwhelming</h2>
-            <p>Relocating to a new country involves dozens of moving parts — visas, housing, school searches, banking, local registrations. Relokate set out to bring all of this into one platform, serving both employees moving abroad and the HR teams managing their transitions. The challenge was designing workflows complex enough to handle real-world edge cases while feeling approachable for stressed, time-poor users.</p>
+            <h2>Case management at the scale of hundreds of relocations</h2>
+            <p>Relokate's HR team tracks every international hire's relocation from a single dashboard — visas, work permits, housing, family moves, degree verifications, all running as parallel cases with their own deadlines. At any given time an HR owner is holding over a hundred active cases, each moving through a different stage. The interface had to make that scale legible: fast to scan, easy to filter, and honest about what needs attention today versus what can wait.</p>
+            <div class="cs-image">
+              <img src="images/relokate/relokate_candidates.png" alt="Relokate candidates table with search, status filters, and export">
+            </div>
           </div>
 
           <div class="cs-section">
             <span class="cs-section-label">02 — Approach</span>
-            <h2>Two users, one platform</h2>
-            <p>The platform serves two distinct audiences: relocating employees navigating their move, and HR coordinators tracking multiple cases at once. I designed dual-view dashboards that give each user type exactly what they need — personal checklists and milestone tracking for employees; case management, document oversight, and team communication tools for HR.</p>
-            <p>A strong information architecture was the foundation. By mapping every user journey end-to-end before touching Figma, we avoided the trap of building screens in isolation — every flow connected logically to the next.</p>
+            <h2>Designing around the case lifecycle, not the feature list</h2>
+            <p>Instead of organizing the product around modules, I structured it around the actual path a case takes — payment received, welcome email sent, documents submitted, degree verified, employer declaration signed. That workflow timeline became the spine of the case detail view, so an HR owner can see exactly where a candidate stands without hunting through tabs.</p>
+            <p>I also rebuilt the design system from the ground up: sampled the brand's real yellow and navy from existing product screenshots, standardized every service tag, avatar, and status color to a single semantic palette, and unified button and pill radii across all ten screens so the product reads as one coherent system instead of a set of screens shipped at different times.</p>
             <div class="cs-image">
-              <img src="images/relokate/relokate_cover.png" alt="Relokate UI detail">
+              <img src="images/relokate/relokate_case_detail.png" alt="Relokate case detail view showing workflow progress timeline">
             </div>
           </div>
 
           <div class="cs-section">
             <span class="cs-section-label">03 — Results</span>
-            <h2>A platform built for real complexity</h2>
-            <p>The finished product handles the full relocation lifecycle — from initial offer acceptance through to settled-in status — with a consistent, calming UI that reduces anxiety at every step. The design system scales across mobile and desktop, ensuring employees can check progress on the go while HR managers work through complex cases at their desks.</p>
+            <h2>Screening candidates before a case ever opens</h2>
+            <p>One of the redesign's additions was Pre-Checks — a lightweight, step-by-step eligibility screen HR can run on a candidate before committing the time and cost of opening a full case. It surfaces an eligible / conditional / not-eligible verdict early, so HR teams stop investing hours into relocations that were never going to clear visa requirements.</p>
+            <div class="cs-image">
+              <img src="images/relokate/relokate_precheck.png" alt="Relokate Pre-Checks eligibility screening flow">
+            </div>
             <div style="display:flex;gap:24px;flex-wrap:wrap;margin:24px 0;">
               <div style="flex:1;min-width:140px;padding:20px 24px;background:var(--gray-50,#fafafa);border:1px solid var(--border);border-radius:12px;">
-                <div class="stat-num" style="font-size:1.6rem;font-weight:700;color:var(--black);">2 user types</div>
-                <div style="font-size:0.8rem;color:var(--gray-500);margin-top:4px;">employee + HR views</div>
+                <div class="stat-num" style="font-size:1.6rem;font-weight:700;color:var(--black);">10 screens</div>
+                <div style="font-size:0.8rem;color:var(--gray-500);margin-top:4px;">one unified system</div>
               </div>
               <div style="flex:1;min-width:140px;padding:20px 24px;background:var(--gray-50,#fafafa);border:1px solid var(--border);border-radius:12px;">
                 <div class="stat-num" style="font-size:1.6rem;font-weight:700;color:var(--black);">Full lifecycle</div>
-                <div style="font-size:0.8rem;color:var(--gray-500);margin-top:4px;">offer to settled</div>
+                <div style="font-size:0.8rem;color:var(--gray-500);margin-top:4px;">pre-check to completed case</div>
               </div>
               <div style="flex:1;min-width:140px;padding:20px 24px;background:var(--gray-50,#fafafa);border:1px solid var(--border);border-radius:12px;">
-                <div class="stat-num" style="font-size:1.6rem;font-weight:700;color:var(--black);">Mobile + web</div>
-                <div style="font-size:0.8rem;color:var(--gray-500);margin-top:4px;">responsive design</div>
+                <div class="stat-num" style="font-size:1.6rem;font-weight:700;color:var(--black);">100+ cases</div>
+                <div style="font-size:0.8rem;color:var(--gray-500);margin-top:4px;">designed to stay legible at scale</div>
               </div>
             </div>
           </div>
