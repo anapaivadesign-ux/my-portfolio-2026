@@ -79,6 +79,20 @@
     </div>
   </nav>
 
+  <main>
+    <section class="intro-hero" aria-labelledby="intro-title">
+      <div class="intro-copy">
+        <p class="intro-kicker"><span class="availability-dot" aria-hidden="true"></span> Independent designer</p>
+        <h1 id="intro-title">Hi, I’m Ana.</h1>
+        <p class="intro-lede">I’m a product designer and illustrator with 10+ years of experience turning complex ideas into clear, thoughtful experiences for people and businesses.</p>
+        <div class="intro-actions">
+          <a class="intro-primary" href="#selected-work">Explore selected work <span aria-hidden="true">↓</span></a>
+          <a class="intro-secondary" href="contact.html">Let’s talk <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="intro-footnote">Available for select collaborations</p>
+      </div>
+    </section>
+
   <!-- Hero Section -->
 <style>
     .card-fan-hero {
@@ -169,7 +183,7 @@
     }
   </style>
 
-  <section class="card-fan-hero">
+  <section class="card-fan-hero" style="display:none" aria-hidden="true">
     <p class="hero-subtitle">Consulting. Design. Illustration.</p>
     <div class="card-fan-wrap">
       <!-- Card 1: Orange 4-pointed star -->
@@ -241,7 +255,7 @@
   </section>
 
   <!-- Project card modal -->
-  <div class="fan-modal-overlay" id="fanModal" role="dialog" aria-modal="true">
+  <div class="fan-modal-overlay" id="fanModal" role="dialog" aria-modal="true" aria-hidden="true" style="display:none">
     <div class="fan-modal-card">
       <div class="fan-modal-left" id="fanModalImage"></div>
       <div class="fan-modal-right">
@@ -422,7 +436,7 @@
   </script>
 
   <!-- Scroll banner -->
-  <a href="#selected-work" class="scroll-banner">
+  <a href="#selected-work" class="scroll-banner" style="display:none" aria-hidden="true">
 <span class="scroll-banner-center">Scroll to projects</span>
     <span class="scroll-banner-arrow">↓</span>
   </a>
@@ -489,8 +503,16 @@
   </style>
 
   <!-- Selected Work -->
-  <section id="selected-work" class="section" style="padding-top: 10px;">
+  <section id="selected-work" class="section">
     <div class="container wide-container">
+
+      <div class="work-intro-row">
+        <div>
+          <p class="work-kicker">A few things I’ve helped bring to life</p>
+          <h2 class="work-heading">Selected work<span>.</span></h2>
+        </div>
+        <a class="work-archive-link" href="work.html">Browse all projects <span aria-hidden="true">↗</span></a>
+      </div>
 
       <div class="work-filter">
         <button class="work-filter-btn active" data-filter="all">All</button>
@@ -510,6 +532,7 @@
               <div class="work-desc">UI/UX Design · Design System</div>
             </div>
           </div>
+          <div class="work-meta"><p class="work-desc">Product design · Design systems</p><h3 class="work-title">SIMCON</h3></div>
         </a>
 
         <a class="work-card work-card--overlay" href="trustyou.html" data-category="ui-ux saas" style="--overlay-bg: rgba(15, 60, 110, 0.88);">
@@ -520,6 +543,7 @@
               <div class="work-desc">UI/UX Design · SaaS</div>
             </div>
           </div>
+          <div class="work-meta"><p class="work-desc">Product design · SaaS</p><h3 class="work-title">TrustYou</h3></div>
         </a>
 
         <a class="work-card work-card--overlay" href="relokate.html" data-category="ui-ux saas" style="--overlay-bg: rgba(13, 110, 100, 0.88);">
@@ -530,6 +554,7 @@
               <div class="work-desc">UI/UX Design · SaaS</div>
             </div>
           </div>
+          <div class="work-meta"><p class="work-desc">Product design · Relocation</p><h3 class="work-title">Relokate</h3></div>
         </a>
 
         <a class="work-card work-card--overlay" href="milene.html" data-category="ui-ux" data-hidden="true" style="--overlay-bg: rgba(45, 47, 107, 0.88); display:none;">
@@ -550,6 +575,7 @@
               <div class="work-desc">UI/UX Design · SaaS</div>
             </div>
           </div>
+          <div class="work-meta"><p class="work-desc">AI product design</p><h3 class="work-title">wenglor AILab</h3></div>
         </a>
 
         <a class="work-card work-card--overlay" href="chapter-rx.html" data-category="ui-ux apps" style="--overlay-bg: rgba(92, 45, 94, 0.85);">
@@ -560,6 +586,7 @@
               <div class="work-desc">UI Design · Health</div>
             </div>
           </div>
+          <div class="work-meta"><p class="work-desc">Digital health · Mobile app</p><h3 class="work-title">Chapter RX</h3></div>
         </a>
 
       </div>
@@ -626,6 +653,7 @@
   </section>
 
   <!-- Footer -->
+  </main>
   <footer>
     <div class="footer-content">
       <div class="footer-col">

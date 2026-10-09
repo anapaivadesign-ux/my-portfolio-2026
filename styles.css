@@ -1667,3 +1667,271 @@ footer {
     animation: none;
   }
 }
+
+/* Homepage introduction and selected work */
+body .card-fan-hero,
+body .fan-modal-overlay,
+body .scroll-banner {
+  display: none !important;
+}
+
+.intro-hero {
+  width: min(100%, 1320px);
+  margin: 0 auto;
+  padding: 158px 6.5% 126px;
+}
+
+.intro-copy {
+  max-width: 920px;
+  padding: 20px 0;
+  animation: intro-arrive 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.intro-kicker,
+.work-kicker {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--gray-600);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.76rem;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+.availability-dot {
+  width: 9px;
+  height: 9px;
+  flex: 0 0 9px;
+  border-radius: 50%;
+  background: #1644f4;
+  box-shadow: 0 0 0 4px rgba(22, 68, 244, 0.13);
+}
+
+.intro-copy h1 {
+  max-width: 900px;
+  margin: 30px 0 28px;
+  font-family: 'Caudex', Georgia, serif;
+  font-size: 88px;
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: 0;
+}
+
+.intro-lede {
+  max-width: 650px;
+  color: var(--gray-700);
+  font-size: 1.14rem;
+  line-height: 1.7;
+}
+
+.intro-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 26px;
+  margin-top: 34px;
+}
+
+.intro-primary,
+.intro-secondary,
+.work-archive-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.94rem;
+  font-weight: 600;
+}
+
+.intro-primary {
+  min-height: 52px;
+  padding: 0 22px;
+  border-radius: 999px;
+  background: #1644f4;
+  color: #fff;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.intro-primary:hover {
+  background: #1038ca;
+  transform: translateY(-2px);
+}
+
+.intro-primary span,
+.intro-secondary span,
+.work-archive-link span {
+  font-size: 1.1rem;
+}
+
+.intro-secondary {
+  min-height: 44px;
+  border-bottom: 1px solid currentColor;
+}
+
+.intro-footnote {
+  margin-top: 25px;
+  color: var(--gray-500);
+  font-size: 0.84rem;
+}
+
+.work-intro-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+  margin: 4px 0 34px;
+}
+
+.work-kicker {
+  margin-bottom: 10px;
+}
+
+.work-heading {
+  font-family: 'Caudex', Georgia, serif;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+.work-heading span {
+  color: #1644f4;
+}
+
+.work-archive-link {
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+#selected-work .wide-container {
+  max-width: 1440px;
+  padding: 0 6.5%;
+}
+
+#selected-work .work-filter {
+  gap: 8px;
+  margin-bottom: 30px;
+}
+
+#selected-work .work-filter-btn {
+  min-height: 40px;
+  padding: 8px 15px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.78rem;
+}
+
+#selected-work .work-filter-btn:hover {
+  border-color: #1644f4;
+}
+
+#selected-work .work-filter-btn.active {
+  background: #1644f4;
+  border-color: #1644f4;
+}
+
+#selected-work .work-grid {
+  gap: 46px 28px;
+}
+
+#selected-work .work-card {
+  gap: 14px;
+}
+
+#selected-work .work-thumb {
+  aspect-ratio: 1.48;
+  border-radius: 2px;
+  background: #e8e5dc;
+}
+
+#selected-work .work-thumb img {
+  outline: none;
+}
+
+#selected-work .work-meta {
+  gap: 4px;
+}
+
+#selected-work .work-desc {
+  order: initial;
+  color: var(--gray-600);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0;
+}
+
+#selected-work .work-title {
+  font-family: 'Caudex', Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+@keyframes intro-arrive {
+  from { opacity: 0; translate: 0 18px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+@media (max-width: 1000px) {
+  .intro-copy h1 {
+    font-size: 72px;
+  }
+}
+
+@media (max-width: 720px) {
+  .intro-hero {
+    padding: 112px 7% 76px;
+  }
+
+  .intro-copy {
+    padding: 0;
+  }
+
+  .intro-copy h1 {
+    margin: 24px 0 20px;
+    font-size: 52px;
+  }
+
+  .intro-lede {
+    font-size: 1.04rem;
+  }
+
+  .work-intro-row {
+    align-items: start;
+    flex-direction: column;
+    margin-bottom: 26px;
+  }
+
+  .work-heading {
+    font-size: 43px;
+  }
+
+  #selected-work .wide-container {
+    padding: 0 7%;
+  }
+
+  #selected-work .work-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  #selected-work .work-thumb {
+    aspect-ratio: 1.25;
+  }
+}
+
+@media (max-width: 420px) {
+  .intro-copy h1 {
+    font-size: 44px;
+  }
+
+  .intro-actions {
+    gap: 16px;
+  }
+
+  .intro-primary {
+    padding: 0 15px;
+    font-size: 0.86rem;
+  }
+}
