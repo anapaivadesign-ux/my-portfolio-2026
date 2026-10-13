@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Relokate · Color System</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: #FAFAFA;
+    color: #111;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+
+  /* ── Page header ── */
+  .page-header {
+    background: linear-gradient(180deg, #C8D2EE 0%, #D8E0F0 30%, #E4EEF0 60%, #DDE8E3 100%);
+    padding: 60px 72px 64px;
+  }
+
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 52px;
+  }
+
+  .brand-logo svg { width: 20px; height: 30px; flex-shrink: 0; }
+
+  .brand-logo-name {
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: #1A1040;
+  }
+
+  .header-eyebrow {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #1E1255;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .header-eyebrow::after {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1.5px;
+    background: #1E1255;
+    opacity: 0.4;
+  }
+
+  .header-title {
+    font-size: 62px;
+    font-weight: 900;
+    letter-spacing: -0.045em;
+    color: #1A1040;
+    line-height: 1;
+    text-wrap: balance;
+    max-width: 520px;
+    margin-bottom: 20px;
+  }
+
+  .header-desc {
+    font-size: 15px;
+    color: rgba(26,16,64,0.5);
+    max-width: 460px;
+    line-height: 1.65;
+    font-weight: 400;
+  }
+
+  /* ── Page content ── */
+  .page-content {
+    padding: 64px 72px 80px;
+    max-width: 1280px;
+  }
+
+  /* ── Section ── */
+  .section { margin-bottom: 72px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #EBEBEB;
+  }
+
+  .section-num {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: #9A7800;
+    background: rgba(212,176,48,0.12);
+    border: 1px solid rgba(212,176,48,0.22);
+    border-radius: 5px;
+    padding: 3px 8px;
+  }
+
+  .section-title {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #1A1040;
+  }
+
+  .section-desc {
+    font-size: 12.5px;
+    color: #999;
+    margin-left: auto;
+  }
+
+  /* ── Swatch grids ── */
+  .grid-2   { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .grid-3   { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .grid-4   { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .grid-6   { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+
+  /* ── Swatch card ── */
+  .swatch-card {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.07);
+    background: white;
+  }
+
+  .swatch-block {
+    position: relative;
+    overflow: hidden;
+    height: 180px;
+  }
+
+  .swatch-block.tall { height: 240px; }
+  .swatch-block.short { height: 120px; }
+
+  .swatch-hex-display {
+    position: absolute;
+    bottom: 14px;
+    left: 18px;
+    font-size: 28px;
+    font-weight: 900;
+    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+    letter-spacing: -0.02em;
+    color: rgba(255,255,255,0.22);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .swatch-hex-display.dark { color: rgba(0,0,0,0.12); }
+
+  .swatch-info {
+    padding: 15px 18px 17px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .swatch-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1A1040;
+    margin-bottom: 2px;
+    letter-spacing: -0.01em;
+  }
+
+  .swatch-hex {
+    font-size: 11.5px;
+    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+    color: #AAAAAA;
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+  }
+
+  .swatch-usage {
+    font-size: 11.5px;
+    color: #999;
+    line-height: 1.45;
+  }
+
+  .swatch-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    margin-top: 9px;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+
+  .tag-primary { background: rgba(212,176,48,0.12); color: #8A6800; }
+  .tag-dark    { background: rgba(26,16,64,0.08);   color: #1A1040; }
+  .tag-mint    { background: rgba(58,158,147,0.1);  color: #1E6B62; }
+  .tag-chart   { background: rgba(107,109,196,0.1); color: #3A3C8C; }
+  .tag-error   { background: rgba(222,122,61,0.18); color: #96481A; }
+
+  /* dark info area for navy card */
+  .swatch-card.on-dark .swatch-info { background: #1A1040; border-top-color: rgba(255,255,255,0.08); }
+  .swatch-card.on-dark .swatch-name { color: #FFFFFF; }
+  .swatch-card.on-dark .swatch-hex  { color: rgba(255,255,255,0.35); }
+  .swatch-card.on-dark .swatch-usage { color: rgba(255,255,255,0.28); }
+
+  /* ── Gradient card ── */
+  .gradient-card {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.07);
+    background: white;
+  }
+
+  .gradient-block {
+    height: 180px;
+    background: linear-gradient(180deg, #C8D2EE 0%, #D8E0F0 30%, #E4EEF0 60%, #DDE8E3 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 0 24px 20px;
+    gap: 0;
+    justify-content: space-between;
+  }
+
+  .grad-stop {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .grad-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.7);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+  }
+
+  .grad-label {
+    font-size: 11px;
+    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+    font-weight: 600;
+    color: rgba(26,16,64,0.45);
+    letter-spacing: 0.02em;
+  }
+
+  .gradient-info {
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .gradient-name { font-size: 13px; font-weight: 700; color: #1A1040; margin-bottom: 3px; }
+  .gradient-sub  { font-size: 11.5px; color: #999; }
+
+  .gradient-code {
+    font-size: 11px;
+    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+    color: #888;
+    background: #F5F5F8;
+    border: 1px solid #E8E8EC;
+    border-radius: 7px;
+    padding: 6px 14px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* ── Semantic card with icon ── */
+  .semantic-icon-wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid rgba(255,255,255,0.3);
+  }
+
+  .semantic-icon-wrap svg { width: 22px; height: 22px; stroke: white; }
+
+  /* ── Mini swatches (data viz) ── */
+  .swatch-card.mini .swatch-info { padding: 12px 14px 13px; }
+  .swatch-card.mini .swatch-name { font-size: 12px; margin-bottom: 1px; }
+  .swatch-card.mini .swatch-hex  { margin-bottom: 0; font-size: 10.5px; }
+
+  /* ── Combination preview ── */
+  .combos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    grid-auto-rows: auto;
+  }
+
+  .combo-card {
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.07);
+  }
+
+  .combo-preview {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 16px;
+  }
+
+  .combo-label-big {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+
+  .combo-label-sm {
+    font-size: 10.5px;
+    font-weight: 600;
+    opacity: 0.6;
+  }
+
+  .combo-footer {
+    background: white;
+    padding: 10px 13px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    font-size: 10.5px;
+    color: #888;
+    font-weight: 600;
+  }
+
+  /* ── Footer ── */
+  .page-footer {
+    background: #1A1040;
+    padding: 28px 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .footer-logo { display: flex; align-items: center; gap: 9px; }
+  .footer-logo-name { font-size: 14px; font-weight: 800; color: white; letter-spacing: -0.02em; }
+  .footer-divider { width: 1px; height: 18px; background: rgba(255,255,255,0.15); }
+  .footer-label { font-size: 12px; color: rgba(255,255,255,0.35); }
+  .footer-version { font-size: 11px; color: rgba(255,255,255,0.2); font-family: 'SF Mono', monospace; }
+</style>
+</head>
+<body>
+
+<!-- ═══ Page header ═══ -->
+<header class="page-header">
+  <div class="brand-logo">
+    <svg viewBox="0 0 36 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1.52015 18.0664C1.26337 18.6171 1.03567 19.1845 0.827344 19.7731C-0.614798 23.9494 -0.141621 27.9165 2.01271 31.7986C4.35599 36.0311 7.30002 39.8783 10.3297 43.6784C13.0944 47.1479 16.0013 50.5157 18.6514 54.0655L19.0778 54.6374V54.5889C19.2247 54.3947 19.3652 54.2066 19.5057 54.0185C20.9366 52.101 22.4417 50.2381 23.9597 48.3827L1.52015 18.0664Z" fill="#1A1040"/>
+      <path d="M5.21875 7.41992C2.99916 9.08936 1.25367 11.1951 0 13.588L23.3889 45.0666C24.5729 43.6276 25.7586 42.1902 26.9208 40.7371C27.4589 40.0652 27.6884 39.5971 28.2188 38.9199L5.21875 7.41992Z" fill="#1A1040"/>
+      <path d="M35.1726 15.1316C34.9696 13.5352 34.5423 12.659 34.5423 12.659C32.1236 5.5671 25.7707 1.12716 18.833 0.199915H18.8135C17.0673 -0.157074 14.967 0.0237402 13.3491 0.278732C13.1639 0.306549 12.9771 0.331272 12.7919 0.36218V0.371452C12.1584 0.474479 11.533 0.612539 10.9158 0.785624L10.7712 0.822712C8.53492 1.44181 6.43295 2.43621 4.56445 3.75898L26.9906 34.4198C28.2739 32.7369 29.5198 31.0292 30.6877 29.2721C31.4335 28.231 32.1111 27.1472 32.7165 26.0267C32.9309 25.6558 33.1421 25.2834 33.3484 24.9063C35.0865 21.7258 35.7363 18.4882 35.171 15.1301" fill="#1A1040"/>
+    </svg>
+    <span class="brand-logo-name">relokate</span>
+  </div>
+  <div class="header-eyebrow">Brand Identity</div>
+  <h1 class="header-title">Color System</h1>
+  <p class="header-desc">Official color palette for Relokate. Use these tokens consistently across all product, marketing, and communication surfaces.</p>
+</header>
+
+<!-- ═══ Content ═══ -->
+<main class="page-content">
+
+  <!-- 01 · Primary Colors -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Primary Colors</h2>
+      <span class="section-desc">The two anchors of every Relokate surface</span>
+    </div>
+    <div class="grid-2">
+
+      <div class="swatch-card">
+        <div class="swatch-block tall" style="background:#FCE27F;">
+          <span class="swatch-hex-display dark">#FCE27F</span>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Brand Yellow</div>
+          <div class="swatch-hex">#FCE27F · RGB 252 226 127</div>
+          <div class="swatch-usage">Primary CTA buttons, active sidebar states, badges, and key highlights. The signature color that defines Relokate energy.</div>
+          <span class="swatch-tag tag-primary">Primary CTA</span>
+        </div>
+      </div>
+
+      <div class="swatch-card on-dark">
+        <div class="swatch-block tall" style="background:linear-gradient(180deg,#1E1255 0%,#140D3A 100%);">
+          <span class="swatch-hex-display">#1E1255</span>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Brand Navy</div>
+          <div class="swatch-hex">#1E1255 → #140D3A · sidebar gradient</div>
+          <div class="swatch-usage">Dark sidebar surface, footer, dark UI overlays. Deeper purple than the base navy — applied as a vertical gradient.</div>
+          <span class="swatch-tag tag-dark" style="background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.5);">Foundation</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 02 · Brand Gradients -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Brand Gradients</h2>
+      <span class="section-desc">Three surfaces — vivid background, soft surface, dark navigation</span>
+    </div>
+    <div class="grid-3">
+
+      <div class="gradient-card">
+        <div class="gradient-block" style="background:linear-gradient(180deg,#C8D2EE 0%,#D8E0F0 30%,#E4EEF0 60%,#DDE8E3 100%);">
+          <div class="grad-stop">
+            <div class="grad-dot" style="background:#C8D2EE;"></div>
+            <span class="grad-label">#C8D2EE</span>
+          </div>
+          <div class="grad-stop">
+            <div class="grad-dot" style="background:#DDE8E3; border-color:rgba(26,16,64,0.15);"></div>
+            <span class="grad-label">#DDE8E3</span>
+          </div>
+        </div>
+        <div class="gradient-info">
+          <div>
+            <div class="gradient-name">Periwinkle to Mint</div>
+            <div class="gradient-sub">Dashboard body, login page, landing pages · 180° vertical</div>
+          </div>
+          <code class="gradient-code">180deg, #C8D2EE → #DDE8E3</code>
+        </div>
+      </div>
+
+      <div class="gradient-card">
+        <div class="gradient-block" style="background:linear-gradient(180deg,#EDEFFD 0%,#F6FBFE 50%,#FFFFFF 100%);">
+          <div class="grad-stop">
+            <div class="grad-dot" style="background:#EDEFFD; border-color:rgba(26,16,64,0.15);"></div>
+            <span class="grad-label" style="color:rgba(26,16,64,0.45);">#EDEFFD</span>
+          </div>
+          <div class="grad-stop">
+            <div class="grad-dot" style="background:#FFFFFF; border-color:rgba(26,16,64,0.15);"></div>
+            <span class="grad-label" style="color:rgba(26,16,64,0.45);">#FFFFFF</span>
+          </div>
+        </div>
+        <div class="gradient-info">
+          <div>
+            <div class="gradient-name">Periwinkle Mist</div>
+            <div class="gradient-sub">Empty states, soft card fills, mobile surfaces · 180° vertical</div>
+          </div>
+          <code class="gradient-code">180deg, #EDEFFD → #FFFFFF</code>
+        </div>
+      </div>
+
+      <div class="gradient-card">
+        <div class="gradient-block" style="background:linear-gradient(180deg,#1E1255 0%,#140D3A 100%);">
+          <div class="grad-stop">
+            <div class="grad-dot" style="background:#1E1255;"></div>
+            <span class="grad-label" style="color:rgba(255,255,255,0.5);">#1E1255</span>
+          </div>
+          <div class="grad-stop" style="align-items:flex-end;">
+            <div class="grad-dot" style="background:#140D3A;"></div>
+            <span class="grad-label" style="color:rgba(255,255,255,0.5);">#140D3A</span>
+          </div>
+        </div>
+        <div class="gradient-info">
+          <div>
+            <div class="gradient-name">Dark Purple Sidebar</div>
+            <div class="gradient-sub">Navigation sidebar, dark UI surfaces · 180° vertical</div>
+          </div>
+          <code class="gradient-code">180deg, #1E1255 → #140D3A</code>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 03 · Secondary Colors -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Secondary Colors</h2>
+      <span class="section-desc">Pastel accents for cards, badges, tags, and UI surfaces</span>
+    </div>
+    <div class="grid-4">
+
+      <div class="swatch-card">
+        <div class="swatch-block" style="background:#C1EAFF; border-bottom:1px solid #A8DDEF;">
+          <span class="swatch-hex-display dark">#C1EAFF</span>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Sky Blue</div>
+          <div class="swatch-hex">#C1EAFF</div>
+          <div class="swatch-usage">Card tints, info badges, highlights on light surfaces.</div>
+          <span class="swatch-tag" style="background:rgba(0,150,255,0.1);color:#005FA3;">Accent</span>
+        </div>
+      </div>
+
+      <div class="swatch-card">
+        <div class="swatch-block" style="background:#B4DEDA; border-bottom:1px solid #9DCFCA;">
+          <span class="swatch-hex-display dark">#B4DEDA</span>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Soft Green</div>
+          <div class="swatch-hex">#B4DEDA</div>
+          <div class="swatch-usage">Success backgrounds, completed state fills, mint surfaces.</div>
+          <span class="swatch-tag tag-mint">Success bg</span>
+        </div>
+      </div>
+
+      <div class="swatch-card">
+        <div class="swatch-block" style="background:#C5CAFF; border-bottom:1px solid #ADB4F8;">
+          <span class="swatch-hex-display dark">#C5CAFF</span>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Lila</div>
+          <div class="swatch-hex">#C5CAFF</div>
+          <div class="swatch-usage">KPI card tints, data highlights, secondary accent surfaces.</div>
+          <span class="swatch-tag tag-chart">Accent</span>
+        </div>
+      </div>
+
+      <div class="swatch-card">
+        <div class="swatch-block" style="background:#FCE27F; border-bottom:1px solid #F5D55A;">
+          <span class="swatch-hex-display dark">#FCE27F</span>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Pastel Yellow</div>
+          <div class="swatch-hex">#FCE27F</div>
+          <div class="swatch-usage">Warning backgrounds, task banners, soft highlight areas.</div>
+          <span class="swatch-tag tag-primary">Warning bg</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 04 · Semantic Colors -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Semantic Colors</h2>
+      <span class="section-desc">Status and feedback — never used decoratively</span>
+    </div>
+    <div class="grid-3">
+
+      <div class="swatch-card">
+        <div class="swatch-block" style="background:#DE7A3D; position:relative;">
+          <div class="semantic-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <span class="swatch-hex-display">#DE7A3D</span>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Error · Urgent</div>
+          <div class="swatch-hex">#DE7A3D</div>
+          <div class="swatch-usage">Expiring permits, critical alerts, destructive actions. Use sparingly.</div>
+          <span class="swatch-tag tag-error">Danger</span>
+        </div>
+      </div>
+
+      <div class="swatch-card">
+        <div class="swatch-block" style="background:#F5C035; position:relative;">
+          <div class="semantic-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <span class="swatch-hex-display dark">#F5C035</span>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Warning</div>
+          <div class="swatch-hex">#F5C035</div>
+          <div class="swatch-usage">Action needed, upcoming deadlines, outstanding tasks banners.</div>
+          <span class="swatch-tag tag-primary">Attention</span>
+        </div>
+      </div>
+
+      <div class="swatch-card">
+        <div class="swatch-block" style="background:#3A9E93; position:relative;">
+          <div class="semantic-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <span class="swatch-hex-display">#3A9E93</span>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Success</div>
+          <div class="swatch-hex">#3A9E93</div>
+          <div class="swatch-usage">Completed cases, on-track status pills, confirmation states.</div>
+          <span class="swatch-tag tag-mint">Confirmed</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 05 · Color Combinations -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Color Combinations</h2>
+      <span class="section-desc">Approved pairings for UI and communications</span>
+    </div>
+    <div class="combos">
+
+      <div class="combo-card">
+        <div class="combo-preview" style="background:#FCE27F;">
+          <span class="combo-label-big" style="color:#1A1040;">Aa</span>
+          <span class="combo-label-sm" style="color:rgba(26,16,64,0.6);">Navy on Brand Yellow</span>
+        </div>
+        <div class="combo-footer">CTA buttons · badges</div>
+      </div>
+
+      <div class="combo-card">
+        <div class="combo-preview" style="background:linear-gradient(180deg,#1E1255,#140D3A);">
+          <span class="combo-label-big" style="color:#FCE27F;">Aa</span>
+          <span class="combo-label-sm" style="color:rgba(255,255,255,0.35);">Yellow on Dark Purple</span>
+        </div>
+        <div class="combo-footer">Sidebar active · dark navigation</div>
+      </div>
+
+      <div class="combo-card">
+        <div class="combo-preview" style="background:linear-gradient(135deg,#D9E4FF,#FFFFFF);">
+          <span class="combo-label-big" style="color:#1A1040;">Aa</span>
+          <span class="combo-label-sm" style="color:rgba(26,16,64,0.4);">Navy on Blue Gradient</span>
+        </div>
+        <div class="combo-footer">KPI cards · feature highlights</div>
+      </div>
+
+      <div class="combo-card">
+        <div class="combo-preview" style="background:#B4DEDA;">
+          <span class="combo-label-big" style="color:#1A1040;">Aa</span>
+          <span class="combo-label-sm" style="color:rgba(26,16,64,0.5);">Navy on Soft Green</span>
+        </div>
+        <div class="combo-footer">Success states · completed cases</div>
+      </div>
+
+      <div class="combo-card">
+        <div class="combo-preview" style="background:#C1EAFF;">
+          <span class="combo-label-big" style="color:#1A1040;">Aa</span>
+          <span class="combo-label-sm" style="color:rgba(26,16,64,0.5);">Navy on Sky Blue</span>
+        </div>
+        <div class="combo-footer">Info cards · candidate tags</div>
+      </div>
+
+      <div class="combo-card">
+        <div class="combo-preview" style="background:#FCE27F;">
+          <span class="combo-label-big" style="color:#1A1040;">Aa</span>
+          <span class="combo-label-sm" style="color:rgba(26,16,64,0.5);">Navy on Pastel Yellow</span>
+        </div>
+        <div class="combo-footer">Warning banners · task alerts</div>
+      </div>
+
+      <div class="combo-card">
+        <div class="combo-preview" style="background:linear-gradient(180deg,#C8D2EE,#DDE8E3);">
+          <span class="combo-label-big" style="color:#1A1040;">Aa</span>
+          <span class="combo-label-sm" style="color:rgba(26,16,64,0.4);">Navy on Gradient</span>
+        </div>
+        <div class="combo-footer">Backgrounds · landing pages</div>
+      </div>
+
+      <div class="combo-card">
+        <div class="combo-preview" style="background:#FFFFFF; border-bottom:1px solid #F0EFF8;">
+          <span class="combo-label-big" style="color:#1A1040;">Aa</span>
+          <span class="combo-label-sm" style="color:#AAAAAA;">Navy on White</span>
+        </div>
+        <div class="combo-footer">Cards · content areas</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 06 · Data Visualization -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <h2 class="section-title">Data Visualization Palette</h2>
+      <span class="section-desc">Sequential order for charts, donut graphs, and dashboards</span>
+    </div>
+    <div class="grid-6">
+
+      <div class="swatch-card mini">
+        <div class="swatch-block short" style="background:#2B52E6;">
+          <span style="position:absolute;top:10px;left:12px;font-size:10px;font-weight:800;color:rgba(255,255,255,0.4);letter-spacing:0.06em;">01</span>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Deep Blue</div>
+          <div class="swatch-hex">#2B52E6</div>
+        </div>
+      </div>
+
+      <div class="swatch-card mini">
+        <div class="swatch-block short" style="background:#62C8BC;">
+          <span style="position:absolute;top:10px;left:12px;font-size:10px;font-weight:800;color:rgba(255,255,255,0.4);letter-spacing:0.06em;">02</span>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Mint</div>
+          <div class="swatch-hex">#62C8BC</div>
+        </div>
+      </div>
+
+      <div class="swatch-card mini">
+        <div class="swatch-block short" style="background:#F5C035;">
+          <span style="position:absolute;top:10px;left:12px;font-size:10px;font-weight:800;color:rgba(255,255,255,0.4);letter-spacing:0.06em;">03</span>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Amber</div>
+          <div class="swatch-hex">#F5C035</div>
+        </div>
+      </div>
+
+      <div class="swatch-card mini">
+        <div class="swatch-block short" style="background:#F5BCBD;">
+          <span style="position:absolute;top:10px;left:12px;font-size:10px;font-weight:800;color:rgba(255,255,255,0.4);letter-spacing:0.06em;">04</span>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Blush</div>
+          <div class="swatch-hex">#F5BCBD</div>
+        </div>
+      </div>
+
+      <div class="swatch-card mini">
+        <div class="swatch-block short" style="background:#C5C2F8;">
+          <span style="position:absolute;top:10px;left:12px;font-size:10px;font-weight:800;color:rgba(255,255,255,0.4);letter-spacing:0.06em;">05</span>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Lavender</div>
+          <div class="swatch-hex">#C5C2F8</div>
+        </div>
+      </div>
+
+      <div class="swatch-card mini">
+        <div class="swatch-block short" style="background:#5AAEED;">
+          <span style="position:absolute;top:10px;left:12px;font-size:10px;font-weight:800;color:rgba(255,255,255,0.4);letter-spacing:0.06em;">06</span>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Sky Blue</div>
+          <div class="swatch-hex">#5AAEED</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══ Footer ═══ -->
+<footer class="page-footer">
+  <div class="footer-left">
+    <div class="footer-logo">
+      <svg width="14" height="21" viewBox="0 0 36 55" fill="none">
+        <path d="M1.52015 18.0664C1.26337 18.6171 1.03567 19.1845 0.827344 19.7731C-0.614798 23.9494 -0.141621 27.9165 2.01271 31.7986C4.35599 36.0311 7.30002 39.8783 10.3297 43.6784C13.0944 47.1479 16.0013 50.5157 18.6514 54.0655L19.0778 54.6374V54.5889C19.2247 54.3947 19.3652 54.2066 19.5057 54.0185C20.9366 52.101 22.4417 50.2381 23.9597 48.3827L1.52015 18.0664Z" fill="white"/>
+        <path d="M5.21875 7.41992C2.99916 9.08936 1.25367 11.1951 0 13.588L23.3889 45.0666C24.5729 43.6276 25.7586 42.1902 26.9208 40.7371C27.4589 40.0652 27.6884 39.5971 28.2188 38.9199L5.21875 7.41992Z" fill="white"/>
+        <path d="M35.1726 15.1316C34.9696 13.5352 34.5423 12.659 34.5423 12.659C32.1236 5.5671 25.7707 1.12716 18.833 0.199915H18.8135C17.0673 -0.157074 14.967 0.0237402 13.3491 0.278732C13.1639 0.306549 12.9771 0.331272 12.7919 0.36218V0.371452C12.1584 0.474479 11.533 0.612539 10.9158 0.785624L10.7712 0.822712C8.53492 1.44181 6.43295 2.43621 4.56445 3.75898L26.9906 34.4198C28.2739 32.7369 29.5198 31.0292 30.6877 29.2721C31.4335 28.231 32.1111 27.1472 32.7165 26.0267C32.9309 25.6558 33.1421 25.2834 33.3484 24.9063C35.0865 21.7258 35.7363 18.4882 35.171 15.1301" fill="white"/>
+      </svg>
+      <span class="footer-logo-name">relokate</span>
+    </div>
+    <div class="footer-divider"></div>
+    <span class="footer-label">Brand Color Guidelines</span>
+  </div>
+  <span class="footer-version">v1.0 · 2026</span>
+</footer>
+
+</body>
+</html>

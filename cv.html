@@ -191,6 +191,24 @@
 
     .cv-download-btn:hover { opacity: 0.75; }
 
+    .cv-intro {
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+      gap: 32px;
+      margin-bottom: 48px;
+    }
+    .cv-photo {
+      width: 160px;
+      height: 160px;
+      flex-shrink: 0;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 50%;
+      display: block;
+    }
+    .cv-intro .cv-summary { margin-bottom: 0; }
+
     @media (max-width: 860px) {
       .cv-grid {
         grid-template-columns: 1fr;
@@ -199,6 +217,49 @@
       .cv-sidebar {
         position: static;
       }
+    }
+    @media print {
+      @page { size: A4; margin: 14mm 18mm; }
+
+      .cv-download-btn, .cv-ats-btn, nav, footer, .wa-widget, .cursor { display: none !important; }
+
+      :root { --white: #ffffff; }
+      body { font-size: 10px; background: #fff; -webkit-print-color-adjust: exact; }
+
+      .hero { padding-top: 16px !important; padding-bottom: 0 !important; background: #fff !important; }
+      .hero h1 { font-size: 1.6rem !important; margin-bottom: 0 !important; }
+
+      .section { padding-top: 0 !important; padding-bottom: 0 !important; }
+      .cv-intro { margin-top: 4px; }
+      .container { max-width: 100% !important; padding: 0 !important; }
+
+      .cv-summary { font-size: 0.78rem; line-height: 1.5; margin-bottom: 14px; }
+
+      .cv-grid { gap: 28px; }
+
+      .cv-section { margin-bottom: 18px; }
+      .cv-section-label { font-size: 0.58rem; margin-bottom: 8px; padding-bottom: 5px; }
+
+      .cv-name { font-size: 1.5rem; margin-bottom: 3px; }
+      .cv-title { font-size: 0.78rem; margin-bottom: 10px; }
+
+      .cv-contact-list { gap: 3px; }
+      .cv-contact-list li { font-size: 0.73rem; }
+
+      .cv-skills-list { gap: 2px; }
+      .cv-skills-list li { font-size: 0.73rem; }
+
+      .cv-lang-row { font-size: 0.73rem; padding: 3px 0; }
+      .cv-lang-level { font-size: 0.62rem; }
+
+      .cv-entry { margin-bottom: 12px; padding-bottom: 12px; }
+      .cv-entry-meta { font-size: 0.62rem; margin-bottom: 2px; }
+      .cv-entry-title { font-size: 0.9rem; margin-bottom: 3px; }
+      .cv-entry-desc { font-size: 0.75rem; line-height: 1.5; }
+      .cv-clients { font-size: 0.68rem; line-height: 1.5; margin-top: 3px; }
+      .cv-intro { display: flex !important; flex-direction: row !important; align-items: flex-start !important; gap: 28px; margin-bottom: 14px; }
+      .cv-summary { order: 1; flex: 1; margin-bottom: 0; }
+      .cv-photo { order: 2; width: 150px; height: 150px; flex-shrink: 0; margin-top: -48px; }
     }
   </style>
   <!-- Google tag (gtag.js) -->
@@ -244,12 +305,15 @@
   <section class="section" style="padding-top: 0;">
     <div class="container">
 
-      <p class="cv-summary">Berlin-based Senior UI/UX Designer and Illustrator with over 10 years of experience creating user-centred digital products. Specialised in solving business problems through research, design thinking, and cross-platform product design. Experienced in partnering with global agencies and startups to deliver intuitive, data-driven, and visually engaging experiences.</p>
+      <div class="cv-intro">
+        <img src="images/profile picture/profile_picture.png" alt="Ana Paiva" class="cv-photo" />
+        <p class="cv-summary">Senior Product Designer with 10+ years of experience designing digital products across global agencies, startups and product teams in Europe. Experienced in taking complex product problems from discovery and research through UX/UI, interaction design, prototyping, design systems and production handoff. Strong cross-functional experience working with product, engineering and leadership teams across enterprise, SaaS, fintech, e-commerce and consumer products.</p>
+      </div>
 
       <a href="CV_anapaiva_Senior_product_designer_2026-compressed.pdf" download class="cv-download-btn">
         ↓ Download CV
       </a>
-      <a href="cv-ats.html" style="display:inline-flex;align-items:center;gap:8px;margin-left:12px;margin-bottom:56px;border:1.5px solid rgba(11,11,15,0.2);border-radius:999px;padding:12px 24px;font-size:0.82rem;font-weight:700;letter-spacing:0.04em;text-decoration:none;color:var(--black);transition:background 160ms,color 160ms;">
+      <a href="cv-ats.html" class="cv-ats-btn" style="display:inline-flex;align-items:center;gap:8px;margin-left:12px;margin-bottom:56px;border:1.5px solid rgba(11,11,15,0.2);border-radius:999px;padding:12px 24px;font-size:0.82rem;font-weight:700;letter-spacing:0.04em;text-decoration:none;color:var(--black);transition:background 160ms,color 160ms;">
         ATS Version ↗
       </a>
 
@@ -264,24 +328,6 @@
               <li><a href="mailto:ana.paiva.design@gmail.com">ana.paiva.design@gmail.com</a></li>
               <li><a href="https://www.linkedin.com/in/anapaivadesign/" target="_blank">LinkedIn ↗</a></li>
               <li><a href="tel:+491746290656">+49 174 629 0656</a></li>
-            </ul>
-          </div>
-
-          <div class="cv-section">
-            <div class="cv-section-label">Skills</div>
-            <ul class="cv-skills-list">
-              <li>User research</li>
-              <li>Information architecture</li>
-              <li>Interaction design</li>
-              <li>UX/UI design</li>
-              <li>Ideation & prototyping</li>
-              <li>A/B testing</li>
-              <li>Design thinking</li>
-              <li>Design sprints</li>
-              <li>Agile & Scrum workflows</li>
-              <li>User needs analysis</li>
-              <li>AI integration in product design</li>
-              <li>No-code / low-code automation</li>
             </ul>
           </div>
 
@@ -301,6 +347,81 @@
             </div>
           </div>
 
+        </div>
+
+        <!-- Main content -->
+        <div class="cv-main">
+
+          <div class="cv-section">
+            <div class="cv-section-label">Experience</div>
+
+            <div class="cv-entry">
+              <div class="cv-entry-meta">2016 – Present · Freelance / Contract</div>
+              <div class="cv-entry-title">Senior Product Designer</div>
+              <div class="cv-entry-desc">Embedded within agencies, startups and product teams, leading product and UX/UI design from discovery through to delivery across 20+ engagements.</div>
+              <div class="cv-entry-desc">- Lead end-to-end product design across SaaS, fintech, food delivery, e-commerce and enterprise products.</div>
+              <div class="cv-entry-desc">- Partner closely with product, engineering and leadership teams to translate complex requirements into clear, intuitive digital experiences.</div>
+              <div class="cv-entry-desc">- Conduct user research, define user flows and information architecture, and develop wireframes, prototypes and high-fidelity interfaces.</div>
+              <div class="cv-entry-desc">- Design and evolve scalable Figma design systems to support consistency and efficient collaboration across teams.</div>
+              <div class="cv-entry-desc">- Facilitate design sprints, ideation and collaborative workshops to explore and validate product solutions.</div>
+              <div class="cv-entry-desc">- Integrate quickly into existing teams and take ownership of ambiguous design problems from discovery through to handoff.</div>
+              <div class="cv-clients">Publicis · AKQA · MetaDesign · Wunderman Thompson · DHL · MVP Factory · Digitas Pixelpark · TrustYou · Simcon · Bettermile · AirBeamTV</div>
+            </div>
+
+            <div class="cv-entry">
+              <div class="cv-entry-meta">2018 – 2020 · Berlin, Germany</div>
+              <div class="cv-entry-title">Product Designer, Mobilab Solutions</div>
+              <div class="cv-entry-desc">Partnered closely with engineering teams to design and ship product features for DHL and Vapiano. Worked from technical constraints through to polished, production-ready interfaces. Collaborated across product and engineering to translate complex requirements into usable digital experiences.</div>
+            </div>
+
+            <div class="cv-entry">
+              <div class="cv-entry-meta">2015 – 2017 · Berlin, Germany</div>
+              <div class="cv-entry-title">UX Designer, Techstars Startups</div>
+              <div class="cv-entry-desc">Provided end-to-end UX support across a portfolio of early-stage startups. Developed wireframes, prototypes and interface designs to help founding teams validate and launch their first products. Worked directly with founders and multidisciplinary teams in fast-moving environments.</div>
+            </div>
+
+            <div class="cv-entry">
+              <div class="cv-entry-meta">2014 – 2015 · Germany</div>
+              <div class="cv-entry-title">UX Designer, Foodora</div>
+              <div class="cv-entry-desc">Owned UX for core product flows during a period of rapid user growth. Developed wireframes, prototypes and interface designs supporting the evolution of the product.</div>
+            </div>
+
+            <div class="cv-entry">
+              <div class="cv-entry-meta">2014 · Hamburg, Germany</div>
+              <div class="cv-entry-title">Intern, Landor & Fitch</div>
+              <div class="cv-entry-desc">Contributed to visual identity and brand strategy projects.</div>
+            </div>
+
+            <div class="cv-entry">
+              <div class="cv-entry-meta">2013 · Munich, Germany</div>
+              <div class="cv-entry-title">Intern, Wayra Telefónica Innovation Incubator</div>
+              <div class="cv-entry-desc">Supported design and innovation projects within a startup incubator environment.</div>
+            </div>
+
+          </div>
+
+          <div class="cv-section">
+            <div class="cv-section-label">Skills</div>
+            <ul class="cv-skills-list">
+              <li>UX/UI Design</li>
+              <li>Interaction Design</li>
+              <li>Information Architecture</li>
+              <li>User Research</li>
+              <li>User Needs Analysis</li>
+              <li>Prototyping</li>
+              <li>Design Thinking</li>
+              <li>Design Sprints</li>
+              <li>A/B Testing</li>
+              <li>Design Systems</li>
+              <li>Figma</li>
+              <li>Agile / Scrum</li>
+              <li>Cross-functional Collaboration</li>
+              <li>Developer Handoff</li>
+              <li>AI Integration in Product Design</li>
+              <li>No-code / Low-code Automation</li>
+            </ul>
+          </div>
+
           <div class="cv-section">
             <div class="cv-section-label">Education</div>
 
@@ -317,57 +438,11 @@
             </div>
 
             <div class="cv-entry">
-              <div class="cv-entry-meta">2009 · Viseu, Portugal</div>
+              <div class="cv-entry-meta">2009</div>
               <div class="cv-entry-title">Bachelor's in Multimedia</div>
             </div>
           </div>
 
-        </div>
-
-        <!-- Main content -->
-        <div class="cv-main">
-
-          <div class="cv-section">
-            <div class="cv-section-label">Experience</div>
-
-            <div class="cv-entry">
-              <div class="cv-entry-meta">2016 – Present · Freelance</div>
-              <div class="cv-entry-title">Senior Product Designer & Illustrator</div>
-              <div class="cv-entry-desc">Independent designer working with agencies, startups, and founders worldwide on product design, brand strategy, and illustration.</div>
-              <div class="cv-clients">Meta Design · AKQA · Wunderman Thompson · MVP Factory · Blush Illustrations · Digitas Pixelpark · Monday.pt · MingLabs · Dayone · Deevio · Bettermile · Shorty · AirBeamTV · Relokate · Matchwave · Vaultoro · Trustyou · Simcon · KGK</div>
-            </div>
-
-            <div class="cv-entry">
-              <div class="cv-entry-meta">2018 – 2020 · Berlin, Germany</div>
-              <div class="cv-entry-title">Product Designer — MobiLab Solutions</div>
-              <div class="cv-entry-desc">Partnered with engineering teams to ensure seamless product implementation for DHL and Vapiano.</div>
-            </div>
-
-            <div class="cv-entry">
-              <div class="cv-entry-meta">2015 – 2017 · Berlin, Germany</div>
-              <div class="cv-entry-title">UX Designer — Techstars Startups</div>
-              <div class="cv-entry-desc">Provided UX guidance, developed wireframes, prototypes, and interface designs for early-stage startups.</div>
-            </div>
-
-            <div class="cv-entry">
-              <div class="cv-entry-meta">2014 – 2015 · Berlin, Germany</div>
-              <div class="cv-entry-title">UX Designer — Foodora</div>
-              <div class="cv-entry-desc">Provided UX guidance, developed wireframes, prototypes, and interface designs during the startup's growth phase.</div>
-            </div>
-
-            <div class="cv-entry">
-              <div class="cv-entry-meta">2014 · Hamburg, Germany</div>
-              <div class="cv-entry-title">Intern — Landor & Fitch</div>
-              <div class="cv-entry-desc">Brand agency internship contributing to visual identity and brand strategy projects.</div>
-            </div>
-
-            <div class="cv-entry">
-              <div class="cv-entry-meta">2013 · Munich, Germany</div>
-              <div class="cv-entry-title">Intern — Wayra Telefónica Innovation Incubator</div>
-              <div class="cv-entry-desc">Supported design and innovation projects within Telefónica's startup incubator programme.</div>
-            </div>
-
-          </div>
         </div>
 
       </div>
