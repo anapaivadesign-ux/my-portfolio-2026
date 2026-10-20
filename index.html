@@ -65,7 +65,7 @@
   <!-- Navigation -->
   <nav>
     <a href="index.html" class="nav-logo">copenicker . studio</a>
-    <button class="burger" id="burger" aria-label="Menu" onclick="this.classList.toggle('open');document.getElementById('navRight').classList.toggle('open')">
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" onclick="this.classList.toggle('open');document.getElementById('navRight').classList.toggle('open');this.setAttribute('aria-expanded', this.classList.contains('open'))">
       <span></span><span></span><span></span>
     </button>
     <div class="nav-right" id="navRight">
@@ -82,14 +82,16 @@
   <main>
     <section class="intro-hero" aria-labelledby="intro-title">
       <div class="intro-copy">
-        <p class="intro-kicker"><span class="availability-dot" aria-hidden="true"></span> Independent designer</p>
-        <h1 id="intro-title">Hi, I’m Ana.</h1>
+        <p class="intro-kicker"><span class="availability-dot" aria-hidden="true"></span> Independent designer · Lisbon &amp; Berlin</p>
+        <h1 id="intro-title">Thoughtful design for complex ideas and <span>real people.</span></h1>
         <p class="intro-lede">I’m a product designer and illustrator with 10+ years of experience turning complex ideas into clear, thoughtful experiences for people and businesses.</p>
         <div class="intro-actions">
-          <a class="intro-primary" href="#selected-work">Explore selected work <span aria-hidden="true">↓</span></a>
-          <a class="intro-secondary" href="contact.html">Let’s talk <span aria-hidden="true">↗</span></a>
+          <a class="intro-primary" href="mailto:ana@copenickerstudio.com">Email me <span aria-hidden="true">↗</span></a>
+          <a class="intro-secondary" href="#selected-work">Explore selected work <span aria-hidden="true">↓</span></a>
         </div>
-        <p class="intro-footnote">Available for select collaborations</p>
+      </div>
+      <div class="intro-portrait" aria-hidden="true">
+        <img src="images/profile/images:profile:ana-hero.png" alt="">
       </div>
     </section>
 
@@ -710,7 +712,7 @@
   <div class="wa-widget">
     <div class="wa-panel" id="waPanel">
       <div class="wa-panel-header">
-        <img class="wa-avatar" src="images/ana-profile.png" alt="Ana">
+        <img class="wa-avatar" src="images/profile/ana-profile.png" alt="Ana">
         <div class="wa-panel-header-info">
           <strong>copenicker . studio</strong>
           <span>Typically replies instantly</span>

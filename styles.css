@@ -777,6 +777,7 @@ nav {
 .section:has(.work-grid).visible .work-grid .work-card:nth-child(4) { opacity:1; translate:0 0; filter:blur(0); transition-delay:240ms; }
 .section:has(.work-grid).visible .work-grid .work-card:nth-child(5) { opacity:1; translate:0 0; filter:blur(0); transition-delay:320ms; }
 .section:has(.work-grid).visible .work-grid .work-card:nth-child(6) { opacity:1; translate:0 0; filter:blur(0); transition-delay:400ms; }
+.section:has(.work-grid).visible .work-grid .work-card:nth-child(n+7) { opacity:1; translate:0 0; filter:blur(0); transition-delay:480ms; }
 
 .work-card {
   display: grid;
@@ -1933,5 +1934,510 @@ body .scroll-banner {
   .intro-primary {
     padding: 0 15px;
     font-size: 0.86rem;
+  }
+}
+
+/* Qoim-inspired portfolio refresh */
+:root {
+  --portfolio-accent: #d94d35;
+}
+
+.intro-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
+  align-items: center;
+  gap: clamp(42px, 7vw, 104px);
+  width: min(100%, 1520px);
+  min-height: 630px;
+  padding-top: 92px;
+  padding-bottom: 84px;
+}
+
+.intro-copy {
+  max-width: 700px;
+}
+
+.intro-kicker {
+  color: var(--gray-700);
+}
+
+.availability-dot {
+  background: var(--portfolio-accent);
+  box-shadow: 0 0 0 4px rgba(217, 77, 53, 0.13);
+}
+
+.intro-copy h1 {
+  max-width: 710px;
+  margin: 28px 0 24px;
+  font-family: inherit;
+  font-size: 98px;
+  font-weight: 700;
+  line-height: 0.98;
+}
+
+.intro-copy h1 em {
+  color: var(--portfolio-accent);
+  font-family: 'Caudex', Georgia, serif;
+  font-weight: 400;
+}
+
+.intro-lede {
+  max-width: 540px;
+  font-size: 1.08rem;
+}
+
+.intro-primary {
+  border-radius: 3px;
+  background: var(--black);
+}
+
+.intro-primary:hover {
+  background: var(--portfolio-accent);
+}
+
+.intro-feature {
+  display: block;
+  min-width: 0;
+  color: var(--black);
+}
+
+.intro-feature img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.28;
+  object-fit: cover;
+  object-position: center;
+  background: #dce5e0;
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.intro-feature:hover img {
+  transform: scale(1.015);
+}
+
+.intro-feature-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding-top: 13px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 13px;
+}
+
+.intro-feature-caption > span {
+  color: var(--gray-600);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+}
+
+.intro-feature-caption strong {
+  font-family: 'Caudex', Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.intro-feature-caption strong span {
+  color: var(--portfolio-accent);
+  font-family: inherit;
+}
+
+#selected-work .work-intro-row {
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+#selected-work .work-heading span {
+  color: var(--portfolio-accent);
+}
+
+#selected-work .work-archive-link {
+  border-color: var(--portfolio-accent);
+}
+
+#selected-work .work-filter {
+  gap: 22px;
+  border-bottom: 1px solid var(--border);
+}
+
+#selected-work .work-filter-btn {
+  min-height: 42px;
+  padding: 8px 0;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  color: var(--gray-600);
+}
+
+#selected-work .work-filter-btn:hover {
+  color: var(--black);
+}
+
+#selected-work .work-filter-btn.active {
+  background: transparent;
+  border-color: var(--portfolio-accent);
+  color: var(--black);
+}
+
+#selected-work .work-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 56px 32px;
+}
+
+#selected-work .work-thumb {
+  aspect-ratio: 1.38;
+  overflow: hidden;
+  background: #e8e5dc;
+}
+
+#selected-work .work-thumb img {
+  transition: transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#selected-work .work-card:hover .work-thumb img {
+  transform: scale(1.035);
+}
+
+#selected-work .work-title {
+  font-size: 1.95rem;
+}
+
+@media (max-width: 900px) {
+  .intro-hero {
+    min-height: 0;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 0.82fr);
+    gap: 38px;
+    padding-top: 84px;
+    padding-bottom: 72px;
+  }
+
+  .intro-copy h1 {
+    font-size: 76px;
+  }
+}
+
+@media (max-width: 720px) {
+  .intro-hero {
+    grid-template-columns: 1fr;
+    gap: 38px;
+    padding-top: 102px;
+    padding-bottom: 64px;
+  }
+
+  .intro-copy h1 {
+    max-width: 590px;
+    font-size: 64px;
+  }
+
+  .intro-feature {
+    width: min(100%, 560px);
+  }
+
+  #selected-work .work-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  #selected-work .work-filter {
+    gap: 18px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scrollbar-width: none;
+  }
+
+  #selected-work .work-filter::-webkit-scrollbar {
+    display: none;
+  }
+
+  #selected-work .work-filter-btn {
+    flex: 0 0 auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .intro-copy h1 {
+    font-size: 52px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-feature img,
+  #selected-work .work-thumb img {
+    transition: none;
+  }
+}
+
+/* Luzia-inspired homepage */
+body:has(.intro-hero) {
+  --portfolio-accent: #111;
+  --white: #fff;
+  background: #fff;
+}
+
+body:has(.intro-hero) nav {
+  padding: 20px 4.5%;
+  background: rgba(255, 255, 255, 0.94);
+  border: 0;
+  backdrop-filter: blur(12px);
+}
+
+body:has(.intro-hero) .nav-logo {
+  font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+body:has(.intro-hero) .burger {
+  display: flex;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+}
+
+body:has(.intro-hero) .burger span {
+  width: 26px;
+  height: 2px;
+  border-radius: 0;
+}
+
+body:has(.intro-hero) .nav-right {
+  display: none;
+  position: fixed;
+  top: 76px;
+  left: auto;
+  right: 4.5%;
+  width: min(380px, 91vw);
+  padding: 14px 24px 24px;
+  background: #fff;
+  border: 1px solid rgba(17, 17, 17, 0.1);
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.12);
+}
+
+body:has(.intro-hero) .nav-right.open {
+  display: flex;
+}
+
+body:has(.intro-hero) .nav-links {
+  width: 100%;
+  flex-direction: column;
+  gap: 0;
+}
+
+body:has(.intro-hero) .nav-links li {
+  width: 100%;
+  border-bottom: 1px solid var(--border);
+}
+
+body:has(.intro-hero) .nav-links a {
+  display: block;
+  padding: 15px 0;
+  color: var(--black);
+  font-size: 1.05rem;
+  text-decoration: none;
+}
+
+body:has(.intro-hero) .nav-cta {
+  justify-content: center;
+  margin-top: 8px;
+  padding: 14px 20px;
+  border-radius: 16px;
+  background: #111;
+  color: #fff;
+}
+
+body:has(.intro-hero) .intro-hero {
+  display: flex;
+  width: min(100%, 1560px);
+  min-height: 0;
+  margin: 0 auto;
+  padding: 150px 4.5% 0;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  overflow: hidden;
+}
+
+body:has(.intro-hero) .intro-copy {
+  z-index: 1;
+  max-width: 1040px;
+  padding: 0;
+}
+
+body:has(.intro-hero) .intro-kicker {
+  display: inline-flex;
+  min-height: 48px;
+  padding: 0 18px;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.025);
+  color: #646464;
+  font-family: inherit;
+  font-size: 0.92rem;
+}
+
+body:has(.intro-hero) .availability-dot {
+  background: #20bf62;
+  box-shadow: 0 0 0 4px rgba(32, 191, 98, 0.13);
+}
+
+body:has(.intro-hero) .intro-copy h1 {
+  max-width: 1000px;
+  margin: 34px 0 24px;
+  font-family: inherit;
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1.09;
+  letter-spacing: 0;
+}
+
+body:has(.intro-hero) .intro-copy h1 span {
+  font-weight: 400;
+}
+
+body:has(.intro-hero) .intro-lede {
+  max-width: 820px;
+  color: #4d4d4d;
+  font-size: 1.22rem;
+  line-height: 1.55;
+}
+
+body:has(.intro-hero) .intro-actions {
+  gap: 26px;
+  margin-top: 34px;
+}
+
+body:has(.intro-hero) .intro-primary {
+  min-height: 64px;
+  padding: 0 30px;
+  border-radius: 18px;
+  background: #111;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.16);
+  font-size: 1.05rem;
+}
+
+body:has(.intro-hero) .intro-primary:hover {
+  background: #333;
+}
+
+body:has(.intro-hero) .intro-secondary {
+  min-height: 42px;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+body:has(.intro-hero) .intro-portrait {
+  display: flex;
+  height: 440px;
+  margin: 4px auto 0;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+}
+
+body:has(.intro-hero) .intro-portrait img {
+  display: block;
+  width: min(430px, 84vw);
+  max-height: 500px;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+body:has(.intro-hero) #selected-work .work-heading,
+body:has(.intro-hero) #selected-work .work-title {
+  font-family: inherit;
+  font-weight: 600;
+}
+
+body:has(.intro-hero) #selected-work .work-heading {
+  font-size: 3rem;
+}
+
+body:has(.intro-hero) #selected-work .work-heading span,
+body:has(.intro-hero) #selected-work .work-title {
+  color: #111;
+}
+
+@media (max-width: 900px) {
+  body:has(.intro-hero) .intro-copy h1 {
+    max-width: 820px;
+    font-size: 64px;
+  }
+
+  body:has(.intro-hero) .intro-portrait {
+    height: 390px;
+  }
+}
+
+@media (max-width: 600px) {
+  body:has(.intro-hero) nav {
+    padding: 12px 6%;
+  }
+
+  body:has(.intro-hero) .nav-right {
+    top: 64px;
+    left: 0;
+    right: 0;
+    width: auto;
+    border-right: 0;
+    border-left: 0;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.09);
+  }
+
+  body:has(.intro-hero) .intro-hero {
+    padding: 112px 6% 0;
+  }
+
+  body:has(.intro-hero) .intro-kicker {
+    min-height: 42px;
+    padding: 0 13px;
+    font-size: 0.76rem;
+  }
+
+  body:has(.intro-hero) .intro-copy h1 {
+    margin: 28px 0 20px;
+    font-size: 48px;
+    line-height: 1.08;
+  }
+
+  body:has(.intro-hero) .intro-lede {
+    font-size: 1.02rem;
+  }
+
+  body:has(.intro-hero) .intro-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 13px;
+    margin-top: 26px;
+  }
+
+  body:has(.intro-hero) .intro-primary {
+    min-height: 58px;
+  }
+
+  body:has(.intro-hero) .intro-portrait {
+    height: 330px;
+    margin-top: 12px;
+  }
+
+  body:has(.intro-hero) .intro-portrait img {
+    width: min(330px, 92vw);
+  }
+
+  body:has(.intro-hero) #selected-work .work-heading {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  body:has(.intro-hero) .intro-copy h1 {
+    font-size: 43px;
   }
 }
