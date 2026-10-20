@@ -2716,3 +2716,30 @@ body:has(.intro-hero) .intro-secondary {
     font-size: 38px;
   }
 }
+
+body:has(.intro-hero) .intro-portrait {
+  align-items: flex-start;
+  height: min(72%, 650px);
+}
+
+body:has(.intro-hero) .intro-portrait img {
+  width: 112%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  object-position: center top;
+  -webkit-mask-image: linear-gradient(to bottom, #000 58%, transparent 67%);
+  mask-image: linear-gradient(to bottom, #000 58%, transparent 67%);
+}
+
+@media (max-width: 760px) {
+  body:has(.intro-hero) .intro-portrait {
+    height: 300px;
+  }
+
+  body:has(.intro-hero) .intro-portrait img {
+    width: 100%;
+    -webkit-mask-image: linear-gradient(to bottom, #000 57%, transparent 68%);
+    mask-image: linear-gradient(to bottom, #000 57%, transparent 68%);
+  }
+}
