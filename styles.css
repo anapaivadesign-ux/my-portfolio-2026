@@ -2333,23 +2333,6 @@ body:has(.intro-hero) .intro-secondary {
   font-size: 0.95rem;
 }
 
-body:has(.intro-hero) .intro-portrait {
-  display: flex;
-  height: 440px;
-  margin: 4px auto 0;
-  align-items: flex-end;
-  justify-content: center;
-  overflow: hidden;
-}
-
-body:has(.intro-hero) .intro-portrait img {
-  display: block;
-  width: min(430px, 84vw);
-  max-height: 500px;
-  object-fit: contain;
-  object-position: center bottom;
-}
-
 body:has(.intro-hero) #selected-work .work-heading,
 body:has(.intro-hero) #selected-work .work-title {
   font-family: inherit;
@@ -2369,10 +2352,6 @@ body:has(.intro-hero) #selected-work .work-title {
   body:has(.intro-hero) .intro-copy h1 {
     max-width: 820px;
     font-size: 64px;
-  }
-
-  body:has(.intro-hero) .intro-portrait {
-    height: 390px;
   }
 }
 
@@ -2420,15 +2399,6 @@ body:has(.intro-hero) #selected-work .work-title {
 
   body:has(.intro-hero) .intro-primary {
     min-height: 58px;
-  }
-
-  body:has(.intro-hero) .intro-portrait {
-    height: 330px;
-    margin-top: 12px;
-  }
-
-  body:has(.intro-hero) .intro-portrait img {
-    width: min(330px, 92vw);
   }
 
   body:has(.intro-hero) #selected-work .work-heading {
@@ -2497,22 +2467,21 @@ body:has(.intro-hero) .nav-cta {
 
 body:has(.intro-hero) .intro-hero {
   position: relative;
-  display: block;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+  align-items: center;
+  gap: clamp(48px, 9vw, 140px);
   width: min(100%, 1600px);
-  height: min(900px, 100svh);
-  min-height: 760px;
+  min-height: min(900px, 100svh);
   margin: 0 auto;
-  padding: 78px 26px 0;
-  overflow: hidden;
+  padding: 120px 6%;
   isolation: isolate;
 }
 
 body:has(.intro-hero) .intro-copy {
-  position: absolute;
+  position: relative;
   z-index: 2;
-  left: 26px;
-  bottom: 8.5%;
-  width: min(43%, 570px);
+  width: 100%;
   max-width: 570px;
   padding: 0;
 }
@@ -2536,35 +2505,11 @@ body:has(.intro-hero) .intro-copy h1 span {
   font-weight: 400;
 }
 
-body:has(.intro-hero) .intro-portrait {
-  position: absolute;
-  z-index: 0;
-  left: 50%;
-  bottom: 0;
-  width: min(47%, 680px);
-  height: min(86%, 790px);
-  margin: 0;
-  transform: translateX(-50%);
-  align-items: flex-end;
-  overflow: hidden;
-}
-
-body:has(.intro-hero) .intro-portrait img {
-  width: 100%;
-  height: 100%;
-  max-height: none;
-  object-fit: contain;
-  object-position: center bottom;
-  -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
-}
-
 body:has(.intro-hero) .intro-aside {
-  position: absolute;
+  position: relative;
   z-index: 2;
-  right: 26px;
-  bottom: 17%;
-  width: min(29%, 420px);
+  width: 100%;
+  max-width: 420px;
 }
 
 body:has(.intro-hero) .intro-lede {
@@ -2659,7 +2604,7 @@ body:has(.intro-hero) .intro-secondary {
     min-height: 0;
     padding: 104px 6% 0;
     grid-template-columns: minmax(0, 1fr);
-    grid-template-areas: "copy" "portrait" "aside";
+    grid-template-areas: "copy" "aside";
     gap: 0;
     overflow: hidden;
   }
@@ -2676,16 +2621,6 @@ body:has(.intro-hero) .intro-secondary {
     max-width: 580px;
     margin-top: 22px;
     font-size: 44px;
-  }
-
-  body:has(.intro-hero) .intro-portrait {
-    position: relative;
-    inset: auto;
-    width: min(100%, 410px);
-    height: 360px;
-    margin: 8px auto 0;
-    transform: none;
-    grid-area: portrait;
   }
 
   body:has(.intro-hero) .intro-aside {
@@ -2714,32 +2649,5 @@ body:has(.intro-hero) .intro-secondary {
 @media (max-width: 380px) {
   body:has(.intro-hero) .intro-copy h1 {
     font-size: 38px;
-  }
-}
-
-body:has(.intro-hero) .intro-portrait {
-  align-items: flex-start;
-  height: min(72%, 650px);
-}
-
-body:has(.intro-hero) .intro-portrait img {
-  width: 112%;
-  height: auto;
-  max-height: none;
-  object-fit: contain;
-  object-position: center top;
-  -webkit-mask-image: linear-gradient(to bottom, #000 58%, transparent 67%);
-  mask-image: linear-gradient(to bottom, #000 58%, transparent 67%);
-}
-
-@media (max-width: 760px) {
-  body:has(.intro-hero) .intro-portrait {
-    height: 300px;
-  }
-
-  body:has(.intro-hero) .intro-portrait img {
-    width: 100%;
-    -webkit-mask-image: linear-gradient(to bottom, #000 57%, transparent 68%);
-    mask-image: linear-gradient(to bottom, #000 57%, transparent 68%);
   }
 }
